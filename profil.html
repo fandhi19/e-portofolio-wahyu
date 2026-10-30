@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Mahasiswa PPG Pendidikan Pancasila | Wahyu Surya Al Fikri, S.Pd. - UAD</title>
+  
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* Responsive layout classes for Profil & Anambas sections */
+    .anambas-hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .anambas-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .split-story-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.15fr;
+      gap: 3.5rem;
+      align-items: flex-start;
+    }
+    .split-story-grid.reverse {
+      grid-template-columns: 1.15fr 0.95fr;
+    }
+
+    @media (max-width: 992px) {
+      .anambas-hero-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+      }
+      .anambas-cards-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1.5rem !important;
+      }
+      .split-story-grid,
+      .split-story-grid.reverse {
+        grid-template-columns: 1fr !important;
+        gap: 2.5rem !important;
+      }
+      .split-story-grid.reverse > div:first-child {
+        order: 2;
+      }
+      .split-story-grid.reverse > div:last-child {
+        order: 1;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .anambas-cards-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =================================================================
+       1. TOPBAR (Contact Info & Angled Lime Social Strip)
+       ================================================================= -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-contact">
+        <a href="tel:+62859195374310" class="topbar-item">
+          <i class="fa-solid fa-phone"></i>
+          <span>+62 859-1953-74310</span>
+        </a>
+        <a href="mailto:wahyu.ppg@uad.ac.id" class="topbar-item">
+          <i class="fa-solid fa-envelope"></i>
+          <span>wahyu.ppg@uad.ac.id</span>
+        </a> 
+        <div class="topbar-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Universitas Ahmad Dahlan (UAD) • D.I. Yogyakarta</span>
+        </div>
+      </div>
+
+      <div class="topbar-social-wrap">
+        <a href="javascript:void(0)" onclick="showToast('Facebook Wahyu Surya Al Fikri')" class="social-circle-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="javascript:void(0)" onclick="showToast('Twitter / X')" class="social-circle-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="javascript:void(0)" onclick="showToast('Instagram Wahyu Surya Al Fikri')" class="social-circle-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="javascript:void(0)" onclick="showToast('Kanal YouTube Pembelajaran Pendidikan Pancasila')" class="social-circle-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="javascript:void(0)" onclick="showToast('LinkedIn Wahyu Surya Al Fikri')" class="social-circle-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =================================================================
+       2. MAIN NAVBAR
+       ================================================================= -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="brand">
+        <img src="logo.png" alt="Logo UAD" class="brand-logo-img" onerror="this.style.display='none'">
+        <div>
+          <span class="brand-title">Wahyu Surya Al Fikri, S.Pd.</span>
+          <span class="brand-subtitle">PPG Calon Guru Pendidikan Pancasila UAD</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Beranda</a></li>
+          <li><a href="profil.html" class="nav-link active">Profil</a></li>
+          
+          <!-- UTS Dropdown -->
+          <li class="nav-item-dropdown">
+            <a href="javascript:void(0)" class="nav-link dropdown-toggle" role="button">
+              UTS <i class="fa-solid fa-chevron-down chevron-icon"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="UTS/rancangan.html" class="dropdown-item"><i class="fa-solid fa-book-bookmark"></i> Rancangan</a></li>
+              <li><a href="UTS/materi.html" class="dropdown-item"><i class="fa-solid fa-book-open"></i> Materi</a></li>
+              <li><a href="UTS/media.html" class="dropdown-item"><i class="fa-solid fa-photo-film"></i> Media</a></li>
+              <li><a href="UTS/instrumen.html" class="dropdown-item"><i class="fa-solid fa-clipboard-check"></i> Instrumen</a></li>
+              <li><a href="UTS/video.html" class="dropdown-item"><i class="fa-solid fa-circle-play"></i> Video</a></li>
+            </ul>
+          </li>
+
+          <!-- UAS Dropdown -->
+          <li class="nav-item-dropdown">
+            <a href="javascript:void(0)" class="nav-link dropdown-toggle" role="button">
+              UAS <i class="fa-solid fa-chevron-down chevron-icon"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="UAS/rancangan.html" class="dropdown-item"><i class="fa-solid fa-book-bookmark"></i> Rancangan</a></li>
+              <li><a href="UAS/materi.html" class="dropdown-item"><i class="fa-solid fa-book-open"></i> Materi</a></li>
+              <li><a href="UAS/media.html" class="dropdown-item"><i class="fa-solid fa-photo-film"></i> Media</a></li>
+              <li><a href="UAS/instrumen.html" class="dropdown-item"><i class="fa-solid fa-clipboard-check"></i> Instrumen</a></li>
+              <li><a href="UAS/video.html" class="dropdown-item"><i class="fa-solid fa-circle-play"></i> Video</a></li>
+            </ul>
+          </li>
+
+          <li><a href="non-mengajar.html" class="nav-link">Non-Mengajar</a></li>
+          <li><a href="dokumentasi.html" class="nav-link">Dokumentasi</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="index.html" class="btn btn-outline-dark btn-sm">
+          <i class="fa-solid fa-arrow-left"></i> Beranda
+        </a>
+        <button class="mobile-toggle" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =================================================================
+       3. SUBPAGE HERO HEADER
+       ================================================================= -->
+  <section class="subpage-hero-agency">
+    <div class="container">
+      <div class="badge-pill-group">
+        <span class="twin-dot-icon">
+          <span></span><span></span>
+        </span>
+        <span>BIODATA, ASAL DAERAH & PANGGILAN JIWA MENJADI GURU</span>
+      </div>
+
+      <h1 style="font-size: clamp(2.2rem, 4vw, 3.2rem); color: var(--color-primary-dark); margin-bottom: 0.8rem; font-weight: 800;">
+        Profil & Dedikasi Pedagogik
+      </h1>
+      <p style="max-width: 760px; font-size: 1.05rem; line-height: 1.7; color: var(--color-text-muted);">
+        Mengenal lebih dekat <strong>Wahyu Surya Al Fikri, S.Pd.</strong>, mahasiswa Program Pendidikan Profesi Guru (PPG) Calon Guru Bidang Studi Pendidikan Pancasila Universitas Ahmad Dahlan (UAD) yang tumbuh dari beranda terdepan Indonesia — Kabupaten Kepulauan Anambas.
+      </p>
+
+      <div class="subpage-breadcrumb">
+        <a href="index.html">Beranda</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span style="color: var(--color-primary-dark); font-weight: 700;">Profil Mahasiswa</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       4. MAIN PROFILE CARD (Slide 1: Profil Calon Guru)
+       ================================================================= -->
+  <main>
+    <div class="container">
+      <div class="profile-agency-card">
+        <!-- Photo & Action -->
+        <div style="text-align: center;">
+          <div class="profile-agency-avatar">
+            <img src="IMG/wahyu.jpg" alt="Wahyu Surya Al Fikri, S.Pd." onerror="this.onerror=null; this.src='IMG/slide_profil.jpg';">
+          </div>
+
+          <div class="badge-pill-group" style="justify-content: center; margin-bottom: 1.25rem;">
+            <span class="twin-dot-icon">
+              <span></span><span></span>
+            </span>
+            <span>NIM: 2518963046</span>
+          </div>
+
+          <button class="btn btn-primary-dark btn-sm" style="width: 100%;" onclick="showToast('Curriculum Vitae Wahyu Surya Al Fikri siap diunduh!')">
+            <i class="fa-solid fa-file-pdf"></i> Unduh Biodata Lengkap
+          </button>
+        </div>
+
+        <!-- Information Details -->
+        <div>
+          <div class="badge-pill-group" style="margin-bottom: 0.5rem;">
+            <span class="twin-dot-icon">
+              <span></span><span></span>
+            </span>
+            <span>Mahasiswa PPG Calon Guru • Gelombang 1</span>
+          </div>
+
+          <h2 style="font-size: clamp(1.8rem, 3vw, 2.4rem); color: var(--color-primary-dark); margin-bottom: 0.4rem; font-weight: 800;">
+            Wahyu Surya Al Fikri, S.Pd.
+          </h2>
+          <p style="color: var(--color-accent-lime-hover); font-weight: 700; font-size: 1.05rem; margin-bottom: 1.25rem;">
+            Guru Pendidikan Pancasila • Calon Guru Profesional
+          </p>
+
+          <p style="font-size: 0.96rem; line-height: 1.75; color: var(--color-text-muted);">
+            Putra daerah beranda terdepan Indonesia asal <strong>Kabupaten Kepulauan Anambas, Provinsi Kepulauan Riau</strong> yang saat ini sedang menempuh <strong>Program Pendidikan Profesi Guru (PPG) Calon Guru Bidang Studi Pendidikan Pancasila</strong> di <strong>Universitas Ahmad Dahlan (UAD)</strong>. Bertekad tulus kembali ke tanah kelahiran sebagai pendidik profesional yang kompeten untuk memutus rantai ketimpangan dan menghadirkan pendidikan berkualitas bagi anak-anak di beranda perbatasan negeri.
+          </p>
+
+          <!-- Bio Grid Matching Slide 1 -->
+          <div class="profile-bio-grid">
+            <div class="bio-card-item">
+              <div class="bio-label-text">Nama Lengkap</div>
+              <div class="bio-value-text">Wahyu Surya Al Fikri, S.Pd.</div>
+            </div>
+            <div class="bio-card-item">
+              <div class="bio-label-text">Nomor Induk Mahasiswa (NIM)</div>
+              <div class="bio-value-text">2518963046</div>
+            </div>
+            <div class="bio-card-item">
+              <div class="bio-label-text">Program Studi</div>
+              <div class="bio-value-text">Pendidikan Pancasila</div>
+            </div>
+            <div class="bio-card-item">
+              <div class="bio-label-text">Perguruan Tinggi LPTK</div>
+              <div class="bio-value-text">Universitas Ahmad Dahlan (UAD)</div>
+            </div>
+            <div class="bio-card-item">
+              <div class="bio-label-text">Sekolah Lokasi PPL</div>
+              <div class="bio-value-text">SMA Negeri 4 Yogyakarta (SMA Negeri 8)</div>
+            </div>
+            <div class="bio-card-item">
+              <div class="bio-label-text">Daerah Asal / Kelahiran</div>
+              <div class="bio-value-text">Kabupaten Kepulauan Anambas, Kepri</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+        <!-- =================================================================
+         5. SECTION: KABUPATEN KEPULAUAN ANAMBAS (Slide 2 & 3)
+         ================================================================= -->
+    <section style="padding: 5rem 0 5.5rem; background: #FFFFFF; border-top: 1px solid var(--color-border-light);">
+      <div class="container">
+        
+        <!-- Section Header -->
+        <div style="text-align: center; max-width: 780px; margin: 0 auto 3.5rem;">
+          <div class="badge-pill-group" style="justify-content: center;">
+            <span class="twin-dot-icon">
+              <span></span><span></span>
+            </span>
+            <span>BERANDA TERDEPAN INDONESIA • TANAH KELAHIRAN</span>
+          </div>
+          <h2 style="font-size: clamp(1.8rem, 3vw, 2.5rem); color: var(--color-primary-dark); margin-bottom: 0.8rem; font-weight: 800;">
+            Mengenal Kabupaten Kepulauan Anambas
+          </h2>
+          <p style="color: var(--color-text-muted); font-size: 1.02rem; line-height: 1.7;">
+            Gugusan permata kepulauan tropis di batas utara nusantara, tempat saya tumbuh, belajar, dan menemukan panggilan jiwa untuk mengabdi sebagai guru.
+          </p>
+        </div>
+
+        <!-- 1. FEATURE STORY: GEOGRAFIS & WILAYAH STRATEGIS (Slide 2) -->
+        <div class="card-agency" style="padding: 2.5rem; margin-bottom: 3.5rem; background: #F8F9F5; border: 1px solid var(--color-border-light);">
+          <div class="anambas-hero-grid">
+            
+            <!-- Aerial Photo Frame -->
+            <div style="position: relative; border-radius: 18px; overflow: hidden; box-shadow: var(--shadow-md); border: 2px solid #FFFFFF;">
+              <img src="IMG/anambas_aerial.jpg" alt="Panorama Kabupaten Kepulauan Anambas" style="width: 100%; height: 320px; object-fit: cover; display: block;">
+              <div style="position: absolute; bottom: 15px; left: 15px; right: 15px; background: rgba(18, 56, 45, 0.9); backdrop-filter: blur(8px); padding: 0.6rem 1rem; border-radius: 10px; display: flex; align-items: center; justify-content: space-between;">
+                <span style="color: #FFFFFF; font-size: 0.82rem; font-weight: 700;">
+                  <i class="fa-solid fa-camera" style="color: var(--color-accent-lime); margin-right: 6px;"></i> Lanskap Tarempa & Laut Natuna
+                </span>
+                <span style="color: var(--color-accent-lime); font-size: 0.76rem; font-weight: 800; text-transform: uppercase;">Beranda Terdepan NKRI</span>
+              </div>
+            </div>
+
+            <!-- Narrative Content -->
+            <div>
+              <div class="badge-pill-group" style="margin-bottom: 0.6rem;">
+                <span class="twin-dot-icon">
+                  <span></span><span></span>
+                </span>
+                <span>LETAK GEOGRAFIS & WILAYAH STRATEGIS</span>
+              </div>
+              
+              <h3 style="font-size: 1.45rem; color: var(--color-primary-dark); font-weight: 800; margin-bottom: 1rem; line-height: 1.3;">
+                Gugusan Ratusan Pulau di Jalur Pelayaran Internasional
+              </h3>
+
+              <p style="font-size: 0.95rem; line-height: 1.8; color: var(--color-text-muted); margin-bottom: 1rem; text-align: justify;">
+                Kabupaten Kepulauan Anambas adalah salah satu wilayah beranda terdepan Indonesia yang terletak di Provinsi Kepulauan Riau. Kabupaten ini terbentuk dari pemekaran Kabupaten Natuna pada tahun 2008 dengan ibu kota berada di <strong>Tarempa</strong>.
+              </p>
+
+              <p style="font-size: 0.95rem; line-height: 1.8; color: var(--color-text-muted); margin-bottom: 1.5rem; text-align: justify;">
+                Secara geografis, wilayah Anambas didominasi oleh lautan luas yang berbatasan langsung dengan Laut Natuna Utara serta negara tetangga seperti Malaysia dan Vietnam. Terdiri dari ratusan pulau kecil eksotis, konektivitas antarwilayah di kabupaten ini sangat bergantung pada jalur transportasi laut dan udara, menjadikannya salah satu daerah kepulauan yang strategis di jalur pelayaran internasional.
+              </p>
+
+              <!-- Quick Facts Badges -->
+              <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                <span class="tag-pill" style="background: rgba(18, 56, 45, 0.08); color: var(--color-primary-dark); font-weight: 700;">
+                  <i class="fa-solid fa-landmark" style="margin-right: 5px;"></i> Pemekaran Natuna 2008
+                </span>
+                <span class="tag-pill" style="background: rgba(184, 224, 35, 0.25); color: var(--color-primary-dark); font-weight: 700;">
+                  <i class="fa-solid fa-anchor" style="margin-right: 5px;"></i> Ibu Kota Tarempa
+                </span>
+                <span class="tag-pill" style="background: rgba(18, 56, 45, 0.08); color: var(--color-primary-dark); font-weight: 700;">
+                  <i class="fa-solid fa-compass" style="margin-right: 5px;"></i> Batas Laut Natuna Utara
+                </span>
+                <span class="tag-pill" style="background: rgba(184, 224, 35, 0.25); color: var(--color-primary-dark); font-weight: 700;">
+                  <i class="fa-solid fa-ship" style="margin-right: 5px;"></i> Jalur Maritim Dunia
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 2. THREE PILLARS: WISATA, BUDAYA & KULINER (Slide 3) -->
+        <div style="margin-bottom: 3.5rem;">
+          <div style="text-align: center; max-width: 650px; margin: 0 auto 2.5rem;">
+            <div class="badge-pill-group" style="justify-content: center;">
+              <span class="twin-dot-icon">
+                <span></span><span></span>
+              </span>
+              <span>PESONA ALAM & KEARIFAN LOKAL</span>
+            </div>
+            <h3 style="font-size: 1.6rem; color: var(--color-primary-dark); font-weight: 800;">
+              Wisata Bahari Tropis, Tradisi Melayu & Kuliner Khas
+            </h3>
+          </div>
+
+          <!-- 3-Column Card Grid -->
+          <div class="anambas-cards-grid">
+            
+            <!-- Card 1: Wisata Bahari & Air Terjun -->
+            <div class="card-agency" style="padding: 0; overflow: hidden; display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid var(--color-border-light);">
+              <div style="width: 100%; height: 210px; overflow: hidden; background: #12382D; position: relative;">
+                <img src="IMG/anambas_air_terjun.jpg" alt="Air Terjun Temburun dan Wisata Bahari Anambas" style="width: 100%; height: 100%; object-fit: cover;">
+                <span class="tag-pill" style="position: absolute; top: 12px; left: 12px; background: rgba(18, 56, 45, 0.85); color: #B8E023; font-size: 0.75rem; font-weight: 700;">
+                  <i class="fa-solid fa-water" style="margin-right: 4px;"></i> Wisata Bahari
+                </span>
+              </div>
+              <div style="padding: 1.75rem; display: flex; flex-direction: column; flex-grow: 1;">
+                <h4 style="font-size: 1.15rem; color: var(--color-primary-dark); font-weight: 800; margin-bottom: 0.75rem; line-height: 1.4;">
+                  Kepulauan Tropis Terindah & Air Terjun Temburun
+                </h4>
+                <p style="font-size: 0.9rem; line-height: 1.7; color: var(--color-text-muted); margin-bottom: 1.25rem; flex-grow: 1;">
+                  Keunikan utama Kepulauan Anambas terletak pada potensi wisata baharinya yang luar biasa hingga pernah dinobatkan sebagai salah satu kepulauan tropis terindah di Asia. Di sini terdapat perairan sangat jernih (gradasi hijau toska ke biru tua), terumbu karang perawan, serta fenomena langka seperti Pulau Air Asuk dan <strong>Air Terjun Temburun</strong> yang alirannya langsung jatuh ke laut.
+                </p>
+                <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+                  <span class="tag-pill" style="background: rgba(184, 224, 35, 0.2); color: var(--color-primary-dark); font-size: 0.76rem; font-weight: 700;">Pulau Air Asuk</span>
+                  <span class="tag-pill" style="background: rgba(18, 56, 45, 0.06); color: var(--color-primary-dark); font-size: 0.76rem; font-weight: 700;">Air Terjun Temburun</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2: Budaya Melayu Pesisir -->
+            <div class="card-agency" style="padding: 0; overflow: hidden; display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid var(--color-border-light);">
+              <div style="width: 100%; height: 210px; overflow: hidden; background: #12382D; position: relative;">
+                <img src="IMG/anambas_budaya.jpg" alt="Seni dan Budaya Tradisi Melayu Pesisir Anambas" style="width: 100%; height: 100%; object-fit: cover;">
+                <span class="tag-pill" style="position: absolute; top: 12px; left: 12px; background: rgba(18, 56, 45, 0.85); color: #B8E023; font-size: 0.75rem; font-weight: 700;">
+                  <i class="fa-solid fa-masks-theater" style="margin-right: 4px;"></i> Seni & Tradisi
+                </span>
+              </div>
+              <div style="padding: 1.75rem; display: flex; flex-direction: column; flex-grow: 1;">
+                <h4 style="font-size: 1.15rem; color: var(--color-primary-dark); font-weight: 800; margin-bottom: 0.75rem; line-height: 1.4;">
+                  Kehangatan Budaya Melayu Pesisir & Hasil Alam
+                </h4>
+                <p style="font-size: 0.9rem; line-height: 1.7; color: var(--color-text-muted); margin-bottom: 1.25rem; flex-grow: 1;">
+                  Dari sisi budaya, kehidupan masyarakat Anambas sangat kental dengan nuansa Melayu pesisir yang ramah dan bersahaja. Selain pesona alam dan tradisi budayanya yang adiluhung, Anambas juga dianugerahi kekayaan hasil laut melimpah serta menjadi salah satu daerah penghasil minyak bumi dan gas alam terbesar di Indonesia.
+                </p>
+                <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+                  <span class="tag-pill" style="background: rgba(184, 224, 35, 0.2); color: var(--color-primary-dark); font-size: 0.76rem; font-weight: 700;">Melayu Pesisir</span>
+                  <span class="tag-pill" style="background: rgba(18, 56, 45, 0.06); color: var(--color-primary-dark); font-size: 0.76rem; font-weight: 700;">Migas & Hasil Laut</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3: Kuliner Khas Legendaris -->
+            <div class="card-agency" style="padding: 0; overflow: hidden; display: flex; flex-direction: column; background: #FFFFFF; border: 1px solid var(--color-border-light);">
+              <div style="width: 100%; height: 210px; overflow: hidden; background: #12382D; position: relative;">
+                <img src="IMG/anambas_kuliner.jpg" alt="Kuliner Mi Tarempa dan Luti Gendang Khas Anambas" style="width: 100%; height: 100%; object-fit: cover;">
+                <span class="tag-pill" style="position: absolute; top: 12px; left: 12px; background: rgba(18, 56, 45, 0.85); color: #B8E023; font-size: 0.75rem; font-weight: 700;">
+                  <i class="fa-solid fa-utensils" style="margin-right: 4px;"></i> Kuliner Ikonik
+                </span>
+              </div>
+              <div style="padding: 1.75rem; display: flex; flex-direction: column; flex-grow: 1;">
+                <h4 style="font-size: 1.15rem; color: var(--color-primary-dark); font-weight: 800; margin-bottom: 0.75rem; line-height: 1.4;">
+                  Ikon Kuliner: Luti Gendang & Mi Tarempa
+                </h4>
+                <p style="font-size: 0.9rem; line-height: 1.7; color: var(--color-text-muted); margin-bottom: 1.25rem; flex-grow: 1;">
+                  Salah satu keunikan kuliner yang menjadi ikon wajib dari daerah ini adalah <strong>Luti Gendang</strong>, yaitu roti goreng khas berbentuk lonjong dengan isian abon ikan tongkol yang gurih dan sedikit pedas, serta <strong>mi tarempa</strong> yang kenyal dan kaya akan bumbu rempah autentik pesisir kepulauan.
+                </p>
+                <div style="display: flex; gap: 0.4rem; flex-wrap: wrap;">
+                  <span class="tag-pill" style="background: rgba(184, 224, 35, 0.2); color: var(--color-primary-dark); font-size: 0.76rem; font-weight: 700;">Luti Gendang</span>
+                  <span class="tag-pill" style="background: rgba(18, 56, 45, 0.06); color: var(--color-primary-dark); font-size: 0.76rem; font-weight: 700;">Mi Tarempa Rempah</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 3. SUMMARY HIGHLIGHT RIBBON -->
+        <div style="background: #12382D; color: #FFFFFF; border-radius: 18px; padding: 2rem 2.5rem; border-left: 6px solid #B8E023; display: flex; align-items: center; justify-content: space-between; gap: 2rem; flex-wrap: wrap;">
+          <div style="flex: 1; min-width: 280px;">
+            <div style="font-size: 0.78rem; font-weight: 800; text-transform: uppercase; color: #B8E023; letter-spacing: 0.08em; margin-bottom: 0.4rem;">
+              REFLEKSI IDENTITAS TANAH KELAHIRAN
+            </div>
+            <p style="font-size: 1rem; line-height: 1.7; color: #F1F5F9; margin: 0; font-style: italic;">
+              "Kombinasi antara letak geografis yang terisolasi namun indah, kekayaan energi fosil, serta warisan budaya Melayu yang terjaga membuat Kabupaten Kepulauan Anambas menjadi permata tersembunyi yang sangat memikat di ujung utara Indonesia."
+            </p>
+          </div>
+          <div style="flex-shrink: 0;">
+            <span class="tag-pill" style="background: rgba(184, 224, 35, 0.2); color: #B8E023; border: 1px solid rgba(184, 224, 35, 0.4); padding: 8px 18px; font-weight: 700;">
+              <i class="fa-solid fa-compass" style="margin-right: 6px;"></i> Beranda Terdepan Indonesia
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  <!-- =================================================================
+         6. SECTION: INSPIRASI MENJADI GURU (Slide 4)
+         ================================================================= -->
+    <section style="padding: 5rem 0; background: var(--color-bg-subtle); border-top: 1px solid var(--color-border-light);">
+      <div class="container">
+        
+        <div class="split-story-grid">
+          
+          <!-- Left: Big Feature Visual -->
+          <div>
+            <div class="badge-pill-group">
+              <span class="twin-dot-icon">
+                <span></span><span></span>
+              </span>
+              <span>PANGGILAN JIWA & REFLEKSI HIDUP</span>
+            </div>
+            
+            <h2 style="font-size: clamp(2rem, 3.2vw, 2.6rem); color: var(--color-primary-dark); margin-bottom: 1.5rem; font-weight: 800; line-height: 1.2;">
+              Inspirasi Menjadi Guru
+            </h2>
+
+            <!-- Photo Frame Card -->
+            <div style="background: #FFFFFF; border-radius: 20px; overflow: hidden; border: 1px solid var(--color-border-light); box-shadow: var(--shadow-md); margin-bottom: 1.5rem;">
+              <img src="IMG/slide_inspirasi.jpg" alt="Inspirasi Menjadi Guru - Wisuda Wahyu Surya Al Fikri bersama Orang Tua" style="width: 100%; height: auto; display: block;">
+              <div style="padding: 1.25rem 1.5rem; background: #FFFFFF; border-top: 1px solid var(--color-border-light);">
+                <div style="font-size: 0.88rem; font-weight: 700; color: var(--color-primary-dark); display: flex; align-items: center; gap: 8px;">
+                  <i class="fa-solid fa-graduation-cap" style="color: var(--color-accent-lime-hover); font-size: 1.1rem;"></i>
+                  <span>Momentum Wisuda Sarjana Pendidikan (S.Pd.) UAD bersama Ayah & Ibu</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quote Box -->
+            <div style="background: #12382D; color: #FFFFFF; padding: 1.75rem 2rem; border-radius: 16px; border-left: 5px solid #B8E023; position: relative;">
+              <i class="fa-solid fa-quote-left" style="color: rgba(184, 224, 35, 0.3); font-size: 2.2rem; position: absolute; top: 15px; right: 20px;"></i>
+              <p style="font-size: 1rem; line-height: 1.7; font-style: italic; color: #F1F5F9; margin-bottom: 0.75rem;">
+                "Menyaksikan perjuangan guru-guru kami terdahulu yang tertatih-tatih melompati batas disiplin ilmu demi kami membuat tekad saya bulat: saya harus kembali ke tanah kelahiran saya bukan sebagai penonton yang mengeluh, melainkan sebagai bagian dari solusi yang membawa perubahan."
+              </p>
+              <div style="font-size: 0.84rem; color: #B8E023; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;">
+                — Wahyu Surya Al Fikri, S.Pd.
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: 3 Narrative Blocks from Slide 4 -->
+          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+            
+            <!-- Block 1 -->
+            <div class="card-agency" style="padding: 2rem;">
+              <div style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 0.85rem;">
+                <div style="width: 38px; height: 38px; border-radius: 10px; background: rgba(18, 56, 45, 0.08); display: flex; align-items: center; justify-content: center; color: var(--color-primary-dark); font-weight: 800; font-size: 0.95rem;">
+                  01
+                </div>
+                <h3 style="font-size: 1.15rem; color: var(--color-primary-dark); font-weight: 800; margin: 0;">
+                  Kenyataan Ketimpangan & Guru Merangkap Peran
+                </h3>
+              </div>
+              <p style="font-size: 0.94rem; line-height: 1.8; color: var(--color-text-muted); margin: 0; text-align: justify;">
+                Menjadi anak yang tumbuh dan menempuh pendidikan di wilayah terdepan Indonesia membuka mata saya pada kenyataan pahit tentang ketimpangan pendidikan di negeri ini. Di saat anak-anak di kota besar dapat memilih fasilitas terbaik, kami di beranda negara harus puas dengan kondisi sekolah yang serbakekurangan, terutama dalam hal tenaga pendidik. Kenangan masa sekolah saya dipenuhi oleh memori di mana satu guru harus merangkap banyak peran, terpaksa mengajar mata pelajaran yang sama sekali bukan bidang keahlian mereka seperti guru bahasa Indonesia yang harus mengajar Pendidikan Pancasila. Hal ini bukan karena mereka tidak berkompetensi, melainkan karena keterbatasan pilihan demi menjaga agar lonceng sekolah kami tetap berbunyi dan kelas tidak kosong.
+              </p>
+            </div>
+
+            <!-- Block 2 -->
+            <div class="card-agency" style="padding: 2rem; border-left: 4px solid var(--color-accent-lime);">
+              <div style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 0.85rem;">
+                <div style="width: 38px; height: 38px; border-radius: 10px; background: rgba(184, 224, 35, 0.3); display: flex; align-items: center; justify-content: center; color: var(--color-primary-dark); font-weight: 800; font-size: 0.95rem;">
+                  02
+                </div>
+                <h3 style="font-size: 1.15rem; color: var(--color-primary-dark); font-weight: 800; margin: 0;">
+                  Keresahan yang Menjelma Menjadi Panggilan Jiwa
+                </h3>
+              </div>
+              <p style="font-size: 0.94rem; line-height: 1.8; color: var(--color-text-muted); margin: 0; text-align: justify;">
+                Keresahan yang saya saksikan setiap hari di ruang kelas itulah yang akhirnya menjelma menjadi panggil jiwa yang begitu kuat. Saya menyadari bahwa anak-anak di wilayah perbatasan tidak kekurangan kecerdasan atau semangat untuk belajar, mereka hanya kekurangan kesempatan untuk dididik oleh guru yang tepat di bidangnya. Menyaksikan perjuangan guru-guru kami terdahulu yang tertatih-tatih melompati batas disiplin ilmu demi kami membuat tekad saya bulat: saya harus kembali ke tanah kelahiran saya bukan sebagai penonton yang mengeluh, melainkan sebagai bagian dari solusi yang membawa perubahan.
+              </p>
+            </div>
+
+            <!-- Block 3 -->
+            <div class="card-agency" style="padding: 2rem;">
+              <div style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 0.85rem;">
+                <div style="width: 38px; height: 38px; border-radius: 10px; background: rgba(18, 56, 45, 0.08); display: flex; align-items: center; justify-content: center; color: var(--color-primary-dark); font-weight: 800; font-size: 0.95rem;">
+                  03
+                </div>
+                <h3 style="font-size: 1.15rem; color: var(--color-primary-dark); font-weight: 800; margin: 0;">
+                  Janji Kepada Masa Depan Tanah Kelahiran
+                </h3>
+              </div>
+              <p style="font-size: 0.94rem; line-height: 1.8; color: var(--color-text-muted); margin: 0; text-align: justify;">
+                Keputusan saya untuk menjadi guru adalah sebuah janji kepada masa depan tanah kelahiran saya. Saya ingin memutus rantai keterbatasan tersebut dengan berdiri di depan kelas sebagai pendidik yang profesional, kompeten, dan benar-benar menguasai ilmu yang saya ajarkan. Bagi saya, mengajar di wilayah terdepan bukan sekadar profesi untuk menyambung hidup, melainkan sebuah misi kemanusiaan dan nasionalisme untuk memastikan bahwa mutiara-mutiara bangsa di ujung negeri ini mendapatkan hak pendidikan dengan kualitas yang sama adilnya.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =================================================================
+         7. SECTION: TUJUAN MENJADI GURU (Slide 5)
+         ================================================================= -->
+    <section style="padding: 5rem 0; background: #FFFFFF; border-top: 1px solid var(--color-border-light);">
+      <div class="container">
+        
+        <div class="split-story-grid reverse">
+          
+          <!-- Left: 3 Mission Blocks from Slide 5 -->
+          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+            <div>
+              <div class="badge-pill-group">
+                <span class="twin-dot-icon">
+                  <span></span><span></span>
+                </span>
+                <span>VISI, MISI & PENGABDIAN NEGERI</span>
+              </div>
+              <h2 style="font-size: clamp(2rem, 3.2vw, 2.6rem); color: var(--color-primary-dark); margin-bottom: 1.25rem; font-weight: 800; line-height: 1.2;">
+                Tujuan Menjadi Guru
+              </h2>
+            </div>
+
+            <!-- Block 1 -->
+            <div class="card-agency" style="padding: 2rem;">
+              <div style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 0.85rem;">
+                <div style="width: 38px; height: 38px; border-radius: 10px; background: rgba(184, 224, 35, 0.3); display: flex; align-items: center; justify-content: center; color: var(--color-primary-dark); font-weight: 800; font-size: 0.95rem;">
+                  <i class="fa-solid fa-school"></i>
+                </div>
+                <h3 style="font-size: 1.15rem; color: var(--color-primary-dark); font-weight: 800; margin: 0;">
+                  Kualitas Sekolah yang Setara dengan Kota Besar
+                </h3>
+              </div>
+              <p style="font-size: 0.94rem; line-height: 1.8; color: var(--color-text-muted); margin: 0; text-align: justify;">
+                Tujuan utama saya menjadi guru sangat sederhana: saya ingin anak-anak di daerah asal saya, di ujung terdepan Indonesia, bisa mendapatkan kualitas sekolah yang sama bagusnya dengan anak-anak di kota besar. Saya tidak ingin lagi melihat adik-adik kelas saya nanti harus belajar dari guru yang terpaksa merangkap mata pelajaran yang bukan bidangnya. Saya ingin pulang dan berdiri di depan kelas sebagai guru yang memang ahli dan siap memberikan ilmu yang tepat dan mendalam untuk mereka.
+              </p>
+            </div>
+
+            <!-- Block 2 -->
+            <div class="card-agency" style="padding: 2rem; border-left: 4px solid var(--color-accent-lime);">
+              <div style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 0.85rem;">
+                <div style="width: 38px; height: 38px; border-radius: 10px; background: rgba(18, 56, 45, 0.08); display: flex; align-items: center; justify-content: center; color: var(--color-primary-dark); font-weight: 800; font-size: 0.95rem;">
+                  <i class="fa-solid fa-lightbulb"></i>
+                </div>
+                <h3 style="font-size: 1.15rem; color: var(--color-primary-dark); font-weight: 800; margin: 0;">
+                  Membangkitkan Potensi & Keberanian Bermimpi Tinggi
+                </h3>
+              </div>
+              <p style="font-size: 0.94rem; line-height: 1.8; color: var(--color-text-muted); margin: 0; text-align: justify;">
+                Bagi saya, anak-anak di wilayah perbatasan itu punya potensi dan kecerdasan yang luar biasa, mereka hanya kalah dalam hal fasilitas dan kesempatan. Di sini, tujuan saya bukan cuma mengajar, tapi mau jadi penyemangat buat mereka supaya mereka percaya diri dan berani punya mimpi yang tinggi. Saya ingin membuktikan kalau lahir di ujung negeri bukan berarti kita harus tertinggal.
+              </p>
+            </div>
+
+            <!-- Block 3 -->
+            <div class="card-agency" style="padding: 2rem;">
+              <div style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 0.85rem;">
+                <div style="width: 38px; height: 38px; border-radius: 10px; background: rgba(184, 224, 35, 0.3); display: flex; align-items: center; justify-content: center; color: var(--color-primary-dark); font-weight: 800; font-size: 0.95rem;">
+                  <i class="fa-solid fa-flag"></i>
+                </div>
+                <h3 style="font-size: 1.15rem; color: var(--color-primary-dark); font-weight: 800; margin: 0;">
+                  Bakti dan Dedikasi Memajukan Tanah Air
+                </h3>
+              </div>
+              <p style="font-size: 0.94rem; line-height: 1.8; color: var(--color-text-muted); margin: 0; text-align: justify;">
+                Pada akhirnya, menjadi guru di tanah kelahiran sendiri adalah cara saya berterima kasih dan berbakti pada negara. Saya ingin ikut ambil bagian untuk memajukan daerah saya lewat pendidikan. Saya ingin membantu melahirkan generasi muda dari perbatasan yang tidak hanya pintar, tapi juga bangga dan sayang pada daerah serta tanah airnya.
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Right: Gazebo Group Visual -->
+          <div>
+            <!-- Photo Frame Card -->
+            <div style="background: #FFFFFF; border-radius: 20px; overflow: hidden; border: 1px solid var(--color-border-light); box-shadow: var(--shadow-md); margin-bottom: 1.5rem; margin-top: 3.5rem;">
+              <img src="IMG/slide_tujuan.jpg" alt="Tujuan Menjadi Guru - Kebersamaan Mahasiswa PPG Calon Guru" style="width: 100%; height: auto; display: block;">
+              <div style="padding: 1.25rem 1.5rem; background: #FFFFFF; border-top: 1px solid var(--color-border-light);">
+                <div style="font-size: 0.88rem; font-weight: 700; color: var(--color-primary-dark); display: flex; align-items: center; gap: 8px;">
+                  <i class="fa-solid fa-users" style="color: var(--color-accent-lime-hover); font-size: 1.1rem;"></i>
+                  <span>Kebersamaan Mahasiswa PPG Calon Guru Berbusana Adat Tradisional</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quote Highlight Box -->
+            <div style="background: #12382D; color: #FFFFFF; padding: 1.75rem 2rem; border-radius: 16px; border-left: 5px solid #B8E023; position: relative;">
+              <i class="fa-solid fa-quote-left" style="color: rgba(184, 224, 35, 0.3); font-size: 2.2rem; position: absolute; top: 15px; right: 20px;"></i>
+              <p style="font-size: 1.05rem; line-height: 1.7; font-weight: 600; color: #F1F5F9; margin-bottom: 0.75rem;">
+                "Lahir di ujung negeri bukan berarti kita harus tertinggal. Mutiara-mutiara bangsa di beranda terdepan Indonesia berhak atas guru profesional dan hak pendidikan dengan kualitas yang sama adilnya."
+              </p>
+              <div style="font-size: 0.84rem; color: #B8E023; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em;">
+                — Visi Pengabdian Wahyu Surya Al Fikri, S.Pd.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =================================================================
+         8. SECTION: TIGA PILAR KOMITMEN PENGABDIAN
+         ================================================================= -->
+    <section style="padding: 4.5rem 0 5rem; background: var(--color-bg-subtle); border-top: 1px solid var(--color-border-light);">
+      <div class="container">
+        
+        <div style="text-align: center; max-width: 700px; margin: 0 auto 3rem;">
+          <div class="badge-pill-group" style="justify-content: center;">
+            <span class="twin-dot-icon">
+              <span></span><span></span>
+            </span>
+            <span>NILAI DASAR PENGABDIAN</span>
+          </div>
+          <h2 style="font-size: clamp(1.8rem, 3vw, 2.4rem); color: var(--color-primary-dark); margin-bottom: 0.8rem; font-weight: 800;">
+            Tiga Pilar Komitmen Guru Pendidikan Pancasila
+          </h2>
+          <p style="color: var(--color-text-muted);">
+            Prinsip utama yang melandasi langkah dan dedikasi saya dalam menunaikan panggilan profesi pendidik bangsa.
+          </p>
+        </div>
+
+        <div class="cards-agency-grid">
+          
+          <!-- Card 1 -->
+          <div class="card-agency">
+            <div class="card-agency-header">
+              <div class="card-agency-icon">
+                <i class="fa-solid fa-award"></i>
+              </div>
+              <span class="tag-pill" style="background: rgba(18,56,45,0.06); color: var(--color-primary-dark);">Kompetensi Keilmuan</span>
+            </div>
+            <div class="card-agency-body">
+              <h3 class="card-agency-title">Pendidik Ahli di Bidangnya</h3>
+              <p class="card-agency-desc">
+                Berdiri di depan kelas dengan penguasaan substansi Pendidikan Pancasila yang mendalam, pedagogik modern berbasis TPACK, dan Kurikulum Merdeka agar siswa di perbatasan tidak lagi diajar oleh guru yang merangkap di luar keahliannya.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="card-agency">
+            <div class="card-agency-header">
+              <div class="card-agency-icon">
+                <i class="fa-solid fa-rocket"></i>
+              </div>
+              <span class="tag-pill" style="background: rgba(184,224,35,0.2); color: var(--color-primary-dark);">Pemberdayaan Siswa</span>
+            </div>
+            <div class="card-agency-body">
+              <h3 class="card-agency-title">Penyemangat Mimpi Anak Perbatasan</h3>
+              <p class="card-agency-desc">
+                Membimbing dan menumbuhkan rasa percaya diri bahwa keterbatasan fasilitas di wilayah 3T bukanlah penghalang untuk bersaing, berprestasi, dan memiliki cita-cita setinggi langit yang setara dengan anak-anak di kota besar.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="card-agency">
+            <div class="card-agency-header">
+              <div class="card-agency-icon">
+                <i class="fa-solid fa-hand-holding-heart"></i>
+              </div>
+              <span class="tag-pill" style="background: rgba(18,56,45,0.06); color: var(--color-primary-dark);">Misi Kebangsaan</span>
+            </div>
+            <div class="card-agency-body">
+              <h3 class="card-agency-title">Bakti Nyata Menjaga Beranda NKRI</h3>
+              <p class="card-agency-desc">
+                Menjadikan ruang kelas Pendidikan Pancasila sebagai benteng karakter moral dan nasionalisme, merawat keutuhan NKRI dari batas terdepan bangsa, serta melahirkan generasi yang bangga dan cinta pada tanah airnya.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =================================================================
+       9. AGENCY FOOTER
+       ================================================================= -->
+  <footer class="footer-agency">
+    <div class="container">
+      <div class="footer-agency-grid">
+        
+        <!-- Brand Info -->
+        <div class="footer-agency-col">
+          <div class="footer-agency-brand" style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 1rem;">
+            <img src="logo.png" alt="Logo UAD" class="footer-agency-logo-img" style="width: 46px; height: 46px; object-fit: contain; background: transparent; padding: 0; border: none; box-shadow: none; flex-shrink: 0;" onerror="this.style.display='none'">
+            <div class="footer-agency-brand-text">
+              <span class="title" style="display: block; font-size: 1.15rem; font-weight: 800; color: #ffffff;">Wahyu Surya Al Fikri, S.Pd.</span>
+              <span class="sub" style="display: block; font-size: 0.8rem; color: #94A3B8; font-weight: 600;">PPG Calon Guru Pendidikan Pancasila UAD</span>
+            </div>
+          </div>
+          <p class="footer-agency-bio" style="color: #94A3B8; font-size: 0.88rem; line-height: 1.7;">
+            Portofolio resmi PPL Terbimbing Program Pendidikan Profesi Guru (PPG) Calon Guru Bidang Studi Pendidikan Pancasila Universitas Ahmad Dahlan (UAD) di SMA Negeri 4 Yogyakarta.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-agency-col">
+          <h4 class="footer-agency-col-title">Navigasi Portofolio</h4>
+          <ul class="footer-agency-links">
+            <li><a href="index.html"><i class="fa-solid fa-arrow-right" style="font-size:0.75rem; margin-right:6px;"></i> Beranda Utama</a></li>
+            <li><a href="profil.html"><i class="fa-solid fa-arrow-right" style="font-size:0.75rem; margin-right:6px;"></i> Profil Lengkap Mahasiswa</a></li>
+            <li><a href="UTS/rancangan.html"><i class="fa-solid fa-arrow-right" style="font-size:0.75rem; margin-right:6px;"></i> Siklus 1 (UTS PPL)</a></li>
+            <li><a href="UAS/rancangan.html"><i class="fa-solid fa-arrow-right" style="font-size:0.75rem; margin-right:6px;"></i> Siklus 2 (UAS PPL)</a></li>
+            <li><a href="non-mengajar.html"><i class="fa-solid fa-arrow-right" style="font-size:0.75rem; margin-right:6px;"></i> Kegiatan Non-Mengajar</a></li>
+            <li><a href="dokumentasi.html"><i class="fa-solid fa-arrow-right" style="font-size:0.75rem; margin-right:6px;"></i> Galeri Dokumentasi</a></li>
+          </ul>
+        </div>
+
+        <!-- Perangkat PPL -->
+        <div class="footer-agency-col">
+          <h4 class="footer-agency-col-title">Perangkat Pembelajaran</h4>
+          <ul class="footer-agency-links">
+            <li><a href="UTS/rancangan.html"><i class="fa-solid fa-check" style="color:var(--color-accent-lime); font-size:0.75rem; margin-right:6px;"></i> Modul Ajar Siklus 1 & 2</a></li>
+            <li><a href="UTS/media.html"><i class="fa-solid fa-check" style="color:var(--color-accent-lime); font-size:0.75rem; margin-right:6px;"></i> Media Berbasis TPACK</a></li>
+            <li><a href="UTS/instrumen.html"><i class="fa-solid fa-check" style="color:var(--color-accent-lime); font-size:0.75rem; margin-right:6px;"></i> Instrumen Asesmen Pancasila</a></li>
+            <li><a href="UTS/video.html"><i class="fa-solid fa-check" style="color:var(--color-accent-lime); font-size:0.75rem; margin-right:6px;"></i> Video Praktik Pembelajaran</a></li>
+          </ul>
+        </div>
+
+        <!-- Kontak & Alamat -->
+        <div class="footer-agency-col">
+          <h4 class="footer-agency-col-title">LPTK & Kontak Resmi</h4>
+          <p style="font-size: 0.88rem; color: #94A3B8; margin-bottom: 0.75rem;">
+            <i class="fa-solid fa-location-dot" style="color: var(--color-accent-lime); margin-right: 6px;"></i> Kampus Utama UAD, Jl. Ringroad Selatan, Tamanan, Banguntapan, Bantul, D.I. Yogyakarta 55191
+          </p>
+          <p style="font-size: 0.88rem; color: #94A3B8; margin-bottom: 1.25rem;">
+            <i class="fa-solid fa-envelope" style="color: var(--color-accent-lime); margin-right: 6px;"></i> wahyu.ppg@uad.ac.id
+          </p>
+          <div style="display: flex; gap: 0.6rem;">
+            <a href="javascript:void(0)" onclick="showToast('YouTube')" class="social-circle-btn"><i class="fa-brands fa-youtube"></i></a>
+            <a href="javascript:void(0)" onclick="showToast('Instagram')" class="social-circle-btn"><i class="fa-brands fa-instagram"></i></a>
+            <a href="javascript:void(0)" onclick="showToast('LinkedIn')" class="social-circle-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom-strip">
+        <div>
+          &copy; 2026 <strong>Wahyu Surya Al Fikri, S.Pd.</strong> All Rights Reserved • PPG Calon Guru Pendidikan Pancasila Universitas Ahmad Dahlan (UAD).
+        </div>
+        <div>
+          Tema Desain: Modern Clean Green & Lime Agency Style
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

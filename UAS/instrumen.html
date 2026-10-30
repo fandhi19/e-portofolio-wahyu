@@ -1,0 +1,1538 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UAS - Instrumen & Rubrik Penilaian Pendidikan Pancasila | Wahyu Surya Al Fikri, S.Pd. - UAD</title>
+
+    <link rel="icon" type="image/png" href="../logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <style>
+      /* Cycle Switcher Tabs for UAS */
+      .uas-tabs-wrapper {
+        display: flex;
+        gap: 0.85rem;
+        margin-bottom: 1.75rem;
+        flex-wrap: wrap;
+      }
+      .uas-tab-btn {
+        background: #f8f9f5;
+        border: 1px solid var(--color-border-light);
+        color: var(--color-primary-dark);
+        padding: 0.85rem 1.65rem;
+        border-radius: var(--radius-pill);
+        font-size: 0.92rem;
+        font-weight: 700;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.65rem;
+        transition: var(--transition-fast);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+      }
+      .uas-tab-btn:hover {
+        background: #ffffff;
+        border-color: var(--color-primary-dark);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-sm);
+      }
+      .uas-tab-btn.active {
+        background: var(--color-primary-dark);
+        color: #ffffff;
+        border-color: var(--color-primary-dark);
+        box-shadow: var(--shadow-md);
+      }
+      .uas-tab-btn.active i {
+        color: var(--color-accent-lime);
+      }
+      .uas-tab-badge {
+        background: rgba(184, 224, 35, 0.2);
+        color: var(--color-primary-dark);
+        padding: 3px 10px;
+        border-radius: var(--radius-pill);
+        font-size: 0.72rem;
+        font-weight: 800;
+        margin-left: 0.25rem;
+      }
+      .uas-tab-btn.active .uas-tab-badge {
+        background: var(--color-accent-lime);
+        color: var(--color-primary-dark);
+      }
+
+      /* Analysis Containers Transition */
+      .uas-analysis-container {
+        display: none;
+        animation: fadeInAnalysis 0.4s ease-in-out forwards;
+      }
+      .uas-analysis-container.active {
+        display: block;
+      }
+      @keyframes fadeInAnalysis {
+        from {
+          opacity: 0;
+          transform: translateY(12px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Summary Card Grid */
+      .uas-summary-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 3.5rem;
+      }
+      .uas-summary-card {
+        background: #f8f9f5;
+        border-radius: var(--radius-lg);
+        padding: 1.8rem;
+        border: 1px solid var(--color-border-light);
+        border-top: 4px solid var(--color-border-light);
+        transition: var(--transition-normal);
+        cursor: pointer;
+      }
+      .uas-summary-card:hover {
+        background: #ffffff;
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-md);
+      }
+      .uas-summary-card.active {
+        background: #ffffff;
+        border-color: var(--color-primary-dark);
+        border-top: 4px solid var(--color-accent-lime);
+        box-shadow: var(--shadow-md);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- =================================================================
+       1. TOPBAR (Contact Info & Angled Lime Social Strip)
+       ================================================================= -->
+    <div class="topbar">
+      <div class="container topbar-inner">
+        <div class="topbar-contact">
+          <a href="tel:+62859195374310" class="topbar-item">
+            <i class="fa-solid fa-phone"></i>
+            <span>+62 859-1953-74310</span>
+          </a>
+          <a href="mailto:wahyu.ppg@uad.ac.id" class="topbar-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span>wahyu.ppg@uad.ac.id</span>
+          </a>
+          <div class="topbar-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Universitas Ahmad Dahlan (UAD) • D.I. Yogyakarta</span>
+          </div>
+        </div>
+
+        <div class="topbar-social-wrap">
+          <a href="javascript:void(0)" onclick="showToast('Facebook Wahyu Surya Al Fikri')" class="social-circle-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="javascript:void(0)" onclick="showToast('Twitter / X')" class="social-circle-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="javascript:void(0)" onclick="showToast('Instagram Wahyu Surya Al Fikri')" class="social-circle-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="javascript:void(0)" onclick="showToast('Kanal YouTube Pembelajaran Pendidikan Pancasila')" class="social-circle-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="javascript:void(0)" onclick="showToast('LinkedIn Wahyu Surya Al Fikri')" class="social-circle-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- =================================================================
+       2. MAIN NAVBAR
+       ================================================================= -->
+    <header class="navbar">
+      <div class="container navbar-inner">
+        <a href="../index.html" class="brand">
+          <img src="../logo.png" alt="Logo UAD" class="brand-logo-img" onerror="this.style.display = 'none'" />
+          <div>
+            <span class="brand-title">Wahyu Surya Al Fikri, S.Pd.</span>
+            <span class="brand-subtitle">PPG Calon Guru Pendidikan Pancasila UAD</span>
+          </div>
+        </a>
+
+        <nav>
+          <ul class="nav-links">
+            <li><a href="../index.html" class="nav-link">Beranda</a></li>
+            <li><a href="../profil.html" class="nav-link">Profil</a></li>
+
+            <!-- UTS Dropdown -->
+            <li class="nav-item-dropdown">
+              <a href="javascript:void(0)" class="nav-link dropdown-toggle" role="button"> UTS <i class="fa-solid fa-chevron-down chevron-icon"></i> </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="../UTS/rancangan.html" class="dropdown-item"><i class="fa-solid fa-book-bookmark"></i> Rancangan</a>
+                </li>
+                <li>
+                  <a href="../UTS/materi.html" class="dropdown-item"><i class="fa-solid fa-book-open"></i> Materi</a>
+                </li>
+                <li>
+                  <a href="../UTS/media.html" class="dropdown-item"><i class="fa-solid fa-photo-film"></i> Media</a>
+                </li>
+                <li>
+                  <a href="../UTS/instrumen.html" class="dropdown-item"><i class="fa-solid fa-clipboard-check"></i> Instrumen</a>
+                </li>
+                <li>
+                  <a href="../UTS/video.html" class="dropdown-item"><i class="fa-solid fa-circle-play"></i> Video</a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- UAS Dropdown (Active) -->
+            <li class="nav-item-dropdown">
+              <a href="javascript:void(0)" class="nav-link dropdown-toggle active" role="button"> UAS <i class="fa-solid fa-chevron-down chevron-icon"></i> </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="rancangan.html" class="dropdown-item"><i class="fa-solid fa-book-bookmark"></i> Rancangan</a>
+                </li>
+                <li>
+                  <a href="materi.html" class="dropdown-item"><i class="fa-solid fa-book-open"></i> Materi</a>
+                </li>
+                <li>
+                  <a href="media.html" class="dropdown-item"><i class="fa-solid fa-photo-film"></i> Media</a>
+                </li>
+                <li>
+                  <a href="instrumen.html" class="dropdown-item active" style="font-weight: 700"><i class="fa-solid fa-clipboard-check"></i> Instrumen</a>
+                </li>
+                <li>
+                  <a href="video.html" class="dropdown-item"><i class="fa-solid fa-circle-play"></i> Video</a>
+                </li>
+              </ul>
+            </li>
+
+            <li><a href="../non-mengajar.html" class="nav-link">Non-Mengajar</a></li>
+            <li><a href="../dokumentasi.html" class="nav-link">Dokumentasi</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="../index.html" class="btn btn-outline-dark btn-sm"> <i class="fa-solid fa-arrow-left"></i> Beranda </a>
+          <button class="mobile-toggle" aria-label="Toggle Menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- =================================================================
+       3. SUBPAGE HERO HEADER
+       ================================================================= -->
+    <section class="subpage-hero-agency">
+      <div class="container">
+        <div class="badge-pill-group">
+          <span class="twin-dot-icon"> <span></span><span></span> </span>
+          <span>UAS • SIKLUS 2, 3 & 4 PPL TERBIMBING</span>
+        </div>
+
+        <h1 style="font-size: clamp(2.2rem, 4vw, 3.2rem); color: var(--color-primary-dark); margin-bottom: 0.8rem">Instrumen & Rubrik Penilaian (UAS)</h1>
+        <p style="max-width: 860px; font-size: 1.05rem; line-height: 1.6; color: var(--color-text-muted)">
+          Kompilasi instrumen asesmen otentik Kurikulum Merdeka Fase F (Kelas XI SMA) untuk Ujian Akhir Semester (UAS) / Siklus Lanjutan PPL Terbimbing di SMA Negeri 4 Yogyakarta. Terdiri atas 3 siklus evaluasi komprehensif lengkap dengan
+          <strong>analisis mandiri terpisah untuk setiap siklus</strong>: <strong>Siklus 2: Periodisasi Pemberlakuan Konstitusi</strong>, <strong>Siklus 3: Perubahan UUD NRI Tahun 1945</strong>, dan
+          <strong>Siklus 4: Perubahan UUD NRI Tahun 1945 (Siklus Lanjutan)</strong>.
+        </p>
+
+        <div class="subpage-breadcrumb">
+          <a href="../index.html">Beranda</a>
+          <i class="fa-solid fa-chevron-right"></i>
+          <span>Siklus Lanjutan (UAS)</span>
+          <i class="fa-solid fa-chevron-right"></i>
+          <span style="color: var(--color-primary-dark); font-weight: 700">Instrumen Penilaian</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================
+       4. MAIN CONTENT: MULTI-SIKLUS PDF VIEWER & SEPARATE ANALYSES
+       ================================================================= -->
+    <main style="padding: 4rem 0 6rem; background: #ffffff">
+      <div class="container">
+        <!-- =============================================================
+           A. MULTI-SIKLUS INTERACTIVE PDF VIEWER SECTION
+           ============================================================= -->
+        <section style="margin-bottom: 5rem">
+          <div class="section-agency-head" style="margin-bottom: 2rem">
+            <div class="badge-pill-group">
+              <span class="twin-dot-icon"> <span></span><span></span> </span>
+              <span>DOKUMEN INSTRUMEN ASESMEN SIKLUS 2, 3 & 4</span>
+            </div>
+            <h2 class="section-agency-title">Pratinjau Instrumen Penilaian Digital (Pilih Siklus)</h2>
+            <p class="section-agency-subtitle">Klik tombol siklus di bawah untuk menampilkan dokumen PDF instrumen asesmen terkait dan secara otomatis membuka <strong>analisis akademik khusus yang terpisah</strong> di bawah viewer.</p>
+          </div>
+
+          <!-- Cycle Switcher Tab Navigation (3 Tab Terpisah) -->
+          <div class="uas-tabs-wrapper">
+            <button id="tab-btn-2" class="uas-tab-btn active" onclick="switchUASInstrumen(2)">
+              <i class="fa-solid fa-landmark"></i> <span>Siklus 2: Periodisasi Pemberlakuan Konstitusi</span>
+              <span class="uas-tab-badge">PBL + Deep Learning</span>
+            </button>
+
+            <button id="tab-btn-3" class="uas-tab-btn" onclick="switchUASInstrumen(3)">
+              <i class="fa-solid fa-scale-balanced"></i> <span>Siklus 3: Perubahan UUD NRI Tahun 1945</span>
+              <span class="uas-tab-badge">Cooperative Learning + TGT</span>
+            </button>
+
+            <button id="tab-btn-4" class="uas-tab-btn" onclick="switchUASInstrumen(4)">
+              <i class="fa-solid fa-file-shield"></i> <span>Siklus 4: Perubahan UUD NRI Tahun 1945 (Lanjutan)</span>
+              <span class="uas-tab-badge">TGT "New Family 100"</span>
+            </button>
+          </div>
+
+          <!-- PDF Viewer Container Card -->
+          <div class="pdf-viewer-card">
+            <!-- Toolbar -->
+            <div class="pdf-viewer-toolbar">
+              <div class="pdf-toolbar-info">
+                <div class="pdf-toolbar-icon">
+                  <i class="fa-solid fa-file-pdf"></i>
+                </div>
+                <div>
+                  <div id="uas-doc-title" class="pdf-toolbar-title">Instrumen Penilaian Pendidikan Pancasila Siklus 2: Periodisasi Pemberlakuan Konstitusi</div>
+                  <div id="uas-doc-sub" class="pdf-toolbar-sub">Penyusun: <strong>Wahyu Surya Al Fikri, S.Pd.</strong> • Siklus 2 UAS • Fase F / Kelas XI F3 • Alokasi: 1 Pertemuan (90 Menit)</div>
+                </div>
+              </div>
+
+              <div class="pdf-toolbar-actions">
+                <span id="uas-doc-badge" class="tag-pill" style="background: rgba(184, 224, 35, 0.2); color: #b8e023; font-weight: 700; border: 1px solid rgba(184, 224, 35, 0.4); padding: 6px 14px; font-size: 0.78rem">
+                  <i class="fa-solid fa-circle-check" style="margin-right: 5px"></i> Terverifikasi LPTK UAD
+                </span>
+                <a id="uas-doc-download" href="../Dokumen/Instrumen Siklus 2.pdf" download="Instrumen_Penilaian_Pancasila_Siklus2_PeriodisasiKonstitusi_WahyuSuryaAlFikri.pdf" class="btn btn-primary-lime btn-sm">
+                  <i class="fa-solid fa-file-arrow-down"></i> Unduh PDF
+                </a>
+                <a id="uas-doc-fullscreen" href="../Dokumen/Instrumen Siklus 2.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light btn-sm" style="border-color: rgba(255, 255, 255, 0.4); color: #ffffff">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Layar Penuh
+                </a>
+              </div>
+            </div>
+
+            <!-- Embedded Frame -->
+            <div class="pdf-frame-wrapper">
+              <iframe id="uas-doc-iframe" src="../Dokumen/Instrumen Siklus 2.pdf#toolbar=1&navpanes=0&scrollbar=1" title="Instrumen Penilaian UAS Wahyu Surya Al Fikri" loading="lazy">
+                <p style="padding: 2rem; color: #ffffff; text-align: center">
+                  Peramban Anda tidak mendukung tampilan PDF langsung. Silakan
+                  <a id="uas-doc-fallback" href="../Dokumen/Instrumen Siklus 2.pdf" target="_blank" style="color: var(--color-accent-lime); font-weight: bold; text-decoration: underline">
+                    Klik di sini untuk mengunduh dokumen instrumen penilaian (.PDF) </a
+                  >.
+                </p>
+              </iframe>
+            </div>
+
+            <!-- Footer Metadata Bar (Dynamic) -->
+            <div id="uas-meta-bar" style="background: #f8f9f5; padding: 1.25rem 2rem; border-top: 1px solid var(--color-border-light); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem">
+              <div style="display: flex; align-items: center; gap: 1.8rem; flex-wrap: wrap">
+                <div style="font-size: 0.85rem; color: var(--color-text-muted)">
+                  <i class="fa-solid fa-school" style="color: var(--color-primary-dark); margin-right: 6px"></i>
+                  <span id="uas-meta-school"><strong>Sekolah Mitra:</strong> SMA Negeri 4 Yogyakarta</span>
+                </div>
+                <div style="font-size: 0.85rem; color: var(--color-text-muted)">
+                  <i class="fa-solid fa-calculator" style="color: var(--color-primary-dark); margin-right: 6px"></i>
+                  <span id="uas-meta-weight"><strong>Struktur:</strong> Diagnostik + Formatif + Sumatif</span>
+                </div>
+                <div style="font-size: 0.85rem; color: var(--color-text-muted)">
+                  <i class="fa-solid fa-chart-line" style="color: var(--color-primary-dark); margin-right: 6px"></i>
+                  <span id="uas-meta-kktp"><strong>Pendekatan:</strong> PBL + Deep Learning + TaRL + CRT</span>
+                </div>
+                <div style="font-size: 0.85rem; color: var(--color-text-muted)">
+                  <i class="fa-solid fa-sliders" style="color: var(--color-primary-dark); margin-right: 6px"></i>
+                  <span id="uas-meta-approach"><strong>Media:</strong> TTS + Tabel Komparasi + CARL</span>
+                </div>
+              </div>
+              <div>
+                <a href="javascript:void(0)" onclick="showToast('Instrumen Resmi PPL Terbimbing PPG UAD')" style="font-size: 0.82rem; color: var(--color-primary-dark); font-weight: 700; text-decoration: none">
+                  <i class="fa-solid fa-circle-check" style="color: var(--color-accent-lime); margin-right: 5px"></i> Kurikulum Merdeka 2026
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =============================================================
+           B. QUICK SUMMARY CARDS (3 Cards)
+           ============================================================= -->
+        <section style="margin-bottom: 4rem">
+          <div style="margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem">
+            <div>
+              <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 0.25rem">Ringkasan Matriks Instrumen Penilaian Siklus 2, 3 & 4</h3>
+              <p style="font-size: 0.9rem; color: var(--color-text-muted); margin: 0">Klik salah satu kartu untuk berpindah pratinjau dokumen instrumen dan membuka analisis akademik mendalam.</p>
+            </div>
+            <span style="font-size: 0.8rem; background: #f1f5f9; color: var(--color-primary-dark); font-weight: 700; padding: 5px 12px; border-radius: var(--radius-pill)"> 3 Siklus Mandiri </span>
+          </div>
+
+          <div class="uas-summary-grid">
+            <!-- Summary Card Siklus 2 -->
+            <div id="sum-card-2" class="uas-summary-card active" onclick="switchUASInstrumen(2)">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem">
+                <span class="tag-pill" style="background: var(--color-primary-dark); color: var(--color-accent-lime); font-size: 0.72rem; font-weight: 800"> SIKLUS 2 • UAS </span>
+                <i class="fa-solid fa-landmark" style="font-size: 1.5rem; color: var(--color-primary-dark)"></i>
+              </div>
+              <h4 style="font-size: 1.15rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 0.5rem">Periodisasi Pemberlakuan Konstitusi</h4>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 1rem">
+                Instrumen asesmen komprehensif yang mencakup diagnostik (emotional check-in, quick vote), formatif (rubrik 4 aspek), LKPD TTS + tabel komparasi + analisis sebab-akibat, serta refleksi CARL.
+              </p>
+              <div style="border-top: 1px dashed var(--color-border-light); padding-top: 0.85rem; font-size: 0.82rem; color: var(--color-text-muted); display: flex; flex-direction: column; gap: 0.35rem">
+                <div><i class="fa-solid fa-check" style="color: #65a30d; margin-right: 5px"></i> Rubrik Formatif 4 Aspek</div>
+                <div><i class="fa-solid fa-check" style="color: #65a30d; margin-right: 5px"></i> LKPD TTS + Tabel Komparasi</div>
+                <div><i class="fa-solid fa-check" style="color: #65a30d; margin-right: 5px"></i> Refleksi CARL (4 Komponen)</div>
+              </div>
+            </div>
+
+            <!-- Summary Card Siklus 3 -->
+            <div id="sum-card-3" class="uas-summary-card" onclick="switchUASInstrumen(3)">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem">
+                <span class="tag-pill" style="background: #1e3a8a; color: #93c5fd; font-size: 0.72rem; font-weight: 800"> SIKLUS 3 • UAS </span>
+                <i class="fa-solid fa-scale-balanced" style="font-size: 1.5rem; color: #1e3a8a"></i>
+              </div>
+              <h4 style="font-size: 1.15rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 0.5rem">Perubahan UUD NRI Tahun 1945</h4>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 1rem">
+                Asesmen 3 ranah (sikap, pengetahuan, keterampilan) dengan observasi, kuis "New Family 100", tes tertulis (5 PG + 2 uraian), rubrik lengkap, KKTP 75, dan refleksi peserta didik.
+              </p>
+              <div style="border-top: 1px dashed var(--color-border-light); padding-top: 0.85rem; font-size: 0.82rem; color: var(--color-text-muted); display: flex; flex-direction: column; gap: 0.35rem">
+                <div><i class="fa-solid fa-check" style="color: #65a30d; margin-right: 5px"></i> Observasi Sikap & Keterampilan</div>
+                <div><i class="fa-solid fa-check" style="color: #65a30d; margin-right: 5px"></i> Kuis TGT "New Family 100"</div>
+                <div><i class="fa-solid fa-check" style="color: #65a30d; margin-right: 5px"></i> Tes Tertulis + Refleksi</div>
+              </div>
+            </div>
+
+            <!-- Summary Card Siklus 4 -->
+            <div id="sum-card-4" class="uas-summary-card" onclick="switchUASInstrumen(4)">
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem">
+                <span class="tag-pill" style="background: #9a3412; color: #fdba74; font-size: 0.72rem; font-weight: 800"> SIKLUS 4 • UAS </span>
+                <i class="fa-solid fa-file-shield" style="font-size: 1.5rem; color: #9a3412"></i>
+              </div>
+              <h4 style="font-size: 1.15rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 0.5rem">Perubahan UUD 1945 (Siklus Lanjutan)</h4>
+              <p style="font-size: 0.85rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 1rem">
+                Siklus lanjutan/penguatan dengan instrumen yang sama, menekankan pendalaman muatan amandemen, penguatan analisis dampak, serta pematangan refleksi kritis peserta didik.
+              </p>
+              <div style="border-top: 1px dashed var(--color-border-light); padding-top: 0.85rem; font-size: 0.82rem; color: var(--color-text-muted); display: flex; flex-direction: column; gap: 0.35rem">
+                <div><i class="fa-solid fa-check" style="color: #65a30d; margin-right: 5px"></i> Penguatan Analisis Muatan Amandemen</div>
+                <div><i class="fa-solid fa-check" style="color: #65a30d; margin-right: 5px"></i> Pendalaman Kuis TGT</div>
+                <div><i class="fa-solid fa-check" style="color: #65a30d; margin-right: 5px"></i> Refleksi Kritis Mendalam</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =============================================================
+           C. SEPARATE COMPREHENSIVE ANALYSES
+           ============================================================= -->
+
+        <!-- =============================================================
+           CONTAINER SIKLUS 2
+           ============================================================= -->
+        <div id="analysis-siklus-2" class="uas-analysis-container active">
+          <div class="section-agency-head" style="margin-bottom: 3.5rem">
+            <div class="badge-pill-group">
+              <span class="twin-dot-icon"> <span></span><span></span> </span>
+              <span>ANALISIS INSTRUMEN • SIKLUS 2 (PERIODISASI KONSTITUSI)</span>
+            </div>
+            <h2 class="section-agency-title">Analisis Akademik & Refleksi Kritis Asesmen Periodisasi Konstitusi</h2>
+            <p class="section-agency-subtitle">
+              Kajian pedagogis terhadap perancangan instrumen penilaian materi Periodisasi Pemberlakuan Konstitusi di Indonesia berbasis Problem Based Learning (PBL), Deep Learning, TaRL, dan CRT di SMA Negeri 4 Yogyakarta.
+            </p>
+          </div>
+
+          <!-- 01. Konteks dan Tujuan (Siklus 2) -->
+          <article class="analysis-module-card">
+            <div class="analysis-module-header">
+              <div class="analysis-module-num">01</div>
+              <div>
+                <h3 class="analysis-module-title">Konteks dan Tujuan Instrumen Penilaian Siklus 2</h3>
+                <p class="analysis-module-desc">
+                  Tinjauan karakteristik asesmen materi sejarah konstitusi, pemetaan heterogenitas kesiapan belajar peserta didik Fase F, serta dekonstruksi struktur asesmen diagnostik, formatif, dan sumatif.
+                </p>
+              </div>
+            </div>
+
+            <div class="analysis-content-body">
+              <div style="margin-bottom: 2.5rem">
+                <h4 style="font-size: 1.25rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.65rem">
+                  <i class="fa-solid fa-landmark" style="color: var(--color-primary-dark); font-size: 1.1rem"></i>
+                  A. Konteks Pembelajaran & Kesiapan Belajar Peserta Didik (TaRL)
+                </h4>
+                <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.75; margin-bottom: 1.2rem">
+                  Materi Periodisasi Konstitusi menuntut peserta didik memahami kronologi empat periode (UUD 1945, Konstitusi RIS, UUDS 1950, UUD 1945 Pasca-Dekret), membedakan bentuk negara dan sistem pemerintahan, serta menganalisis
+                  sebab-akibat perubahan. Instrumen dirancang dengan pendekatan <strong>TaRL</strong> dan <strong>CRT</strong> untuk merespons heterogenitas kesiapan belajar:
+                </p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem">
+                  <div style="background: #f8f9f5; border-radius: var(--radius-md); padding: 1.4rem; border-left: 4px solid #ef4444">
+                    <strong style="display: block; color: var(--color-primary-dark); font-size: 0.95rem; margin-bottom: 0.4rem"> <i class="fa-solid fa-users" style="margin-right: 6px"></i> Kelompok Perlu Bimbingan (Level Awal) </strong>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                      Mampu mengurutkan periodisasi konstitusi dengan bantuan garis waktu visual dan kartu kata kunci (scaffolding). Instrumen memetakan mereka melalui asesmen diagnostik dan memberikan LKPD TTS dengan panduan huruf awal.
+                    </p>
+                  </div>
+
+                  <div style="background: #f8f9f5; border-radius: var(--radius-md); padding: 1.4rem; border-left: 4px solid #f59e0b">
+                    <strong style="display: block; color: var(--color-primary-dark); font-size: 0.95rem; margin-bottom: 0.4rem">
+                      <i class="fa-solid fa-shoe-prints" style="margin-right: 6px; color: #f59e0b"></i> Kelompok Sedang / Berkembang
+                    </strong>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                      Mampu mengidentifikasi masa berlaku, karakteristik bentuk negara (kesatuan vs federal), dan sistem pemerintahan (presidensial vs parlementer) melalui diskusi kelompok dan pengisian tabel komparasi.
+                    </p>
+                  </div>
+
+                  <div style="background: #f8f9f5; border-radius: var(--radius-md); padding: 1.4rem; border-left: 4px solid var(--color-accent-lime)">
+                    <strong style="display: block; color: var(--color-primary-dark); font-size: 0.95rem; margin-bottom: 0.4rem"> <i class="fa-solid fa-network-wired" style="margin-right: 6px"></i> Kelompok Mahir </strong>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                      Mampu menganalisis hubungan kausalitas (sebab-akibat) dinamika politik-diplomasi terhadap pergantian konstitusi, serta menghubungkan nilai kearifan musyawarah lokal dengan stabilitas negara.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Dekonstruksi Asesmen Otentik Siklus 2 -->
+              <div>
+                <h4 style="font-size: 1.25rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.65rem">
+                  <i class="fa-solid fa-list-check" style="color: var(--color-primary-dark); font-size: 1.1rem"></i>
+                  B. Dekonstruksi Struktur Asesmen: Diagnostik, Formatif, dan Sumatif
+                </h4>
+                <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7; margin-bottom: 1.4rem">Instrumen mengintegrasikan tiga ranah asesmen yang saling melengkapi:</p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.4rem">
+                  <div style="background: #ffffff; border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-sm)">
+                    <div style="display: inline-block; background: var(--color-primary-dark); color: var(--color-accent-lime); font-size: 0.72rem; font-weight: 800; padding: 3px 8px; border-radius: 4px; margin-bottom: 0.75rem">
+                      A. ASESMEN DIAGNOSTIK
+                    </div>
+                    <h5 style="font-size: 1rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.5rem">Emotional Check-in + Quick Vote</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                      Mengukur kesiapan emosional dan pemahaman awal melalui pertanyaan pemantik ("Mengapa Indonesia berganti-ganti UUD?") dan quick vote ("Kesatuan atau Federal?"). Hasilnya menjadi dasar scaffolding TaRL.
+                    </p>
+                  </div>
+
+                  <div style="background: #ffffff; border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-sm)">
+                    <div style="display: inline-block; background: var(--color-primary-dark); color: var(--color-accent-lime); font-size: 0.72rem; font-weight: 800; padding: 3px 8px; border-radius: 4px; margin-bottom: 0.75rem">
+                      B. ASESMEN FORMATIF
+                    </div>
+                    <h5 style="font-size: 1rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.5rem">Rubrik Observasi 4 Aspek (Skala 1–4)</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                      Menilai <strong>Ketepatan Konsep Sejarah</strong> (LKPD TTS), <strong>Penalaran Kritis & Analisis Kausalitas</strong>, <strong>Kolaborasi Kelompok & Komunikasi</strong>, serta
+                      <strong>Refleksi Nilai Kebangsaan (CARL)</strong>.
+                    </p>
+                  </div>
+
+                  <div style="background: #ffffff; border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-sm)">
+                    <div style="display: inline-block; background: var(--color-primary-dark); color: var(--color-accent-lime); font-size: 0.72rem; font-weight: 800; padding: 3px 8px; border-radius: 4px; margin-bottom: 0.75rem">
+                      C. LKPD TERSTRUKTUR
+                    </div>
+                    <h5 style="font-size: 1rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.5rem">TTS + Tabel Komparasi + Analisis</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                      LKPD berisi 10 soal TTS (PPKI, NASAKOM, PRESIDENSIAL, PEMILU, DEKRET, REFORMASI, KONSTITUANTE, PERDANA MENTERI, KONSTITUSI, SERIKAT), tabel komparasi 4 periode, dan 3 soal analisis sebab-akibat terbimbing.
+                    </p>
+                  </div>
+
+                  <div style="background: #ffffff; border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-sm)">
+                    <div style="display: inline-block; background: #65a30d; color: #ffffff; font-size: 0.72rem; font-weight: 800; padding: 3px 8px; border-radius: 4px; margin-bottom: 0.75rem">D. REFLEKSI & TINDAK LANJUT</div>
+                    <h5 style="font-size: 1rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.5rem">CARL + Remedial/Pengayaan</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                      Refleksi CARL (Context, Action, Result, Learning) diisi individual. Tindak lanjut: remedial (pendampingan bagan alur) dan pengayaan (analisis studi kasus perbandingan konstitusi).
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 02. Kelebihan dan Kekurangan (Siklus 2) -->
+          <article class="analysis-module-card">
+            <div class="analysis-module-header">
+              <div class="analysis-module-num">02</div>
+              <div>
+                <h3 class="analysis-module-title">Kelebihan dan Kekurangan Instrumen Penilaian Siklus 2</h3>
+                <p class="analysis-module-desc">Evaluasi komparatif terhadap kelengkapan instrumen, kejelasan rubrik, serta tantangan teknis dan inkonsistensi yang perlu diperbaiki.</p>
+              </div>
+            </div>
+
+            <div class="analysis-content-body">
+              <div class="analysis-grid-2col">
+                <div class="analysis-box-item pro">
+                  <div class="analysis-box-title" style="color: var(--color-primary-dark)">
+                    <i class="fa-solid fa-circle-check" style="color: #65a30d; font-size: 1.3rem"></i>
+                    Kelebihan & Keunggulan Instrumen (Strengths)
+                  </div>
+                  <ul class="analysis-list">
+                    <li>
+                      <i class="fa-solid fa-check-circle" style="color: #65a30d"></i>
+                      <div>
+                        <strong>Kelengkapan Luar Biasa:</strong>
+                        Mulai dari diagnostik, formatif, LKPD TTS, kunci jawaban, pedoman penskoran, hingga tindak lanjut. Instrumen ini siap pakai.
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-check-circle" style="color: #65a30d"></i>
+                      <div>
+                        <strong>Rubrik Formatif 4 Aspek yang Komprehensif:</strong>
+                        Mencakup kognitif (Ketepatan Konsep, Penalaran Kritis), sosial (Kolaborasi), dan afektif (Refleksi CARL).
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-check-circle" style="color: #65a30d"></i>
+                      <div>
+                        <strong>LKPD TTS yang Konkret dan Menyenangkan:</strong>
+                        10 soal TTS dengan kunci jawaban lengkap, sesuai semangat Deep Learning (Joyful).
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-check-circle" style="color: #65a30d"></i>
+                      <div>
+                        <strong>Analisis Sebab-Akibat yang Menggugah:</strong>
+                        3 pertanyaan diskusi terbimbing yang menuntut penalaran kausalitas.
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-check-circle" style="color: #65a30d"></i>
+                      <div>
+                        <strong>Refleksi CARL yang Terstruktur:</strong>
+                        4 komponen dengan pertanyaan yang menggiring refleksi mendalam dan komitmen tindakan.
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="analysis-box-item con">
+                  <div class="analysis-box-title" style="color: #b45309">
+                    <i class="fa-solid fa-triangle-exclamation" style="color: #f59e0b; font-size: 1.3rem"></i>
+                    Kelemahan & Tantangan Implementasi (Limitations)
+                  </div>
+                  <ul class="analysis-list">
+                    <li>
+                      <i class="fa-solid fa-circle-xmark" style="color: #f59e0b"></i>
+                      <div>
+                        <strong>Soal Diagnostik Belum Dilampirkan:</strong>
+                        Instrumen menyebut "pertanyaan pemantik" dan "quick vote", tetapi butir soal konkretnya tidak disertakan.
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-circle-xmark" style="color: #f59e0b"></i>
+                      <div>
+                        <strong>Inkonsistensi Jumlah Soal TTS:</strong>
+                        Di rubrik disebut "9-10 item TTS", tetapi daftar dan kunci berjumlah 10.
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-circle-xmark" style="color: #f59e0b"></i>
+                      <div>
+                        <strong>Penomoran TTS Ganda:</strong>
+                        Ada "Nomor 2" untuk PPKI (mendatar) dan "Nomor 2" untuk Perdana Menteri (menurun).
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-circle-xmark" style="color: #f59e0b"></i>
+                      <div>
+                        <strong>Rubrik "Ketepatan Konsep" Mencampur Dua Hal:</strong>
+                        Menilai jumlah jawaban TTS dan kualitas tabel komparasi secara bersamaan.
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-circle-xmark" style="color: #f59e0b"></i>
+                      <div>
+                        <strong>Tidak Ada Akuntabilitas Individu:</strong>
+                        Belum ada peer assessment atau catatan kontribusi individu. Berisiko free-rider.
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-circle-xmark" style="color: #f59e0b"></i>
+                      <div>
+                        <strong>Tidak Ada Rubrik Presentasi:</strong>
+                        Modul ajar menyebut presentasi kelompok, tetapi instrumen tidak memiliki rubrik khusus presentasi.
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-circle-xmark" style="color: #f59e0b"></i>
+                      <div>
+                        <strong>Asesmen Sumatif Tidak Dilampirkan:</strong>
+                        Instrumen menyebut "penilaian harian tertulis", tetapi butir soalnya tidak dilampirkan.
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="analysis-box-item solution">
+                <div class="analysis-box-title" style="color: var(--color-primary-dark); font-size: 1.2rem; border-bottom: 1px solid var(--color-border-light); padding-bottom: 0.75rem; margin-bottom: 1.25rem">
+                  <i class="fa-solid fa-lightbulb" style="color: var(--color-accent-lime); font-size: 1.3rem"></i>
+                  Solusi & Rekomendasi Mitigasi Lapangan (Siklus 2)
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem">
+                  <div>
+                    <h5 style="color: var(--color-primary-dark); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem">1. Lampirkan Soal Diagnostik Konkret</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">Tambahkan 2–3 butir soal dan butir quick vote beserta pilihan jawabannya.</p>
+                  </div>
+                  <div>
+                    <h5 style="color: var(--color-primary-dark); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem">2. Seragamkan TTS Menjadi 10 Soal</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">Perbaiki penomoran (2a untuk PPKI, 2b untuk Perdana Menteri) dan pastikan rubrik menyebut "10 item".</p>
+                  </div>
+                  <div>
+                    <h5 style="color: var(--color-primary-dark); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem">3. Pisahkan Rubrik "Ketepatan Konsep"</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">Buat rubrik terpisah untuk TTS (jumlah jawaban benar) dan tabel komparasi (kualitas isi).</p>
+                  </div>
+                  <div>
+                    <h5 style="color: var(--color-primary-dark); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem">4. Tambahkan Peer Assessment</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">Sertakan lembar penilaian antarteman sederhana untuk akuntabilitas individu.</p>
+                  </div>
+                  <div>
+                    <h5 style="color: var(--color-primary-dark); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem">5. Tambahkan Rubrik Presentasi</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">Buat rubrik untuk menilai kualitas presentasi kelompok (kejelasan, kerja sama, penguasaan materi).</p>
+                  </div>
+                  <div>
+                    <h5 style="color: var(--color-primary-dark); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem">6. Lampirkan Soal Sumatif</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">Tambahkan butir soal penilaian harian tertulis (5 PG + 2 uraian) beserta kunci jawaban.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 03. Kajian Teori (Siklus 2) -->
+          <article class="analysis-module-card">
+            <div class="analysis-module-header">
+              <div class="analysis-module-num">03</div>
+              <div>
+                <h3 class="analysis-module-title">Kajian Teori Evaluasi Pendidikan Pancasila (Siklus 2)</h3>
+                <p class="analysis-module-desc">Landasan ilmiah dari PBL, Deep Learning, TaRL, CRT, konstruktivisme sosial Vygotsky, dan refleksi CARL dalam asesmen sejarah konstitusi.</p>
+              </div>
+            </div>
+
+            <div class="analysis-content-body">
+              <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.75; margin-bottom: 2rem">
+                Perancangan instrumen penilaian Siklus 2 dipertanggungjawabkan melalui landasan keilmuan pendidikan kewarganegaraan berikut:
+              </p>
+
+              <div class="theory-grid">
+                <div class="theory-card">
+                  <span class="theory-badge"><i class="fa-solid fa-brain" style="margin-right: 5px"></i> Model Pembelajaran</span>
+                  <h4 class="theory-title">Problem Based Learning (Barrows & Tamblyn, 1980)</h4>
+                  <p class="theory-desc">
+                    PBL menuntut asesmen yang mengukur proses penyelidikan. Rubrik formatif 4 aspek selaras dengan PBL: penalaran kritis saat orientasi masalah, kolaborasi saat mengorganisasi, empati saat penyelidikan, dan kualitas solusi
+                    saat mengembangkan karya.
+                  </p>
+                </div>
+                <div class="theory-card">
+                  <span class="theory-badge" style="background: rgba(184, 224, 35, 0.25)"><i class="fa-solid fa-heart-pulse" style="margin-right: 5px"></i> Paradigma Pembelajaran</span>
+                  <h4 class="theory-title">Deep Learning Framework (Fullan, Quinn & McEachen, 2018)</h4>
+                  <p class="theory-desc">Mengintegrasikan dimensi Mindful (emotional check-in), Meaningful (kaitan konstitusi dengan kehidupan warga negara), dan Joyful (TTS, diskusi interaktif, apresiasi kelompok).</p>
+                </div>
+                <div class="theory-card">
+                  <span class="theory-badge"><i class="fa-solid fa-layer-group" style="margin-right: 5px"></i> Diferensiasi</span>
+                  <h4 class="theory-title">Teaching at the Right Level (Banerjee & Duflo)</h4>
+                  <p class="theory-desc">Asesmen diagnostik menjadi dasar penyesuaian scaffolding TaRL. Siswa dengan kesiapan belajar berbeda mendapat dukungan yang sesuai, bukan diperlakukan seragam.</p>
+                </div>
+                <div class="theory-card">
+                  <span class="theory-badge" style="background: rgba(184, 224, 35, 0.25)"><i class="fa-solid fa-globe" style="margin-right: 5px"></i> Konteks Budaya</span>
+                  <h4 class="theory-title">Culturally Responsive Teaching (Gay, 2000)</h4>
+                  <p class="theory-desc">Media menghubungkan materi konstitusi dengan kearifan lokal (rembug desa/nagari) dan pengalaman nyata siswa, sehingga pembelajaran terasa relevan dan inklusif.</p>
+                </div>
+                <div class="theory-card">
+                  <span class="theory-badge"><i class="fa-solid fa-stairs" style="margin-right: 5px"></i> Konstruktivisme Sosial</span>
+                  <h4 class="theory-title">Zone of Proximal Development & Scaffolding (Vygotsky, 1978)</h4>
+                  <p class="theory-desc">Penerapan 3 tier TaRL dan pemberian LKPD berstruktur (TTS, kartu kata kunci) berfungsi sebagai scaffolding yang dikurangi bertahap seiring meningkatnya kompetensi.</p>
+                </div>
+                <div class="theory-card">
+                  <span class="theory-badge" style="background: rgba(184, 224, 35, 0.25)"><i class="fa-solid fa-arrows-rotate" style="margin-right: 5px"></i> Pembelajaran Reflektif</span>
+                  <h4 class="theory-title">Experiential Learning & Refleksi CARL (Kolb, 1984)</h4>
+                  <p class="theory-desc">Kerangka CARL (Context–Action–Result–Learning) mengadopsi siklus belajar eksperiensial Kolb untuk memaknai proses dan memetik pembelajaran bermakna.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- =============================================================
+           CONTAINER SIKLUS 3
+           ============================================================= -->
+        <div id="analysis-siklus-3" class="uas-analysis-container">
+          <div class="section-agency-head" style="margin-bottom: 3.5rem">
+            <div class="badge-pill-group">
+              <span class="twin-dot-icon"> <span></span><span></span> </span>
+              <span>ANALISIS INSTRUMEN • SIKLUS 3 (PERUBAHAN UUD 1945)</span>
+            </div>
+            <h2 class="section-agency-title">Analisis Akademik & Refleksi Kritis Asesmen Perubahan UUD NRI Tahun 1945 (Siklus 3)</h2>
+            <p class="section-agency-subtitle">
+              Kajian ilmiah terhadap instrumen evaluasi materi Perubahan UUD NRI Tahun 1945 (Amandemen 1999–2002) berbasis Cooperative Learning, Teams Games Tournament (TGT) "New Family 100", TaRL, dan CRT di SMA Negeri 4 Yogyakarta pada
+              Siklus 3 (Pertemuan 1 & 2).
+            </p>
+          </div>
+
+          <!-- 01. Konteks dan Tujuan (Siklus 3) -->
+          <article class="analysis-module-card">
+            <div class="analysis-module-header">
+              <div class="analysis-module-num">01</div>
+              <div>
+                <h3 class="analysis-module-title">Konteks dan Tujuan Instrumen Penilaian Siklus 3</h3>
+                <p class="analysis-module-desc">
+                  Tinjauan karakteristik asesmen 2 pertemuan (180 menit), pemetaan kesiapan belajar berbasis emotional check-in permen, serta dekonstruksi struktur asesmen sikap, pengetahuan, dan keterampilan.
+                </p>
+              </div>
+            </div>
+
+            <div class="analysis-content-body">
+              <div style="margin-bottom: 2.5rem">
+                <h4 style="font-size: 1.25rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.65rem">
+                  <i class="fa-solid fa-scale-balanced" style="color: #1e3a8a; font-size: 1.1rem"></i>
+                  A. Konteks Pembelajaran 2 Pertemuan & Kesiapan Belajar (TaRL + CRT)
+                </h4>
+                <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.75; margin-bottom: 1.2rem">
+                  Instrumen Siklus 3 dirancang untuk <strong>2 pertemuan (4 JP / 180 menit)</strong> dengan materi Perubahan UUD NRI Tahun 1945 (Amandemen 1999–2002). Pembelajaran menerapkan
+                  <strong>Cooperative Learning + Teams Games Tournament (TGT)</strong> melalui kuis "New Family 100", diperkaya <strong>TaRL</strong> dan <strong>CRT</strong>. Instrumen mencakup tiga ranah asesmen:
+                </p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem">
+                  <div style="background: #f8f9f5; border-radius: var(--radius-md); padding: 1.4rem; border-left: 4px solid #1e3a8a">
+                    <strong style="display: block; color: var(--color-primary-dark); font-size: 0.95rem; margin-bottom: 0.4rem">
+                      <i class="fa-solid fa-face-smile" style="margin-right: 6px"></i> Emotional Check-in (TaRL Non-Kognitif)
+                    </strong>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                      Peserta didik memilih tingkat energi belajar (25% = permen Mint Z, 45% = Kopiko, 70% = Kiss). Guru mencatat pemetaan kesiapan untuk menyesuaikan kedalaman materi, membentuk kelompok heterogen, dan menentukan
+                      pendampingan (TaRL).
+                    </p>
+                  </div>
+
+                  <div style="background: #f8f9f5; border-radius: var(--radius-md); padding: 1.4rem; border-left: 4px solid #f59e0b">
+                    <strong style="display: block; color: var(--color-primary-dark); font-size: 0.95rem; margin-bottom: 0.4rem">
+                      <i class="fa-solid fa-lightbulb" style="margin-right: 6px; color: #f59e0b"></i> Pertanyaan Pemantik (CRT)
+                    </strong>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                      "Jika peraturan kelas atau sekolah sudah tidak relevan dengan kebutuhan murid zaman sekarang, apakah peraturan tersebut boleh diperbaiki?" Analogi ini menjembatani konsep abstrak amandemen konstitusi dengan pengalaman
+                      nyata siswa.
+                    </p>
+                  </div>
+
+                  <div style="background: #f8f9f5; border-radius: var(--radius-md); padding: 1.4rem; border-left: 4px solid var(--color-accent-lime)">
+                    <strong style="display: block; color: var(--color-primary-dark); font-size: 0.95rem; margin-bottom: 0.4rem"> <i class="fa-solid fa-trophy" style="margin-right: 6px"></i> Kuis "New Family 100" (TGT) </strong>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                      Kuis kelompok dengan Ronde 1 (Adu Cepat) dan Ronde 2 (Tebak Jawaban) menjadi media joyful learning yang menantang. Skor kuis (100, 80, 60, 40, 20 poin) dikonversi menjadi nilai pengetahuan kelompok.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Dekonstruksi Asesmen Siklus 3 -->
+              <div>
+                <h4 style="font-size: 1.25rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.65rem">
+                  <i class="fa-solid fa-list-check" style="color: #1e3a8a; font-size: 1.1rem"></i>
+                  B. Dekonstruksi 3 Ranah Asesmen: Sikap, Pengetahuan, Keterampilan
+                </h4>
+                <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7; margin-bottom: 1.4rem">Instrumen mencakup tiga ranah asesmen yang saling melengkapi dengan formula pengolahan nilai yang transparan:</p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.4rem">
+                  <div style="background: #ffffff; border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-sm)">
+                    <div style="display: inline-block; background: #1e3a8a; color: #93c5fd; font-size: 0.72rem; font-weight: 800; padding: 3px 8px; border-radius: 4px; margin-bottom: 0.75rem">RANAH SIKAP • 20%</div>
+                    <h5 style="font-size: 1rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.5rem">Lembar Observasi Sikap (3 Indikator)</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                      Menilai <strong>Kerja Sama</strong>, <strong>Tanggung Jawab</strong>, serta <strong>Sportivitas</strong>. Skor 1–4 per indikator, dengan rubrik deskriptor 4 level yang operasional.
+                    </p>
+                  </div>
+
+                  <div style="background: #ffffff; border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-sm)">
+                    <div style="display: inline-block; background: #1e3a8a; color: #93c5fd; font-size: 0.72rem; font-weight: 800; padding: 3px 8px; border-radius: 4px; margin-bottom: 0.75rem">RANAH PENGETAHUAN • 50%</div>
+                    <h5 style="font-size: 1rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.5rem">Kuis "New Family 100" + Tes Tertulis</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                      Nilai Pengetahuan = <strong>70% Tes Tertulis</strong> (5 PG + 2 Uraian, total 100 poin) + <strong>30% Kuis Kelompok</strong> (konversi skor TGT). Tes tertulis mencakup Pasal 37, kuorum 1/3, masa jabatan presiden, MK,
+                      dan anggaran pendidikan 20%.
+                    </p>
+                  </div>
+
+                  <div style="background: #ffffff; border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-sm)">
+                    <div style="display: inline-block; background: #1e3a8a; color: #93c5fd; font-size: 0.72rem; font-weight: 800; padding: 3px 8px; border-radius: 4px; margin-bottom: 0.75rem">RANAH KETERAMPILAN • 30%</div>
+                    <h5 style="font-size: 1rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.5rem">Lembar Observasi Keterampilan (3 Indikator)</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                      Menilai <strong>Berdiskusi</strong>, <strong>Menyampaikan Pendapat</strong>, serta <strong>Kerja Sama Tim dalam Kuis</strong>. Skor 1–4 per indikator dengan rubrik deskriptor yang teramati.
+                    </p>
+                  </div>
+
+                  <div style="background: #ffffff; border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-sm)">
+                    <div style="display: inline-block; background: #65a30d; color: #ffffff; font-size: 0.72rem; font-weight: 800; padding: 3px 8px; border-radius: 4px; margin-bottom: 0.75rem">FORMULA & TINDAK LANJUT</div>
+                    <h5 style="font-size: 1rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.5rem">Nilai Akhir & KKTP 75</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                      Formula: <strong>NA = (50% × Pengetahuan) + (30% × Keterampilan) + (20% × Sikap)</strong>. Standar KKTP ≥ 75. Predikat: A (90–100), B (80–89), C (75–79), D (<75, remedial). Remedial: pembelajaran ulang + tutor sebaya.
+                      Pengayaan: analisis studi kasus perbandingan konstitusi.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 02. Kelebihan dan Kekurangan (Siklus 3) -->
+          <article class="analysis-module-card">
+            <div class="analysis-module-header">
+              <div class="analysis-module-num">02</div>
+              <div>
+                <h3 class="analysis-module-title">Kelebihan dan Kekurangan Instrumen Penilaian Siklus 3</h3>
+                <p class="analysis-module-desc">Evaluasi komparatif terhadap kelengkapan asesmen tiga ranah, kejelasan rubrik, serta tantangan teknis (durasi tes, akuntabilitas individu) yang perlu diperbaiki.</p>
+              </div>
+            </div>
+
+            <div class="analysis-content-body">
+              <div class="analysis-grid-2col">
+                <div class="analysis-box-item pro">
+                  <div class="analysis-box-title" style="color: #1e3a8a">
+                    <i class="fa-solid fa-circle-check" style="color: #65a30d; font-size: 1.3rem"></i>
+                    Kelebihan & Keunggulan Instrumen (Strengths)
+                  </div>
+                  <ul class="analysis-list">
+                    <li>
+                      <i class="fa-solid fa-check-circle" style="color: #65a30d"></i>
+                      <div>
+                        <strong>Kelengkapan Asesmen Tiga Ranah:</strong>
+                        Mencakup sikap (observasi), pengetahuan (kuis + tes tertulis), dan keterampilan (observasi kinerja).
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-check-circle" style="color: #65a30d"></i>
+                      <div>
+                        <strong>Rubrik yang Operasional:</strong>
+                        Setiap aspek memiliki deskriptor 4 level yang jelas dan teramati.
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-check-circle" style="color: #65a30d"></i>
+                      <div>
+                        <strong>Tes Tertulis dengan Kunci Jawaban:</strong>
+                        5 PG + 2 uraian dengan kunci dan pedoman jawaban yang lengkap. Soal PG mencakup C2–C4.
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-check-circle" style="color: #65a30d"></i>
+                      <div>
+                        <strong>Soal Uraian HOTS:</strong>
+                        Soal uraian 1 menuntut pemahaman konsep amandemen dan 5 kesepakatan dasar MPR. Soal uraian 2 menuntut analisis dampak amandemen bagi warga negara.
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-check-circle" style="color: #65a30d"></i>
+                      <div>
+                        <strong>Pengolahan Nilai yang Transparan:</strong>
+                        Formula lengkap dengan contoh perhitungan yang jelas (Nilai Akhir 84,8 = B, tuntas).
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-check-circle" style="color: #65a30d"></i>
+                      <div>
+                        <strong>KKTP dan Tindak Lanjut yang Jelas:</strong>
+                        KKTP 75 dengan predikat A/B/C/D. Remedial dan pengayaan yang detail.
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-check-circle" style="color: #65a30d"></i>
+                      <div>
+                        <strong>Refleksi Peserta Didik yang Mendalam:</strong>
+                        6 pertanyaan reflektif + skala pemahaman Mint Z/Kopiko/Kiss yang kreatif.
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="analysis-box-item con">
+                  <div class="analysis-box-title" style="color: #b45309">
+                    <i class="fa-solid fa-triangle-exclamation" style="color: #f59e0b; font-size: 1.3rem"></i>
+                    Kelemahan & Tantangan Implementasi (Limitations)
+                  </div>
+                  <ul class="analysis-list">
+                    <li>
+                      <i class="fa-solid fa-circle-xmark" style="color: #f59e0b"></i>
+                      <div>
+                        <strong>Tes Tertulis 10 Menit Terlalu Singkat:</strong>
+                        Untuk 5 PG + 2 uraian, 10 menit sangat ketat. Sebaiknya 15 menit.
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-circle-xmark" style="color: #f59e0b"></i>
+                      <div>
+                        <strong>Nilai Kuis Kelompok 30% Berisiko Free-Rider:</strong>
+                        Siswa yang tidak berkontribusi tetap mendapat nilai tinggi karena teman sekelompoknya.
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-circle-xmark" style="color: #f59e0b"></i>
+                      <div>
+                        <strong>Tidak Ada Peer Assessment:</strong>
+                        Tidak ada instrumen untuk menilai kontribusi individu dalam kelompok.
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-circle-xmark" style="color: #f59e0b"></i>
+                      <div>
+                        <strong>Lembar Observasi Hanya 5 Baris:</strong>
+                        Format tabel hanya menyediakan 5 baris. Padahal kelas XI F3 memiliki 36 siswa.
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-circle-xmark" style="color: #f59e0b"></i>
+                      <div>
+                        <strong>Tidak Ada Rubrik Khusus Kuis "New Family 100":</strong>
+                        Rubrik kuis hanya mengandalkan skor poin, tanpa rubrik kualitas jawaban/kerja sama.
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-circle-xmark" style="color: #f59e0b"></i>
+                      <div>
+                        <strong>Refleksi Hanya di Pertemuan 2:</strong>
+                        Refleksi di Pertemuan 1 juga penting untuk memantau pemahaman siswa.
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="analysis-box-item solution">
+                <div class="analysis-box-title" style="color: var(--color-primary-dark); font-size: 1.2rem; border-bottom: 1px solid var(--color-border-light); padding-bottom: 0.75rem; margin-bottom: 1.25rem">
+                  <i class="fa-solid fa-lightbulb" style="color: var(--color-accent-lime); font-size: 1.3rem"></i>
+                  Solusi & Rekomendasi Mitigasi Lapangan (Siklus 3)
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem">
+                  <div>
+                    <h5 style="color: var(--color-primary-dark); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem">1. Perpanjang Tes Tertulis Menjadi 15 Menit</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">Atau kurangi soal uraian menjadi 1 soal agar siswa punya waktu cukup.</p>
+                  </div>
+                  <div>
+                    <h5 style="color: var(--color-primary-dark); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem">2. Tambahkan Peer Assessment</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">Sertakan lembar penilaian antarteman untuk menilai kontribusi individu dalam kelompok.</p>
+                  </div>
+                  <div>
+                    <h5 style="color: var(--color-primary-dark); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem">3. Tinjau Bobot Kuis Kelompok</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">Kurangi bobot kuis kelompok (misal 20%) atau tambahkan kuis individual (10%) agar nilai lebih adil.</p>
+                  </div>
+                  <div>
+                    <h5 style="color: var(--color-primary-dark); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem">4. Perluas Lembar Observasi</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">Sediakan format untuk 36 siswa (6 kelompok × 6 anggota) atau format terpisah per kelompok.</p>
+                  </div>
+                  <div>
+                    <h5 style="color: var(--color-primary-dark); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem">5. Tambahkan Rubrik Kuis "New Family 100"</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">Buat rubrik untuk menilai kualitas jawaban dan kerja sama tim selama kuis.</p>
+                  </div>
+                  <div>
+                    <h5 style="color: var(--color-primary-dark); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem">6. Tambahkan Refleksi Pertemuan 1</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">Sisipkan refleksi singkat di akhir Pertemuan 1 untuk memantau pemahaman siswa.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 03. Kajian Teori (Siklus 3) -->
+          <article class="analysis-module-card">
+            <div class="analysis-module-header">
+              <div class="analysis-module-num">03</div>
+              <div>
+                <h3 class="analysis-module-title">Kajian Teori Evaluasi Pendidikan Pancasila (Siklus 3)</h3>
+                <p class="analysis-module-desc">Landasan ilmiah dari Cooperative Learning, TGT, TaRL, CRT, HOTS Bloom, dan Meaningful Learning dalam asesmen amandemen konstitusi.</p>
+              </div>
+            </div>
+
+            <div class="analysis-content-body">
+              <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.75; margin-bottom: 2rem">
+                Perancangan instrumen penilaian Siklus 3 dipertanggungjawabkan melalui landasan keilmuan pendidikan kewarganegaraan berikut:
+              </p>
+
+              <div class="theory-grid">
+                <div class="theory-card">
+                  <span class="theory-badge"><i class="fa-solid fa-people-group" style="margin-right: 5px"></i> Model Pembelajaran</span>
+                  <h4 class="theory-title">Cooperative Learning (Slavin, 1995; Johnson & Johnson, 1999)</h4>
+                  <p class="theory-desc">
+                    Cooperative Learning menekankan saling ketergantungan positif, tanggung jawab individu, interaksi promotif, dan keterampilan sosial. Kelompok heterogen bekerja sama untuk mencapai tujuan bersama, sejalan dengan nilai
+                    gotong royong Pancasila.
+                  </p>
+                </div>
+                <div class="theory-card">
+                  <span class="theory-badge" style="background: rgba(184, 224, 35, 0.25)"><i class="fa-solid fa-trophy" style="margin-right: 5px"></i> Model Spesifik</span>
+                  <h4 class="theory-title">Teams Games Tournament (Slavin, 1995)</h4>
+                  <p class="theory-desc">TGT menggabungkan pembelajaran kooperatif dengan turnamen akademik. Siswa bekerja dalam tim, berkompetisi secara sehat dalam game "New Family 100", dan dihargai melalui rekognisi tim.</p>
+                </div>
+                <div class="theory-card">
+                  <span class="theory-badge"><i class="fa-solid fa-layer-group" style="margin-right: 5px"></i> Diferensiasi</span>
+                  <h4 class="theory-title">Teaching at the Right Level (Banerjee & Duflo)</h4>
+                  <p class="theory-desc">Emotional check-in (permen Mint Z/Kopiko/Kiss) menjadi dasar penyesuaian kedalaman materi, pembentukan kelompok heterogen, dan pendampingan guru.</p>
+                </div>
+                <div class="theory-card">
+                  <span class="theory-badge" style="background: rgba(184, 224, 35, 0.25)"><i class="fa-solid fa-globe" style="margin-right: 5px"></i> Konteks Budaya</span>
+                  <h4 class="theory-title">Culturally Responsive Teaching (Gay, 2000)</h4>
+                  <p class="theory-desc">Analogi peraturan kelas/sekolah, permen Mint Z/Kopiko/Kiss, dan kearifan lokal nusantara menjadi jembatan antara materi konstitusi abstrak dengan pengalaman nyata siswa.</p>
+                </div>
+                <div class="theory-card">
+                  <span class="theory-badge"><i class="fa-solid fa-brain" style="margin-right: 5px"></i> Taksonomi Kognitif</span>
+                  <h4 class="theory-title">Asesmen HOTS & Taksonomi Bloom Revisi (Anderson & Krathwohl, 2001)</h4>
+                  <p class="theory-desc">
+                    Soal uraian mendorong peserta didik mencapai level C4 (Menganalisis) hingga C6 (Mencipta): menganalisis mengapa amandemen adalah penyempurnaan, memilih satu hasil amandemen, dan menjelaskan dampaknya.
+                  </p>
+                </div>
+                <div class="theory-card">
+                  <span class="theory-badge" style="background: rgba(184, 224, 35, 0.25)"><i class="fa-solid fa-graduation-cap" style="margin-right: 5px"></i> Pembelajaran Bermakna</span>
+                  <h4 class="theory-title">Meaningful Learning (Ausubel, 1963; Novak, 1998)</h4>
+                  <p class="theory-desc">Materi amandemen dikaitkan dengan pengalaman nyata siswa sebagai warga negara (pemilihan presiden langsung, MK, jaminan HAM Pasal 28A–28J) sehingga pengetahuan tidak menjadi hafalan mati.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- =============================================================
+           CONTAINER SIKLUS 4
+           ============================================================= -->
+        <div id="analysis-siklus-4" class="uas-analysis-container">
+          <div class="section-agency-head" style="margin-bottom: 3.5rem">
+            <div class="badge-pill-group">
+              <span class="twin-dot-icon"> <span></span><span></span> </span>
+              <span>ANALISIS INSTRUMEN • SIKLUS 4 (PERUBAHAN UUD 1945 — LANJUTAN)</span>
+            </div>
+            <h2 class="section-agency-title">Analisis Akademik & Refleksi Kritis Asesmen Perubahan UUD NRI Tahun 1945 (Siklus 4 Lanjutan)</h2>
+            <p class="section-agency-subtitle">
+              Kajian ilmiah terhadap instrumen evaluasi lanjutan materi Perubahan UUD NRI Tahun 1945, menekankan pendalaman muatan amandemen, penguatan analisis dampak, serta pematangan refleksi kritis peserta didik sebagai siklus penguatan
+              (reinforcement cycle).
+            </p>
+          </div>
+
+          <!-- 01. Konteks dan Tujuan (Siklus 4) -->
+          <article class="analysis-module-card">
+            <div class="analysis-module-header">
+              <div class="analysis-module-num">01</div>
+              <div>
+                <h3 class="analysis-module-title">Konteks dan Tujuan Instrumen Penilaian Siklus 4 (Lanjutan)</h3>
+                <p class="analysis-module-desc">Tinjauan peran Siklus 4 sebagai penguatan dan pendalaman pasca-Siklus 3, fokus pada pematangan analisis muatan amandemen, penguatan kuis TGT, serta refleksi kritis yang lebih mendalam.</p>
+              </div>
+            </div>
+
+            <div class="analysis-content-body">
+              <div style="margin-bottom: 2.5rem">
+                <h4 style="font-size: 1.25rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.65rem">
+                  <i class="fa-solid fa-arrows-rotate" style="color: #9a3412; font-size: 1.1rem"></i>
+                  A. Konteks Siklus 4 sebagai Penguatan & Pendalaman Pasca-Siklus 3
+                </h4>
+                <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.75; margin-bottom: 1.2rem">
+                  Siklus 4 dirancang sebagai <strong>siklus penguatan (reinforcement cycle)</strong> setelah Siklus 3. Menggunakan instrumen yang sama, Siklus 4 berfokus pada:
+                </p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem">
+                  <div style="background: #f8f9f5; border-radius: var(--radius-md); padding: 1.4rem; border-left: 4px solid #9a3412">
+                    <strong style="display: block; color: var(--color-primary-dark); font-size: 0.95rem; margin-bottom: 0.4rem">
+                      <i class="fa-solid fa-magnifying-glass-chart" style="margin-right: 6px"></i> Pendalaman Muatan Amandemen
+                    </strong>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                      Peserta didik yang telah menyelesaikan Siklus 3 diajak memperdalam analisis muatan tiap tahap amandemen (1999, 2000, 2001, 2002), membandingkan dampak per tahap, serta mengevaluasi konsistensi nilai demokrasi, HAM, dan
+                      checks and balances.
+                    </p>
+                  </div>
+
+                  <div style="background: #f8f9f5; border-radius: var(--radius-md); padding: 1.4rem; border-left: 4px solid #f59e0b">
+                    <strong style="display: block; color: var(--color-primary-dark); font-size: 0.95rem; margin-bottom: 0.4rem">
+                      <i class="fa-solid fa-trophy" style="margin-right: 6px; color: #f59e0b"></i> Penguatan Kuis TGT "New Family 100"
+                    </strong>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                      Kuis di Siklus 4 dapat menggunakan soal-soal pengayaan (soal HOTS tambahan) atau format turnamen yang lebih kompetitif untuk memantapkan pemahaman siswa.
+                    </p>
+                  </div>
+
+                  <div style="background: #f8f9f5; border-radius: var(--radius-md); padding: 1.4rem; border-left: 4px solid var(--color-accent-lime)">
+                    <strong style="display: block; color: var(--color-primary-dark); font-size: 0.95rem; margin-bottom: 0.4rem"> <i class="fa-solid fa-pen-fancy" style="margin-right: 6px"></i> Pematangan Refleksi Kritis </strong>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                      Refleksi peserta didik di Siklus 4 diarahkan pada metakognisi: "Apa yang saya pahami lebih dalam setelah Siklus 3?", "Bagaimana saya dapat menerapkan nilai amandemen dalam kehidupan sebagai warga negara?"
+                    </p>
+                  </div>
+                </div>
+
+                <div style="background: #fef3c7; border-left: 4px solid #f59e0b; border-radius: var(--radius-md); padding: 1.2rem; margin-top: 1rem">
+                  <p style="font-size: 0.9rem; color: #78350f; margin: 0; line-height: 1.6">
+                    <strong><i class="fa-solid fa-circle-info" style="margin-right: 6px"></i> Catatan:</strong> Instrumen Siklus 4 secara struktur identik dengan Siklus 3 karena menggunakan perangkat asesmen yang sama. Perbedaan utama
+                    terletak pada <em>fokus pedagogis</em>: Siklus 3 sebagai siklus pengenalan & pendalaman awal, sedangkan Siklus 4 sebagai siklus penguatan & pematangan.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Dekonstruksi Asesmen Siklus 4 -->
+              <div>
+                <h4 style="font-size: 1.25rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.65rem">
+                  <i class="fa-solid fa-list-check" style="color: #9a3412; font-size: 1.1rem"></i>
+                  B. Struktur Asesmen Siklus 4 (Sama dengan Siklus 3, Fokus Berbeda)
+                </h4>
+                <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7; margin-bottom: 1.4rem">
+                  Struktur asesmen Siklus 4 mengikuti Siklus 3 (3 ranah: sikap 20%, pengetahuan 50%, keterampilan 30%), dengan penekanan pada:
+                </p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.4rem">
+                  <div style="background: #ffffff; border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-sm)">
+                    <div style="display: inline-block; background: #9a3412; color: #fdba74; font-size: 0.72rem; font-weight: 800; padding: 3px 8px; border-radius: 4px; margin-bottom: 0.75rem">FOKUS PENGUATAN</div>
+                    <h5 style="font-size: 1rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.5rem">Analisis Muatan Tiap Tahap</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                      Peserta didik diajak membandingkan muatan tiap tahap amandemen (1999: batasi presiden, kuatkan DPR; 2000: HAM & otonomi daerah; 2001: demokrasi konstitusional & MK; 2002: penyempurnaan sistem & pendidikan 20%) secara
+                      lebih mendalam.
+                    </p>
+                  </div>
+
+                  <div style="background: #ffffff; border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-sm)">
+                    <div style="display: inline-block; background: #9a3412; color: #fdba74; font-size: 0.72rem; font-weight: 800; padding: 3px 8px; border-radius: 4px; margin-bottom: 0.75rem">FOKUS PENGUATAN</div>
+                    <h5 style="font-size: 1rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.5rem">Kuis Turnamen Tingkat Lanjut</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                      Soal kuis "New Family 100" di Siklus 4 dapat ditingkatkan levelnya (soal HOTS, soal analisis perbandingan, soal studi kasus) untuk menantang siswa yang telah menguasai materi dasar di Siklus 3.
+                    </p>
+                  </div>
+
+                  <div style="background: #ffffff; border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-sm)">
+                    <div style="display: inline-block; background: #9a3412; color: #fdba74; font-size: 0.72rem; font-weight: 800; padding: 3px 8px; border-radius: 4px; margin-bottom: 0.75rem">FOKUS PENGUATAN</div>
+                    <h5 style="font-size: 1rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.5rem">Refleksi Metakognitif</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                      Refleksi di Siklus 4 diarahkan pada metakognisi: "Bagaimana pemahaman saya berubah setelah Siklus 3?", "Apa komitmen saya sebagai warga negara setelah memahami amandemen?"
+                    </p>
+                  </div>
+
+                  <div style="background: #ffffff; border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-sm)">
+                    <div style="display: inline-block; background: #65a30d; color: #ffffff; font-size: 0.72rem; font-weight: 800; padding: 3px 8px; border-radius: 4px; margin-bottom: 0.75rem">TINDAK LANJUT</div>
+                    <h5 style="font-size: 1rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.5rem">Pengayaan & Pendalaman</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                      Siswa yang telah tuntas di Siklus 3 mendapat pengayaan: analisis studi kasus perbandingan konstitusi Indonesia dengan negara lain, atau menjadi tutor sebaya bagi siswa yang masih perlu bimbingan.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 02. Kelebihan dan Kekurangan (Siklus 4) -->
+          <article class="analysis-module-card">
+            <div class="analysis-module-header">
+              <div class="analysis-module-num">02</div>
+              <div>
+                <h3 class="analysis-module-title">Kelebihan dan Kekurangan Instrumen Penilaian Siklus 4</h3>
+                <p class="analysis-module-desc">Evaluasi kritis terhadap peran Siklus 4 sebagai penguatan, potensi kejenuhan siswa, serta strategi menjaga tantangan kognitif yang proporsional.</p>
+              </div>
+            </div>
+
+            <div class="analysis-content-body">
+              <div class="analysis-grid-2col">
+                <div class="analysis-box-item pro">
+                  <div class="analysis-box-title" style="color: #9a3412">
+                    <i class="fa-solid fa-circle-check" style="color: #65a30d; font-size: 1.3rem"></i>
+                    Kelebihan & Keunggulan Instrumen (Strengths)
+                  </div>
+                  <ul class="analysis-list">
+                    <li>
+                      <i class="fa-solid fa-check-circle" style="color: #65a30d"></i>
+                      <div>
+                        <strong>Konsistensi Asesmen:</strong>
+                        Menggunakan instrumen yang sama memudahkan guru membandingkan perkembangan siswa antara Siklus 3 dan Siklus 4 (progress monitoring).
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-check-circle" style="color: #65a30d"></i>
+                      <div>
+                        <strong>Penguatan melalui Repetisi Bermakna:</strong>
+                        Repetisi materi amandemen dengan fokus pendalaman (bukan pengulangan dangkal) memperkuat retensi jangka panjang siswa.
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-check-circle" style="color: #65a30d"></i>
+                      <div>
+                        <strong>Pematangan Refleksi Metakognitif:</strong>
+                        Refleksi di Siklus 4 diarahkan pada metakognisi, mendorong siswa menyadari proses belajarnya sendiri.
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-check-circle" style="color: #65a30d"></i>
+                      <div>
+                        <strong>Fleksibilitas Pengayaan:</strong>
+                        Guru dapat menaikkan level soal kuis TGT di Siklus 4 untuk menantang siswa yang telah menguasai materi dasar.
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="analysis-box-item con">
+                  <div class="analysis-box-title" style="color: #b45309">
+                    <i class="fa-solid fa-triangle-exclamation" style="color: #f59e0b; font-size: 1.3rem"></i>
+                    Kelemahan & Tantangan Implementasi (Limitations)
+                  </div>
+                  <ul class="analysis-list">
+                    <li>
+                      <i class="fa-solid fa-circle-xmark" style="color: #f59e0b"></i>
+                      <div>
+                        <strong>Risiko Kejenuhan Siswa:</strong>
+                        Karena instrumen identik dengan Siklus 3, siswa berpotensi merasa bosan jika tidak ada variasi soal, format kuis, atau aktivitas.
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-circle-xmark" style="color: #f59e0b"></i>
+                      <div>
+                        <strong>Tidak Ada Instrumen Pengayaan Khusus:</strong>
+                        Instrumen Siklus 4 belum menyediakan butir soal pengayaan (HOTS) atau format kuis tingkat lanjut untuk siswa yang sudah mahir.
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-circle-xmark" style="color: #f59e0b"></i>
+                      <div>
+                        <strong>Refleksi Belum Diferensiasi:</strong>
+                        Lembar refleksi masih sama dengan Siklus 3, belum ada pertanyaan metakognitif khusus untuk mengukur pemahaman lanjutan.
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-circle-xmark" style="color: #f59e0b"></i>
+                      <div>
+                        <strong>Keterbatasan Rubrik Pengayaan:</strong>
+                        Belum ada rubrik khusus untuk menilai produk pengayaan (studi kasus, tutor sebaya) di Siklus 4.
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="analysis-box-item solution">
+                <div class="analysis-box-title" style="color: var(--color-primary-dark); font-size: 1.2rem; border-bottom: 1px solid var(--color-border-light); padding-bottom: 0.75rem; margin-bottom: 1.25rem">
+                  <i class="fa-solid fa-lightbulb" style="color: var(--color-accent-lime); font-size: 1.3rem"></i>
+                  Solusi & Rekomendasi Mitigasi Lapangan (Siklus 4)
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem">
+                  <div>
+                    <h5 style="color: var(--color-primary-dark); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem">1. Variasi Soal Kuis TGT</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">Buat bank soal pengayaan (HOTS) untuk kuis "New Family 100" di Siklus 4 agar tidak identik dengan Siklus 3.</p>
+                  </div>
+                  <div>
+                    <h5 style="color: var(--color-primary-dark); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem">2. Tambahkan Instrumen Pengayaan</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">Sediakan lembar studi kasus perbandingan konstitusi untuk siswa yang telah tuntas, beserta rubrik penilaiannya.</p>
+                  </div>
+                  <div>
+                    <h5 style="color: var(--color-primary-dark); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem">3. Diferensiasi Refleksi</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">Tambahkan pertanyaan metakognitif khusus di lembar refleksi Siklus 4: "Bagaimana pemahaman saya berubah setelah Siklus 3?"</p>
+                  </div>
+                  <div>
+                    <h5 style="color: var(--color-primary-dark); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem">4. Variasi Format Turnamen</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                      Ubah format kuis di Siklus 4 (misal: babak semifinal & final, atau kuis antar-juara kelompok) agar lebih kompetitif dan menyenangkan.
+                    </p>
+                  </div>
+                  <div>
+                    <h5 style="color: var(--color-primary-dark); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem">5. Rubrik Produk Pengayaan</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">Buat rubrik untuk menilai produk pengayaan (esai analisis, presentasi studi kasus, atau peran tutor sebaya).</p>
+                  </div>
+                  <div>
+                    <h5 style="color: var(--color-primary-dark); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem">6. Umpan Balik Individual</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">Guru memberikan umpan balik individual di Siklus 4 berdasarkan perbandingan hasil Siklus 3 dan Siklus 4.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 03. Kajian Teori (Siklus 4) -->
+          <article class="analysis-module-card">
+            <div class="analysis-module-header">
+              <div class="analysis-module-num">03</div>
+              <div>
+                <h3 class="analysis-module-title">Kajian Teori Evaluasi Pendidikan Pancasila (Siklus 4)</h3>
+                <p class="analysis-module-desc">Landasan ilmiah dari teori penguatan (reinforcement), pembelajaran spiral (spiral curriculum), metakognisi, dan diferensiasi pengayaan dalam siklus lanjutan.</p>
+              </div>
+            </div>
+
+            <div class="analysis-content-body">
+              <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.75; margin-bottom: 2rem">Perancangan instrumen Siklus 4 sebagai siklus penguatan dipertanggungjawabkan melalui landasan keilmuan berikut:</p>
+
+              <div class="theory-grid">
+                <div class="theory-card">
+                  <span class="theory-badge"><i class="fa-solid fa-arrows-rotate" style="margin-right: 5px"></i> Teori Penguatan</span>
+                  <h4 class="theory-title">Reinforcement Theory & Spaced Repetition (Skinner, 1953; Ebbinghaus, 1885)</h4>
+                  <p class="theory-desc">Pengulangan materi dengan jeda waktu (spaced repetition) memperkuat retensi jangka panjang. Siklus 4 sebagai penguatan pasca-Siklus 3 adalah penerapan prinsip ini dalam pembelajaran bermakna.</p>
+                </div>
+                <div class="theory-card">
+                  <span class="theory-badge" style="background: rgba(184, 224, 35, 0.25)"><i class="fa-solid fa-spiral" style="margin-right: 5px"></i> Desain Kurikulum</span>
+                  <h4 class="theory-title">Spiral Curriculum (Jerome Bruner, 1960)</h4>
+                  <p class="theory-desc">Kurikulum spiral menekankan bahwa konsep yang sama diajarkan berulang dengan tingkat kedalaman yang meningkat. Siklus 4 memperdalam analisis muatan amandemen yang telah diperkenalkan di Siklus 3.</p>
+                </div>
+                <div class="theory-card">
+                  <span class="theory-badge"><i class="fa-solid fa-brain" style="margin-right: 5px"></i> Metakognisi</span>
+                  <h4 class="theory-title">Metacognitive Learning (Flavell, 1979; Zimmerman, 2002)</h4>
+                  <p class="theory-desc">Refleksi metakognitif di Siklus 4 mendorong siswa menyadari proses belajarnya: "Apa yang saya pahami lebih dalam?", "Bagaimana pemahaman saya berubah?", "Apa komitmen saya sebagai warga negara?"</p>
+                </div>
+                <div class="theory-card">
+                  <span class="theory-badge" style="background: rgba(184, 224, 35, 0.25)"><i class="fa-solid fa-graduation-cap" style="margin-right: 5px"></i> Diferensiasi Pengayaan</span>
+                  <h4 class="theory-title">Differentiated Enrichment (Tomlinson, 2001; Renzulli, 1977)</h4>
+                  <p class="theory-desc">Siswa yang telah tuntas di Siklus 3 mendapat pengayaan (studi kasus, tutor sebaya, analisis komparatif) sesuai prinsip diferensiasi pengayaan, sehingga tidak merasa bosan atau under-challenged.</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </main>
+
+    <!-- =================================================================
+       5. AGENCY FOOTER
+       ================================================================= -->
+    <footer class="footer-agency">
+      <div class="container">
+        <div class="footer-agency-grid">
+          <div class="footer-agency-col">
+            <div class="footer-agency-brand" style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 1rem">
+              <img
+                src="../logo.png"
+                alt="Logo UAD"
+                class="footer-agency-logo-img"
+                style="width: 46px; height: 46px; object-fit: contain; background: transparent; padding: 0; border: none; box-shadow: none; flex-shrink: 0"
+                onerror="this.style.display = 'none'"
+              />
+              <div class="footer-agency-brand-text">
+                <span class="title" style="display: block; font-size: 1.15rem; font-weight: 800; color: #ffffff">Wahyu Surya Al Fikri, S.Pd.</span>
+                <span class="sub" style="display: block; font-size: 0.8rem; color: #94a3b8; font-weight: 600">PPG Calon Guru Pendidikan Pancasila UAD</span>
+              </div>
+            </div>
+            <p class="footer-agency-bio" style="color: #94a3b8; font-size: 0.88rem; line-height: 1.7">
+              Portofolio resmi PPL Terbimbing Program Pendidikan Profesi Guru (PPG) Calon Guru Bidang Studi Pendidikan Pancasila Universitas Ahmad Dahlan (UAD) di SMA Negeri 4 Yogyakarta.
+            </p>
+          </div>
+
+          <div class="footer-agency-col">
+            <h4 class="footer-agency-col-title">Navigasi Portofolio</h4>
+            <ul class="footer-agency-links">
+              <li>
+                <a href="../index.html"><i class="fa-solid fa-arrow-right" style="font-size: 0.75rem; margin-right: 6px"></i> Beranda Utama</a>
+              </li>
+              <li>
+                <a href="../profil.html"><i class="fa-solid fa-arrow-right" style="font-size: 0.75rem; margin-right: 6px"></i> Profil Lengkap Mahasiswa</a>
+              </li>
+              <li>
+                <a href="../UTS/rancangan.html"><i class="fa-solid fa-arrow-right" style="font-size: 0.75rem; margin-right: 6px"></i> Siklus 1 (UTS PPL)</a>
+              </li>
+              <li>
+                <a href="rancangan.html"><i class="fa-solid fa-arrow-right" style="font-size: 0.75rem; margin-right: 6px"></i> Siklus Lanjutan (UAS PPL)</a>
+              </li>
+              <li>
+                <a href="../non-mengajar.html"><i class="fa-solid fa-arrow-right" style="font-size: 0.75rem; margin-right: 6px"></i> Kegiatan Non-Mengajar</a>
+              </li>
+              <li>
+                <a href="../dokumentasi.html"><i class="fa-solid fa-arrow-right" style="font-size: 0.75rem; margin-right: 6px"></i> Galeri Dokumentasi</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-agency-col">
+            <h4 class="footer-agency-col-title">Perangkat Pembelajaran</h4>
+            <ul class="footer-agency-links">
+              <li>
+                <a href="rancangan.html"><i class="fa-solid fa-check" style="color: var(--color-accent-lime); font-size: 0.75rem; margin-right: 6px"></i> Modul Ajar Siklus 2, 3 & 4</a>
+              </li>
+              <li>
+                <a href="media.html"><i class="fa-solid fa-check" style="color: var(--color-accent-lime); font-size: 0.75rem; margin-right: 6px"></i> Media Berbasis TPACK</a>
+              </li>
+              <li>
+                <a href="instrumen.html"><i class="fa-solid fa-check" style="color: var(--color-accent-lime); font-size: 0.75rem; margin-right: 6px"></i> Instrumen Asesmen Pancasila</a>
+              </li>
+              <li>
+                <a href="video.html"><i class="fa-solid fa-check" style="color: var(--color-accent-lime); font-size: 0.75rem; margin-right: 6px"></i> Video Praktik Pembelajaran</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-agency-col">
+            <h4 class="footer-agency-col-title">LPTK & Kontak Resmi</h4>
+            <p style="font-size: 0.88rem; color: #94a3b8; margin-bottom: 0.75rem">
+              <i class="fa-solid fa-location-dot" style="color: var(--color-accent-lime); margin-right: 6px"></i> Kampus Utama UAD, Jl. Ringroad Selatan, Tamanan, Banguntapan, Bantul, D.I. Yogyakarta 55191
+            </p>
+            <p style="font-size: 0.88rem; color: #94a3b8; margin-bottom: 1.25rem"><i class="fa-solid fa-envelope" style="color: var(--color-accent-lime); margin-right: 6px"></i> wahyu.ppg@uad.ac.id</p>
+            <div style="display: flex; gap: 0.6rem">
+              <a href="javascript:void(0)" onclick="showToast('YouTube')" class="social-circle-btn"><i class="fa-brands fa-youtube"></i></a>
+              <a href="javascript:void(0)" onclick="showToast('Instagram')" class="social-circle-btn"><i class="fa-brands fa-instagram"></i></a>
+              <a href="javascript:void(0)" onclick="showToast('LinkedIn')" class="social-circle-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom-strip">
+          <div>&copy; 2026 <strong>Wahyu Surya Al Fikri, S.Pd.</strong> All Rights Reserved • PPG Calon Guru Pendidikan Pancasila Universitas Ahmad Dahlan (UAD).</div>
+          <div>Tema Desain: Modern Clean Green & Lime Agency Style</div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- =================================================================
+       6. INTERACTIVE SWITCHER SCRIPT (VANILLA JS) — 3 TAB
+       ================================================================= -->
+    <script>
+      const uasCyclesData = {
+        2: {
+          title: "Instrumen Penilaian Pendidikan Pancasila Siklus 2: Periodisasi Pemberlakuan Konstitusi",
+          sub: "Penyusun: <strong>Wahyu Surya Al Fikri, S.Pd.</strong> • Siklus 2 UAS • Fase F / Kelas XI F3 • Alokasi: 1 Pertemuan (90 Menit)",
+          pdfFile: "../Dokumen/Instrumen Siklus 2.pdf",
+          downloadName: "Instrumen_Penilaian_Pancasila_Siklus2_PeriodisasiKonstitusi_WahyuSuryaAlFikri.pdf",
+          school: "<strong>Sekolah Mitra:</strong> SMA Negeri 4 Yogyakarta",
+          weight: "<strong>Struktur:</strong> Diagnostik + Formatif + Sumatif",
+          kktp: "<strong>Pendekatan:</strong> PBL + Deep Learning + TaRL + CRT",
+          approach: "<strong>Media:</strong> TTS + Tabel Komparasi + CARL",
+          toastMsg: "Menampilkan Instrumen & Analisis Siklus 2: Periodisasi Pemberlakuan Konstitusi",
+        },
+        3: {
+          title: "Instrumen Penilaian Pendidikan Pancasila Siklus 3: Perubahan UUD NRI Tahun 1945",
+          sub: "Penyusun: <strong>Wahyu Surya Al Fikri, S.Pd.</strong> • Siklus 3 UAS • Fase F / Kelas XI F3 • Alokasi: 2 Pertemuan (180 Menit)",
+          pdfFile: "../Dokumen/Instrumen Siklus 3.pdf",
+          downloadName: "Instrumen_Penilaian_Pancasila_Siklus3_PerubahanUUD1945_WahyuSuryaAlFikri.pdf",
+          school: "<strong>Sekolah Mitra:</strong> SMA Negeri 4 Yogyakarta",
+          weight: "<strong>Bobot Nilai:</strong> 50% Pengetahuan + 30% Keterampilan + 20% Sikap",
+          kktp: "<strong>KKTP:</strong> Minimal 75 (Tuntas)",
+          approach: "<strong>Pendekatan:</strong> Cooperative Learning + TGT + TaRL + CRT",
+          toastMsg: "Menampilkan Instrumen & Analisis Siklus 3: Perubahan UUD NRI Tahun 1945",
+        },
+        4: {
+          title: "Instrumen Penilaian Pendidikan Pancasila Siklus 4: Perubahan UUD NRI Tahun 1945 (Siklus Lanjutan)",
+          sub: "Penyusun: <strong>Wahyu Surya Al Fikri, S.Pd.</strong> • Siklus 4 UAS • Fase F / Kelas XI F3 • Alokasi: 2 Pertemuan (180 Menit)",
+          pdfFile: "../Dokumen/Instrumen Siklus 4.pdf",
+          downloadName: "Instrumen_Penilaian_Pancasila_Siklus4_PerubahanUUD1945_WahyuSuryaAlFikri.pdf",
+          school: "<strong>Sekolah Mitra:</strong> SMA Negeri 4 Yogyakarta",
+          weight: "<strong>Bobot Nilai:</strong> 50% Pengetahuan + 30% Keterampilan + 20% Sikap",
+          kktp: "<strong>KKTP:</strong> Minimal 75 (Tuntas)",
+          approach: "<strong>Fokus:</strong> Penguatan, Pendalaman & Refleksi Metakognitif",
+          toastMsg: "Menampilkan Instrumen & Analisis Siklus 4: Perubahan UUD NRI Tahun 1945 (Lanjutan)",
+        },
+      };
+
+      function switchUASInstrumen(cycleNum) {
+        const data = uasCyclesData[cycleNum];
+        if (!data) return;
+
+        // 1. Update Tabs and Cards
+        [2, 3, 4].forEach((n) => {
+          const btn = document.getElementById("tab-btn-" + n);
+          const card = document.getElementById("sum-card-" + n);
+          const analysis = document.getElementById("analysis-siklus-" + n);
+
+          if (btn) btn.classList.toggle("active", n === cycleNum);
+          if (card) card.classList.toggle("active", n === cycleNum);
+          if (analysis) analysis.classList.toggle("active", n === cycleNum);
+        });
+
+        // 2. Update PDF Toolbar & Links
+        document.getElementById("uas-doc-title").innerHTML = data.title;
+        document.getElementById("uas-doc-sub").innerHTML = data.sub;
+
+        const dlBtn = document.getElementById("uas-doc-download");
+        dlBtn.href = data.pdfFile;
+        dlBtn.setAttribute("download", data.downloadName);
+        dlBtn.innerHTML = '<i class="fa-solid fa-file-arrow-down"></i> Unduh PDF';
+
+        const fsBtn = document.getElementById("uas-doc-fullscreen");
+        fsBtn.href = data.pdfFile;
+
+        // 3. Update Iframe with smooth transition
+        const iframe = document.getElementById("uas-doc-iframe");
+        iframe.style.opacity = "0.3";
+        setTimeout(() => {
+          iframe.src = data.pdfFile + "#toolbar=1&navpanes=0&scrollbar=1";
+          iframe.style.opacity = "1";
+        }, 150);
+
+        const fallback = document.getElementById("uas-doc-fallback");
+        if (fallback) fallback.href = data.pdfFile;
+
+        // 4. Update Meta Bar
+        document.getElementById("uas-meta-school").innerHTML = data.school;
+        document.getElementById("uas-meta-weight").innerHTML = data.weight;
+        document.getElementById("uas-meta-kktp").innerHTML = data.kktp;
+        document.getElementById("uas-meta-approach").innerHTML = data.approach;
+
+        // 5. Toast Feedback
+        if (typeof showToast === "function") {
+          showToast(data.toastMsg);
+        }
+      }
+    </script>
+
+    <script src="../js/main.js"></script>
+  </body>
+</html>

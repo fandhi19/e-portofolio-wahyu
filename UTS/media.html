@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UTS - Media Pembelajaran (Siklus 1: Pancasila dalam Tindakan) | Wahyu Surya Al Fikri, S.Pd. - UAD</title>
+  
+  <link rel="icon" type="image/png" href="../logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- =================================================================
+       1. TOPBAR (Contact Info & Angled Lime Social Strip)
+       ================================================================= -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-contact">
+        <a href="tel:+62859195374310" class="topbar-item">
+          <i class="fa-solid fa-phone"></i>
+          <span>+62 859-1953-74310</span>
+        </a>
+        <a href="mailto:wahyu.ppg@uad.ac.id" class="topbar-item">
+          <i class="fa-solid fa-envelope"></i>
+          <span>wahyu.ppg@uad.ac.id</span>
+        </a>
+        <div class="topbar-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Universitas Ahmad Dahlan (UAD) • D.I. Yogyakarta</span>
+        </div>
+      </div>
+
+      <div class="topbar-social-wrap">
+        <a href="javascript:void(0)" onclick="showToast('Facebook Wahyu Surya Al Fikri')" class="social-circle-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="javascript:void(0)" onclick="showToast('Twitter / X')" class="social-circle-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="javascript:void(0)" onclick="showToast('Instagram Wahyu Surya Al Fikri')" class="social-circle-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="javascript:void(0)" onclick="showToast('Kanal YouTube Pembelajaran Pendidikan Pancasila')" class="social-circle-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="javascript:void(0)" onclick="showToast('LinkedIn Wahyu Surya Al Fikri')" class="social-circle-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =================================================================
+       2. MAIN NAVBAR
+       ================================================================= -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="../index.html" class="brand">
+        <img src="../logo.png" alt="Logo UAD" class="brand-logo-img" onerror="this.style.display='none'">
+        <div>
+          <span class="brand-title">Wahyu Surya Al Fikri, S.Pd.</span>
+          <span class="brand-subtitle">PPG Calon Guru Pendidikan Pancasila UAD</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="../index.html" class="nav-link">Beranda</a></li>
+          <li><a href="../profil.html" class="nav-link">Profil</a></li>
+          
+          <!-- UTS Dropdown (Active) -->
+          <li class="nav-item-dropdown">
+            <a href="javascript:void(0)" class="nav-link dropdown-toggle active" role="button">
+              UTS <i class="fa-solid fa-chevron-down chevron-icon"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="rancangan.html" class="dropdown-item"><i class="fa-solid fa-book-bookmark"></i> Rancangan</a></li>
+              <li><a href="materi.html" class="dropdown-item"><i class="fa-solid fa-book-open"></i> Materi</a></li>
+              <li><a href="media.html" class="dropdown-item active" style="font-weight:700;"><i class="fa-solid fa-photo-film"></i> Media</a></li>
+              <li><a href="instrumen.html" class="dropdown-item"><i class="fa-solid fa-clipboard-check"></i> Instrumen</a></li>
+              <li><a href="video.html" class="dropdown-item"><i class="fa-solid fa-circle-play"></i> Video</a></li>
+            </ul>
+          </li>
+
+          <!-- UAS Dropdown -->
+          <li class="nav-item-dropdown">
+            <a href="javascript:void(0)" class="nav-link dropdown-toggle" role="button">
+              UAS <i class="fa-solid fa-chevron-down chevron-icon"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="../UAS/rancangan.html" class="dropdown-item"><i class="fa-solid fa-book-bookmark"></i> Rancangan</a></li>
+              <li><a href="../UAS/materi.html" class="dropdown-item"><i class="fa-solid fa-book-open"></i> Materi</a></li>
+              <li><a href="../UAS/media.html" class="dropdown-item"><i class="fa-solid fa-photo-film"></i> Media</a></li>
+              <li><a href="../UAS/instrumen.html" class="dropdown-item"><i class="fa-solid fa-clipboard-check"></i> Instrumen</a></li>
+              <li><a href="../UAS/video.html" class="dropdown-item"><i class="fa-solid fa-circle-play"></i> Video</a></li>
+            </ul>
+          </li>
+
+          <li><a href="../non-mengajar.html" class="nav-link">Non-Mengajar</a></li>
+          <li><a href="../dokumentasi.html" class="nav-link">Dokumentasi</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="../index.html" class="btn btn-outline-dark btn-sm">
+          <i class="fa-solid fa-arrow-left"></i> Beranda
+        </a>
+        <button class="mobile-toggle" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =================================================================
+       3. SUBPAGE HERO HEADER
+       ================================================================= -->
+  <section class="subpage-hero-agency">
+    <div class="container">
+      <div class="badge-pill-group">
+        <span class="twin-dot-icon">
+          <span></span><span></span>
+        </span>
+        <span>UTS • SIKLUS 1 PPL TERBIMBING</span>
+      </div>
+
+      <h1 style="font-size: clamp(2.2rem, 4vw, 3.2rem); color: var(--color-primary-dark); margin-bottom: 0.8rem; font-weight: 800;">
+        Media Pembelajaran Pendidikan Pancasila (Siklus 1: Pancasila dalam Tindakan)
+      </h1>
+      <p style="max-width: 840px; font-size: 1.05rem; line-height: 1.6; color: var(--color-text-muted);">
+        Media ajar presentasi visual grafis interaktif, komparasi dialektis <em>Meja Statis</em> vs <em>Leitstar Dinamis</em>, pengorganisasian kelompok kolaboratif, refleksi nilai kebangsaan, dan asesmen diagnostik berbasis QR Code Kurikulum Merdeka Fase F (Kelas XI) pada materi <strong>Pancasila sebagai Ideologi Negara</strong> untuk Siklus 1 PPL Terbimbing di SMA Negeri 4 Yogyakarta.
+      </p>
+
+      <div class="subpage-breadcrumb">
+        <a href="../index.html">Beranda</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>Siklus 1 (UTS)</span>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span style="color: var(--color-primary-dark); font-weight: 700;">Media Pembelajaran</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       4. MAIN CONTENT: PDF VIEWER & COMPREHENSIVE ANALYSIS
+       ================================================================= -->
+  <main style="padding: 4rem 0 6rem; background: #FFFFFF;">
+    <div class="container">
+      
+      <!-- =============================================================
+           A. INTERACTIVE PDF VIEWER SECTION
+           ============================================================= -->
+      <section style="margin-bottom: 5rem;">
+        <div class="section-agency-head" style="margin-bottom: 2rem;">
+          <div class="badge-pill-group">
+            <span class="twin-dot-icon">
+              <span></span><span></span>
+            </span>
+            <span>MEDIA PEMBELAJARAN DIGITAL SIKLUS 1</span>
+          </div>
+          <h2 class="section-agency-title">Pratinjau Media Pembelajaran (PDF)</h2>
+          <p class="section-agency-subtitle">
+            Eksplorasi langsung 12 slide dokumen media ajar visual interaktif yang mencakup etimologi & hakikat ideologi, 5 ciri ideologi, fungsi ideologi negara, dialektika Meja Statis & Leitstar Dinamis, contoh implementasi nyata, pembagian 6 kelompok kelas XI F7, hingga asesmen diagnostik QR Code.
+          </p>
+        </div>
+
+        <!-- PDF Viewer Container Card -->
+        <div class="pdf-viewer-card">
+          <!-- Toolbar -->
+          <div class="pdf-viewer-toolbar">
+            <div class="pdf-toolbar-info">
+              <div class="pdf-toolbar-icon">
+                <i class="fa-solid fa-photo-film"></i>
+              </div>
+              <div>
+                <div class="pdf-toolbar-title">Media Ajar Pendidikan Pancasila Siklus 1: Pancasila dalam Tindakan</div>
+                <div class="pdf-toolbar-sub">
+                  Slide Visual Interaktif, Dialektika Konsep & Asesmen Diagnostik QR Code • Fase F / Kelas XI SMA • 12 Slide Presentasi
+                </div>
+              </div>
+            </div>
+
+            <div class="pdf-toolbar-actions">
+              <span class="tag-pill" style="background: rgba(184, 224, 35, 0.2); color: #B8E023; font-weight: 700; border: 1px solid rgba(184, 224, 35, 0.4); padding: 6px 14px; font-size: 0.78rem;">
+                <i class="fa-solid fa-circle-check" style="margin-right: 5px;"></i> Terverifikasi LPTK UAD
+              </span>
+              <a href="../Dokumen/Media Siklus 1.pdf" download="Media_Pembelajaran_Pendidikan_Pancasila_Siklus1_WahyuSuryaAlFikri.pdf" class="btn btn-primary-lime btn-sm">
+                <i class="fa-solid fa-file-arrow-down"></i> Unduh Media PDF (20.3 MB)
+              </a>
+              <a href="../Dokumen/Media Siklus 1.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light btn-sm" style="border-color: rgba(255,255,255,0.4); color: #FFFFFF;">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Layar Penuh
+              </a>
+            </div>
+          </div>
+
+          <!-- Embedded Frame -->
+          <div class="pdf-frame-wrapper">
+            <iframe 
+              src="../Dokumen/Media Siklus 1.pdf#toolbar=1&navpanes=0&scrollbar=1" 
+              title="Media Pembelajaran Siklus 1 Wahyu Surya Al Fikri - Pendidikan Pancasila"
+              loading="lazy">
+              <p style="padding: 2rem; color: #FFFFFF; text-align: center;">
+                Peramban Anda tidak mendukung tampilan PDF langsung. Silakan 
+                <a href="../Dokumen/Media Siklus 1.pdf" target="_blank" style="color: var(--color-accent-lime); font-weight: bold; text-decoration: underline;">
+                  Klik di sini untuk mengunduh atau membuka Media Pembelajaran Siklus 1 (.PDF)
+                </a>.
+              </p>
+            </iframe>
+          </div>
+
+          <!-- Footer Metadata Bar -->
+          <div style="background: #F8F9F5; padding: 1.25rem 2rem; border-top: 1px solid var(--color-border-light); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+            <div style="display: flex; align-items: center; gap: 1.8rem; flex-wrap: wrap;">
+              <div style="font-size: 0.85rem; color: var(--color-text-muted);">
+                <i class="fa-solid fa-layer-group" style="color: var(--color-primary-dark); margin-right: 6px;"></i>
+                <strong>Format:</strong> Presentasi Slide Grafis, Refleksi & QR Code (12 Slide)
+              </div>
+              <div style="font-size: 0.85rem; color: var(--color-text-muted);">
+                <i class="fa-solid fa-laptop-code" style="color: var(--color-primary-dark); margin-right: 6px;"></i>
+                <strong>Pendekatan:</strong> TPACK & Problem-Based Learning (PBL)
+              </div>
+              <div style="font-size: 0.85rem; color: var(--color-text-muted);">
+                <i class="fa-solid fa-users" style="color: var(--color-primary-dark); margin-right: 6px;"></i>
+                <strong>Sasaran:</strong> Kelas XI F7 SMA (35 Siswa • 6 Kelompok Kolaboratif)
+              </div>
+            </div>
+            <div>
+              <a href="javascript:void(0)" onclick="showToast('Media Terintegrasi Kurikulum Merdeka Fase F')" style="font-size: 0.82rem; color: var(--color-primary-dark); font-weight: 700; text-decoration: none;">
+                <i class="fa-solid fa-circle-info" style="color: var(--color-accent-lime); margin-right: 5px;"></i> Terintegrasi Kurikulum Merdeka
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================================================
+           B. COMPREHENSIVE ANALYSIS OF THE LEARNING MEDIA
+           ============================================================= -->
+      <section>
+        <div class="section-agency-head" style="margin-bottom: 3.5rem;">
+          <div class="badge-pill-group">
+            <span class="twin-dot-icon">
+              <span></span><span></span>
+            </span>
+            <span>ANALISIS KOMPREHENSIF MEDIA PEMBELAJARAN</span>
+          </div>
+          <h2 class="section-agency-title">Analisis Akademik & Refleksi Kritis Media Pembelajaran Siklus 1: Pancasila dalam Tindakan</h2>
+          <p class="section-agency-subtitle">
+            Tinjauan mendalam terhadap relevansi desain media berbasis slide Canva, efektivitas visualisasi metafora kenegaraan, kelebihan, keterbatasan kelas, serta landasan teoritis pedagogik dan teknologi pendidikan Pancasila.
+          </p>
+        </div>
+
+        <!-- =========================================================
+             1. KONTEKS DAN TUJUAN MEDIA
+             ========================================================= -->
+        <article class="analysis-module-card">
+          <div class="analysis-module-header">
+            <div class="analysis-module-num">01</div>
+            <div>
+              <h3 class="analysis-module-title">Konteks dan Tujuan Media Pembelajaran</h3>
+              <p class="analysis-module-desc">
+                Analisis urgensi konkretisasi materi filosofis ketatanegaraan yang abstrak, visualisasi dialektika Meja Statis & Leitstar Dinamis, serta perumusan tujuan pembelajaran berbasis 4 domain kompetensi.
+              </p>
+            </div>
+          </div>
+
+          <div class="analysis-content-body">
+            
+            <!-- Konteks Kebutuhan Media di Lapangan -->
+            <div style="margin-bottom: 2.5rem;">
+              <h4 style="font-size: 1.25rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.65rem;">
+                <i class="fa-solid fa-chalkboard-user" style="color: var(--color-primary-dark); font-size: 1.1rem;"></i>
+                A. Analisis Konteks Kebutuhan Media & Karakteristik Kelas XI SMA Negeri 4 Yogyakarta
+              </h4>
+              <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.75; margin-bottom: 1.2rem;">
+                Materi <strong>Pancasila sebagai Ideologi Negara</strong> pada Kurikulum Merdeka Fase F (Kelas XI) menuntut pemahaman konseptual yang mendalam mengenai hakikat falsafah negara, fungsi konstitusional, serta penerapannya di tengah dinamika masyarakat modern. Dalam konteks pelaksanaan pembelajaran di kelas XI F7 SMA Negeri 4 Yogyakarta, pengembangan media slide interaktif ini didasarkan pada empat kebutuhan instruksional mendesak:
+              </p>
+              
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem;">
+                <div style="background: #F8F9F5; border-radius: var(--radius-md); padding: 1.4rem; border-left: 4px solid var(--color-primary-dark);">
+                  <strong style="display: block; color: var(--color-primary-dark); font-size: 0.95rem; margin-bottom: 0.4rem;">
+                    <i class="fa-solid fa-lightbulb" style="margin-right: 6px; color: var(--color-primary-dark);"></i> Reduksi Keabstrakan Konsep Filosofis Ideologi (Slide 2 & 3)
+                  </strong>
+                  <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+                    Konsep ideologi (*Weltanschauung* dan *Philosophische Grondslag*) kerap dipersepsikan siswa sebagai teori hafalan teks yang rumit. Media mengonstruksi pemahaman melalui penguraian etimologi Yunani (<em>ideos</em> = ide, <em>logos</em> = pengetahuan) serta visualisasi 5 ciri utama ideologi dengan ikonografi simbolik (perisai integritas, siluet kepala bernilai, kompas pedoman, kelompok keteraturan, dan timbangan keadilan).
+                  </p>
+                </div>
+
+                <div style="background: #F8F9F5; border-radius: var(--radius-md); padding: 1.4rem; border-left: 4px solid #F59E0B;">
+                  <strong style="display: block; color: var(--color-primary-dark); font-size: 0.95rem; margin-bottom: 0.4rem;">
+                    <i class="fa-solid fa-scale-balanced" style="margin-right: 6px; color: #F59E0B;"></i> Konkretisasi Dialektika "Meja Statis" vs "Leitstar Dinamis" (Slide 6, 7 & 8)
+                  </strong>
+                  <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+                    Gagasan monumental Bung Karno mengenai kedudukan Pancasila sering memicu kebingungan siswa: bagaimana suatu ideologi dapat bersifat tetap sekaligus dinamis? Media memvisualisasikan meja batu kokoh berukir Pancasila (fondasi permanen pemersatu bangsa) dan kompas emas bersinar berlatar kapal mengarungi samudera (bintang pemandu yang adaptif terhadap zaman), menjadikannya sangat mudah dipahami.
+                  </p>
+                </div>
+
+                <div style="background: #F8F9F5; border-radius: var(--radius-md); padding: 1.4rem; border-left: 4px solid var(--color-accent-lime-hover);">
+                  <strong style="display: block; color: var(--color-primary-dark); font-size: 0.95rem; margin-bottom: 0.4rem;">
+                    <i class="fa-solid fa-users-gear" style="margin-right: 6px; color: var(--color-accent-lime-hover);"></i> Pengorganisasian 6 Kelompok Kolaboratif Kelas XI F7 (Slide 10)
+                  </strong>
+                  <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+                    Dengan populasi 35 peserta didik di kelas XI F7, transisi menuju diskusi kelompok rentan memicu kebisingan dan membuang waktu instruksional. Media secara eksplisit memuat bagan pembagian 6 kelompok heterogen (5–6 siswa per kelompok), sehingga pembagian peran kerja berlangsung cepat, transparan, dan kondusif.
+                  </p>
+                </div>
+
+                <div style="background: #F8F9F5; border-radius: var(--radius-md); padding: 1.4rem; border-left: 4px solid #10B981;">
+                  <strong style="display: block; color: var(--color-primary-dark); font-size: 0.95rem; margin-bottom: 0.4rem;">
+                    <i class="fa-solid fa-qrcode" style="margin-right: 6px; color: #10B981;"></i> Integrasi Asesmen Diagnostik Digital Berbasis QR Code (Slide 12)
+                  </strong>
+                  <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+                    Mendukung prinsip diferensiasi Kurikulum Merdeka melalui pemetaan profil dan kesiapan belajar awal (*diagnostic assessment*). Siswa memindai QR Code "Let's Start!" menggunakan gawai pintar masing-masing untuk mengerjakan kuis asesmen awal interaktif secara cepat dan paperless.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tujuan Pengembangan Media -->
+            <div>
+              <h4 style="font-size: 1.25rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.65rem;">
+                <i class="fa-solid fa-bullseye" style="color: var(--color-primary-dark); font-size: 1.1rem;"></i>
+                B. Tujuan Pengembangan Media Pembelajaran Berbasis 4 Domain Kompetensi
+              </h4>
+              <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7; margin-bottom: 1.4rem;">
+                Pengembangan Media Pembelajaran Siklus 1 ini dirancang secara terukur untuk mewujudkan capaian pembelajaran pada empat ranah esensial:
+              </p>
+
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.4rem;">
+                
+                <!-- Tujuan Kognitif -->
+                <div style="background: #FFFFFF; border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-sm);">
+                  <div style="display: inline-block; background: var(--color-primary-dark); color: var(--color-accent-lime); font-size: 0.72rem; font-weight: 800; padding: 3px 8px; border-radius: 4px; margin-bottom: 0.75rem;">
+                    DOMAIN KOGNITIF
+                  </div>
+                  <h5 style="font-size: 1rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.5rem;">
+                    Pemahaman Konseptual & Analisis Dialektis
+                  </h5>
+                  <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+                    Memampukan siswa menguraikan definisi dan 5 ciri ideologi, menganalisis kedudukan Pancasila sebagai sumber hukum dan pedoman kebijakan pembangunan nasional, serta membedakan fungsi Meja Statis dan Leitstar Dinamis secara kritis dan komparatif.
+                  </p>
+                </div>
+
+                <!-- Tujuan Afektif & Nilai Kebangsaan -->
+                <div style="background: #FFFFFF; border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-sm);">
+                  <div style="display: inline-block; background: var(--color-primary-dark); color: var(--color-accent-lime); font-size: 0.72rem; font-weight: 800; padding: 3px 8px; border-radius: 4px; margin-bottom: 0.75rem;">
+                    DOMAIN AFEKTIF & MORAL
+                  </div>
+                  <h5 style="font-size: 1rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.5rem;">
+                    Internalisasi Komitmen Kebangsaan
+                  </h5>
+                  <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+                    Menumbuhkan rasa cinta tanah air, kesadaran menjaga persatuan dalam keragaman suku, agama, dan budaya (pengamalan Sila Pertama & nilai Bhinneka Tunggal Ika), serta menolak segala bentuk ekstremisme dan polarisasi masyarakat.
+                  </p>
+                </div>
+
+                <!-- Tujuan Psikomotorik / Keterampilan Sosial -->
+                <div style="background: #FFFFFF; border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-sm);">
+                  <div style="display: inline-block; background: var(--color-primary-dark); color: var(--color-accent-lime); font-size: 0.72rem; font-weight: 800; padding: 3px 8px; border-radius: 4px; margin-bottom: 0.75rem;">
+                    DOMAIN KETERAMPILAN SOSIAL
+                  </div>
+                  <h5 style="font-size: 1rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.5rem;">
+                    Kolaborasi & Artikulasi Ide Kritis
+                  </h5>
+                  <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+                    Melatih keterampilan komunikasi publik, kerja sama tim dalam 6 kelompok diskusi XI F7, merumuskan argumen logis saat memecahkan studi kasus implementasi Pancasila (Slide 9), serta menyampaikan presentasi hasil telaah di depan kelas.
+                  </p>
+                </div>
+
+                <!-- Tujuan Karakter Profil Pelajar Pancasila -->
+                <div style="background: #FFFFFF; border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-sm);">
+                  <div style="display: inline-block; background: var(--color-primary-dark); color: var(--color-accent-lime); font-size: 0.72rem; font-weight: 800; padding: 3px 8px; border-radius: 4px; margin-bottom: 0.75rem;">
+                    PENGUATAN PROFIL PELAJAR PANCASILA
+                  </div>
+                  <h5 style="font-size: 1rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.5rem;">
+                    Bernalar Kritis & Refleksi Praksis Mandiri
+                  </h5>
+                  <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+                    Mengembangkan dimensi <em>Bernalar Kritis</em>, <em>Berkebhinekaan Global</em>, dan <em>Gotong Royong</em> yang bermuara pada refleksi aksi nyata melalui pertanyaan pemantik di Slide 11: <em>"Bagaimana kamu mengamalkan nilai Pancasila dalam kehidupan sehari-hari?"</em>.
+                  </p>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- =========================================================
+             2. KELEBIHAN DAN KEKURANGAN MEDIA
+             ========================================================= -->
+        <article class="analysis-module-card">
+          <div class="analysis-module-header">
+            <div class="analysis-module-num">02</div>
+            <div>
+              <h3 class="analysis-module-title">Kelebihan dan Kekurangan Media Pembelajaran</h3>
+              <p class="analysis-module-desc">
+                Evaluasi komparatif mengenai efektivitas desain visual slide Canva interaktif, kekuatan grafis metaforis, tantangan teknis kelas, beserta perumusan solusi mitigasi instruksional.
+              </p>
+            </div>
+          </div>
+
+          <div class="analysis-content-body">
+            
+            <!-- 2-Column Grid: Pro vs Con -->
+            <div class="analysis-grid-2col">
+              
+              <!-- Kolom Kelebihan -->
+              <div class="analysis-box-item pro">
+                <div class="analysis-box-title" style="color: var(--color-primary-dark);">
+                  <i class="fa-solid fa-circle-check" style="color: #65A30D; font-size: 1.3rem;"></i>
+                  Kelebihan & Kekuatan Media Ajar (Strengths)
+                </div>
+                <ul class="analysis-list">
+                  <li>
+                    <i class="fa-solid fa-check-circle" style="color: #65A30D;"></i>
+                    <div>
+                      <strong>Visualisasi Metaforis Meja Statis & Leitstar Dinamis yang Sangat Kuat (Slide 6, 7, 8):</strong>
+                      Menjadi terobosan pedagogis utama media ini. Memadukan ilustrasi meja batu pilar bertuliskan "PANCASILA" dan kompas navigasi emas berlayar di laut bebas secara berdampingan berhasil memecahkan dualisme konsep dialektis Bung Karno menjadi representasi visual yang sangat gamblang.
+                    </div>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-check-circle" style="color: #65A30D;"></i>
+                    <div>
+                      <strong>Alur Instruksional Deduktif-Reflektif yang Sangat Rapi & Sistematis:</strong>
+                      Tersusun secara hierarkis: dimulai dari konsep dasar etimologi ideologi (Slide 2–3), partikularisasi di Indonesia (Slide 4–5), esensi dialektika filosofis (Slide 6–8), kontekstualisasi implementasi (Slide 9), kolaborasi terorganisir (Slide 10), hingga refleksi aksi nyata (Slide 11).
+                    </div>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-check-circle" style="color: #65A30D;"></i>
+                    <div>
+                      <strong>Penerapan Teknologi Asesmen Diagnostik QR Code yang Inovatif (Slide 12):</strong>
+                      Memanfaatkan gawai pintar siswa secara positif (*Bring Your Own Device / BYOD*), memfasilitasi pengambilan data kesiapan belajar awal kognitif secara instan, hemat kertas (*paperless*), dan selaras dengan semangat Kurikulum Merdeka.
+                    </div>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-check-circle" style="color: #65A30D;"></i>
+                    <div>
+                      <strong>Bagan Tata Kelola Kolaborasi Siswa yang Eksplisit & Tertata (Slide 10):</strong>
+                      Menampilkan pembagian 35 siswa kelas XI F7 ke dalam 6 kelompok kerja heterogen secara transparan dan estetis, mengeliminasi kebingungan siswa dan memangkas waktu transisi kelas secara signifikan.
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Kolom Kekurangan / Tantangan -->
+              <div class="analysis-box-item con">
+                <div class="analysis-box-title" style="color: #B45309;">
+                  <i class="fa-solid fa-triangle-exclamation" style="color: #F59E0B; font-size: 1.3rem;"></i>
+                  Kelemahan & Tantangan Implementasi Media (Limitations)
+                </div>
+                <ul class="analysis-list">
+                  <li>
+                    <i class="fa-solid fa-circle-xmark" style="color: #F59E0B;"></i>
+                    <div>
+                      <strong>Ketergantungan pada Akses Jaringan Internet untuk Pemindaian QR Code (Slide 12):</strong>
+                      Jika koneksi Wi-Fi sekolah atau sinyal data seluler siswa di ruang kelas XI F7 mengalami gangguan, proses pengisian instrumen asesmen diagnostik daring dapat mengalami hambatan sesaat.
+                    </div>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-circle-xmark" style="color: #F59E0B;"></i>
+                    <div>
+                      <strong>Format Slide Masih Bersifat Grafis Statis (Non-Video Native):</strong>
+                      Dokumen media PDF belum menyertakan pemutar video dokumenter sejarah sidang BPUPK 1 Juni 1945 atau cuplikan berita aktual secara langsung di dalam slide, sehingga guru masih perlu beralih ke peramban untuk memutar video.
+                    </div>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-circle-xmark" style="color: #F59E0B;"></i>
+                    <div>
+                      <strong>Ukuran Berkas PDF Cukup Besar (20.3 MB):</strong>
+                      Tingginya resolusi gambar visual grafis menghasilkan ukuran dokumen yang cukup besar, sehingga membutuhkan waktu beberapa detik untuk memuat (*rendering*) saat diakses melalui gawai dengan spesifikasi dasar.
+                    </div>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-circle-xmark" style="color: #F59E0B;"></i>
+                    <div>
+                      <strong>Potensi Pembacaan Pasif pada Slide Contoh Implementasi (Slide 9):</strong>
+                      Jika tidak dipandu dengan penugasan analitik lembar kerja (LKPD), poin implementasi sila berpotensi sekadar dibaca sepintas oleh siswa tanpa ada perdebatan analitis mengenai studi kasus kontekstual di masyarakat.
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+
+            <!-- Solusi dan Mitigasi Lapangan -->
+            <div class="analysis-box-item solution">
+              <div class="analysis-box-title" style="color: var(--color-primary-dark); font-size: 1.2rem; border-bottom: 1px solid var(--color-border-light); padding-bottom: 0.75rem; margin-bottom: 1.25rem;">
+                <i class="fa-solid fa-lightbulb" style="color: var(--color-accent-lime); font-size: 1.3rem;"></i>
+                Solusi & Rekomendasi Mitigasi Instruksional (Actionable Strategies)
+              </div>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                <div>
+                  <h5 style="color: var(--color-primary-dark); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem;">
+                    1. Penyediaan Alternatif Tautan Pendek (Short-URL) & Salinan Cetak
+                  </h5>
+                  <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+                    Menyertakan teks tautan pendek alternatif (seperti <em>bit.ly/asesmen-pancasila-xi-f7</em>) di samping QR Code serta menyediakan lembar instrumen diagnostik cetak cadangan untuk mengantisipasi siswa yang terkendala kamera ponsel atau kuota internet.
+                  </p>
+                </div>
+                <div>
+                  <h5 style="color: var(--color-primary-dark); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem;">
+                    2. Integrasi Hyperlink Interaktif Menuju Video Studi Kasus Nyata
+                  </h5>
+                  <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+                    Menyematkan tautan klik langsung (*clickable hyperlinks*) pada Slide 9 menuju video studi kasus aktual mengenai kerukunan antarumat beragama dan responsivitas kebijakan publik di era digital.
+                  </p>
+                </div>
+                <div>
+                  <h5 style="color: var(--color-primary-dark); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem;">
+                    3. Kompresi Berkas Digital Versi Web Ringan (Lightweight Edition)
+                  </h5>
+                  <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+                    Menyediakan varian berkas PDF terkompresi berukuran di bawah 3 MB untuk kemudahan transmisi melalui WhatsApp Group kelas atau Google Classroom tanpa mengorbankan ketajaman teks presentasi.
+                  </p>
+                </div>
+                <div>
+                  <h5 style="color: var(--color-primary-dark); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem;">
+                    4. Penerapan Metode Think-Pair-Share pada Pertanyaan Refleksi (Slide 11)
+                  </h5>
+                  <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+                    Menginstruksikan siswa hening selama 2 menit menuliskan jawaban refleksi personal di buku catatan (*Think*), mendiskusikannya dengan teman sebangku (*Pair*), lalu menyepakati komitmen praksis kelas (*Share*).
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- =========================================================
+             3. KAJIAN TEORI MEDIA PEMBELAJARAN
+             ========================================================= -->
+        <article class="analysis-module-card">
+          <div class="analysis-module-header">
+            <div class="analysis-module-num">03</div>
+            <div>
+              <h3 class="analysis-module-title">Kajian Teori & Landasan Keilmuan Media Pembelajaran</h3>
+              <p class="analysis-module-desc">
+                Justifikasi teoritis dari literatur beban kognitif multimedia, pengkodean ganda, konstruktivisme sosial, kerangka TPACK, serta pedagogi kritis reflektif dalam pendidikan kewarganegaraan.
+              </p>
+            </div>
+          </div>
+
+          <div class="analysis-content-body">
+            
+            <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.75; margin-bottom: 2rem;">
+              Desain dan pemanfaatan Media Pembelajaran Siklus 1 ini berpijak pada enam landasan teori ilmiah teknologi pendidikan dan pembelajaran Pendidikan Pancasila:
+            </p>
+
+            <div class="theory-grid">
+              
+              <!-- Teori 1: Mayer Cognitive Theory of Multimedia Learning -->
+              <div class="theory-card">
+                <span class="theory-badge">
+                  <i class="fa-solid fa-brain" style="margin-right: 5px;"></i> Desain Multimedia
+                </span>
+                <h4 class="theory-title">Cognitive Theory of Multimedia Learning (Mayer, 2001)</h4>
+                <p class="theory-desc">
+                  Mayer menekankan bahwa pemrosesan informasi manusia berlangsung melalui dua saluran terpisah (visual dan auditori).
+                  <br><br>
+                  <strong>• Prinsip Modalitas & Redundansi:</strong> Media menghindari penumpukan paragraf panjang, melainkan memadukan teks poin kunci dengan representasi gambar simbolik.
+                  <br>
+                  <strong>• Prinsip Keterpaduan Spasial:</strong> Penempatan definisi etimologis dan ikon 5 ciri ideologi secara bersebelahan meminimalkan beban kognitif asing (*extraneous cognitive load*), sehingga kapasitas memori kerja siswa terfokus pada konstruksi skema pemahaman.
+                </p>
+              </div>
+
+              <!-- Teori 2: Dual Coding Theory Paivio -->
+              <div class="theory-card">
+                <span class="theory-badge" style="background: rgba(184, 224, 35, 0.25);">
+                  <i class="fa-solid fa-code-merge" style="margin-right: 5px;"></i> Psikologi Kognitif
+                </span>
+                <h4 class="theory-title">Dual Coding Theory (Allan Paivio, 1986)</h4>
+                <p class="theory-desc">
+                  Informasi verbal (istilah: <em>Ideologi, Meja Statis, Leitstar Dinamis, Nilai Dasar</em>) dan informasi non-verbal visual (ikon perisai, timbangan keadilan, ilustrasi meja pilar, dan kompas navigasi kapal) dikodekan secara simultan ke dalam sistem memori siswa.
+                  <br><br>
+                  Asosiasi referensial timbal balik ini memperkuat daya retensi jangka panjang (*long-term semantic retention*) siswa terhadap esensi Pancasila dibandingkan metode ceramah verbal semata.
+                </p>
+              </div>
+
+              <!-- Teori 3: TPACK Framework -->
+              <div class="theory-card">
+                <span class="theory-badge">
+                  <i class="fa-solid fa-laptop-code" style="margin-right: 5px;"></i> Teknologi Pendidikan
+                </span>
+                <h4 class="theory-title">Kerangka Kerja TPACK (Mishra & Koehler, 2006)</h4>
+                <p class="theory-desc">
+                  Media ini merefleksikan konvergensi harmonis tiga pilar keilmuan guru profesional:
+                  <br><br>
+                  <strong>• Content Knowledge (CK):</strong> Penguasaan substansi filosofis Pancasila, etika bernegara, dan hermeneutika Meja Statis & Leitstar Dinamis.
+                  <br>
+                  <strong>• Pedagogical Knowledge (PK):</strong> Desain alur Problem-Based Learning (PBL), teknik pengelompokan kooperatif, dan fasilitasi refleksi nilai.
+                  <br>
+                  <strong>• Technological Knowledge (TK):</strong> Keterampilan merancang slide Canva berkualitas tinggi dan menyematkan QR Code asesmen digital interaktif.
+                </p>
+              </div>
+
+              <!-- Teori 4: Social Constructivism Vygotsky -->
+              <div class="theory-card">
+                <span class="theory-badge" style="background: rgba(18, 56, 45, 0.08);">
+                  <i class="fa-solid fa-users-viewfinder" style="margin-right: 5px;"></i> Konstruktivisme Sosial
+                </span>
+                <h4 class="theory-title">Social Constructivism & ZPD (Lev Vygotsky, 1978)</h4>
+                <p class="theory-desc">
+                  Pembentukan makna tidak terjadi dalam isolasi kognitif individual, melainkan melalui interaksi sosiokultural:
+                  <br><br>
+                  <strong>• Zone of Proximal Development (ZPD):</strong> Bagan pembagian 6 kelompok heterogen di Slide 10 memfasilitasi interaksi antar-siswa dengan tingkat kesiapan belajar beragam.
+                  <br>
+                  <strong>• Scaffolding Sosial:</strong> Siswa yang lebih cakap membantu rekannya dalam membedah kasus implementasi ideologi, menghasilkan pemahaman konsep yang lebih matang melalui dialog teman sebaya.
+                </p>
+              </div>
+
+              <!-- Teori 5: Meaningful Learning Theory Ausubel -->
+              <div class="theory-card">
+                <span class="theory-badge">
+                  <i class="fa-solid fa-sitemap" style="margin-right: 5px;"></i> Belajar Bermakna
+                </span>
+                <h4 class="theory-title">Meaningful Learning & Advance Organizer (Ausubel, 1968)</h4>
+                <p class="theory-desc">
+                  Belajar bermakna terjadi ketika informasi baru dihubungkan secara substantif dengan struktur kognitif yang telah dimiliki siswa:
+                  <br><br>
+                  Slide 2 (Etimologi) dan Slide 8 (Perbandingan Meja Statis vs Leitstar Dinamis) berfungsi sebagai <em>Advance Organizer</em>. Dengan menganalogikan ideologi sebagai "meja penopang" dan "bintang penuntun kapal", siswa memiliki jangkar konseptual (*cognitive anchor*) untuk memahami fungsi kenegaraan yang lebih kompleks secara logis, bukan sekadar menghafal kata-kata mati.
+                </p>
+              </div>
+
+              <!-- Teori 6: Critical Pedagogy & Reflective Education -->
+              <div class="theory-card">
+                <span class="theory-badge" style="background: rgba(184, 224, 35, 0.25);">
+                  <i class="fa-solid fa-pen-to-square" style="margin-right: 5px;"></i> Pedagogi Kritis & Refleksi
+                </span>
+                <h4 class="theory-title">Critical Pedagogy & Reflective Practice (Freire, 1970 & Schön, 1983)</h4>
+                <p class="theory-desc">
+                  Pendidikan Pancasila bukan sekadar transmisi doktrinal (*banking education*), melainkan penyadaran kritis (*conscientization*):
+                  <br><br>
+                  Pertanyaan pemantik pada Slide 11 (<em>"Bagaimana kamu mengamalkan nilai Pancasila dalam kehidupan sehari-hari?"</em>) menstimulasi proses <em>Reflection-on-Action</em>. Siswa ditantang menghubungkan konsep abstrak ideologi negara dengan aksi moral personal dalam menjaga toleransi, integritas, dan kebajikan kewarganegaraan (*civic virtue*).
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+        </article>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- =================================================================
+       5. AGENCY FOOTER
+       ================================================================= -->
+  <footer class="footer-agency">
+    <div class="container">
+      <div class="footer-agency-grid">
+        
+        <!-- Brand Info -->
+        <div class="footer-agency-col">
+          <div class="footer-agency-brand" style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 1rem;">
+            <img src="../logo.png" alt="Logo UAD" class="footer-agency-logo-img" style="width: 46px; height: 46px; object-fit: contain; background: transparent; padding: 0; border: none; box-shadow: none; flex-shrink: 0;" onerror="this.style.display='none'">
+            <div class="footer-agency-brand-text">
+              <span class="title" style="display: block; font-size: 1.15rem; font-weight: 800; color: #ffffff;">Wahyu Surya Al Fikri, S.Pd.</span>
+              <span class="sub" style="display: block; font-size: 0.8rem; color: #94A3B8; font-weight: 600;">PPG Calon Guru Pendidikan Pancasila UAD</span>
+            </div>
+          </div>
+          <p class="footer-agency-bio" style="color: #94A3B8; font-size: 0.88rem; line-height: 1.7;">
+            Portofolio resmi PPL Terbimbing Program Pendidikan Profesi Guru (PPG) Calon Guru Bidang Studi Pendidikan Pancasila Universitas Ahmad Dahlan (UAD) di SMA Negeri 4 Yogyakarta.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-agency-col">
+          <h4 class="footer-agency-col-title">Navigasi Portofolio</h4>
+          <ul class="footer-agency-links">
+            <li><a href="../index.html"><i class="fa-solid fa-arrow-right" style="font-size:0.75rem; margin-right:6px;"></i> Beranda Utama</a></li>
+            <li><a href="../profil.html"><i class="fa-solid fa-arrow-right" style="font-size:0.75rem; margin-right:6px;"></i> Profil Lengkap Mahasiswa</a></li>
+            <li><a href="rancangan.html"><i class="fa-solid fa-arrow-right" style="font-size:0.75rem; margin-right:6px;"></i> Siklus 1 (UTS PPL)</a></li>
+            <li><a href="../UAS/rancangan.html"><i class="fa-solid fa-arrow-right" style="font-size:0.75rem; margin-right:6px;"></i> Siklus 2 (UAS PPL)</a></li>
+            <li><a href="../non-mengajar.html"><i class="fa-solid fa-arrow-right" style="font-size:0.75rem; margin-right:6px;"></i> Kegiatan Non-Mengajar</a></li>
+            <li><a href="../dokumentasi.html"><i class="fa-solid fa-arrow-right" style="font-size:0.75rem; margin-right:6px;"></i> Galeri Dokumentasi</a></li>
+          </ul>
+        </div>
+
+        <!-- Perangkat PPL -->
+        <div class="footer-agency-col">
+          <h4 class="footer-agency-col-title">Perangkat Pembelajaran</h4>
+          <ul class="footer-agency-links">
+            <li><a href="rancangan.html"><i class="fa-solid fa-check" style="color:var(--color-accent-lime); font-size:0.75rem; margin-right:6px;"></i> Modul Ajar Siklus 1 & 2</a></li>
+            <li><a href="media.html"><i class="fa-solid fa-check" style="color:var(--color-accent-lime); font-size:0.75rem; margin-right:6px;"></i> Media Berbasis TPACK</a></li>
+            <li><a href="instrumen.html"><i class="fa-solid fa-check" style="color:var(--color-accent-lime); font-size:0.75rem; margin-right:6px;"></i> Instrumen Asesmen Pancasila</a></li>
+            <li><a href="video.html"><i class="fa-solid fa-check" style="color:var(--color-accent-lime); font-size:0.75rem; margin-right:6px;"></i> Video Praktik Pembelajaran</a></li>
+          </ul>
+        </div>
+
+        <!-- Kontak & Alamat -->
+        <div class="footer-agency-col">
+          <h4 class="footer-agency-col-title">LPTK & Kontak Resmi</h4>
+          <p style="font-size: 0.88rem; color: #94A3B8; margin-bottom: 0.75rem;">
+            <i class="fa-solid fa-location-dot" style="color: var(--color-accent-lime); margin-right: 6px;"></i> Kampus Utama UAD, Jl. Ringroad Selatan, Tamanan, Banguntapan, Bantul, D.I. Yogyakarta 55191
+          </p>
+          <p style="font-size: 0.88rem; color: #94A3B8; margin-bottom: 1.25rem;">
+            <i class="fa-solid fa-envelope" style="color: var(--color-accent-lime); margin-right: 6px;"></i> wahyu.ppg@uad.ac.id
+          </p>
+          <div style="display: flex; gap: 0.6rem;">
+            <a href="javascript:void(0)" onclick="showToast('YouTube')" class="social-circle-btn"><i class="fa-brands fa-youtube"></i></a>
+            <a href="javascript:void(0)" onclick="showToast('Instagram')" class="social-circle-btn"><i class="fa-brands fa-instagram"></i></a>
+            <a href="javascript:void(0)" onclick="showToast('LinkedIn')" class="social-circle-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom-strip">
+        <div>
+          &copy; 2026 <strong>Wahyu Surya Al Fikri, S.Pd.</strong> All Rights Reserved • PPG Calon Guru Pendidikan Pancasila Universitas Ahmad Dahlan (UAD).
+        </div>
+        <div>
+          Tema Desain: Modern Clean Green & Lime Agency Style
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

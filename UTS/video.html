@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UTS - Video Praktik (Siklus 1: Pancasila dalam Tindakan) | Wahyu Surya Al Fikri, S.Pd. - UAD</title>
+  
+  <link rel="icon" type="image/png" href="../logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+
+  <style>
+    .video-showcase-card {
+      background: #FFFFFF;
+      border: 1px solid var(--color-border-light);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      margin-bottom: 5rem;
+    }
+    .video-main-layout {
+      display: grid;
+      grid-template-columns: 1.65fr 1fr;
+      background: #0B241D;
+    }
+    .video-screen-wrapper {
+      position: relative;
+      background: #000000;
+      min-height: 460px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .video-screen-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 460px;
+      border: none;
+    }
+    .video-sidebar-panel {
+      padding: 2.2rem;
+      background: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      border-left: 1px solid var(--color-border-light);
+    }
+    @media (max-width: 991px) {
+      .video-main-layout {
+        grid-template-columns: 1fr;
+      }
+      .video-screen-wrapper {
+        min-height: 320px;
+      }
+      .video-screen-wrapper iframe {
+        min-height: 320px;
+      }
+      .video-sidebar-panel {
+        border-left: none;
+        border-top: 1px solid var(--color-border-light);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =================================================================
+       1. TOPBAR (Contact Info & Angled Lime Social Strip)
+       ================================================================= -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-contact">
+        <a href="tel:+62859195374310" class="topbar-item">
+          <i class="fa-solid fa-phone"></i>
+          <span>+62 859-1953-74310</span>
+        </a>
+        <a href="mailto:wahyu.ppg@uad.ac.id" class="topbar-item">
+          <i class="fa-solid fa-envelope"></i>
+          <span>wahyu.ppg@uad.ac.id</span>
+        </a>
+        <div class="topbar-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Universitas Ahmad Dahlan (UAD) • D.I. Yogyakarta</span>
+        </div>
+      </div>
+
+      <div class="topbar-social-wrap">
+        <a href="javascript:void(0)" onclick="showToast('Facebook Wahyu Surya Al Fikri')" class="social-circle-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="javascript:void(0)" onclick="showToast('Twitter / X')" class="social-circle-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="javascript:void(0)" onclick="showToast('Instagram Wahyu Surya Al Fikri')" class="social-circle-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="javascript:void(0)" onclick="showToast('Kanal YouTube Pembelajaran Pendidikan Pancasila')" class="social-circle-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="javascript:void(0)" onclick="showToast('LinkedIn Wahyu Surya Al Fikri')" class="social-circle-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =================================================================
+       2. MAIN NAVBAR
+       ================================================================= -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="../index.html" class="brand">
+        <img src="../logo.png" alt="Logo UAD" class="brand-logo-img" onerror="this.style.display='none'">
+        <div>
+          <span class="brand-title">Wahyu Surya Al Fikri, S.Pd.</span>
+          <span class="brand-subtitle">PPG Calon Guru Pendidikan Pancasila UAD</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="../index.html" class="nav-link">Beranda</a></li>
+          <li><a href="../profil.html" class="nav-link">Profil</a></li>
+          
+          <!-- UTS Dropdown (Active) -->
+          <li class="nav-item-dropdown">
+            <a href="javascript:void(0)" class="nav-link dropdown-toggle active" role="button">
+              UTS <i class="fa-solid fa-chevron-down chevron-icon"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="rancangan.html" class="dropdown-item"><i class="fa-solid fa-book-bookmark"></i> Rancangan</a></li>
+              <li><a href="materi.html" class="dropdown-item"><i class="fa-solid fa-book-open"></i> Materi</a></li>
+              <li><a href="media.html" class="dropdown-item"><i class="fa-solid fa-photo-film"></i> Media</a></li>
+              <li><a href="instrumen.html" class="dropdown-item"><i class="fa-solid fa-clipboard-check"></i> Instrumen</a></li>
+              <li><a href="video.html" class="dropdown-item active" style="font-weight:700;"><i class="fa-solid fa-circle-play"></i> Video</a></li>
+            </ul>
+          </li>
+
+          <!-- UAS Dropdown -->
+          <li class="nav-item-dropdown">
+            <a href="javascript:void(0)" class="nav-link dropdown-toggle" role="button">
+              UAS <i class="fa-solid fa-chevron-down chevron-icon"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="../UAS/rancangan.html" class="dropdown-item"><i class="fa-solid fa-book-bookmark"></i> Rancangan</a></li>
+              <li><a href="../UAS/materi.html" class="dropdown-item"><i class="fa-solid fa-book-open"></i> Materi</a></li>
+              <li><a href="../UAS/media.html" class="dropdown-item"><i class="fa-solid fa-photo-film"></i> Media</a></li>
+              <li><a href="../UAS/instrumen.html" class="dropdown-item"><i class="fa-solid fa-clipboard-check"></i> Instrumen</a></li>
+              <li><a href="../UAS/video.html" class="dropdown-item"><i class="fa-solid fa-circle-play"></i> Video</a></li>
+            </ul>
+          </li>
+
+          <li><a href="../non-mengajar.html" class="nav-link">Non-Mengajar</a></li>
+          <li><a href="../dokumentasi.html" class="nav-link">Dokumentasi</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="../index.html" class="btn btn-outline-dark btn-sm">
+          <i class="fa-solid fa-arrow-left"></i> Beranda
+        </a>
+        <button class="mobile-toggle" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =================================================================
+       3. SUBPAGE HERO HEADER
+       ================================================================= -->
+  <section class="subpage-hero-agency">
+    <div class="container">
+      <div class="badge-pill-group">
+        <span class="twin-dot-icon">
+          <span></span><span></span>
+        </span>
+        <span>UTS • SIKLUS 1 PPL TERBIMBING</span>
+      </div>
+
+      <h1 style="font-size: clamp(2.2rem, 4vw, 3.2rem); color: var(--color-primary-dark); margin-bottom: 0.8rem;">
+        Video Praktik Pembelajaran Pendidikan Pancasila (Siklus 1: Pancasila dalam Tindakan)
+      </h1>
+      <p style="max-width: 820px; font-size: 1.05rem; line-height: 1.6; color: var(--color-text-muted);">
+        Dokumentasi rekaman video pelaksanaan pembelajaran otentik materi <strong>Pancasila dalam Tindakan</strong> Fase F Kelas XI di SMA Negeri 4 Yogyakarta, dilengkapi analisis sintaks pedagogis, evaluasi reflektif kinerja guru, dan landasan keilmuan pendidikan jasmani.
+      </p>
+
+      <div class="subpage-breadcrumb">
+        <a href="../index.html">Beranda</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span>Siklus 1 (UTS)</span>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span style="color: var(--color-primary-dark); font-weight: 700;">Video Praktik</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================================================================
+       4. MAIN CONTENT: VIDEO PLAYER & COMPREHENSIVE ANALYSIS
+       ================================================================= -->
+  <main style="padding: 4rem 0 6rem; background: #FFFFFF;">
+    <div class="container">
+      
+      <!-- =============================================================
+           A. INTERACTIVE VIDEO PLAYER SECTION
+           ============================================================= -->
+      <section style="margin-bottom: 5rem;">
+        <div class="section-agency-head" style="margin-bottom: 2rem;">
+          <div class="badge-pill-group">
+            <span class="twin-dot-icon">
+              <span></span><span></span>
+            </span>
+            <span>REKAMAN VIDEO SIKLUS 1</span>
+          </div>
+          <h2 class="section-agency-title">Pemutaran Video Praktik Mengajar (Google Drive Stream)</h2>
+          <p class="section-agency-subtitle">
+            Saksikan rekaman utuh pelaksanaan pembelajaran praktik senam alat lompat kangkang berdurasi terstandar yang diselenggarakan di GOR / Lapangan Olahraga SMA Negeri 4 Yogyakarta.
+          </p>
+        </div>
+
+        <!-- Video Showcase Container Card -->
+        <div class="video-showcase-card">
+          
+          <!-- Toolbar -->
+          <div class="pdf-viewer-toolbar">
+            <div class="pdf-toolbar-info">
+              <div class="pdf-toolbar-icon" style="background: rgba(184, 224, 35, 0.15); color: var(--color-accent-lime);">
+                <i class="fa-solid fa-circle-play"></i>
+              </div>
+              <div>
+                <div class="pdf-toolbar-title">
+                  Video Praktik: Pembelajaran Pancasila dalam Tindakan (Siklus 1)
+                </div>
+                <div class="pdf-toolbar-sub">
+                  Praktikan: <strong>Wahyu Surya Al Fikri, S.Pd.</strong> • SMA Negeri 4 Yogyakarta • Fase F / Kelas XI SMA • PPL PPG UAD
+                </div>
+              </div>
+            </div>
+
+            <div class="pdf-toolbar-actions">
+              <span class="tag-pill" style="background: rgba(184, 224, 35, 0.2); color: #B8E023; font-weight: 700; border: 1px solid rgba(184, 224, 35, 0.4); padding: 6px 14px; font-size: 0.78rem;">
+                <i class="fa-solid fa-circle-check" style="margin-right: 5px;"></i> Terverifikasi LPTK UAD
+              </span>
+              <a href="https://drive.google.com/file/d/1jb563L4hW5QZWdhceMtQFwhY7aDQ-BC4/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-primary-lime btn-sm">
+                <i class="fa-brands fa-google-drive"></i> Buka di Google Drive
+              </a>
+              <a href="https://drive.google.com/file/d/1jb563L4hW5QZWdhceMtQFwhY7aDQ-BC4/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light btn-sm" style="border-color: rgba(255,255,255,0.4); color: #FFFFFF;">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Layar Penuh
+              </a>
+            </div>
+          </div>
+
+          <!-- Video Display Layout: Screen + Sidebar -->
+          <div class="video-main-layout">
+            
+            <!-- Video Screen Wrapper with Google Drive Preview Iframe -->
+            <div class="video-screen-wrapper">
+              <iframe 
+                src="https://drive.google.com/file/d/1jb563L4hW5QZWdhceMtQFwhY7aDQ-BC4/preview" 
+                title="Video Praktik Pembelajaran Lompat Kangkang Wahyu Surya Al Fikri"
+                allow="autoplay; fullscreen"
+                allowfullscreen>
+                <p style="padding: 2rem; color: #FFFFFF; text-align: center;">
+                  Peramban Anda tidak mendukung pemutaran video langsung. Silakan 
+                  <a href="https://drive.google.com/file/d/1jb563L4hW5QZWdhceMtQFwhY7aDQ-BC4/view?usp=drive_link" target="_blank" style="color: var(--color-accent-lime); font-weight: bold; text-decoration: underline;">
+                    Klik di sini untuk menonton video di Google Drive
+                  </a>.
+                </p>
+              </iframe>
+            </div>
+
+            <!-- Video Sidebar & Timeline Sintaks -->
+            <div class="video-sidebar-panel">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.5rem;">
+                <h3 style="font-size:1.2rem; color:var(--color-primary-dark); font-weight:800; margin:0;">
+                  Sintaks Pembelajaran
+                </h3>
+                <span class="time-badge" style="background:var(--color-primary-dark); color:var(--color-accent-lime); font-weight:800; font-size:0.75rem; padding:4px 10px; border-radius:var(--radius-pill);">
+                  Video Praktik Lapangan
+                </span>
+              </div>
+              <p style="font-size:0.85rem; color:var(--color-text-muted); margin-bottom:1.25rem;">
+                Materi: Lompat Kangkang Peti Berjenjang • Fase F Kelas XI SMA Negeri 4 Yogyakarta
+              </p>
+
+              <!-- Timeline Items -->
+              <div class="timeline-list">
+                
+                <div class="timeline-item active">
+                  <span class="time-badge">Fase 1</span>
+                  <div>
+                    <strong style="font-size:0.88rem; color:var(--color-primary-dark); display:block; margin-bottom:2px;">
+                      Pendahuluan & Apersepsi Keberanian
+                    </strong>
+                    <span style="font-size:0.8rem; color:var(--color-text-muted); line-height:1.5; display:block;">
+                      Salam pembuka, doa bersama, cek presensi, penyampaian tujuan pembelajaran, pengondisian rasa aman, dan briefing budaya <em>peer spotting</em>.
+                    </span>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <span class="time-badge">Fase 2</span>
+                  <div>
+                    <strong style="font-size:0.88rem; color:var(--color-primary-dark); display:block; margin-bottom:2px;">
+                      Pemanasan Dinamis & Drill Pengantar
+                    </strong>
+                    <span style="font-size:0.8rem; color:var(--color-text-muted); line-height:1.5; display:block;">
+                      Peregangan statis-dinamis pergelangan tangan & tungkai kaki, dilanjutkan drill koordinasi lari lompat melewati rintangan rendah (<em>hurdle</em>).
+                    </span>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <span class="time-badge">Fase 3</span>
+                  <div>
+                    <strong style="font-size:0.88rem; color:var(--color-primary-dark); display:block; margin-bottom:2px;">
+                      Kegiatan Inti & Diferensiasi Berjenjang
+                    </strong>
+                    <span style="font-size:0.8rem; color:var(--color-text-muted); line-height:1.5; display:block;">
+                      Praktik tolakan papan pegas, dorongan tangan kokoh di atas peti, pembagian kelompok berdasarkan level ketinggian peti (2, 3, 4 balok), serta umpan balik korektif guru.
+                    </span>
+                  </div>
+                </div>
+
+                <div class="timeline-item">
+                  <span class="time-badge">Fase 4</span>
+                  <div>
+                    <strong style="font-size:0.88rem; color:var(--color-primary-dark); display:block; margin-bottom:2px;">
+                      Pendinginan, Evaluasi & Refleksi
+                    </strong>
+                    <span style="font-size:0.8rem; color:var(--color-text-muted); line-height:1.5; display:block;">
+                      Cooling down relaksasi otot tungkai, evaluasi bersama mengenai kontrol pendaratan mengeper (fleksi 45°), apresiasi keberanian siswa, dan doa penutup.
+                    </span>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Action Link -->
+              <div style="margin-top:auto; padding-top:1.5rem;">
+                <a href="https://drive.google.com/file/d/1jb563L4hW5QZWdhceMtQFwhY7aDQ-BC4/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn btn-primary-dark btn-sm" style="width: 100%; text-align: center; justify-content: center;">
+                  <i class="fa-brands fa-google-drive"></i> Tonton di Tab Baru Google Drive
+                </a>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Footer Metadata Bar -->
+          <div style="background: #F8F9F5; padding: 1.25rem 2rem; border-top: 1px solid var(--color-border-light); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+            <div style="display: flex; align-items: center; gap: 1.8rem; flex-wrap: wrap;">
+              <div style="font-size: 0.85rem; color: var(--color-text-muted);">
+                <i class="fa-solid fa-school" style="color: var(--color-primary-dark); margin-right: 6px;"></i>
+                <strong>Lokasi Praktik:</strong> SMA Negeri 4 Yogyakarta
+              </div>
+              <div style="font-size: 0.85rem; color: var(--color-text-muted);">
+                <i class="fa-solid fa-clapperboard" style="color: var(--color-primary-dark); margin-right: 6px;"></i>
+                <strong>Format Video:</strong> Uji Kinerja (UKin) PPG Pendidikan Pancasila
+              </div>
+              <div style="font-size: 0.85rem; color: var(--color-text-muted);">
+                <i class="fa-solid fa-cloud-arrow-up" style="color: var(--color-primary-dark); margin-right: 6px;"></i>
+                <strong>Streaming:</strong> Google Drive Cloud HD
+              </div>
+              <div style="font-size: 0.85rem; color: var(--color-text-muted);">
+                <i class="fa-solid fa-shield-halved" style="color: var(--color-primary-dark); margin-right: 6px;"></i>
+                <strong>Protokol:</strong> Active Spotting & Matras Standard
+              </div>
+            </div>
+            <div>
+              <a href="javascript:void(0)" onclick="showToast('Video Resmi PPL Terbimbing PPG UAD 2026')" style="font-size: 0.82rem; color: var(--color-primary-dark); font-weight: 700; text-decoration: none;">
+                <i class="fa-solid fa-circle-check" style="color: var(--color-accent-lime); margin-right: 5px;"></i> PPG Calon Guru Gelombang 1
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- =============================================================
+           B. COMPREHENSIVE ANALYSIS OF THE TEACHING VIDEO
+           ============================================================= -->
+      <section>
+        <div class="section-agency-head" style="margin-bottom: 3.5rem;">
+          <div class="badge-pill-group">
+            <span class="twin-dot-icon">
+              <span></span><span></span>
+            </span>
+            <span>ANALISIS KOMPREHENSIF PRAKTIK PEMBELAJARAN</span>
+          </div>
+          <h2 class="section-agency-title">Analisis Akademik & Refleksi Kritis Video Praktik</h2>
+          <p class="section-agency-subtitle">
+            Kajian reflektif dan evaluasi pedagogis terhadap video rekaman pelaksanaan pembelajaran Siklus 1, menelaah keselarasan sintaks mengajar di lapangan nyata, evaluasi kelebihan-kelemahan, serta justifikasi ilmiah supervisi klinis keolahragaan.
+          </p>
+        </div>
+
+        <!-- =========================================================
+             1. KONTEKS DAN TUJUAN
+             ========================================================= -->
+        <article class="analysis-module-card">
+          <div class="analysis-module-header">
+            <div class="analysis-module-num">01</div>
+            <div>
+              <h3 class="analysis-module-title">Konteks dan Tujuan Video Praktik Pembelajaran</h3>
+              <p class="analysis-module-desc">
+                Tinjauan situasi pembelajaran lapangan senam alat di sekolah mitra, dekonstruksi alur sintaks mengajar dari apersepsi hingga refleksi, serta sasaran evaluasi kompetensi guru model.
+              </p>
+            </div>
+          </div>
+
+          <div class="analysis-content-body">
+            
+            <!-- Konteks Lapangan & Situasi Belajar -->
+            <div style="margin-bottom: 2.5rem;">
+              <h4 style="font-size: 1.25rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.65rem;">
+                <i class="fa-solid fa-chalkboard-user" style="color: var(--color-primary-dark); font-size: 1.1rem;"></i>
+                A. Konteks Lapangan Pembelajaran & Kondisi Otentik Peserta Didik
+              </h4>
+              <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.75; margin-bottom: 1.2rem;">
+                Video praktik pembelajaran ini merekam interaksi nyata antara mahasiswa PPG Calon Guru (Wahyu Surya Al Fikri, S.Pd.) dengan peserta didik <strong>Fase F (Kelas XI SMA Negeri 4 Yogyakarta)</strong> pada materi senam lantai/alat Lompat Kangkang (<em>Vaulting</em>). Beberapa konteks esensial yang terdokumentasi dalam video meliputi:
+              </p>
+              
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem;">
+                <div style="background: #F8F9F5; border-radius: var(--radius-md); padding: 1.4rem; border-left: 4px solid var(--color-primary-dark);">
+                  <strong style="display: block; color: var(--color-primary-dark); font-size: 0.95rem; margin-bottom: 0.4rem;">
+                    <i class="fa-solid fa-heart-pulse" style="margin-right: 6px;"></i> Pengelolaan Emosi & Keberanian Siswa (Managing Anxiety)
+                  </strong>
+                  <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+                    Video memperlihatkan bagaimana guru mengelola ketakutan awal peserta didik terhadap peti lompat kayu yang keras melalui instruksi verbal yang menenangkan, pengondisian rasa aman, dan penataan matras pendaratan berlapis busa tebal.
+                  </p>
+                </div>
+
+                <div style="background: #F8F9F5; border-radius: var(--radius-md); padding: 1.4rem; border-left: 4px solid #F59E0B;">
+                  <strong style="display: block; color: var(--color-primary-dark); font-size: 0.95rem; margin-bottom: 0.4rem;">
+                    <i class="fa-solid fa-layer-group" style="margin-right: 6px; color: #F59E0B;"></i> Implementasi Diferensiasi Level Peti (Tiered Practice)
+                  </strong>
+                  <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+                    Terekam jelas penerapan strategi berdiferensiasi di mana siswa diberi kebebasan memilih ketinggian peti lompat (Level 2 peti hingga 4 peti) sesuai dengan keyakinan motorik dan kapasitas fisiknya masing-masing tanpa ada paksaan yang berisiko cedera.
+                  </p>
+                </div>
+
+                <div style="background: #F8F9F5; border-radius: var(--radius-md); padding: 1.4rem; border-left: 4px solid var(--color-accent-lime);">
+                  <strong style="display: block; color: var(--color-primary-dark); font-size: 0.95rem; margin-bottom: 0.4rem;">
+                    <i class="fa-solid fa-hand-holding-hand" style="margin-right: 6px;"></i> Penerapan Active Peer Spotting di Sisi Matras
+                  </strong>
+                  <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+                    Guru melatih dan menempatkan duta keselamatan siswa (<em>spotter</em>) di sisi peti lompat untuk mendampingi rekan yang melompat, menumbuhkan dimensi Profil Pelajar Pancasila Gotong Royong dan kepedulian terhadap keselamatan bersama.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sasaran dan Tujuan Dokumentasi Video -->
+            <div>
+              <h4 style="font-size: 1.25rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.65rem;">
+                <i class="fa-solid fa-bullseye" style="color: var(--color-primary-dark); font-size: 1.1rem;"></i>
+                B. Sasaran Dokumentasi Video & Tujuan Evaluasi Reflektif
+              </h4>
+              <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7; margin-bottom: 1.4rem;">
+                Perekaman video praktik mengajar ini memiliki empat tujuan strategis dalam kerangka program PPG Calon Guru:
+              </p>
+
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.4rem;">
+                
+                <div style="background: #FFFFFF; border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-sm);">
+                  <div style="display: inline-block; background: var(--color-primary-dark); color: var(--color-accent-lime); font-size: 0.72rem; font-weight: 800; padding: 3px 8px; border-radius: 4px; margin-bottom: 0.75rem;">
+                    SASARAN 1 • UJI KINERJA (UKIN)
+                  </div>
+                  <h5 style="font-size: 1rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.5rem;">
+                    Pemenuhan Standar Portofolio Profesi
+                  </h5>
+                  <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+                    Menyediakan bukti otentik unjuk kemampuan mengajar calon guru secara komprehensif bagi Guru Pamong dan Dosen Pembimbing Lapangan (DPL) Universitas Ahmad Dahlan (UAD) sesuai rubrik penilaian UKin Kemendikbudristek.
+                  </p>
+                </div>
+
+                <div style="background: #FFFFFF; border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-sm);">
+                  <div style="display: inline-block; background: var(--color-primary-dark); color: var(--color-accent-lime); font-size: 0.72rem; font-weight: 800; padding: 3px 8px; border-radius: 4px; margin-bottom: 0.75rem;">
+                    SASARAN 2 • OBSERVATIONAL ANALYSIS
+                  </div>
+                  <h5 style="font-size: 1rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.5rem;">
+                    Evaluasi Manajemen Waktu Belajar (ALT-PE)
+                  </h5>
+                  <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+                    Menganalisis rasio <em>Active Learning Time</em> siswa selama pembelajaran berlangsung, memastikan siswa memperoleh kesempatan gerak yang tinggi dan meminimalisir waktu antrean pasif di lapangan olahraga.
+                  </p>
+                </div>
+
+                <div style="background: #FFFFFF; border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-sm);">
+                  <div style="display: inline-block; background: var(--color-primary-dark); color: var(--color-accent-lime); font-size: 0.72rem; font-weight: 800; padding: 3px 8px; border-radius: 4px; margin-bottom: 0.75rem;">
+                    SASARAN 3 • SUPERVISI KLINIS
+                  </div>
+                  <h5 style="font-size: 1rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.5rem;">
+                    Refleksi Pola Komunikasi Instruksional
+                  </h5>
+                  <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+                    Menilai kejelasan instruksi verbal, bahasa tubuh, penggunaan isyarat peluit, serta ketepatan pemberian umpan balik korektif (<em>feedback loop</em>) guru saat mendampingi siswa yang mengalami kesalahan teknik.
+                  </p>
+                </div>
+
+                <div style="background: #FFFFFF; border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-sm);">
+                  <div style="display: inline-block; background: #65A30D; color: #FFFFFF; font-size: 0.72rem; font-weight: 800; padding: 3px 8px; border-radius: 4px; margin-bottom: 0.75rem;">
+                    SASARAN 4 • PRAKTIK BAIK (BEST PRACTICE)
+                  </div>
+                  <h5 style="font-size: 1rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.5rem;">
+                    Dokumentasi Pembelajaran Berpusat Siswa
+                  </h5>
+                  <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+                    Menjadi artefak portofolio digital yang dapat diakses publik sebagai referensi penerapan pembelajaran senam alat yang ramah, aman, dan memerdekakan siswa di jenjang Sekolah Menengah Atas.
+                  </p>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- =========================================================
+             2. KELEBIHAN DAN KEKURANGAN
+             ========================================================= -->
+        <article class="analysis-module-card">
+          <div class="analysis-module-header">
+            <div class="analysis-module-num">02</div>
+            <div>
+              <h3 class="analysis-module-title">Kelebihan dan Kekurangan Video Praktik Pembelajaran</h3>
+              <p class="analysis-module-desc">
+                Evaluasi kritis terhadap keunggulan keterampilan pedagogik yang ditampilkan, keterbatasan teknis rekaman di lapangan olahraga, serta strategi mitigasi solusi lapangan.
+              </p>
+            </div>
+          </div>
+
+          <div class="analysis-content-body">
+            
+            <!-- 2-Column Grid: Pro vs Con -->
+            <div class="analysis-grid-2col">
+              
+              <!-- Kolom Kelebihan -->
+              <div class="analysis-box-item pro">
+                <div class="analysis-box-title" style="color: var(--color-primary-dark);">
+                  <i class="fa-solid fa-circle-check" style="color: #65A30D; font-size: 1.3rem;"></i>
+                  Kelebihan & Kekuatan Praktik Mengajar (Strengths)
+                </div>
+                <ul class="analysis-list">
+                  <li>
+                    <i class="fa-solid fa-check-circle" style="color: #65A30D;"></i>
+                    <div>
+                      <strong>Demonstrasi Teknik Gerak yang Presisi & Kredibel:</strong>
+                      Sebagai lulusan S1 Pendidikan Kepelatihan Olahraga (PKO) Universitas Ahmad Dahlan (UAD) dengan keahlian kondisi fisik, guru mendemonstrasikan fase tolakan dan tumpuan tangan dengan biomekanika yang sangat akurat, memberikan <em>visual blueprint</em> yang kuat bagi siswa.
+                    </div>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-check-circle" style="color: #65A30D;"></i>
+                    <div>
+                      <strong>Komunikasi Instruksional yang Positif & Memotivasi:</strong>
+                      Guru secara konsisten memberikan penguatan verbal (<em>positive reinforcement</em>) kepada siswa yang ragu-ragu melompat, mereduksi ketegangan psikologis siswa putri secara signifikan.
+                    </div>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-check-circle" style="color: #65A30D;"></i>
+                    <div>
+                      <strong>Manajemen Keselamatan Aktif yang Berlapis (Multi-Tier Safety):</strong>
+                      Guru selalu bersiaga di samping matras pada titik tumpu kritis (<em>critical spotting point</em>), sekaligus memberdayakan siswa lain sebagai pengawas sekunder di zona pendaratan.
+                    </div>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-check-circle" style="color: #65A30D;"></i>
+                    <div>
+                      <strong>Alur Sintaks Terstruktur Rapi Sesuai Modul Ajar:</strong>
+                      Tahapan kegiatan mengalir runtut dari apersepsi pemanasan, drill rintangan pengantar, praktik inti berjenjang, hingga pendinginan dan evaluasi tanpa ada fase yang terlewat.
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Kolom Kekurangan / Tantangan -->
+              <div class="analysis-box-item con">
+                <div class="analysis-box-title" style="color: #B45309;">
+                  <i class="fa-solid fa-triangle-exclamation" style="color: #F59E0B; font-size: 1.3rem;"></i>
+                  Kelemahan & Tantangan Teknis Rekaman (Limitations)
+                </div>
+                <ul class="analysis-list">
+                  <li>
+                    <i class="fa-solid fa-circle-xmark" style="color: #F59E0B;"></i>
+                    <div>
+                      <strong>Gangguan Akustik Lingkungan (Acoustic Echo & Background Noise):</strong>
+                      Rekaman di lapangan olahraga terbuka/semi-indoor rentan terhadap gangguan pantulan gema dan desau angin, sehingga pada beberapa segmen penjelasan guru terdengar sedikit terdistorsi jika tanpa mikrofon nirkabel clip-on.
+                    </div>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-circle-xmark" style="color: #F59E0B;"></i>
+                    <div>
+                      <strong>Sudut Pandang Kamera Statis Terbatas (Single-Angle Limitation):</strong>
+                      Penggunaan kamera utama statis pada tripod terkadang kehilangan detail sudut perkenaan tangan saat tubuh siswa melintas di atas peti lompat dengan kecepatan tinggi.
+                    </div>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-circle-xmark" style="color: #F59E0B;"></i>
+                    <div>
+                      <strong>Waktu Tunggu Antrean Gerak (Waiting Queue Friction):</strong>
+                      Keterbatasan set peti lompat utama menuntut pengelolaan antrean yang sangat ketat agar siswa yang belum giliran melompat tetap aktif bergerak melakukan drill pendukung.
+                    </div>
+                  </li>
+                  <li>
+                    <i class="fa-solid fa-circle-xmark" style="color: #F59E0B;"></i>
+                    <div>
+                      <strong>Keterbatasan Pencahayaan Dinamis Lapangan:</strong>
+                      Perubahan intensitas sinar matahari di lapangan semi-outdoor memengaruhi kontras visual rekaman pada beberapa pergantian menit pembelajaran.
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+
+            <!-- Solusi dan Mitigasi Lapangan -->
+            <div class="analysis-box-item solution">
+              <div class="analysis-box-title" style="color: var(--color-primary-dark); font-size: 1.2rem; border-bottom: 1px solid var(--color-border-light); padding-bottom: 0.75rem; margin-bottom: 1.25rem;">
+                <i class="fa-solid fa-lightbulb" style="color: var(--color-accent-lime); font-size: 1.3rem;"></i>
+                Solusi & Rekomendasi Mitigasi Lapangan (Actionable Strategies)
+              </div>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+                <div>
+                  <h5 style="color: var(--color-primary-dark); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem;">
+                    1. Penggunaan Wireless Lapel Mic dengan Windshield
+                  </h5>
+                  <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+                    Menyematkan mikrofon clip-on nirkabel (2.4 GHz) yang dilengkapi peredam busa/deadcat pada kerah guru, sehingga vokal instruksi tetap jernih dan bebas derau angin meskipun guru aktif bergerak dan menjaga pendaratan siswa.
+                  </p>
+                </div>
+                <div>
+                  <h5 style="color: var(--color-primary-dark); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem;">
+                    2. Konfigurasi Multi-Angle (Tripod Wide + Smartphone Gimbal)
+                  </h5>
+                  <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+                    Mengombinasikan satu kamera utama sudut lebar (<em>wide-angle</em>) untuk menangkap formasi kelas utuh, ditambah satu smartphone dengan stabilizer gimbal yang dipegang asisten juru kamera untuk merekam jarak dekat momen tumpuan tangan dan pendaratan.
+                  </p>
+                </div>
+                <div>
+                  <h5 style="color: var(--color-primary-dark); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem;">
+                    3. Pengorganisasian Pos Sirkuit Paralel Aktif
+                  </h5>
+                  <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
+                    Membuat pos latihan bayangan di samping peti lompat (pos latihan tolakan kaki di bangku panjang & drill kekuatan tangan di matras datar), sehingga 100% siswa tetap bergerak aktif selama menunggu giliran unjuk kerja utama.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- =========================================================
+             3. KAJIAN TEORI
+             ========================================================= -->
+        <article class="analysis-module-card">
+          <div class="analysis-module-header">
+            <div class="analysis-module-num">03</div>
+            <div>
+              <h3 class="analysis-module-title">Kajian Teori Pembelajaran & Supervisi Klinis PJOK</h3>
+              <p class="analysis-module-desc">
+                Justifikasi ilmiah dari literatur teori belajar sosial Bandura, waktu belajar aktif ALT-PE, model praktisi reflektif Schön, dan analisis interaksi kelas keolahragaan.
+              </p>
+            </div>
+          </div>
+
+          <div class="analysis-content-body">
+            
+            <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.75; margin-bottom: 2rem;">
+              Praktik pembelajaran yang ditampilkan dalam video ini didukung oleh 5 landasan teoretis supervisi dan pedagogi olahraga:
+            </p>
+
+            <div class="theory-grid">
+              
+              <!-- Teori 1: Observational Learning Bandura -->
+              <div class="theory-card">
+                <span class="theory-badge">
+                  <i class="fa-solid fa-eye" style="margin-right: 5px;"></i> Teori Belajar Sosial
+                </span>
+                <h4 class="theory-title">Observational Learning & Modeling (Albert Bandura, 1977)</h4>
+                <p class="theory-desc">
+                  Siswa mempelajari keterampilan motorik baru sebagian besar melalui pengamatan visual terhadap model yang kompeten. Demonstrasi guru yang membedah fase lari awalan, letak tangan, dan bukaan kaki menjadi <em>representasi simbolik internal</em> yang memandu eksekusi gerak peserta didik secara aman.
+                </p>
+              </div>
+
+              <!-- Teori 2: ALT-PE Siedentop -->
+              <div class="theory-card">
+                <span class="theory-badge" style="background: rgba(184, 224, 35, 0.25);">
+                  <i class="fa-solid fa-stopwatch" style="margin-right: 5px;"></i> Manajemen Pembelajaran
+                </span>
+                <h4 class="theory-title">Active Learning Time in Physical Education / ALT-PE (Siedentop, 1982)</h4>
+                <p class="theory-desc">
+                  ALT-PE mengukur proporsi waktu ketika siswa benar-benar terlibat dalam aktivitas motorik yang sesuai dengan tingkat kemampuannya. Rekaman video menunjukkan minimnya waktu instruksi pasif yang bertele-tele dan tingginya alokasi waktu praktik gerak di pos-pos latihan berjenjang.
+                </p>
+              </div>
+
+              <!-- Teori 3: Donald Schon Reflective Practitioner -->
+              <div class="theory-card">
+                <span class="theory-badge">
+                  <i class="fa-solid fa-brain" style="margin-right: 5px;"></i> Supervisi Klinis
+                </span>
+                <h4 class="theory-title">The Reflective Practitioner: Reflection-in-Action (Donald Schön, 1983)</h4>
+                <p class="theory-desc">
+                  Video mendokumentasikan kemampuan guru dalam melakukan <em>reflection-in-action</em>: mengambil keputusan spontan saat melihat siswi merasa cemas di depan peti dengan segera menurunkan level balok peti ke tingkat yang lebih ramah tanpa mematahkan semangat siswa.
+                </p>
+              </div>
+
+              <!-- Teori 4: Cheffers CAFIAS Interaction -->
+              <div class="theory-card">
+                <span class="theory-badge" style="background: rgba(184, 224, 35, 0.25);">
+                  <i class="fa-solid fa-comments" style="margin-right: 5px;"></i> Komunikasi Olahraga
+                </span>
+                <h4 class="theory-title">Interaksi Verbal & Non-Verbal CAFIAS (Cheffers Adaptation of Flanders, 1974)</h4>
+                <p class="theory-desc">
+                  Analisis video memperlihatkan integrasi sinyal non-verbal yang efektif: gestur tangan terbuka, senyum suportif, kontak mata yang meyakinkan, serta isyarat peluit yang tegas saat mengendalikan antrean keselamatan di lintasan matras pendaratan.
+                </p>
+              </div>
+
+              <!-- Teori 5: Shulman PCK -->
+              <div class="theory-card">
+                <span class="theory-badge">
+                  <i class="fa-solid fa-graduation-cap" style="margin-right: 5px;"></i> Pedagogi Keolahragaan
+                </span>
+                <h4 class="theory-title">Pedagogical Content Knowledge / PCK (Lee Shulman, 1986)</h4>
+                <p class="theory-desc">
+                  Keahlian mendalam guru dalam ilmu kepelatihan fisik (<em>Content Knowledge</em>) berhasil ditransformasikan menjadi metode pengajaran senam yang mudah dicerna peserta didik SMA (<em>Pedagogical Knowledge</em>), mengubah materi senam alat yang dianggap menakutkan menjadi pengalaman belajar yang menyenangkan.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+        </article>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- =================================================================
+       5. AGENCY FOOTER
+       ================================================================= -->
+  <footer class="footer-agency">
+    <div class="container">
+      <div class="footer-agency-grid">
+        
+        <!-- Brand Info -->
+        <div class="footer-agency-col">
+          <div class="footer-agency-brand" style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 1rem;">
+            <img src="../logo.png" alt="Logo UAD" class="footer-agency-logo-img" style="width: 46px; height: 46px; object-fit: contain; background: transparent; padding: 0; border: none; box-shadow: none; flex-shrink: 0;" onerror="this.style.display='none'">
+            <div class="footer-agency-brand-text">
+              <span class="title" style="display: block; font-size: 1.15rem; font-weight: 800; color: #ffffff;">Wahyu Surya Al Fikri, S.Pd.</span>
+              <span class="sub" style="display: block; font-size: 0.8rem; color: #94A3B8; font-weight: 600;">PPG Calon Guru Pendidikan Pancasila UAD</span>
+            </div>
+          </div>
+          <p class="footer-agency-bio" style="color: #94A3B8; font-size: 0.88rem; line-height: 1.7;">
+            Portofolio resmi PPL Terbimbing Program Pendidikan Profesi Guru (PPG) Calon Guru Bidang Studi Pendidikan Pancasila Universitas Ahmad Dahlan (UAD) di SMA Negeri 4 Yogyakarta.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-agency-col">
+          <h4 class="footer-agency-col-title">Navigasi Portofolio</h4>
+          <ul class="footer-agency-links">
+            <li><a href="../index.html"><i class="fa-solid fa-arrow-right" style="font-size:0.75rem; margin-right:6px;"></i> Beranda Utama</a></li>
+            <li><a href="../profil.html"><i class="fa-solid fa-arrow-right" style="font-size:0.75rem; margin-right:6px;"></i> Profil Lengkap Mahasiswa</a></li>
+            <li><a href="rancangan.html"><i class="fa-solid fa-arrow-right" style="font-size:0.75rem; margin-right:6px;"></i> Siklus 1 (UTS PPL)</a></li>
+            <li><a href="../UAS/rancangan.html"><i class="fa-solid fa-arrow-right" style="font-size:0.75rem; margin-right:6px;"></i> Siklus 2 (UAS PPL)</a></li>
+            <li><a href="../non-mengajar.html"><i class="fa-solid fa-arrow-right" style="font-size:0.75rem; margin-right:6px;"></i> Kegiatan Non-Mengajar</a></li>
+            <li><a href="../dokumentasi.html"><i class="fa-solid fa-arrow-right" style="font-size:0.75rem; margin-right:6px;"></i> Galeri Dokumentasi</a></li>
+          </ul>
+        </div>
+
+        <!-- Perangkat PPL -->
+        <div class="footer-agency-col">
+          <h4 class="footer-agency-col-title">Perangkat Pembelajaran</h4>
+          <ul class="footer-agency-links">
+            <li><a href="rancangan.html"><i class="fa-solid fa-check" style="color:var(--color-accent-lime); font-size:0.75rem; margin-right:6px;"></i> Modul Ajar Siklus 1 & 2</a></li>
+            <li><a href="media.html"><i class="fa-solid fa-check" style="color:var(--color-accent-lime); font-size:0.75rem; margin-right:6px;"></i> Media Berbasis TPACK</a></li>
+            <li><a href="instrumen.html"><i class="fa-solid fa-check" style="color:var(--color-accent-lime); font-size:0.75rem; margin-right:6px;"></i> Instrumen Asesmen Pancasila</a></li>
+            <li><a href="video.html"><i class="fa-solid fa-check" style="color:var(--color-accent-lime); font-size:0.75rem; margin-right:6px;"></i> Video Praktik Pembelajaran</a></li>
+          </ul>
+        </div>
+
+        <!-- Kontak & Alamat -->
+        <div class="footer-agency-col">
+          <h4 class="footer-agency-col-title">LPTK & Kontak Resmi</h4>
+          <p style="font-size: 0.88rem; color: #94A3B8; margin-bottom: 0.75rem;">
+            <i class="fa-solid fa-location-dot" style="color: var(--color-accent-lime); margin-right: 6px;"></i> Kampus Utama UAD, Jl. Ringroad Selatan, Tamanan, Banguntapan, Bantul, D.I. Yogyakarta 55191
+          </p>
+          <p style="font-size: 0.88rem; color: #94A3B8; margin-bottom: 1.25rem;">
+            <i class="fa-solid fa-envelope" style="color: var(--color-accent-lime); margin-right: 6px;"></i> wahyu.ppg@uad.ac.id
+          </p>
+          <div style="display: flex; gap: 0.6rem;">
+            <a href="javascript:void(0)" onclick="showToast('YouTube')" class="social-circle-btn"><i class="fa-brands fa-youtube"></i></a>
+            <a href="javascript:void(0)" onclick="showToast('Instagram')" class="social-circle-btn"><i class="fa-brands fa-instagram"></i></a>
+            <a href="javascript:void(0)" onclick="showToast('LinkedIn')" class="social-circle-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom-strip">
+        <div>
+          &copy; 2026 <strong>Wahyu Surya Al Fikri, S.Pd.</strong> All Rights Reserved • PPG Calon Guru Pendidikan Pancasila Universitas Ahmad Dahlan (UAD).
+        </div>
+        <div>
+          Tema Desain: Modern Clean Green & Lime Agency Style
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

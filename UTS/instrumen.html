@@ -1,0 +1,683 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UTS - Instrumen Penilaian (Siklus 1: Pancasila sebagai Ideologi Negara) | Wahyu Surya Al Fikri, S.Pd. - UAD</title>
+
+    <link rel="icon" type="image/png" href="../logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <!-- =================================================================
+       1. TOPBAR (Contact Info & Angled Lime Social Strip)
+       ================================================================= -->
+    <div class="topbar">
+      <div class="container topbar-inner">
+        <div class="topbar-contact">
+          <a href="tel:+62859195374310" class="topbar-item">
+            <i class="fa-solid fa-phone"></i>
+            <span>+62 859-1953-74310</span>
+          </a>
+          <a href="mailto:wahyu.ppg@uad.ac.id" class="topbar-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span>wahyu.ppg@uad.ac.id</span>
+          </a>
+          <div class="topbar-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Universitas Ahmad Dahlan (UAD) • D.I. Yogyakarta</span>
+          </div>
+        </div>
+
+        <div class="topbar-social-wrap">
+          <a href="javascript:void(0)" onclick="showToast('Facebook Wahyu Surya Al Fikri')" class="social-circle-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="javascript:void(0)" onclick="showToast('Twitter / X')" class="social-circle-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="javascript:void(0)" onclick="showToast('Instagram Wahyu Surya Al Fikri')" class="social-circle-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="javascript:void(0)" onclick="showToast('Kanal YouTube Pembelajaran Pendidikan Pancasila')" class="social-circle-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="javascript:void(0)" onclick="showToast('LinkedIn Wahyu Surya Al Fikri')" class="social-circle-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- =================================================================
+       2. MAIN NAVBAR
+       ================================================================= -->
+    <header class="navbar">
+      <div class="container navbar-inner">
+        <a href="../index.html" class="brand">
+          <img src="../logo.png" alt="Logo UAD" class="brand-logo-img" onerror="this.style.display = 'none'" />
+          <div>
+            <span class="brand-title">Wahyu Surya Al Fikri, S.Pd.</span>
+            <span class="brand-subtitle">PPG Calon Guru Pendidikan Pancasila UAD</span>
+          </div>
+        </a>
+
+        <nav>
+          <ul class="nav-links">
+            <li><a href="../index.html" class="nav-link">Beranda</a></li>
+            <li><a href="../profil.html" class="nav-link">Profil</a></li>
+
+            <!-- UTS Dropdown (Active) -->
+            <li class="nav-item-dropdown">
+              <a href="javascript:void(0)" class="nav-link dropdown-toggle active" role="button"> UTS <i class="fa-solid fa-chevron-down chevron-icon"></i> </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="rancangan.html" class="dropdown-item"><i class="fa-solid fa-book-bookmark"></i> Rancangan</a>
+                </li>
+                <li>
+                  <a href="materi.html" class="dropdown-item"><i class="fa-solid fa-book-open"></i> Materi</a>
+                </li>
+                <li>
+                  <a href="media.html" class="dropdown-item"><i class="fa-solid fa-photo-film"></i> Media</a>
+                </li>
+                <li>
+                  <a href="instrumen.html" class="dropdown-item active" style="font-weight: 700"><i class="fa-solid fa-clipboard-check"></i> Instrumen</a>
+                </li>
+                <li>
+                  <a href="video.html" class="dropdown-item"><i class="fa-solid fa-circle-play"></i> Video</a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- UAS Dropdown -->
+            <li class="nav-item-dropdown">
+              <a href="javascript:void(0)" class="nav-link dropdown-toggle" role="button"> UAS <i class="fa-solid fa-chevron-down chevron-icon"></i> </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="../UAS/rancangan.html" class="dropdown-item"><i class="fa-solid fa-book-bookmark"></i> Rancangan</a>
+                </li>
+                <li>
+                  <a href="../UAS/materi.html" class="dropdown-item"><i class="fa-solid fa-book-open"></i> Materi</a>
+                </li>
+                <li>
+                  <a href="../UAS/media.html" class="dropdown-item"><i class="fa-solid fa-photo-film"></i> Media</a>
+                </li>
+                <li>
+                  <a href="../UAS/instrumen.html" class="dropdown-item"><i class="fa-solid fa-clipboard-check"></i> Instrumen</a>
+                </li>
+                <li>
+                  <a href="../UAS/video.html" class="dropdown-item"><i class="fa-solid fa-circle-play"></i> Video</a>
+                </li>
+              </ul>
+            </li>
+
+            <li><a href="../non-mengajar.html" class="nav-link">Non-Mengajar</a></li>
+            <li><a href="../dokumentasi.html" class="nav-link">Dokumentasi</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="../index.html" class="btn btn-outline-dark btn-sm"> <i class="fa-solid fa-arrow-left"></i> Beranda </a>
+          <button class="mobile-toggle" aria-label="Toggle Menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- =================================================================
+       3. SUBPAGE HERO HEADER
+       ================================================================= -->
+    <section class="subpage-hero-agency">
+      <div class="container">
+        <div class="badge-pill-group">
+          <span class="twin-dot-icon"> <span></span><span></span> </span>
+          <span>UTS • SIKLUS 1 PPL TERBIMBING</span>
+        </div>
+
+        <h1 style="font-size: clamp(2.2rem, 4vw, 3.2rem); color: var(--color-primary-dark); margin-bottom: 0.8rem">Instrumen & Rubrik Penilaian Pendidikan Pancasila (Siklus 1: Pancasila sebagai Ideologi Negara)</h1>
+        <p style="max-width: 820px; font-size: 1.05rem; line-height: 1.6; color: var(--color-text-muted)">
+          Perangkat instrumen asesmen otentik 3 ranah (Diagnostik, Formatif, dan Reflektif) dengan integrasi model <strong>Problem Based Learning (PBL)</strong>, pendekatan <strong>TaRL</strong>, <strong>PSE EMC²</strong>, dan refleksi
+          <strong>CARL</strong> pada materi <strong>Pancasila sebagai Ideologi Negara</strong> Fase F Kelas XI SMA Negeri 4 Yogyakarta.
+        </p>
+
+        <div class="subpage-breadcrumb">
+          <a href="../index.html">Beranda</a>
+          <i class="fa-solid fa-chevron-right"></i>
+          <span>Siklus 1 (UTS)</span>
+          <i class="fa-solid fa-chevron-right"></i>
+          <span style="color: var(--color-primary-dark); font-weight: 700">Instrumen Penilaian</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================
+       4. MAIN CONTENT: PDF VIEWER & COMPREHENSIVE ANALYSIS
+       ================================================================= -->
+    <main style="padding: 4rem 0 6rem; background: #ffffff">
+      <div class="container">
+        <!-- =============================================================
+           A. INTERACTIVE PDF VIEWER SECTION
+           ============================================================= -->
+        <section style="margin-bottom: 5rem">
+          <div class="section-agency-head" style="margin-bottom: 2rem">
+            <div class="badge-pill-group">
+              <span class="twin-dot-icon"> <span></span><span></span> </span>
+              <span>DOKUMEN ASESMEN SIKLUS 1</span>
+            </div>
+            <h2 class="section-agency-title">Pratinjau Instrumen Penilaian Digital (PDF)</h2>
+            <p class="section-agency-subtitle">
+              Telusuri dokumen lengkap 4 halaman instrumen asesmen diagnostik awal (kuis + emotion check-in), rubrik observasi formatif 4 aspek, lembar rekap penilaian, serta lembar refleksi mandiri berbasis kerangka CARL yang telah
+              divalidasi oleh Guru Pamong dan Dosen Pembimbing Lapangan (DPL) Universitas Ahmad Dahlan (UAD).
+            </p>
+          </div>
+
+          <!-- PDF Viewer Container Card -->
+          <div class="pdf-viewer-card">
+            <!-- Toolbar -->
+            <div class="pdf-viewer-toolbar">
+              <div class="pdf-toolbar-info">
+                <div class="pdf-toolbar-icon">
+                  <i class="fa-solid fa-file-pdf"></i>
+                </div>
+                <div>
+                  <div class="pdf-toolbar-title">Instrumen Penilaian Pendidikan Pancasila Siklus 1: Pancasila sebagai Ideologi Negara</div>
+                  <div class="pdf-toolbar-sub">Penyusun: <strong>Wahyu Surya Al Fikri, S.Pd.</strong> • SMA Negeri 4 Yogyakarta • Fase F / Kelas XI • 1 Pertemuan (2 × 40 Menit / 80 Menit)</div>
+                </div>
+              </div>
+
+              <div class="pdf-toolbar-actions">
+                <span class="tag-pill" style="background: rgba(184, 224, 35, 0.2); color: #b8e023; font-weight: 700; border: 1px solid rgba(184, 224, 35, 0.4); padding: 6px 14px; font-size: 0.78rem">
+                  <i class="fa-solid fa-circle-check" style="margin-right: 5px"></i> Terverifikasi LPTK UAD
+                </span>
+                <a href="../Dokumen/Instrumen Siklus 1.pdf" download="Instrumen_Penilaian_Pancasila_Siklus1_WahyuSuryaAlFikri.pdf" class="btn btn-primary-lime btn-sm"> <i class="fa-solid fa-file-arrow-down"></i> Unduh PDF </a>
+                <a href="../Dokumen/Instrumen Siklus 1.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light btn-sm" style="border-color: rgba(255, 255, 255, 0.4); color: #ffffff">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Layar Penuh
+                </a>
+              </div>
+            </div>
+
+            <!-- Embedded Frame -->
+            <div class="pdf-frame-wrapper">
+              <iframe src="../Dokumen/Instrumen Siklus 1.pdf#toolbar=1&navpanes=0&scrollbar=1" title="Instrumen Penilaian Siklus 1: Pancasila sebagai Ideologi Negara - Wahyu Surya Al Fikri" loading="lazy">
+                <p style="padding: 2rem; color: #ffffff; text-align: center">
+                  Peramban Anda tidak mendukung tampilan PDF langsung. Silakan
+                  <a href="../Dokumen/Instrumen Siklus 1.pdf" target="_blank" style="color: var(--color-accent-lime); font-weight: bold; text-decoration: underline"> Klik di sini untuk mengunduh atau membuka Instrumen Siklus 1 (.PDF) </a>.
+                </p>
+              </iframe>
+            </div>
+
+            <!-- Footer Metadata Bar -->
+            <div style="background: #f8f9f5; padding: 1.25rem 2rem; border-top: 1px solid var(--color-border-light); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem">
+              <div style="display: flex; align-items: center; gap: 1.8rem; flex-wrap: wrap">
+                <div style="font-size: 0.85rem; color: var(--color-text-muted)">
+                  <i class="fa-solid fa-school" style="color: var(--color-primary-dark); margin-right: 6px"></i>
+                  <strong>Sekolah Mitra:</strong> SMA Negeri 4 Yogyakarta
+                </div>
+                <div style="font-size: 0.85rem; color: var(--color-text-muted)">
+                  <i class="fa-solid fa-clipboard-list" style="color: var(--color-primary-dark); margin-right: 6px"></i>
+                  <strong>Struktur Asesmen:</strong> Diagnostik + Formatif + Reflektif CARL
+                </div>
+                <div style="font-size: 0.85rem; color: var(--color-text-muted)">
+                  <i class="fa-solid fa-table-list" style="color: var(--color-primary-dark); margin-right: 6px"></i>
+                  <strong>Rubrik:</strong> Observasi Formatif 4 Aspek (Skala 1–4)
+                </div>
+                <div style="font-size: 0.85rem; color: var(--color-text-muted)">
+                  <i class="fa-solid fa-layer-group" style="color: var(--color-primary-dark); margin-right: 6px"></i>
+                  <strong>Diferensiasi:</strong> 3 Tier TaRL
+                </div>
+              </div>
+              <div>
+                <a href="javascript:void(0)" onclick="showToast('Instrumen Asesmen Terstandar PPG UAD 2026')" style="font-size: 0.82rem; color: var(--color-primary-dark); font-weight: 700; text-decoration: none">
+                  <i class="fa-solid fa-circle-check" style="color: var(--color-accent-lime); margin-right: 5px"></i> Kurikulum Merdeka 2026
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =============================================================
+           B. COMPREHENSIVE ANALYSIS OF THE ASSESSMENT INSTRUMENT
+           ============================================================= -->
+        <section>
+          <div class="section-agency-head" style="margin-bottom: 3.5rem">
+            <div class="badge-pill-group">
+              <span class="twin-dot-icon"> <span></span><span></span> </span>
+              <span>ANALISIS KOMPREHENSIF PERANGKAT ASESMEN</span>
+            </div>
+            <h2 class="section-agency-title">Analisis Akademik & Refleksi Kritis Instrumen Penilaian Siklus 1: Pancasila sebagai Ideologi Negara</h2>
+            <p class="section-agency-subtitle">
+              Kajian pedagogis dan evaluasi ilmiah terhadap perancangan instrumen asesmen Siklus 1, mencakup keselarasan konteks lapangan, evaluasi kekuatan-kelemahan, mitigasi solusi praktis, serta justifikasi teoritis asesmen otentik
+              Pendidikan Pancasila.
+            </p>
+          </div>
+
+          <!-- =========================================================
+             1. KONTEKS DAN TUJUAN
+             ========================================================= -->
+          <article class="analysis-module-card">
+            <div class="analysis-module-header">
+              <div class="analysis-module-num">01</div>
+              <div>
+                <h3 class="analysis-module-title">Konteks dan Tujuan Instrumen Penilaian</h3>
+                <p class="analysis-module-desc">
+                  Tinjauan karakteristik asesmen Pendidikan Pancasila, pemetaan kesiapan belajar peserta didik berbasis TaRL, serta dekonstruksi instrumen ke dalam 3 ranah asesmen (Diagnostik, Formatif, dan Reflektif CARL).
+                </p>
+              </div>
+            </div>
+
+            <div class="analysis-content-body">
+              <!-- Konteks Evaluasi Lapangan -->
+              <div style="margin-bottom: 2.5rem">
+                <h4 style="font-size: 1.25rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.65rem">
+                  <i class="fa-solid fa-clipboard-user" style="color: var(--color-primary-dark); font-size: 1.1rem"></i>
+                  A. Konteks Lapangan & Karakteristik Asesmen Pancasila sebagai Ideologi Negara
+                </h4>
+                <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.75; margin-bottom: 1.2rem">
+                  Asesmen materi <strong>Pancasila sebagai Ideologi Negara</strong> pada <strong>Fase F (Kelas XI SMA)</strong> memiliki karakteristik khas yang menuntut keseimbangan antara pengukuran
+                  <strong>penalaran kritis, empati sosial, dan komitmen tindakan</strong>. Faktor kontekstual yang mendasari perancangan instrumen ini meliputi:
+                </p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem">
+                  <div style="background: #f8f9f5; border-radius: var(--radius-md); padding: 1.4rem; border-left: 4px solid var(--color-primary-dark)">
+                    <strong style="display: block; color: var(--color-primary-dark); font-size: 0.95rem; margin-bottom: 0.4rem">
+                      <i class="fa-solid fa-users-viewfinder" style="margin-right: 6px"></i> Keberagaman Kesiapan Belajar (TaRL)
+                    </strong>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                      Berdasarkan observasi awal dan asesmen diagnostik kognitif/nonkognitif kelas XI F 7, peserta didik memiliki karakteristik belajar beragam. Sebagian aktif menyampaikan pendapat kritis, sebagian lain memerlukan
+                      pertanyaan pemantik terbimbing dan <em>scaffolding</em>. Kondisi ini menjadi dasar penerapan <strong>3 tier TaRL</strong> (Mahir, Sedang, Perlu Bimbingan).
+                    </p>
+                  </div>
+
+                  <div style="background: #f8f9f5; border-radius: var(--radius-md); padding: 1.4rem; border-left: 4px solid #f59e0b">
+                    <strong style="display: block; color: var(--color-primary-dark); font-size: 0.95rem; margin-bottom: 0.4rem">
+                      <i class="fa-solid fa-heart-pulse" style="margin-right: 6px; color: #f59e0b"></i> Pentingnya Asesmen Sosial-Emosional (PSE EMC²)
+                    </strong>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                      Isu ideologi di era digital (hoaks, ujaran kebencian, intoleransi) berpotensi memicu reaksi emosional peserta didik. Oleh karena itu, instrumen diawali dengan <em>Emotion Check-in</em> untuk memetakan kesiapan
+                      psikologis sebelum kuis kognitif dijalankan.
+                    </p>
+                  </div>
+
+                  <div style="background: #f8f9f5; border-radius: var(--radius-md); padding: 1.4rem; border-left: 4px solid var(--color-accent-lime)">
+                    <strong style="display: block; color: var(--color-primary-dark); font-size: 0.95rem; margin-bottom: 0.4rem"> <i class="fa-solid fa-scale-balanced" style="margin-right: 6px"></i> Penilaian Proses dan Produk PBL </strong>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                      Karena modul ajar menggunakan PBL dengan diferensiasi produk (poster/infografis, mini-esai, podcast/role-play), instrumen tidak hanya menilai hasil akhir, melainkan juga
+                      <strong>proses penalaran, empati, dan kolaborasi</strong> selama sintaks PBL berlangsung.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Dekonstruksi 3 Ranah Asesmen -->
+              <div>
+                <h4 style="font-size: 1.25rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.65rem">
+                  <i class="fa-solid fa-scale-balanced" style="color: var(--color-primary-dark); font-size: 1.1rem"></i>
+                  B. Dekonstruksi Tiga Ranah Asesmen Pendidikan Pancasila
+                </h4>
+                <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7; margin-bottom: 1.4rem">
+                  Sesuai paradigma Kurikulum Merdeka dan kerangka asesmen otentik, instrumen mencakup tiga dimensi yang saling melengkapi:
+                </p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.4rem">
+                  <!-- Ranah 1: Diagnostik Awal -->
+                  <div style="background: #ffffff; border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-sm)">
+                    <div style="display: inline-block; background: var(--color-primary-dark); color: var(--color-accent-lime); font-size: 0.72rem; font-weight: 800; padding: 3px 8px; border-radius: 4px; margin-bottom: 0.75rem">
+                      A. ASESMEN DIAGNOSTIK AWAL
+                    </div>
+                    <h5 style="font-size: 1rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.5rem">Kuis Singkat + Emotion Check-in</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                      Mengetahui kesiapan belajar, preferensi minat, dan pemahaman awal murid mengenai fungsi ideologi negara melalui <strong>3 soal kuis singkat (Google Forms/Mentimeter)</strong> dan <strong>Emotion Check-in</strong>.
+                      Hasilnya menjadi dasar pengelompokan murid ke dalam <strong>3 tier TaRL</strong>.
+                    </p>
+                  </div>
+
+                  <!-- Ranah 2: Formatif Proses -->
+                  <div style="background: #ffffff; border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-sm)">
+                    <div style="display: inline-block; background: var(--color-primary-dark); color: var(--color-accent-lime); font-size: 0.72rem; font-weight: 800; padding: 3px 8px; border-radius: 4px; margin-bottom: 0.75rem">
+                      B. ASESMEN FORMATIF
+                    </div>
+                    <h5 style="font-size: 1rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.5rem">Rubrik Observasi 4 Aspek (Skala 1–4)</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                      Mengamati keaktifan diskusi, penalaran kritis, empati sosial, dan kolaborasi saat memecahkan masalah melalui 4 aspek: <strong>(1) Penalaran Kritis</strong>, <strong>(2) Empati & Kepedulian</strong>,
+                      <strong>(3) Pemecahan Masalah</strong>, dan <strong>(4) Kolaborasi & Kesadaran (Mindfulness)</strong>.
+                    </p>
+                  </div>
+
+                  <!-- Ranah 3: Reflektif CARL -->
+                  <div style="background: #ffffff; border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-sm)">
+                    <div style="display: inline-block; background: var(--color-primary-dark); color: var(--color-accent-lime); font-size: 0.72rem; font-weight: 800; padding: 3px 8px; border-radius: 4px; margin-bottom: 0.75rem">
+                      C. ASESMEN REFLEKTIF (CARL)
+                    </div>
+                    <h5 style="font-size: 1rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.5rem">Lembar Refleksi Mandiri Peserta Didik</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                      Mengukur kesadaran bermakna tanpa beban skor kognitif kaku melalui kerangka <strong>CARL</strong>: <em>Context</em> (pemahaman isu), <em>Action</em> (tindakan solutif), <em>Result</em> (hasil karya & empati),
+                      <em>Learning</em> (sikap ber-Pancasila yang akan diterapkan).
+                    </p>
+                  </div>
+
+                  <!-- Lembar Rekap -->
+                  <div style="background: #ffffff; border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-sm)">
+                    <div style="display: inline-block; background: #65a30d; color: #ffffff; font-size: 0.72rem; font-weight: 800; padding: 3px 8px; border-radius: 4px; margin-bottom: 0.75rem">D. LEMBAR REKAP & TINDAK LANJUT</div>
+                    <h5 style="font-size: 1rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.5rem">Rekapitulasi Observasi Formatif</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                      Tabel rekap berisi kolom nama peserta didik dan 4 aspek penilaian (Penalaran Kritis, Empati & Kepedulian, Pemecahan Masalah, Kolaborasi & Kesadaran) dengan keterangan skor
+                      <strong>4 = Sangat Baik; 3 = Baik; 2 = Cukup; 1 = Perlu Bimbingan</strong>.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- =========================================================
+             2. KELEBIHAN DAN KEKURANGAN
+             ========================================================= -->
+          <article class="analysis-module-card">
+            <div class="analysis-module-header">
+              <div class="analysis-module-num">02</div>
+              <div>
+                <h3 class="analysis-module-title">Kelebihan dan Kekurangan Instrumen Penilaian</h3>
+                <p class="analysis-module-desc">Evaluasi kritis terhadap validitas isi, reliabilitas penskoran, tantangan teknis saat mengobservasi proses diskusi PBL, serta rekomendasi mitigasi solusi operasional.</p>
+              </div>
+            </div>
+
+            <div class="analysis-content-body">
+              <!-- 2-Column Grid: Pro vs Con -->
+              <div class="analysis-grid-2col">
+                <!-- Kolom Kelebihan -->
+                <div class="analysis-box-item pro">
+                  <div class="analysis-box-title" style="color: var(--color-primary-dark)">
+                    <i class="fa-solid fa-circle-check" style="color: #65a30d; font-size: 1.3rem"></i>
+                    Kelebihan & Kekuatan Instrumen (Strengths)
+                  </div>
+                  <ul class="analysis-list">
+                    <li>
+                      <i class="fa-solid fa-check-circle" style="color: #65a30d"></i>
+                      <div>
+                        <strong>Asesmen Berkelanjutan Utuh (Assessment FOR, AS, and OF Learning):</strong>
+                        Menyajikan asesmen diagnostik awal (kuis + emotion check-in), asesmen formatif proses PBL (rubrik observasi 4 aspek), serta asesmen reflektif CARL di akhir pembelajaran. Ketiganya saling melengkapi dan sejalan dengan
+                        prinsip asesmen sebagai proses belajar.
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-check-circle" style="color: #65a30d"></i>
+                      <div>
+                        <strong>Integrasi Multi-Pendekatan yang Sistematis:</strong>
+                        Instrumen memadukan <strong>PBL</strong> (rubrik pemecahan masalah), <strong>PSE EMC²</strong> (emotion check-in & empati), <strong>TaRL</strong> (tindakan pengelompokan 3 tier), dan <strong>CARL</strong> (lembar
+                        refleksi) secara fungsional, bukan tempelan.
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-check-circle" style="color: #65a30d"></i>
+                      <div>
+                        <strong>Rubrik Observasi 4 Aspek yang Komprehensif:</strong>
+                        Mencakup aspek kognitif (penalaran kritis), afektif (empati & kepedulian), konatif (pemecahan masalah), serta regulasi diri (kolaborasi & mindfulness). Skala 4 level memberi ruang gradasi capaian yang adil.
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-check-circle" style="color: #65a30d"></i>
+                      <div>
+                        <strong>Emotion Check-in yang Humanis:</strong>
+                        Adanya <em>emotion check-in</em> sebelum kuis kognitif menunjukkan penghargaan terhadap kesiapan psikologis murid, sejalan dengan prinsip PSE untuk memastikan murid siap belajar secara emosional.
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Kolom Kekurangan / Tantangan -->
+                <div class="analysis-box-item con">
+                  <div class="analysis-box-title" style="color: #b45309">
+                    <i class="fa-solid fa-triangle-exclamation" style="color: #f59e0b; font-size: 1.3rem"></i>
+                    Kelemahan & Tantangan Implementasi (Limitations)
+                  </div>
+                  <ul class="analysis-list">
+                    <li>
+                      <i class="fa-solid fa-circle-xmark" style="color: #f59e0b"></i>
+                      <div>
+                        <strong>Soal Kuis Diagnostik Belum Dilampirkan:</strong>
+                        Instrumen menyebut adanya "3 soal kuis singkat" namun butir soal konkretnya tidak disertakan. Tanpa soal, guru lain tidak dapat mereplikasi asesmen diagnostik ini secara utuh.
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-circle-xmark" style="color: #f59e0b"></i>
+                      <div>
+                        <strong>Pencampuran Konstruk dalam Aspek Rubrik:</strong>
+                        Aspek <em>"Kolaborasi & Kesadaran (Mindfulness)"</em> mencampur dua konstruk berbeda: keterampilan sosial (kolaborasi) dan regulasi diri (mindfulness). Sebaiknya dipisahkan agar penilaian lebih objektif dan
+                        operasional.
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-circle-xmark" style="color: #f59e0b"></i>
+                      <div>
+                        <strong>Rubrik Produk Diferensiasi Belum Tersedia:</strong>
+                        Modul ajar menyebut produk diferensiasi (poster/infografis, mini-esai, podcast/role-play), namun instrumen belum memiliki rubrik khusus untuk menilai kualitas produk tersebut. Ini berpotensi membuat penilaian produk
+                        tidak adil.
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-circle-xmark" style="color: #f59e0b"></i>
+                      <div>
+                        <strong>Akuntabilitas Individu Belum Terukur:</strong>
+                        Rubrik observasi menilai proses kelompok, tetapi belum ada instrumen untuk mengukur kontribusi individu secara spesifik (misalnya lembar <em>peer assessment</em> atau catatan kontribusi), sehingga berisiko munculnya
+                        <em>free-rider effect</em>.
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-circle-xmark" style="color: #f59e0b"></i>
+                      <div>
+                        <strong>Alokasi Waktu CARL 5 Menit Terlalu Singkat:</strong>
+                        Mengisi 4 komponen refleksi (Context, Action, Result, Learning) dalam 5 menit di akhir pembelajaran sangat berisiko menghasilkan jawaban superfisial. Perlu strategi tambahan seperti <em>exit ticket</em> atau tugas
+                        rumah.
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Solusi dan Mitigasi Lapangan -->
+              <div class="analysis-box-item solution">
+                <div class="analysis-box-title" style="color: var(--color-primary-dark); font-size: 1.2rem; border-bottom: 1px solid var(--color-border-light); padding-bottom: 0.75rem; margin-bottom: 1.25rem">
+                  <i class="fa-solid fa-lightbulb" style="color: var(--color-accent-lime); font-size: 1.3rem"></i>
+                  Solusi & Rekomendasi Mitigasi Lapangan (Actionable Strategies)
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem">
+                  <div>
+                    <h5 style="color: var(--color-primary-dark); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem">1. Lampirkan Butir Soal Diagnostik Konkret</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                      Tambahkan 3 butir soal kuis singkat, misalnya: (1) soal pilihan ganda tentang makna ideologi, (2) soal esai singkat tentang contoh perilaku Pancasila di media sosial, (3) soal identifikasi hoaks/ujaran kebencian.
+                    </p>
+                  </div>
+                  <div>
+                    <h5 style="color: var(--color-primary-dark); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem">2. Pisahkan Aspek Rubrik & Tambahkan Rubrik Produk</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                      Pisahkan aspek "Kolaborasi" dan "Regulasi Diri (Mindfulness)". Tambahkan rubrik produk diferensiasi (poster dinilai dari akurasi data, desain visual, pesan solutif; esai dinilai dari struktur argumen, kedalaman
+                      analisis).
+                    </p>
+                  </div>
+                  <div>
+                    <h5 style="color: var(--color-primary-dark); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem">3. Tambahkan Peer Assessment & Strategi CARL</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                      Sertakan lembar penilaian antarteman sederhana untuk akuntabilitas individu. Sederhanakan lembar CARL (skala singkat + satu pertanyaan terbuka per komponen) atau jadikan <em>exit ticket</em> yang dikumpulkan.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- =========================================================
+             3. KAJIAN TEORI
+             ========================================================= -->
+          <article class="analysis-module-card">
+            <div class="analysis-module-header">
+              <div class="analysis-module-num">03</div>
+              <div>
+                <h3 class="analysis-module-title">Kajian Teori & Landasan Keilmuan Evaluasi Pendidikan Pancasila</h3>
+                <p class="analysis-module-desc">
+                  Justifikasi ilmiah dari literatur asesmen otentik, pembelajaran berbasis masalah, pembelajaran sosial-emosional, pembelajaran reflektif, pendekatan TaRL, serta asesmen HOTS dalam Kurikulum Merdeka.
+                </p>
+              </div>
+            </div>
+
+            <div class="analysis-content-body">
+              <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.75; margin-bottom: 2rem">
+                Rancangan instrumen penilaian Siklus 1 ini berpijak kokoh pada pilar-pilar teori evaluasi pendidikan kewarganegaraan dan pembelajaran abad ke-21 berikut:
+              </p>
+
+              <div class="theory-grid">
+                <!-- Teori 1: Authentic Assessment -->
+                <div class="theory-card">
+                  <span class="theory-badge"> <i class="fa-solid fa-clipboard-check" style="margin-right: 5px"></i> Evaluasi Pendidikan </span>
+                  <h4 class="theory-title">Teori Asesmen Otentik (Grant Wiggins, 1998; Mueller, 2005)</h4>
+                  <p class="theory-desc">
+                    Asesmen otentik menegaskan bahwa penilaian harus merefleksikan tugas-tugas dunia nyata yang menuntut integrasi pengetahuan, keterampilan, dan sikap. Instrumen ini menilai kemampuan peserta didik menganalisis isu ideologi
+                    digital (hoaks, ujaran kebencian), merumuskan solusi aplikatif, dan menunjukkan empati sosial — bukan sekadar hafalan teoretis.
+                  </p>
+                </div>
+
+                <!-- Teori 2: PBL Assessment -->
+                <div class="theory-card">
+                  <span class="theory-badge" style="background: rgba(184, 224, 35, 0.25)"> <i class="fa-solid fa-brain" style="margin-right: 5px"></i> Model Pembelajaran </span>
+                  <h4 class="theory-title">Asesmen dalam PBL (Barrows & Tamblyn, 1980; Hmelo-Silver, 2004)</h4>
+                  <p class="theory-desc">
+                    PBL menuntut asesmen yang mengukur <strong>proses penyelidikan</strong>, bukan hanya hasil akhir. Rubrik observasi 4 aspek dalam instrumen ini selaras dengan prinsip PBL: menilai penalaran kritis saat orientasi masalah,
+                    kolaborasi saat mengorganisasi murid, empati saat penyelidikan, serta kualitas solusi saat mengembangkan karya.
+                  </p>
+                </div>
+
+                <!-- Teori 3: CASEL PSE -->
+                <div class="theory-card">
+                  <span class="theory-badge"> <i class="fa-solid fa-heart-pulse" style="margin-right: 5px"></i> Pembelajaran Sosial-Emosional </span>
+                  <h4 class="theory-title">CASEL Framework & PSE EMC² (CASEL, 2003; Elias dkk., 1997)</h4>
+                  <p class="theory-desc">
+                    Asesmen PSE EMC² (<em>Empathy, Mindfulness, Compassion</em>) mencakup lima kompetensi CASEL: kesadaran diri (<em>emotion check-in</em>), manajemen diri (mindfulness), kesadaran sosial (empati), keterampilan relasi
+                    (kolaborasi), dan pengambilan keputusan bertanggung jawab (pemecahan masalah).
+                  </p>
+                </div>
+
+                <!-- Teori 4: CARL Reflection -->
+                <div class="theory-card">
+                  <span class="theory-badge" style="background: rgba(184, 224, 35, 0.25)"> <i class="fa-solid fa-arrows-rotate" style="margin-right: 5px"></i> Pembelajaran Reflektif </span>
+                  <h4 class="theory-title">Experiential Learning & Refleksi CARL (Kolb, 1984; York-Barr dkk., 2006)</h4>
+                  <p class="theory-desc">
+                    Kerangka <strong>CARL</strong> (Context–Action–Result–Learning) mengadopsi siklus belajar eksperiensial Kolb: siswa mengalami masalah (Context), mengambil tindakan solutif (Action), mengevaluasi hasil (Result), dan
+                    memetik pembelajaran bermakna (Learning) untuk diterapkan dalam kehidupan sehari-hari.
+                  </p>
+                </div>
+
+                <!-- Teori 5: TaRL -->
+                <div class="theory-card">
+                  <span class="theory-badge"> <i class="fa-solid fa-layer-group" style="margin-right: 5px"></i> Diferensiasi Asesmen </span>
+                  <h4 class="theory-title">Teaching at the Right Level (TaRL) & Asesmen Berdiferensiasi (Banerjee dkk., 2016; Tomlinson, 2014)</h4>
+                  <p class="theory-desc">
+                    Prinsip TaRL menegaskan bahwa asesmen harus memetakan kesiapan belajar murid secara akurat agar pembelajaran dan penilaian disesuaikan dengan level kemampuan aktual. Pengelompokan 3 tier (Mahir, Sedang, Perlu Bimbingan)
+                    berbasis hasil diagnostik adalah wujud nyata penerapan TaRL dalam asesmen.
+                  </p>
+                </div>
+
+                <!-- Teori 6: HOTS Assessment -->
+                <div class="theory-card">
+                  <span class="theory-badge" style="background: rgba(184, 224, 35, 0.25)"> <i class="fa-solid fa-award" style="margin-right: 5px"></i> Taksonomi Kognitif </span>
+                  <h4 class="theory-title">Asesmen HOTS & Taksonomi Bloom Revisi (Anderson & Krathwohl, 2001)</h4>
+                  <p class="theory-desc">
+                    Instrumen mendorong peserta didik mencapai level kognitif <strong>C4 (Menganalisis)</strong> hingga <strong>C6 (Mencipta)</strong>: menganalisis perbedaan ideologi Pancasila dengan Liberalisme/Sosialisme, mengevaluasi
+                    klaim informasi (fakta vs hoaks), dan merumuskan gagasan solutif aplikatif di era digital.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+      </div>
+    </main>
+
+    <!-- =================================================================
+       5. AGENCY FOOTER
+       ================================================================= -->
+    <footer class="footer-agency">
+      <div class="container">
+        <div class="footer-agency-grid">
+          <!-- Brand Info -->
+          <div class="footer-agency-col">
+            <div class="footer-agency-brand" style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 1rem">
+              <img
+                src="../logo.png"
+                alt="Logo UAD"
+                class="footer-agency-logo-img"
+                style="width: 46px; height: 46px; object-fit: contain; background: transparent; padding: 0; border: none; box-shadow: none; flex-shrink: 0"
+                onerror="this.style.display = 'none'"
+              />
+              <div class="footer-agency-brand-text">
+                <span class="title" style="display: block; font-size: 1.15rem; font-weight: 800; color: #ffffff">Wahyu Surya Al Fikri, S.Pd.</span>
+                <span class="sub" style="display: block; font-size: 0.8rem; color: #94a3b8; font-weight: 600">PPG Calon Guru Pendidikan Pancasila UAD</span>
+              </div>
+            </div>
+            <p class="footer-agency-bio" style="color: #94a3b8; font-size: 0.88rem; line-height: 1.7">
+              Portofolio resmi PPL Terbimbing Program Pendidikan Profesi Guru (PPG) Calon Guru Bidang Studi Pendidikan Pancasila Universitas Ahmad Dahlan (UAD) di SMA Negeri 4 Yogyakarta.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-agency-col">
+            <h4 class="footer-agency-col-title">Navigasi Portofolio</h4>
+            <ul class="footer-agency-links">
+              <li>
+                <a href="../index.html"><i class="fa-solid fa-arrow-right" style="font-size: 0.75rem; margin-right: 6px"></i> Beranda Utama</a>
+              </li>
+              <li>
+                <a href="../profil.html"><i class="fa-solid fa-arrow-right" style="font-size: 0.75rem; margin-right: 6px"></i> Profil Lengkap Mahasiswa</a>
+              </li>
+              <li>
+                <a href="rancangan.html"><i class="fa-solid fa-arrow-right" style="font-size: 0.75rem; margin-right: 6px"></i> Siklus 1 (UTS PPL)</a>
+              </li>
+              <li>
+                <a href="../UAS/rancangan.html"><i class="fa-solid fa-arrow-right" style="font-size: 0.75rem; margin-right: 6px"></i> Siklus 2 (UAS PPL)</a>
+              </li>
+              <li>
+                <a href="../non-mengajar.html"><i class="fa-solid fa-arrow-right" style="font-size: 0.75rem; margin-right: 6px"></i> Kegiatan Non-Mengajar</a>
+              </li>
+              <li>
+                <a href="../dokumentasi.html"><i class="fa-solid fa-arrow-right" style="font-size: 0.75rem; margin-right: 6px"></i> Galeri Dokumentasi</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Perangkat PPL -->
+          <div class="footer-agency-col">
+            <h4 class="footer-agency-col-title">Perangkat Pembelajaran</h4>
+            <ul class="footer-agency-links">
+              <li>
+                <a href="rancangan.html"><i class="fa-solid fa-check" style="color: var(--color-accent-lime); font-size: 0.75rem; margin-right: 6px"></i> Modul Ajar Siklus 1 & 2</a>
+              </li>
+              <li>
+                <a href="media.html"><i class="fa-solid fa-check" style="color: var(--color-accent-lime); font-size: 0.75rem; margin-right: 6px"></i> Media Berbasis TPACK</a>
+              </li>
+              <li>
+                <a href="instrumen.html"><i class="fa-solid fa-check" style="color: var(--color-accent-lime); font-size: 0.75rem; margin-right: 6px"></i> Instrumen Asesmen Pancasila</a>
+              </li>
+              <li>
+                <a href="video.html"><i class="fa-solid fa-check" style="color: var(--color-accent-lime); font-size: 0.75rem; margin-right: 6px"></i> Video Praktik Pembelajaran</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Kontak & Alamat -->
+          <div class="footer-agency-col">
+            <h4 class="footer-agency-col-title">LPTK & Kontak Resmi</h4>
+            <p style="font-size: 0.88rem; color: #94a3b8; margin-bottom: 0.75rem">
+              <i class="fa-solid fa-location-dot" style="color: var(--color-accent-lime); margin-right: 6px"></i> Kampus Utama UAD, Jl. Ringroad Selatan, Tamanan, Banguntapan, Bantul, D.I. Yogyakarta 55191
+            </p>
+            <p style="font-size: 0.88rem; color: #94a3b8; margin-bottom: 1.25rem"><i class="fa-solid fa-envelope" style="color: var(--color-accent-lime); margin-right: 6px"></i> wahyu.ppg@uad.ac.id</p>
+            <div style="display: flex; gap: 0.6rem">
+              <a href="javascript:void(0)" onclick="showToast('YouTube')" class="social-circle-btn"><i class="fa-brands fa-youtube"></i></a>
+              <a href="javascript:void(0)" onclick="showToast('Instagram')" class="social-circle-btn"><i class="fa-brands fa-instagram"></i></a>
+              <a href="javascript:void(0)" onclick="showToast('LinkedIn')" class="social-circle-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom-strip">
+          <div>&copy; 2026 <strong>Wahyu Surya Al Fikri, S.Pd.</strong> All Rights Reserved • PPG Calon Guru Pendidikan Pancasila Universitas Ahmad Dahlan (UAD).</div>
+          <div>Tema Desain: Modern Clean Green & Lime Agency Style</div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+  </body>
+</html>

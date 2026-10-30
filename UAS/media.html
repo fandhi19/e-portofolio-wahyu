@@ -1,0 +1,996 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UAS - Media Pembelajaran Pendidikan Pancasila (Siklus 2, 3 & 4) | Wahyu Surya Al Fikri, S.Pd. - UAD</title>
+
+    <link rel="icon" type="image/png" href="../logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+
+    <style>
+      /* Cycle Switcher Tabs for UAS */
+      .uas-tabs-wrapper {
+        display: flex;
+        gap: 0.85rem;
+        margin-bottom: 1.75rem;
+        flex-wrap: wrap;
+      }
+      .uas-tab-btn {
+        background: #f8f9f5;
+        border: 1px solid var(--color-border-light);
+        color: var(--color-primary-dark);
+        padding: 0.85rem 1.65rem;
+        border-radius: var(--radius-pill);
+        font-size: 0.92rem;
+        font-weight: 700;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.65rem;
+        transition: var(--transition-fast);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+      }
+      .uas-tab-btn:hover {
+        background: #ffffff;
+        border-color: var(--color-primary-dark);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-sm);
+      }
+      .uas-tab-btn.active {
+        background: var(--color-primary-dark);
+        color: var(--color-accent-lime);
+        border-color: var(--color-primary-dark);
+        box-shadow: 0 6px 18px rgba(18, 56, 45, 0.25);
+      }
+      .uas-tab-badge {
+        background: rgba(184, 224, 35, 0.25);
+        color: var(--color-primary-dark);
+        font-size: 0.72rem;
+        padding: 2px 7px;
+        border-radius: 4px;
+        font-weight: 800;
+      }
+      .uas-tab-btn.active .uas-tab-badge {
+        background: var(--color-accent-lime);
+        color: var(--color-primary-dark);
+      }
+
+      /* Cycle summary cards */
+      .uas-cycles-summary-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 1.85rem;
+        margin-top: 3.5rem;
+      }
+      .uas-cycle-summary-card {
+        background: #ffffff;
+        border: 1px solid var(--color-border-light);
+        border-radius: var(--radius-xl);
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        box-shadow: var(--shadow-sm);
+        transition: var(--transition-fast);
+        position: relative;
+      }
+      .uas-cycle-summary-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--color-primary-dark);
+        box-shadow: var(--shadow-md);
+      }
+      .uas-cycle-summary-card.active-card {
+        border-top: 4px solid var(--color-accent-lime);
+      }
+
+      /* Analysis Cycle Switch Container */
+      .analysis-cycle-container {
+        display: none;
+        animation: fadeInAnalysis 0.35s ease;
+      }
+      .analysis-cycle-container.active {
+        display: block;
+      }
+      @keyframes fadeInAnalysis {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Slide Sub-badge */
+      .slide-subbadge {
+        display: inline-block;
+        background: rgba(18, 56, 45, 0.08);
+        color: var(--color-primary-dark);
+        font-size: 0.75rem;
+        font-weight: 800;
+        padding: 3px 10px;
+        border-radius: 4px;
+        margin-bottom: 0.6rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- =================================================================
+       1. TOPBAR (Contact Info & Angled Lime Social Strip)
+       ================================================================= -->
+    <div class="topbar">
+      <div class="container topbar-inner">
+        <div class="topbar-contact">
+          <a href="tel:+62859195374310" class="topbar-item">
+            <i class="fa-solid fa-phone"></i>
+            <span>+62 859-1953-74310</span>
+          </a>
+          <a href="mailto:wahyu.ppg@uad.ac.id" class="topbar-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span>wahyu.ppg@uad.ac.id</span>
+          </a>
+          <div class="topbar-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Universitas Ahmad Dahlan (UAD) • D.I. Yogyakarta</span>
+          </div>
+        </div>
+
+        <div class="topbar-social-wrap">
+          <a href="javascript:void(0)" onclick="showToast('Facebook Wahyu Surya Al Fikri')" class="social-circle-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="javascript:void(0)" onclick="showToast('Twitter / X')" class="social-circle-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="javascript:void(0)" onclick="showToast('Instagram Wahyu Surya Al Fikri')" class="social-circle-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="javascript:void(0)" onclick="showToast('Kanal YouTube Pembelajaran Pendidikan Pancasila')" class="social-circle-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="javascript:void(0)" onclick="showToast('LinkedIn Wahyu Surya Al Fikri')" class="social-circle-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- =================================================================
+       2. MAIN NAVBAR
+       ================================================================= -->
+    <header class="navbar">
+      <div class="container navbar-inner">
+        <a href="../index.html" class="brand">
+          <img src="../logo.png" alt="Logo UAD" class="brand-logo-img" onerror="this.style.display = 'none'" />
+          <div>
+            <span class="brand-title">Wahyu Surya Al Fikri, S.Pd.</span>
+            <span class="brand-subtitle">PPG Calon Guru Pendidikan Pancasila UAD</span>
+          </div>
+        </a>
+
+        <nav>
+          <ul class="nav-links">
+            <li><a href="../index.html" class="nav-link">Beranda</a></li>
+            <li><a href="../profil.html" class="nav-link">Profil</a></li>
+
+            <!-- UTS Dropdown -->
+            <li class="nav-item-dropdown">
+              <a href="javascript:void(0)" class="nav-link dropdown-toggle" role="button"> UTS <i class="fa-solid fa-chevron-down chevron-icon"></i> </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="../UTS/rancangan.html" class="dropdown-item"><i class="fa-solid fa-book-bookmark"></i> Rancangan</a>
+                </li>
+                <li>
+                  <a href="../UTS/materi.html" class="dropdown-item"><i class="fa-solid fa-book-open"></i> Materi</a>
+                </li>
+                <li>
+                  <a href="../UTS/media.html" class="dropdown-item"><i class="fa-solid fa-photo-film"></i> Media</a>
+                </li>
+                <li>
+                  <a href="../UTS/instrumen.html" class="dropdown-item"><i class="fa-solid fa-clipboard-check"></i> Instrumen</a>
+                </li>
+                <li>
+                  <a href="../UTS/video.html" class="dropdown-item"><i class="fa-solid fa-circle-play"></i> Video</a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- UAS Dropdown (Active) -->
+            <li class="nav-item-dropdown">
+              <a href="javascript:void(0)" class="nav-link dropdown-toggle active" role="button"> UAS <i class="fa-solid fa-chevron-down chevron-icon"></i> </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="rancangan.html" class="dropdown-item"><i class="fa-solid fa-book-bookmark"></i> Rancangan</a>
+                </li>
+                <li>
+                  <a href="materi.html" class="dropdown-item"><i class="fa-solid fa-book-open"></i> Materi</a>
+                </li>
+                <li>
+                  <a href="media.html" class="dropdown-item active" style="font-weight: 700"><i class="fa-solid fa-photo-film"></i> Media</a>
+                </li>
+                <li>
+                  <a href="instrumen.html" class="dropdown-item"><i class="fa-solid fa-clipboard-check"></i> Instrumen</a>
+                </li>
+                <li>
+                  <a href="video.html" class="dropdown-item"><i class="fa-solid fa-circle-play"></i> Video</a>
+                </li>
+              </ul>
+            </li>
+
+            <li><a href="../non-mengajar.html" class="nav-link">Non-Mengajar</a></li>
+            <li><a href="../dokumentasi.html" class="nav-link">Dokumentasi</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="../index.html" class="btn btn-outline-dark btn-sm"> <i class="fa-solid fa-arrow-left"></i> Beranda </a>
+          <button class="mobile-toggle" aria-label="Toggle Menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- =================================================================
+       3. SUBPAGE HERO HEADER
+       ================================================================= -->
+    <section class="subpage-hero-agency">
+      <div class="container">
+        <div class="badge-pill-group">
+          <span class="twin-dot-icon"> <span></span><span></span> </span>
+          <span>UAS • SIKLUS 2, 3 & 4 PPL TERBIMBING</span>
+        </div>
+
+        <h1 style="font-size: clamp(2.2rem, 4vw, 3.2rem); color: var(--color-primary-dark); margin-bottom: 0.8rem">Media Pembelajaran Pendidikan Pancasila (UAS: Siklus 2, 3 & 4)</h1>
+        <p style="max-width: 840px; font-size: 1.05rem; line-height: 1.6; color: var(--color-text-muted)">
+          Kompilasi media pembelajaran visual grafis, presentasi taktis, panduan grafis, dan E-LKPD interaktif Kurikulum Merdeka Fase F (Kelas XI SMA) untuk Ujian Akhir Semester (UAS) / Siklus Lanjutan PPL Terbimbing di SMA Negeri 4
+          Yogyakarta. Meliputi <strong>Siklus 2: Periodisasi Pemberlakuan Konstitusi di Indonesia</strong> dan <strong>Siklus 3 & 4: Perubahan UUD NRI Tahun 1945</strong> dengan analisis mandiri terpisah.
+        </p>
+
+        <div class="subpage-breadcrumb">
+          <a href="../index.html">Beranda</a>
+          <i class="fa-solid fa-chevron-right"></i>
+          <span>Siklus Lanjutan (UAS)</span>
+          <i class="fa-solid fa-chevron-right"></i>
+          <span style="color: var(--color-primary-dark); font-weight: 700">Media Pembelajaran</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================================================
+       4. MAIN CONTENT: MULTI-SIKLUS MEDIA VIEWER & SEPARATE ANALYSES
+       ================================================================= -->
+    <main style="padding: 4rem 0 6rem; background: #ffffff">
+      <div class="container">
+        <!-- =============================================================
+           A. MULTI-SIKLUS INTERACTIVE MEDIA VIEWER SECTION
+           ============================================================= -->
+        <section style="margin-bottom: 5rem">
+          <div class="section-agency-head" style="margin-bottom: 2rem">
+            <div class="badge-pill-group">
+              <span class="twin-dot-icon"> <span></span><span></span> </span>
+              <span>DOKUMEN MEDIA SIKLUS 2, 3 & 4</span>
+            </div>
+            <h2 class="section-agency-title">Pratinjau Media Pembelajaran Digital (Pilih Siklus)</h2>
+            <p class="section-agency-subtitle">Pilih siklus di bawah untuk menampilkan dokumen presentasi media digital serta membuka <strong>analisis mendalam khusus</strong> untuk masing-masing media pembelajaran di bawah viewer.</p>
+          </div>
+
+          <!-- Cycle Switcher Tab Navigation -->
+          <div class="uas-tabs-wrapper">
+            <button id="tab-btn-2" class="uas-tab-btn active" onclick="switchUASMedia(2)">
+              <i class="fa-solid fa-landmark"></i> <span>Siklus 2: Periodisasi Pemberlakuan Konstitusi</span>
+              <span class="uas-tab-badge">11 Slide</span>
+            </button>
+
+            <button id="tab-btn-34" class="uas-tab-btn" onclick="switchUASMedia(34)">
+              <i class="fa-solid fa-file-shield"></i> <span>Siklus 3 & 4: Perubahan UUD NRI Tahun 1945</span>
+              <span class="uas-tab-badge">17 Slide</span>
+            </button>
+          </div>
+
+          <!-- PDF Viewer Container Card -->
+          <div class="pdf-viewer-card">
+            <!-- Toolbar -->
+            <div class="pdf-viewer-toolbar">
+              <div class="pdf-toolbar-info">
+                <div class="pdf-toolbar-icon">
+                  <i class="fa-solid fa-photo-film"></i>
+                </div>
+                <div>
+                  <div id="uas-media-title" class="pdf-toolbar-title">Media Pembelajaran Pendidikan Pancasila Siklus 2: Periodisasi Pemberlakuan Konstitusi</div>
+                  <div id="uas-media-sub" class="pdf-toolbar-sub">Penyusun: <strong>Wahyu Surya Al Fikri, S.Pd.</strong> • Fase F / Kelas XI F3 • Media Visual Presentasi & Diagram • 11 Halaman</div>
+                </div>
+              </div>
+
+              <div class="pdf-toolbar-actions">
+                <span id="uas-meta-badge" class="tag-pill" style="background: rgba(184, 224, 35, 0.2); color: #b8e023; font-weight: 700; border: 1px solid rgba(184, 224, 35, 0.4); padding: 6px 14px; font-size: 0.78rem">
+                  <i class="fa-solid fa-circle-check" style="margin-right: 5px"></i> Terverifikasi LPTK UAD
+                </span>
+                <a id="uas-download-btn" href="../Dokumen/Media Siklus 2.pdf" download="Media_Pembelajaran_Pancasila_Siklus2_PeriodisasiKonstitusi_WahyuSuryaAlFikri.pdf" class="btn btn-primary-lime btn-sm">
+                  <i class="fa-solid fa-file-arrow-down"></i> Unduh Media Siklus 2
+                </a>
+                <a id="uas-fullscreen-btn" href="../Dokumen/Media Siklus 2.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light btn-sm" style="border-color: rgba(255, 255, 255, 0.4); color: #ffffff">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Layar Penuh
+                </a>
+              </div>
+            </div>
+
+            <!-- Embedded Frame -->
+            <div class="pdf-frame-wrapper">
+              <iframe id="uas-media-frame" src="../Dokumen/Media Siklus 2.pdf#toolbar=1&navpanes=0&scrollbar=1" title="Media Pembelajaran UAS Wahyu Surya Al Fikri" loading="lazy">
+                <p style="padding: 2rem; color: #ffffff; text-align: center">
+                  Peramban Anda tidak mendukung tampilan PDF langsung. Silakan
+                  <a id="uas-fallback-link" href="../Dokumen/Media Siklus 2.pdf" target="_blank" style="color: var(--color-accent-lime); font-weight: bold; text-decoration: underline">
+                    Klik di sini untuk mengunduh atau membuka Media Pembelajaran (.PDF) </a
+                  >.
+                </p>
+              </iframe>
+            </div>
+
+            <!-- Footer Metadata Bar -->
+            <div style="background: #f8f9f5; padding: 1.25rem 2rem; border-top: 1px solid var(--color-border-light); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem">
+              <div style="display: flex; align-items: center; gap: 1.8rem; flex-wrap: wrap">
+                <div style="font-size: 0.85rem; color: var(--color-text-muted)">
+                  <i class="fa-solid fa-graduation-cap" style="color: var(--color-primary-dark); margin-right: 6px"></i>
+                  <strong>Sekolah Mitra:</strong> SMA Negeri 4 Yogyakarta
+                </div>
+                <div style="font-size: 0.85rem; color: var(--color-text-muted)">
+                  <i class="fa-solid fa-laptop-code" style="color: var(--color-primary-dark); margin-right: 6px"></i>
+                  <strong>Pendekatan:</strong> <span id="uas-meta-method">TPACK & Deep Learning Presentation</span>
+                </div>
+                <div style="font-size: 0.85rem; color: var(--color-text-muted)">
+                  <i class="fa-solid fa-file-powerpoint" style="color: var(--color-primary-dark); margin-right: 6px"></i>
+                  <strong>Kelengkapan:</strong> <span id="uas-meta-pages">11 Halaman Presentasi</span>
+                </div>
+              </div>
+              <div>
+                <a href="javascript:void(0)" onclick="showToast('Dokumen Media Resmi Kurikulum Merdeka Fase F')" style="font-size: 0.82rem; color: var(--color-primary-dark); font-weight: 700; text-decoration: none">
+                  <i class="fa-solid fa-circle-info" style="color: var(--color-accent-lime); margin-right: 5px"></i> Kurikulum Merdeka 2026
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2 Quick Cards: Overview & Direct Download -->
+          <div class="uas-cycles-summary-grid">
+            <!-- Card Siklus 2 -->
+            <div id="summary-card-2" class="uas-cycle-summary-card active-card">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem">
+                <span class="tag-pill" style="background: rgba(18, 56, 45, 0.08); color: var(--color-primary-dark); font-weight: 800"> MEDIA SIKLUS 2 • PERIODISASI KONSTITUSI </span>
+                <span style="font-size: 0.8rem; color: var(--color-text-muted); font-weight: 600">11 Slide</span>
+              </div>
+              <h4 style="font-size: 1.15rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 0.6rem">Periodisasi Pemberlakuan Konstitusi di Indonesia</h4>
+              <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 1.25rem; flex: 1">
+                Media visual grafis (PPT) yang menguraikan dinamika hukum dasar, bentuk negara, dan sistem pemerintahan Indonesia dari UUD 1945, Konstitusi RIS, UUDS 1950, hingga UUD 1945 Pasca-Dekret melalui garis waktu dan tabel komparasi
+                interaktif.
+              </p>
+              <div style="display: flex; gap: 0.6rem">
+                <button class="btn btn-primary-dark btn-sm" style="flex: 1" onclick="switchUASMedia(2)"><i class="fa-solid fa-eye"></i> Tampilkan & Analisis</button>
+                <a href="../Dokumen/Media Siklus 2.pdf" download="Media_Pembelajaran_Pancasila_Siklus2_PeriodisasiKonstitusi.pdf" class="btn btn-outline-dark btn-sm" aria-label="Unduh Media Siklus 2">
+                  <i class="fa-solid fa-download"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Card Siklus 3 & 4 (Combined) -->
+            <div id="summary-card-34" class="uas-cycle-summary-card">
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem">
+                <span class="tag-pill" style="background: rgba(184, 224, 35, 0.25); color: var(--color-primary-dark); font-weight: 800"> MEDIA SIKLUS 3 & 4 • PERUBAHAN UUD 1945 </span>
+                <span style="font-size: 0.8rem; color: var(--color-text-muted); font-weight: 600">17 Slide</span>
+              </div>
+              <h4 style="font-size: 1.15rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 0.6rem">Perubahan UUD NRI Tahun 1945 (Amandemen 1999–2002)</h4>
+              <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 1.25rem; flex: 1">
+                Media presentasi komprehensif yang membedah latar belakang, prosedur Pasal 37, lima kesepakatan dasar MPR, empat tahap amandemen, perbandingan sebelum-sesudah, dampak bagi warga negara, serta aturan main kuis "New Family
+                100".
+              </p>
+              <div style="display: flex; gap: 0.6rem">
+                <button class="btn btn-primary-dark btn-sm" style="flex: 1" onclick="switchUASMedia(34)"><i class="fa-solid fa-eye"></i> Tampilkan & Analisis</button>
+                <a href="../Dokumen/Media Siklus 3 dan 4.pdf" download="Media_Pembelajaran_Pancasila_Siklus3dan4_PerubahanUUD1945.pdf" class="btn btn-outline-dark btn-sm" aria-label="Unduh Media Siklus 3 & 4">
+                  <i class="fa-solid fa-download"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =============================================================
+           B. SEPARATE INDIVIDUAL MEDIA ANALYSES
+           ============================================================= -->
+        <section>
+          <!-- Header Penanda Analisis -->
+          <div class="section-agency-head" style="margin-bottom: 3rem">
+            <div class="badge-pill-group">
+              <span class="twin-dot-icon"> <span></span><span></span> </span>
+              <span id="analysis-media-badge">ANALISIS KHUSUS MEDIA: SIKLUS 2 (PERIODISASI PEMBERLAKUAN KONSTITUSI)</span>
+            </div>
+            <h2 id="analysis-media-main-title" class="section-agency-title">Analisis Media Pembelajaran Siklus 2: Periodisasi Pemberlakuan Konstitusi</h2>
+            <p id="analysis-media-subtitle" class="section-agency-subtitle">
+              Kajian mandiri terhadap perancangan dan efektivitas media visual presentasi Siklus 2, membedah visualisasi garis waktu, tabel komparasi, dan analisis sebab-akibat.
+            </p>
+          </div>
+
+          <!-- =========================================================
+             ANALISIS KHUSUS MEDIA: SIKLUS 2
+             ========================================================= -->
+          <div id="analysis-siklus-2" class="analysis-cycle-container active">
+            <!-- 1. Konteks dan Tujuan Media Siklus 2 -->
+            <article class="analysis-module-card">
+              <div class="analysis-module-header">
+                <div class="analysis-module-num">01</div>
+                <div>
+                  <h3 class="analysis-module-title">Konteks dan Tujuan: Media Pembelajaran Siklus 2</h3>
+                  <p class="analysis-module-desc">Tinjauan kebutuhan visualisasi kronologi konstitusi, pemetaan struktur materi 11 slide, serta integrasi pendekatan Deep Learning dalam desain visual.</p>
+                </div>
+              </div>
+
+              <div class="analysis-content-body">
+                <div style="margin-bottom: 2rem">
+                  <h4 style="font-size: 1.15rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 0.8rem">
+                    <i class="fa-solid fa-chalkboard-user" style="margin-right: 6px"></i> A. Analisis Konteks Visual & Kebutuhan Media
+                  </h4>
+                  <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.75; margin-bottom: 1.2rem">
+                    Materi Periodisasi Konstitusi menuntut pemahaman kronologis dan kausalitas yang kompleks. Media presentasi 11 slide ini dirancang untuk menjembatani konsep abstrak tersebut melalui visualisasi garis waktu interaktif,
+                    tabel komparasi yang tajam, dan diagram sebab-akibat yang mengalir. Media ini tidak hanya menyajikan teks, tetapi juga mengajak siswa beraktivitas (diskusi berpasangan, quick vote, cocokkan kartu).
+                  </p>
+
+                  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem">
+                    <div style="background: #f8f9f5; border-radius: var(--radius-md); padding: 1.25rem; border-left: 4px solid var(--color-primary-dark)">
+                      <strong style="color: var(--color-primary-dark); display: block; font-size: 0.92rem; margin-bottom: 0.3rem"> Visualisasi Garis Waktu (Slide 3) </strong>
+                      <p style="font-size: 0.86rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                        Menampilkan 4 periode konstitusi (UUD 1945, RIS, UUDS, UUD 1945 Pasca-Dekret) secara berurutan dengan penanda tahun yang jelas, memudahkan siswa memahami rentang waktu dan transisi antar periode.
+                      </p>
+                    </div>
+
+                    <div style="background: #f8f9f5; border-radius: var(--radius-md); padding: 1.25rem; border-left: 4px solid var(--color-accent-lime)">
+                      <strong style="color: var(--color-primary-dark); display: block; font-size: 0.92rem; margin-bottom: 0.3rem"> Tabel Komparasi & Diagram Sebab-Akibat (Slide 8 & 9) </strong>
+                      <p style="font-size: 0.86rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                        Tabel komparasi (Slide 8) meringkas 4 periode dalam satu pandangan. Diagram sebab-akibat (Slide 9) menunjukkan alur kausalitas (KMB → RIS → Penolakan Federal → UUDS → Dekret Presiden → Reformasi) yang sangat penting
+                        untuk penalaran kritis.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 style="font-size: 1.15rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 0.8rem">
+                    <i class="fa-solid fa-bullseye" style="margin-right: 6px"></i> B. Tujuan Pengembangan Media Pembelajaran Siklus 2
+                  </h4>
+                  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem">
+                    <div style="background: #ffffff; border: 1px solid var(--color-border-light); padding: 1.35rem; border-radius: var(--radius-md)">
+                      <div style="color: var(--color-primary-dark); font-weight: 800; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 0.4rem">Tujuan Kognitif (Meaningful)</div>
+                      <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                        Siswa mampu menguraikan 4 periode konstitusi, membedakan bentuk negara (kesatuan vs federal) dan sistem pemerintahan (presidensial vs parlementer), serta menganalisis sebab-akibat perubahan.
+                      </p>
+                    </div>
+                    <div style="background: #ffffff; border: 1px solid var(--color-border-light); padding: 1.35rem; border-radius: var(--radius-md)">
+                      <div style="color: var(--color-primary-dark); font-weight: 800; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 0.4rem">Tujuan Afektif (Mindful)</div>
+                      <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                        Siswa menyadari peran sejarah konstitusi terhadap kehidupannya sebagai warga negara hari ini, serta meneladani komitmen pendiri bangsa dalam menjaga keutuhan NKRI.
+                      </p>
+                    </div>
+                    <div style="background: #ffffff; border: 1px solid var(--color-border-light); padding: 1.35rem; border-radius: var(--radius-md)">
+                      <div style="color: var(--color-primary-dark); font-weight: 800; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 0.4rem">Tujuan Psikomotorik (Joyful)</div>
+                      <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                        Siswa terlibat aktif dalam diskusi berpasangan, quick vote, cocokkan kartu, analisis tabel komparasi, dan refleksi tertulis yang menyenangkan.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 2. Kelebihan dan Kekurangan Media Siklus 2 -->
+            <article class="analysis-module-card">
+              <div class="analysis-module-header">
+                <div class="analysis-module-num">02</div>
+                <div>
+                  <h3 class="analysis-module-title">Kelebihan dan Kekurangan Media: Siklus 2</h3>
+                  <p class="analysis-module-desc">Evaluasi kritis aspek keterbacaan, kepadatan slide, konsistensi visual, serta kelengkapan komponen pendukung modul ajar.</p>
+                </div>
+              </div>
+
+              <div class="analysis-content-body">
+                <div class="analysis-grid-2col">
+                  <div class="analysis-box-item pro">
+                    <div class="analysis-box-title" style="color: var(--color-primary-dark)"><i class="fa-solid fa-circle-check" style="color: #65a30d"></i> Kelebihan Media Siklus 2</div>
+                    <ul class="analysis-list">
+                      <li>
+                        <i class="fa-solid fa-check-circle" style="color: #65a30d"></i>
+                        <div><strong>Konsistensi Pertanyaan Pemantik:</strong> Hampir setiap slide memiliki pertanyaan pemantik yang menggugah berpikir kritis, sangat selaras dengan PBL dan Deep Learning.</div>
+                      </li>
+                      <li>
+                        <i class="fa-solid fa-check-circle" style="color: #65a30d"></i>
+                        <div><strong>Visual Kontekstual dan Estetis:</strong> Gambar-gambar yang digunakan (bendera, siswa berdiskusi, sidang PPKI, pemilu 1955, demonstrasi Reformasi) sangat relevan dan berkualitas tinggi.</div>
+                      </li>
+                      <li>
+                        <i class="fa-solid fa-check-circle" style="color: #65a30d"></i>
+                        <div><strong>Diagram Sebab-Akibat (Slide 9):</strong> Diagram alur yang menunjukkan hubungan kausalitas antar periode sangat membantu siswa memahami "mengapa" di balik perubahan konstitusi.</div>
+                      </li>
+                      <li>
+                        <i class="fa-solid fa-check-circle" style="color: #65a30d"></i>
+                        <div><strong>Integrasi Aktivitas:</strong> Media tidak hanya berisi materi, tetapi juga aktivitas (diskusi berpasangan, Quick Vote, cocokkan kartu, refleksi 1 kalimat).</div>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="analysis-box-item con">
+                    <div class="analysis-box-title" style="color: #b45309"><i class="fa-solid fa-triangle-exclamation" style="color: #f59e0b"></i> Kekurangan & Tantangan Media Siklus 2</div>
+                    <ul class="analysis-list">
+                      <li>
+                        <i class="fa-solid fa-circle-xmark" style="color: #f59e0b"></i>
+                        <div><strong>Tidak Ada Slide Sintaks PBL & TaRL Eksplisit:</strong> Media tidak menampilkan 5 sintaks PBL dan pembagian 3 tier TaRL, meskipun modul ajar menyebutkannya.</div>
+                      </li>
+                      <li>
+                        <i class="fa-solid fa-circle-xmark" style="color: #f59e0b"></i>
+                        <div><strong>Inkonsistensi Aktivitas TTS:</strong> Modul ajar menyebutkan LKPD TTS (Teka-Teki Silang), tetapi media hanya menampilkan aktivitas "Cocokkan kartu periode dengan cirinya".</div>
+                      </li>
+                      <li>
+                        <i class="fa-solid fa-circle-xmark" style="color: #f59e0b"></i>
+                        <div><strong>Slide 8 (Tabel Komparasi) Terlalu Padat:</strong> Tabel dengan 5 kolom dan 4 baris dalam satu slide sulit dibaca dari jarak jauh.</div>
+                      </li>
+                      <li>
+                        <i class="fa-solid fa-circle-xmark" style="color: #f59e0b"></i>
+                        <div><strong>Slide 11 (Pembagian Kelompok) Terlalu Text-Heavy:</strong> Daftar 6 kelompok + 6 petunjuk pengerjaan TTS dalam satu slide sangat padat.</div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="analysis-box-item solution">
+                  <div class="analysis-box-title" style="color: var(--color-primary-dark)"><i class="fa-solid fa-lightbulb" style="color: var(--color-accent-lime)"></i> Solusi Mitigasi Terapan Media Siklus 2</div>
+                  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem">
+                    <div>
+                      <h5 style="color: var(--color-primary-dark); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.4rem">1. Tambah Slide Sintaks PBL & TaRL</h5>
+                      <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                        Sisipkan 1 slide khusus di awal untuk menampilkan 5 sintaks PBL dan pembagian 3 tier TaRL agar alur pembelajaran transparan.
+                      </p>
+                    </div>
+                    <div>
+                      <h5 style="color: var(--color-primary-dark); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.4rem">2. Sesuaikan Aktivitas dengan Modul Ajar</h5>
+                      <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">Jika modul menyebutkan TTS, tambahkan slide TTS atau ubah modul agar sesuai dengan media (cocokkan kartu).</p>
+                    </div>
+                    <div>
+                      <h5 style="color: var(--color-primary-dark); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.4rem">3. Pecah Slide 8 & 11</h5>
+                      <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                        Pecah tabel komparasi menjadi 2 slide atau gunakan animasi bertahap. Pisahkan pembagian kelompok dan petunjuk pengerjaan TTS menjadi 2 slide berbeda.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 3. Kajian Teori Media Siklus 2 -->
+            <article class="analysis-module-card">
+              <div class="analysis-module-header">
+                <div class="analysis-module-num">03</div>
+                <div>
+                  <h3 class="analysis-module-title">Kajian Teori: Media Pembelajaran Siklus 2</h3>
+                  <p class="analysis-module-desc">Landasan ilmiah teori kognitif multimedia, dual coding, Deep Learning, dan integrasi TPACK dalam media sejarah konstitusi.</p>
+                </div>
+              </div>
+
+              <div class="analysis-content-body">
+                <div class="theory-grid">
+                  <div class="theory-card">
+                    <span class="theory-badge">Desain Multimedia</span>
+                    <h4 class="theory-title">Cognitive Theory of Multimedia Learning (Mayer, 2001)</h4>
+                    <p class="theory-desc">
+                      Penyajian visual garis waktu dan tabel komparasi bersebelahan dengan teks penjelas memproses informasi melalui saluran visual dan verbal secara seimbang, mengurangi beban kognitif dan memperkuat retensi.
+                    </p>
+                  </div>
+                  <div class="theory-card">
+                    <span class="theory-badge" style="background: rgba(184, 224, 35, 0.25)">Psikologi Kognitif</span>
+                    <h4 class="theory-title">Dual Coding Theory (Allan Paivio, 1986)</h4>
+                    <p class="theory-desc">
+                      Kombinasi kode verbal (teks penjelasan) dan kode non-verbal (gambar sidang PPKI, peta Indonesia, diagram sebab-akibat) membantu siswa mengingat materi lebih lama karena informasi disimpan dalam dua format mental.
+                    </p>
+                  </div>
+                  <div class="theory-card">
+                    <span class="theory-badge">Paradigma Pembelajaran</span>
+                    <h4 class="theory-title">Deep Learning Framework (Fullan, Quinn & McEachen, 2018)</h4>
+                    <p class="theory-desc">
+                      Media dirancang memfasilitasi dimensi Mindful (pertanyaan pemantik yang menggugah kesadaran), Meaningful (kaitan konstitusi dengan kehidupan warga negara), dan Joyful (visual estetis dan aktivitas interaktif).
+                    </p>
+                  </div>
+                  <div class="theory-card">
+                    <span class="theory-badge" style="background: rgba(184, 224, 35, 0.25)">Teknologi Pendidikan</span>
+                    <h4 class="theory-title">Integrasi TPACK (Mishra & Koehler, 2006)</h4>
+                    <p class="theory-desc">Perpaduan pengetahuan konten sejarah konstitusi (CK), strategi diferensiasi TaRL dan PBL (PK), serta presentasi visual digital (TK) menghasilkan perangkat instruksional adaptif bagi murid SMA.</p>
+                  </div>
+                  <div class="theory-card">
+                    <span class="theory-badge">Konteks Budaya</span>
+                    <h4 class="theory-title">Culturally Responsive Teaching (Gay, 2000)</h4>
+                    <p class="theory-desc">Media menghubungkan materi konstitusi dengan kearifan lokal (rembug desa/nagari) dan pengalaman nyata siswa, sehingga pembelajaran terasa relevan dan inklusif.</p>
+                  </div>
+                  <div class="theory-card">
+                    <span class="theory-badge" style="background: rgba(184, 224, 35, 0.25)">Taksonomi Kognitif</span>
+                    <h4 class="theory-title">Asesmen HOTS & Taksonomi Bloom Revisi (Anderson & Krathwohl, 2001)</h4>
+                    <p class="theory-desc">
+                      Pertanyaan pemantik dan diagram sebab-akibat mendorong peserta didik mencapai level C4 (Menganalisis) hingga C5 (Mengevaluasi): menganalisis mengapa konstitusi berganti dan mengevaluasi dampaknya bagi stabilitas
+                      nasional.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- =========================================================
+             ANALISIS KHUSUS MEDIA: SIKLUS 3 & 4
+             ========================================================= -->
+          <div id="analysis-siklus-34" class="analysis-cycle-container">
+            <!-- 1. Konteks dan Tujuan Media Siklus 3 & 4 -->
+            <article class="analysis-module-card">
+              <div class="analysis-module-header">
+                <div class="analysis-module-num">01</div>
+                <div>
+                  <h3 class="analysis-module-title">Konteks dan Tujuan: Media Pembelajaran Siklus 3 & 4</h3>
+                  <p class="analysis-module-desc">Tinjauan kebutuhan visualisasi prosedur amandemen, struktur 17 slide, serta integrasi TGT "New Family 100" dan Emotional Check-in dalam desain visual.</p>
+                </div>
+              </div>
+
+              <div class="analysis-content-body">
+                <div style="margin-bottom: 2rem">
+                  <h4 style="font-size: 1.15rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 0.8rem">
+                    <i class="fa-solid fa-chalkboard-user" style="margin-right: 6px"></i> A. Analisis Konteks Visual & Kebutuhan Media
+                  </h4>
+                  <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.75; margin-bottom: 1.2rem">
+                    Materi Perubahan UUD NRI Tahun 1945 mencakup konsep abstrak (Pasal 37, lima kesepakatan dasar) dan prosedur yang kompleks. Media presentasi 17 slide ini dirancang untuk menyederhanakan kompleksitas tersebut melalui
+                    visualisasi prosedur (Slide 8), tabel perbandingan sebelum-sesudah (Slide 14), serta emotional check-in yang kreatif (baterai dan permen). Media ini juga dilengkapi aturan main kuis "New Family 100" (Slide 17) untuk
+                    mendukung TGT.
+                  </p>
+
+                  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem">
+                    <div style="background: #f8f9f5; border-radius: var(--radius-md); padding: 1.25rem; border-left: 4px solid var(--color-primary-dark)">
+                      <strong style="color: var(--color-primary-dark); display: block; font-size: 0.92rem; margin-bottom: 0.3rem"> Emotional Check-in Kreatif (Slide 2 & 3) </strong>
+                      <p style="font-size: 0.86rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                        Menggunakan visual baterai (25%, 45%, 70%) dan permen (Mint Z, Kopiko, Kiss) untuk mengukur kesiapan emosional siswa. Ini adalah penerapan TaRL dan CRT yang sangat membumi dan menyenangkan.
+                      </p>
+                    </div>
+
+                    <div style="background: #f8f9f5; border-radius: var(--radius-md); padding: 1.25rem; border-left: 4px solid var(--color-accent-lime)">
+                      <strong style="color: var(--color-primary-dark); display: block; font-size: 0.92rem; margin-bottom: 0.3rem"> Visualisasi Prosedur & Dampak (Slide 8 & 15) </strong>
+                      <p style="font-size: 0.86rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                        Slide 8 memvisualisasikan alur prosedur Pasal 37 (1/3 → tertulis & jelas → 2/3 → 50%+1 → NKRI tetap). Slide 15 menghubungkan amandemen dengan dampak nyata bagi warga negara (hak suara langsung, HAM, kepastian hukum).
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h4 style="font-size: 1.15rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 0.8rem">
+                    <i class="fa-solid fa-bullseye" style="margin-right: 6px"></i> B. Tujuan Pengembangan Media Pembelajaran Siklus 3 & 4
+                  </h4>
+                  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem">
+                    <div style="background: #ffffff; border: 1px solid var(--color-border-light); padding: 1.35rem; border-radius: var(--radius-md)">
+                      <div style="color: var(--color-primary-dark); font-weight: 800; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 0.4rem">Tujuan Kognitif</div>
+                      <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                        Siswa memahami konsep dan prosedur amandemen (Pasal 37), menganalisis 4 tahap amandemen (1999–2002), serta membandingkan kondisi sebelum dan sesudah amandemen.
+                      </p>
+                    </div>
+                    <div style="background: #ffffff; border: 1px solid var(--color-border-light); padding: 1.35rem; border-radius: var(--radius-md)">
+                      <div style="color: var(--color-primary-dark); font-weight: 800; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 0.4rem">Tujuan Afektif</div>
+                      <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                        Siswa merefleksikan dampak amandemen bagi kehidupan warga negara secara kritis dan bertanggung jawab, serta menghargai proses demokrasi yang konstitusional.
+                      </p>
+                    </div>
+                    <div style="background: #ffffff; border: 1px solid var(--color-border-light); padding: 1.35rem; border-radius: var(--radius-md)">
+                      <div style="color: var(--color-primary-dark); font-weight: 800; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 0.4rem">Tujuan Psikomotorik/Sosial</div>
+                      <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                        Siswa terlibat aktif dalam kuis "New Family 100" (TGT), bekerja sama dalam tim, serta menunjukkan sportivitas dan kolaborasi selama permainan.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 2. Kelebihan dan Kekurangan Media Siklus 3 & 4 -->
+            <article class="analysis-module-card">
+              <div class="analysis-module-header">
+                <div class="analysis-module-num">02</div>
+                <div>
+                  <h3 class="analysis-module-title">Kelebihan dan Kekurangan Media: Siklus 3 & 4</h3>
+                  <p class="analysis-module-desc">Evaluasi kritis aspek keterbacaan, kepadatan slide, konsistensi visual, serta kelengkapan komponen pendukung modul ajar.</p>
+                </div>
+              </div>
+
+              <div class="analysis-content-body">
+                <div class="analysis-grid-2col">
+                  <div class="analysis-box-item pro">
+                    <div class="analysis-box-title" style="color: var(--color-primary-dark)"><i class="fa-solid fa-check-circle" style="color: #65a30d"></i> Kelebihan Media Siklus 3 & 4</div>
+                    <ul class="analysis-list">
+                      <li>
+                        <i class="fa-solid fa-check-circle" style="color: #65a30d"></i>
+                        <div><strong>Emotional Check-in yang Kreatif:</strong> Penggunaan baterai dan permen adalah inovasi media yang sangat baik, membangun kedekatan dengan siswa melalui simbol familiar.</div>
+                      </li>
+                      <li>
+                        <i class="fa-solid fa-check-circle" style="color: #65a30d"></i>
+                        <div><strong>Klarifikasi Konsep yang Tegas (Slide 6):</strong> Slide "AMANDEMEN = MENYEMPURNAKAN" dengan tegas membedakan "BUKAN mengganti UUD lama" dan "TETAP UUD NRI 1945".</div>
+                      </li>
+                      <li>
+                        <i class="fa-solid fa-check-circle" style="color: #65a30d"></i>
+                        <div><strong>Visualisasi Prosedur Pasal 37 (Slide 8):</strong> Diagram alur 1/3 → tertulis & jelas → 2/3 → 50%+1 → NKRI tetap sangat jelas dan mudah dipahami.</div>
+                      </li>
+                      <li>
+                        <i class="fa-solid fa-check-circle" style="color: #65a30d"></i>
+                        <div><strong>Koneksi ke Kehidupan Warga Negara (Slide 15):</strong> Media menghubungkan amandemen dengan dampak nyata (hak suara, HAM, kepastian hukum, otonomi daerah, pendidikan).</div>
+                      </li>
+                      <li>
+                        <i class="fa-solid fa-check-circle" style="color: #65a30d"></i>
+                        <div><strong>Aturan Main TGT yang Rinci (Slide 17):</strong> Memudahkan guru dan siswa menjalankan kuis "New Family 100" dengan tertib.</div>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="analysis-box-item con">
+                    <div class="analysis-box-title" style="color: #b45309"><i class="fa-solid fa-triangle-exclamation" style="color: #f59e0b"></i> Kekurangan & Tantangan Media Siklus 3 & 4</div>
+                    <ul class="analysis-list">
+                      <li>
+                        <i class="fa-solid fa-circle-xmark" style="color: #f59e0b"></i>
+                        <div><strong>Slide 7 (Latar Belakang) Terlalu Text-Heavy:</strong> 6 poin latar belakang dalam satu slide dengan teks panjang bisa membuat siswa kehilangan fokus.</div>
+                      </li>
+                      <li>
+                        <i class="fa-solid fa-circle-xmark" style="color: #f59e0b"></i>
+                        <div><strong>Slide 10–13 (Empat Tahap) Kurang Visual:</strong> Visualnya masih didominasi teks. Sebaiknya ditambahkan ikon atau ilustrasi untuk setiap poin.</div>
+                      </li>
+                      <li>
+                        <i class="fa-solid fa-circle-xmark" style="color: #f59e0b"></i>
+                        <div><strong>Tidak Ada Slide Sintaks Cooperative Learning & TaRL Tier:</strong> Media tidak menampilkan 5 sintaks CL dan pembagian 3 tier TaRL secara eksplisit.</div>
+                      </li>
+                      <li>
+                        <i class="fa-solid fa-circle-xmark" style="color: #f59e0b"></i>
+                        <div><strong>Slide 17 (Aturan Main) Terlalu Padat:</strong> Aturan main (8 aturan penting + 7 aturan Ronde 1 + 6 aturan Ronde 2) dalam satu slide sulit dibaca.</div>
+                      </li>
+                      <li>
+                        <i class="fa-solid fa-circle-xmark" style="color: #f59e0b"></i>
+                        <div><strong>Tidak Ada Slide Rubrik & Refleksi Akhir:</strong> Rubrik penilaian dan refleksi akhir (skala Mint Z/Kopiko/Kiss) belum ditampilkan secara visual.</div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="analysis-box-item solution">
+                  <div class="analysis-box-title" style="color: var(--color-primary-dark)"><i class="fa-solid fa-lightbulb" style="color: var(--color-accent-lime)"></i> Solusi Mitigasi Terapan Media Siklus 3 & 4</div>
+                  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem">
+                    <div>
+                      <h5 style="color: var(--color-primary-dark); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.4rem">1. Pecah Slide 7 & 17</h5>
+                      <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                        Pecah slide latar belakang menjadi 2 slide atau gunakan ikon visual. Pecah aturan main menjadi 2–3 slide atau buat infografis yang lebih visual.
+                      </p>
+                    </div>
+                    <div>
+                      <h5 style="color: var(--color-primary-dark); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.4rem">2. Tambahkan Visual di Slide 10–13</h5>
+                      <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                        Tambahkan ikon atau ilustrasi untuk setiap poin (jam untuk masa jabatan, DPR untuk legislatif, MK untuk Mahkamah Konstitusi).
+                      </p>
+                    </div>
+                    <div>
+                      <h5 style="color: var(--color-primary-dark); font-weight: 700; font-size: 0.95rem; margin-bottom: 0.4rem">3. Tambah Slide Sintaks, Rubrik, & Refleksi</h5>
+                      <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">Sisipkan slide sintaks CL & TaRL, rubrik penilaian, contoh soal tes, dan refleksi akhir (skala Mint Z/Kopiko/Kiss).</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </article>
+
+            <!-- 3. Kajian Teori Media Siklus 3 & 4 -->
+            <article class="analysis-module-card">
+              <div class="analysis-module-header">
+                <div class="analysis-module-num">03</div>
+                <div>
+                  <h3 class="analysis-module-title">Kajian Teori: Media Pembelajaran Siklus 3 & 4</h3>
+                  <p class="analysis-module-desc">Landasan ilmiah teori kognitif multimedia, TGT, TaRL, CRT, dan integrasi TPACK dalam media amandemen konstitusi.</p>
+                </div>
+              </div>
+
+              <div class="analysis-content-body">
+                <div class="theory-grid">
+                  <div class="theory-card">
+                    <span class="theory-badge">Desain Multimedia</span>
+                    <h4 class="theory-title">Cognitive Theory of Multimedia Learning (Mayer, 2001)</h4>
+                    <p class="theory-desc">Penyajian visual alur prosedur Pasal 37 dan tabel sebelum-sesudah bersebelahan langsung dengan teks penjelas memproses informasi melalui saluran visual dan verbal secara seimbang.</p>
+                  </div>
+                  <div class="theory-card">
+                    <span class="theory-badge" style="background: rgba(184, 224, 35, 0.25)">Model Spesifik</span>
+                    <h4 class="theory-title">Teams Games Tournament (Slavin, 1995)</h4>
+                    <p class="theory-desc">
+                      Media aturan main "New Family 100" (Slide 17) mendukung sintaks TGT: presentasi kelas, pembentukan tim, kerja tim, turnamen, dan rekognisi tim. Meningkatkan motivasi, partisipasi, dan tanggung jawab individu.
+                    </p>
+                  </div>
+                  <div class="theory-card">
+                    <span class="theory-badge">Diferensiasi</span>
+                    <h4 class="theory-title">Teaching at the Right Level (TaRL - Banerjee & Duflo)</h4>
+                    <p class="theory-desc">
+                      Emotional check-in (Slide 2 & 3) menjadi dasar penyesuaian kedalaman materi, pembentukan kelompok heterogen, dan pendampingan guru. Siswa dengan energi belajar berbeda mendapat dukungan yang sesuai.
+                    </p>
+                  </div>
+                  <div class="theory-card">
+                    <span class="theory-badge" style="background: rgba(184, 224, 35, 0.25)">Konteks Budaya</span>
+                    <h4 class="theory-title">Culturally Responsive Teaching (Gay, 2000)</h4>
+                    <p class="theory-desc">
+                      Analogi peraturan kelas/sekolah (Slide 5) dan permen Mint Z/Kopiko/Kiss (Slide 3) menjadi jembatan antara materi konstitusi abstrak dengan pengalaman nyata siswa. CRT memastikan pembelajaran relevan secara kultural.
+                    </p>
+                  </div>
+                  <div class="theory-card">
+                    <span class="theory-badge">Taksonomi Kognitif</span>
+                    <h4 class="theory-title">Asesmen HOTS & Taksonomi Bloom Revisi (Anderson & Krathwohl, 2001)</h4>
+                    <p class="theory-desc">Pertanyaan pemantik "Apakah aturan dasar negara boleh disempurnakan?" dan tabel dampak bagi warga negara mendorong peserta didik mencapai level C4 (Menganalisis) hingga C6 (Mencipta).</p>
+                  </div>
+                  <div class="theory-card">
+                    <span class="theory-badge" style="background: rgba(184, 224, 35, 0.25)">Teknologi Pendidikan</span>
+                    <h4 class="theory-title">Integrasi TPACK (Mishra & Koehler, 2006)</h4>
+                    <p class="theory-desc">Perpaduan pengetahuan konten amandemen (CK), strategi TGT dan TaRL (PK), serta presentasi visual digital (TK) menghasilkan perangkat instruksional adaptif bagi murid SMA.</p>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- =================================================================
+       5. AGENCY FOOTER
+       ================================================================= -->
+    <footer class="footer-agency">
+      <div class="container">
+        <div class="footer-agency-grid">
+          <!-- Brand Info -->
+          <div class="footer-agency-col">
+            <div class="footer-agency-brand" style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 1rem">
+              <img
+                src="../logo.png"
+                alt="Logo UAD"
+                class="footer-agency-logo-img"
+                style="width: 46px; height: 46px; object-fit: contain; background: transparent; padding: 0; border: none; box-shadow: none; flex-shrink: 0"
+                onerror="this.style.display = 'none'"
+              />
+              <div class="footer-agency-brand-text">
+                <span class="title" style="display: block; font-size: 1.15rem; font-weight: 800; color: #ffffff">Wahyu Surya Al Fikri, S.Pd.</span>
+                <span class="sub" style="display: block; font-size: 0.8rem; color: #94a3b8; font-weight: 600">PPG Calon Guru Pendidikan Pancasila UAD</span>
+              </div>
+            </div>
+            <p class="footer-agency-bio" style="color: #94a3b8; font-size: 0.88rem; line-height: 1.7">
+              Portofolio resmi PPL Terbimbing Program Pendidikan Profesi Guru (PPG) Calon Guru Bidang Studi Pendidikan Pancasila Universitas Ahmad Dahlan (UAD) di SMA Negeri 4 Yogyakarta.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-agency-col">
+            <h4 class="footer-agency-col-title">Navigasi Portofolio</h4>
+            <ul class="footer-agency-links">
+              <li>
+                <a href="../index.html"><i class="fa-solid fa-arrow-right" style="font-size: 0.75rem; margin-right: 6px"></i> Beranda Utama</a>
+              </li>
+              <li>
+                <a href="../profil.html"><i class="fa-solid fa-arrow-right" style="font-size: 0.75rem; margin-right: 6px"></i> Profil Lengkap Mahasiswa</a>
+              </li>
+              <li>
+                <a href="../UTS/rancangan.html"><i class="fa-solid fa-arrow-right" style="font-size: 0.75rem; margin-right: 6px"></i> Siklus 1 (UTS PPL)</a>
+              </li>
+              <li>
+                <a href="rancangan.html"><i class="fa-solid fa-arrow-right" style="font-size: 0.75rem; margin-right: 6px"></i> Siklus Lanjutan (UAS PPL)</a>
+              </li>
+              <li>
+                <a href="../non-mengajar.html"><i class="fa-solid fa-arrow-right" style="font-size: 0.75rem; margin-right: 6px"></i> Kegiatan Non-Mengajar</a>
+              </li>
+              <li>
+                <a href="../dokumentasi.html"><i class="fa-solid fa-arrow-right" style="font-size: 0.75rem; margin-right: 6px"></i> Galeri Dokumentasi</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Perangkat PPL -->
+          <div class="footer-agency-col">
+            <h4 class="footer-agency-col-title">Perangkat Pembelajaran</h4>
+            <ul class="footer-agency-links">
+              <li>
+                <a href="rancangan.html"><i class="fa-solid fa-check" style="color: var(--color-accent-lime); font-size: 0.75rem; margin-right: 6px"></i> Modul Ajar Siklus 2, 3 & 4</a>
+              </li>
+              <li>
+                <a href="media.html"><i class="fa-solid fa-check" style="color: var(--color-accent-lime); font-size: 0.75rem; margin-right: 6px"></i> Media Berbasis TPACK</a>
+              </li>
+              <li>
+                <a href="instrumen.html"><i class="fa-solid fa-check" style="color: var(--color-accent-lime); font-size: 0.75rem; margin-right: 6px"></i> Instrumen Asesmen Pancasila</a>
+              </li>
+              <li>
+                <a href="video.html"><i class="fa-solid fa-check" style="color: var(--color-accent-lime); font-size: 0.75rem; margin-right: 6px"></i> Video Praktik Pembelajaran</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Kontak & Alamat -->
+          <div class="footer-agency-col">
+            <h4 class="footer-agency-col-title">LPTK & Kontak Resmi</h4>
+            <p style="font-size: 0.88rem; color: #94a3b8; margin-bottom: 0.75rem">
+              <i class="fa-solid fa-location-dot" style="color: var(--color-accent-lime); margin-right: 6px"></i> Kampus Utama UAD, Jl. Ringroad Selatan, Tamanan, Banguntapan, Bantul, D.I. Yogyakarta 55191
+            </p>
+            <p style="font-size: 0.88rem; color: #94a3b8; margin-bottom: 1.25rem"><i class="fa-solid fa-envelope" style="color: var(--color-accent-lime); margin-right: 6px"></i> wahyu.ppg@uad.ac.id</p>
+            <div style="display: flex; gap: 0.6rem">
+              <a href="javascript:void(0)" onclick="showToast('YouTube')" class="social-circle-btn"><i class="fa-brands fa-youtube"></i></a>
+              <a href="javascript:void(0)" onclick="showToast('Instagram')" class="social-circle-btn"><i class="fa-brands fa-instagram"></i></a>
+              <a href="javascript:void(0)" onclick="showToast('LinkedIn')" class="social-circle-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom-strip">
+          <div>&copy; 2026 <strong>Wahyu Surya Al Fikri, S.Pd.</strong> All Rights Reserved • PPG Calon Guru Pendidikan Pancasila Universitas Ahmad Dahlan (UAD).</div>
+          <div>Tema Desain: Modern Clean Green & Lime Agency Style</div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Script for Cycle Switcher (Siklus 2 & Siklus 3 & 4) & Independent Analyses for Media -->
+    <script>
+      function switchUASMedia(cycle) {
+        const frame = document.getElementById("uas-media-frame");
+        const title = document.getElementById("uas-media-title");
+        const subtitle = document.getElementById("uas-media-sub");
+        const downloadBtn = document.getElementById("uas-download-btn");
+        const fullscreenBtn = document.getElementById("uas-fullscreen-btn");
+        const fallbackLink = document.getElementById("uas-fallback-link");
+        const metaBadge = document.getElementById("uas-meta-badge");
+        const metaMethod = document.getElementById("uas-meta-method");
+        const metaPages = document.getElementById("uas-meta-pages");
+
+        const analysisBadge = document.getElementById("analysis-media-badge");
+        const analysisMainTitle = document.getElementById("analysis-media-main-title");
+        const analysisSubtitle = document.getElementById("analysis-media-subtitle");
+
+        // Update active state on tab buttons
+        document.querySelectorAll(".uas-tab-btn").forEach((btn) => btn.classList.remove("active"));
+        const activeBtn = document.getElementById("tab-btn-" + cycle);
+        if (activeBtn) activeBtn.classList.add("active");
+
+        // Update active state on summary cards
+        document.querySelectorAll(".uas-cycle-summary-card").forEach((card) => card.classList.remove("active-card"));
+        const activeSummaryCard = document.getElementById("summary-card-" + cycle);
+        if (activeSummaryCard) activeSummaryCard.classList.add("active-card");
+
+        // Toggle separate analysis containers
+        document.querySelectorAll(".analysis-cycle-container").forEach((container) => container.classList.remove("active"));
+        const targetAnalysis = document.getElementById("analysis-siklus-" + cycle);
+        if (targetAnalysis) targetAnalysis.classList.add("active");
+
+        if (cycle === 2) {
+          frame.src = "../Dokumen/Media Siklus 2.pdf#toolbar=1&navpanes=0&scrollbar=1";
+          title.textContent = "Media Pembelajaran Pendidikan Pancasila Siklus 2: Periodisasi Pemberlakuan Konstitusi";
+          subtitle.innerHTML = "Penyusun: <strong>Wahyu Surya Al Fikri, S.Pd.</strong> • Fase F / Kelas XI F3 • Media Visual Presentasi & Diagram • 11 Halaman";
+          downloadBtn.href = "../Dokumen/Media Siklus 2.pdf";
+          downloadBtn.setAttribute("download", "Media_Pembelajaran_Pancasila_Siklus2_PeriodisasiKonstitusi_WahyuSuryaAlFikri.pdf");
+          downloadBtn.innerHTML = '<i class="fa-solid fa-file-arrow-down"></i> Unduh Media Siklus 2';
+          fullscreenBtn.href = "../Dokumen/Media Siklus 2.pdf";
+          if (fallbackLink) fallbackLink.href = "../Dokumen/Media Siklus 2.pdf";
+          if (metaBadge) metaBadge.innerHTML = '<i class="fa-solid fa-circle-check" style="margin-right: 5px;"></i> Terverifikasi LPTK UAD';
+          if (metaMethod) metaMethod.textContent = "TPACK & Deep Learning Presentation";
+          if (metaPages) metaPages.textContent = "11 Halaman Presentasi";
+
+          if (analysisBadge) analysisBadge.textContent = "ANALISIS KHUSUS MEDIA: SIKLUS 2 (PERIODISASI PEMBERLAKUAN KONSTITUSI)";
+          if (analysisMainTitle) analysisMainTitle.textContent = "Analisis Media Pembelajaran Siklus 2: Periodisasi Pemberlakuan Konstitusi";
+          if (analysisSubtitle) analysisSubtitle.textContent = "Kajian mandiri terhadap perancangan dan efektivitas media visual presentasi Siklus 2, membedah visualisasi garis waktu, tabel komparasi, dan analisis sebab-akibat.";
+          showToast("Menampilkan Dokumen & Analisis Media Siklus 2: Periodisasi Pemberlakuan Konstitusi");
+        } else if (cycle === 34) {
+          frame.src = "../Dokumen/Media Siklus 3 dan 4.pdf#toolbar=1&navpanes=0&scrollbar=1";
+          title.textContent = "Media Pembelajaran Pendidikan Pancasila Siklus 3 & 4: Perubahan UUD NRI Tahun 1945";
+          subtitle.innerHTML = 'Penyusun: <strong>Wahyu Surya Al Fikri, S.Pd.</strong> • Fase F / Kelas XI F3 • Media Visual Presentasi & TGT "New Family 100" • 17 Halaman';
+          downloadBtn.href = "../Dokumen/Media Siklus 3 dan 4.pdf";
+          downloadBtn.setAttribute("download", "Media_Pembelajaran_Pancasila_Siklus3dan4_PerubahanUUD1945_WahyuSuryaAlFikri.pdf");
+          downloadBtn.innerHTML = '<i class="fa-solid fa-file-arrow-down"></i> Unduh Media Siklus 3 & 4';
+          fullscreenBtn.href = "../Dokumen/Media Siklus 3 dan 4.pdf";
+          if (fallbackLink) fallbackLink.href = "../Dokumen/Media Siklus 3 dan 4.pdf";
+          if (metaBadge) metaBadge.innerHTML = '<i class="fa-solid fa-circle-check" style="margin-right: 5px;"></i> Terverifikasi LPTK UAD';
+          if (metaMethod) metaMethod.textContent = "TPACK, TGT, TaRL & CRT";
+          if (metaPages) metaPages.textContent = "17 Halaman Presentasi";
+
+          if (analysisBadge) analysisBadge.textContent = "ANALISIS KHUSUS MEDIA: SIKLUS 3 & 4 (PERUBAHAN UUD NRI TAHUN 1945)";
+          if (analysisMainTitle) analysisMainTitle.textContent = "Analisis Media Pembelajaran Siklus 3 & 4: Perubahan UUD NRI Tahun 1945";
+          if (analysisSubtitle)
+            analysisSubtitle.textContent = 'Kajian mandiri terhadap perancangan dan efektivitas media visual presentasi Siklus 3 & 4, membedah visualisasi prosedur amandemen, tabel sebelum-sesudah, dan integrasi TGT "New Family 100".';
+          showToast("Menampilkan Dokumen & Analisis Media Siklus 3 & 4: Perubahan UUD NRI Tahun 1945");
+        }
+      }
+    </script>
+
+    <script src="../js/main.js"></script>
+  </body>
+</html>
