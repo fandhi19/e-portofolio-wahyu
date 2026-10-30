@@ -260,6 +260,113 @@
         align-items: center;
         gap: 5px;
       }
+    
+      /* Photo Showcase in Non-Mengajar Cards */
+      .nm-photo-wrapper {
+        margin-bottom: 2.25rem;
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid var(--color-border-light);
+        background: #0f2e25;
+        box-shadow: 0 6px 20px rgba(18, 56, 45, 0.08);
+      }
+      .nm-photo-thumb {
+        position: relative;
+        cursor: pointer;
+        overflow: hidden;
+        display: block;
+        background: #12382D;
+      }
+      .nm-photo-thumb img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+        transition: transform 0.4s ease;
+      }
+      .nm-photo-thumb:hover img {
+        transform: scale(1.025);
+      }
+      .nm-photo-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(18, 56, 45, 0.92) 0%, rgba(18, 56, 45, 0.35) 45%, transparent 100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 1.5rem 1.75rem;
+        color: #FFFFFF;
+        pointer-events: none;
+      }
+      .nm-photo-overlay-action {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: rgba(18, 56, 45, 0.85);
+        backdrop-filter: blur(8px);
+        color: #B8E023;
+        padding: 8px 14px;
+        border-radius: var(--radius-pill);
+        font-size: 0.82rem;
+        font-weight: 700;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        border: 1px solid rgba(184, 224, 35, 0.4);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        pointer-events: none;
+      }
+      .nm-photo-caption-title {
+        font-size: 1.15rem;
+        font-weight: 800;
+        color: #FFFFFF;
+        margin-bottom: 0.3rem;
+        line-height: 1.35;
+      }
+      .nm-photo-caption-sub {
+        font-size: 0.86rem;
+        color: #D4F455;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 600;
+      }
+
+      /* Dual Photo Grid for Kegiatan 3 */
+      .nm-photos-grid-2 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2.25rem;
+      }
+      .nm-photos-grid-2 .nm-photo-wrapper {
+        margin-bottom: 0;
+      }
+      .nm-photos-grid-2 .nm-photo-thumb img {
+        height: 320px;
+      }
+
+      /* Modal Image Preview */
+      .modal-img-container {
+        width: 100%;
+        max-height: 480px;
+        background: #0d2820;
+        border-radius: var(--radius-sm);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        margin-bottom: 1.25rem;
+      }
+      .modal-img-container img {
+        max-height: 480px;
+        width: auto;
+        max-width: 100%;
+        object-fit: contain;
+        border-radius: var(--radius-sm);
+      }
+
     </style>
   </head>
   <body>
@@ -395,7 +502,7 @@
     </section>
 
     <!-- =================================================================
-       4. DETAIL ACTIVITIES MAIN SECTION (3 DETAILED ACTIVITIES, NO PHOTOS)
+       4. DETAIL ACTIVITIES MAIN SECTION (3 DETAILED ACTIVITIES WITH AUTHENTIC PHOTOS)
        ================================================================= -->
     <main style="padding: 4rem 0 6rem; background: #ffffff">
       <div class="container">
@@ -452,6 +559,23 @@
           <p class="nm-lead-text">
             Selama pelaksanaan PPL Terbimbing di SMA Negeri 4 Yogyakarta, Wahyu Surya Al Fikri, S.Pd. secara terjadwal melaksanakan tugas piket lobi sebagai representasi etalase terdepan pelayanan institusi sekolah. Bertugas di lobi utama menempatkan calon guru pada episentrum interaksi langsung dengan beragam pemangku kepentingan (<em>stakeholders</em>)—mulai dari tamu kedinasan, pengawas sekolah, orang tua/wali peserta didik, tamu kemitraan, hingga civitas akademika internal. Kegiatan ini mengasah kepekaan komunikasi interpersonal, ketegasan administratif, serta keteladanan penanaman budaya 5S (Senyum, Salam, Sapa, Sopan, dan Santun) dalam membangun atmosfer lingkungan sekolah yang ramah, tertib, dan berwibawa.
           </p>
+
+          <!-- Photo Showcase: Piket Lobi -->
+          <div class="nm-photo-wrapper">
+            <div class="nm-photo-thumb" onclick="openPhotoModal('IMG/Piket Loby.jpeg', 'Dokumentasi Tugas Piket Lobi & Pelayanan Tamu Sekolah', 'Kegiatan Non-Mengajar', 'Wahyu Surya Al Fikri, S.Pd. bertugas di lobi utama SMA Negeri 4 Yogyakarta menyambut tamu sekolah, mencatat kehadiran tamu di buku registrasi, serta melayani administrasi perizinan peserta didik dengan menerapkan budaya 5S.', 'Lobi Utama SMA Negeri 4 Yogyakarta', 'Piket Lobi')">
+              <img src="IMG/Piket Loby.jpeg" alt="Dokumentasi Piket Lobi SMA Negeri 4 Yogyakarta" />
+              <div class="nm-photo-overlay-action">
+                <i class="fa-solid fa-magnifying-glass-plus"></i> Klik untuk Perbesar
+              </div>
+              <div class="nm-photo-overlay">
+                <div class="nm-photo-caption-title">Dokumentasi Tugas Piket Lobi & Manajemen Pelayanan Tamu Sekolah</div>
+                <div class="nm-photo-caption-sub">
+                  <i class="fa-solid fa-location-dot"></i> Lobi Utama & Meja Informasi SMA Negeri 4 Yogyakarta • Budaya 5S
+                </div>
+              </div>
+            </div>
+          </div>
+
 
           <div class="nm-grid-3">
             <div class="nm-box-item">
@@ -548,6 +672,23 @@
             Dalam rangkaian penjaminan mutu asesmen pembelajaran Kurikulum Merdeka di SMA Negeri 4 Yogyakarta, Wahyu Surya Al Fikri, S.Pd. dipercaya mengemban amanah sebagai Pengawas Ruang pada pelaksanaan Asesmen Sumatif Tengah Semester (ASTS) Gasal. Pengawasan asesmen sumatif memegang peranan krusial dalam menjamin keabsahan (validitas), keadilan (fairness), dan keandalan (reliabilitas) data capaian kompetensi peserta didik. Melalui pengawasan yang cermat dan berkeadaban, calon guru memastikan iklim ruang ujian berjalan hening, tertib, dan steril dari kecurangan akademik, sehingga setiap hasil evaluasi yang diperoleh merefleksikan kemampuan intelektual dan kejujuran murni peserta didik.
           </p>
 
+          <!-- Photo Showcase: Mengawas ASTS -->
+          <div class="nm-photo-wrapper">
+            <div class="nm-photo-thumb" onclick="openPhotoModal('IMG/Mengawas ASTS.jpeg', 'Dokumentasi Pengawasan Asesmen Sumatif Tengah Semester (ASTS)', 'Kegiatan Non-Mengajar', 'Wahyu Surya Al Fikri, S.Pd. menjalankan tugas pengawasan ruang ujian pada pelaksanaan ASTS Gasal di SMA Negeri 4 Yogyakarta untuk menjamin integritas, kejujuran akademik, dan ketertiban evaluasi belajar siswa.', 'Ruang Ujian SMA Negeri 4 Yogyakarta', 'Pengawasan ASTS')">
+              <img src="IMG/Mengawas ASTS.jpeg" alt="Dokumentasi Pengawasan ASTS SMA Negeri 4 Yogyakarta" />
+              <div class="nm-photo-overlay-action">
+                <i class="fa-solid fa-magnifying-glass-plus"></i> Klik untuk Perbesar
+              </div>
+              <div class="nm-photo-overlay">
+                <div class="nm-photo-caption-title">Pengawasan Ruang Asesmen Sumatif Tengah Semester (ASTS) Gasal</div>
+                <div class="nm-photo-caption-sub">
+                  <i class="fa-solid fa-location-dot"></i> Ruang Ujian Fase E & F SMA Negeri 4 Yogyakarta • Integritas Akademik
+                </div>
+              </div>
+            </div>
+          </div>
+
+
           <div class="nm-grid-3">
             <div class="nm-box-item">
               <div class="nm-box-title">
@@ -643,6 +784,40 @@
           <p class="nm-lead-text">
             Sebagai wujud komitmen kebangsaan dan peran aktif dalam pembinaan kesiswaan, Wahyu Surya Al Fikri, S.Pd. terlibat sebagai panitia pelaksana pada Peringatan Hari Ulang Tahun (HUT) Ke-79 Kemerdekaan Republik Indonesia di SMA Negeri 4 Yogyakarta. Momentum kemerdekaan menjadi arena laboratorium nyata bagi calon guru Pendidikan Pancasila dalam mengaktualisasikan nilai-nilai kebangsaan, gotong royong, dan patriotisme ke dalam jiwa generasi muda. Bekerja sama secara kolaboratif dengan Pembina OSIS, dewan guru, dan pengurus OSIS/MPK, keterlibatan ini mencakup perencanaan konseptual, manajemen teknis perlombaan edukatif, penjurian objektif, hingga koordinasi puncak peringatan proklamasi kemerdekaan.
           </p>
+
+          <!-- Dual Photo Showcase: Panitia Lomba & Upacara HUT RI -->
+          <div class="nm-photos-grid-2">
+            <div class="nm-photo-wrapper">
+              <div class="nm-photo-thumb" onclick="openPhotoModal('IMG/Panitia Lomba.jpeg', 'Kepanitiaan & Penjurian Lomba Kemerdekaan RI Ke-79', 'Kegiatan Non-Mengajar', 'Wahyu Surya Al Fikri, S.Pd. bersama dewan guru dan OSIS SMA Negeri 4 Yogyakarta bertugas sebagai panitia dan dewan juri perlombaan semarak HUT Ke-79 Kemerdekaan RI.', 'Lapangan & Panggung Utama SMA Negeri 4 Yogyakarta', 'Panitia Lomba')">
+                <img src="IMG/Panitia Lomba.jpeg" alt="Kepanitiaan Lomba HUT Kemerdekaan RI SMA Negeri 4 Yogyakarta" />
+                <div class="nm-photo-overlay-action">
+                  <i class="fa-solid fa-magnifying-glass-plus"></i> Perbesar
+                </div>
+                <div class="nm-photo-overlay">
+                  <div class="nm-photo-caption-title">Kepanitiaan & Penjurian Lomba Semarak HUT Ke-79 Kemerdekaan RI</div>
+                  <div class="nm-photo-caption-sub">
+                    <i class="fa-solid fa-location-dot"></i> Lapangan & Panggung Utama SMA Negeri 4 Yogyakarta
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="nm-photo-wrapper">
+              <div class="nm-photo-thumb" onclick="openPhotoModal('IMG/Upacara Kemerdekaan 17 Agustus.jpeg', 'Upacara Peringatan Detik-Detik Proklamasi Kemerdekaan RI Ke-79', 'Kegiatan Non-Mengajar', 'Wahyu Surya Al Fikri, S.Pd. bersama civitas akademika dan siswa SMA Negeri 4 Yogyakarta berbaris khidmat mengikuti Upacara Peringatan HUT Ke-79 Kemerdekaan Republik Indonesia.', 'Lapangan Utama SMA Negeri 4 Yogyakarta', 'Upacara 17 Agustus')">
+                <img src="IMG/Upacara Kemerdekaan 17 Agustus.jpeg" alt="Upacara Peringatan HUT Ke-79 RI di SMA Negeri 4 Yogyakarta" />
+                <div class="nm-photo-overlay-action">
+                  <i class="fa-solid fa-magnifying-glass-plus"></i> Perbesar
+                </div>
+                <div class="nm-photo-overlay">
+                  <div class="nm-photo-caption-title">Upacara Peringatan HUT Ke-79 Kemerdekaan Republik Indonesia</div>
+                  <div class="nm-photo-caption-sub">
+                    <i class="fa-solid fa-location-dot"></i> Lapangan Upacara SMA Negeri 4 Yogyakarta
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
 
           <div class="nm-grid-3">
             <div class="nm-box-item">
@@ -809,6 +984,83 @@
       </div>
     </footer>
 
+    
+    <!-- Photo Lightbox Modal -->
+    <div id="photo-modal" class="modal-overlay">
+      <div class="modal-window">
+        <button class="modal-close-btn" id="photo-modal-close" aria-label="Tutup Pratinjau">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="modal-img-container">
+          <img id="photo-modal-img" src="" alt="Pratinjau Foto Kegiatan Non-Mengajar" />
+        </div>
+
+        <span id="photo-badge" class="tag-pill-light" style="background: #12382d; color: #b8e023; margin-bottom: 0.75rem; display: inline-block; font-weight: 700"></span>
+        <h3 id="photo-title" style="font-size: 1.35rem; color: #12382d; margin-bottom: 0.4rem; font-weight: 800; line-height: 1.4"></h3>
+        <div id="photo-loc" style="font-size: 0.85rem; color: #12382d; font-weight: 600; margin-bottom: 1rem"></div>
+        <div id="photo-desc" style="color: #475569; font-size: 0.92rem; line-height: 1.7; background: #f8f9f5; padding: 1.2rem; border-radius: 12px; border-left: 4px solid #b8e023; margin-bottom: 1.25rem"></div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem">
+          <span style="font-size: 0.82rem; color: #64748b">
+            <i class="fa-solid fa-camera" style="color: #12382d; margin-right: 5px"></i> Dokumentasi Asli PPL Terbimbing di SMA Negeri 4 Yogyakarta
+          </span>
+          <a id="photo-modal-link" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary-lime btn-sm">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Buka Ukuran Asli
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
     <script src="js/main.js"></script>
+    <script>
+      // Photo Lightbox modal handler
+      const photoModal = document.getElementById("photo-modal");
+      const photoClose = document.getElementById("photo-modal-close");
+      const photoImg = document.getElementById("photo-modal-img");
+      const photoLink = document.getElementById("photo-modal-link");
+      const photoTitle = document.getElementById("photo-title");
+      const photoBadge = document.getElementById("photo-badge");
+      const photoLoc = document.getElementById("photo-loc");
+      const photoDesc = document.getElementById("photo-desc");
+
+      window.openPhotoModal = function (imgSrc, title, category, desc, location, label) {
+        if (photoImg) photoImg.src = imgSrc;
+        if (photoLink) photoLink.href = imgSrc;
+        if (!photoModal) return;
+        if (photoTitle) photoTitle.textContent = title;
+        if (photoBadge) photoBadge.textContent = category + ' • ' + label;
+        if (photoLoc) photoLoc.innerHTML = '<i class="fa-solid fa-location-dot" style="margin-right:6px; color:#12382D;"></i> Lokasi: ' + location;
+        if (photoDesc) photoDesc.textContent = desc;
+
+        photoModal.classList.add("active");
+        document.body.style.overflow = "hidden";
+      };
+
+      if (photoClose) {
+        photoClose.addEventListener("click", () => {
+          photoModal.classList.remove("active");
+          document.body.style.overflow = "";
+        });
+      }
+
+      if (photoModal) {
+        photoModal.addEventListener("click", (e) => {
+          if (e.target === photoModal) {
+            photoModal.classList.remove("active");
+            document.body.style.overflow = "";
+          }
+        });
+      }
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && photoModal && photoModal.classList.contains("active")) {
+          photoModal.classList.remove("active");
+          document.body.style.overflow = "";
+        }
+      });
+    </script>
+
   </body>
 </html>
