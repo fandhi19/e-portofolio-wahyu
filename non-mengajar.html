@@ -11,6 +11,256 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+      .nm-stats-strip {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 3.5rem;
+      }
+      .nm-stat-card {
+        background: #ffffff;
+        border: 1px solid var(--color-border-light);
+        border-radius: var(--radius-lg);
+        padding: 1.5rem 1.8rem;
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+        box-shadow: var(--shadow-sm);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .nm-stat-card:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow-md);
+        border-color: var(--color-primary-dark);
+      }
+      .nm-stat-num {
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: var(--color-accent-lime);
+        background: var(--color-primary-dark);
+        width: 58px;
+        height: 58px;
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        box-shadow: 0 4px 12px rgba(18, 56, 45, 0.2);
+      }
+      .nm-stat-info h4 {
+        font-size: 1.05rem;
+        font-weight: 800;
+        color: var(--color-primary-dark);
+        margin: 0 0 0.25rem;
+      }
+      .nm-stat-info p {
+        font-size: 0.85rem;
+        color: var(--color-text-muted);
+        margin: 0;
+      }
+
+      /* Showcase Cards */
+      .nm-showcase-card {
+        background: #ffffff;
+        border: 1px solid var(--color-border-light);
+        border-radius: var(--radius-xl);
+        padding: 2.75rem 2.5rem;
+        margin-bottom: 3rem;
+        box-shadow: var(--shadow-sm);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        position: relative;
+      }
+      .nm-showcase-card:hover {
+        box-shadow: var(--shadow-md);
+        border-color: rgba(18, 56, 45, 0.3);
+      }
+      .nm-card-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 1.25rem;
+        padding-bottom: 1.75rem;
+        border-bottom: 1px solid var(--color-border-light);
+        margin-bottom: 2rem;
+      }
+      .nm-top-left {
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+      }
+      .nm-icon-wrapper {
+        width: 64px;
+        height: 64px;
+        border-radius: 16px;
+        background: rgba(184, 224, 35, 0.2);
+        color: var(--color-primary-dark);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.75rem;
+        flex-shrink: 0;
+        border: 1px solid rgba(184, 224, 35, 0.5);
+      }
+      .nm-category-badge {
+        font-size: 0.75rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: var(--color-primary-dark);
+        background: rgba(18, 56, 45, 0.08);
+        padding: 3px 10px;
+        border-radius: 4px;
+        display: inline-block;
+        margin-bottom: 0.4rem;
+      }
+      .nm-title {
+        font-size: 1.55rem;
+        font-weight: 800;
+        color: var(--color-primary-dark);
+        margin: 0 0 0.35rem;
+        line-height: 1.3;
+      }
+      .nm-meta-location {
+        font-size: 0.88rem;
+        color: var(--color-text-muted);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .nm-status-badge {
+        background: rgba(18, 56, 45, 0.06);
+        color: var(--color-primary-dark);
+        font-size: 0.82rem;
+        font-weight: 700;
+        padding: 6px 14px;
+        border-radius: var(--radius-pill);
+        border: 1px solid rgba(18, 56, 45, 0.15);
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+      .nm-lead-text {
+        font-size: 1.05rem;
+        line-height: 1.8;
+        color: #334155;
+        margin-bottom: 2.25rem;
+        text-align: justify;
+      }
+      .nm-grid-3 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+        gap: 1.5rem;
+        margin-bottom: 2.25rem;
+      }
+      .nm-box-item {
+        background: #F8F9F5;
+        border: 1px solid var(--color-border-light);
+        border-radius: 14px;
+        padding: 1.6rem;
+      }
+      .nm-box-title {
+        font-size: 1rem;
+        font-weight: 800;
+        color: var(--color-primary-dark);
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.65rem;
+        padding-bottom: 0.65rem;
+        border-bottom: 2px solid rgba(18, 56, 45, 0.1);
+      }
+      .nm-box-item ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .nm-box-item ul li {
+        position: relative;
+        padding-left: 1.35rem;
+        margin-bottom: 0.75rem;
+        font-size: 0.9rem;
+        line-height: 1.6;
+        color: #475569;
+      }
+      .nm-box-item ul li:last-child {
+        margin-bottom: 0;
+      }
+      .nm-box-item ul li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--color-primary-dark);
+        font-weight: 800;
+        font-size: 1.2rem;
+        line-height: 1;
+      }
+      .nm-reflection-box {
+        background: linear-gradient(135deg, #12382D 0%, #0d2a22 100%);
+        border-radius: 14px;
+        padding: 1.8rem 2rem;
+        color: #FFFFFF;
+        display: flex;
+        align-items: flex-start;
+        gap: 1.25rem;
+        box-shadow: 0 8px 24px rgba(18, 56, 45, 0.2);
+        margin-bottom: 1.75rem;
+      }
+      .nm-reflection-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: rgba(184, 224, 35, 0.2);
+        color: var(--color-accent-lime);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        flex-shrink: 0;
+        border: 1px solid rgba(184, 224, 35, 0.4);
+      }
+      .nm-reflection-text h5 {
+        font-size: 1rem;
+        font-weight: 800;
+        color: var(--color-accent-lime);
+        margin: 0 0 0.5rem;
+        letter-spacing: 0.3px;
+      }
+      .nm-reflection-text p {
+        font-size: 0.93rem;
+        line-height: 1.7;
+        color: #E2E8F0;
+        margin: 0;
+        font-style: italic;
+      }
+      .nm-card-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        padding-top: 1.25rem;
+        border-top: 1px solid var(--color-border-light);
+      }
+      .nm-tags-group {
+        display: flex;
+        gap: 0.65rem;
+        flex-wrap: wrap;
+      }
+      .nm-tag-pill {
+        background: #F1F5F9;
+        color: var(--color-primary-dark);
+        font-size: 0.78rem;
+        font-weight: 700;
+        padding: 4px 12px;
+        border-radius: var(--radius-pill);
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+      }
+    </style>
   </head>
   <body>
     <!-- =================================================================
@@ -129,9 +379,11 @@
           <span>PPL TERBIMBING • KEGIATAN NON-MENGAJAR</span>
         </div>
 
-        <h1 style="font-size: clamp(2.2rem, 4vw, 3.2rem); color: var(--color-primary-dark); margin-bottom: 0.8rem">Kegiatan Non-Mengajar di Sekolah Mitra</h1>
-        <p style="max-width: 760px; font-size: 1.05rem; line-height: 1.6; color: var(--color-text-muted)">
-          Kontribusi aktif mahasiswa PPG Calon Guru Pendidikan Pancasila dalam pembinaan kesiswaan, tata tertib, penanaman karakter bangsa, upacara bendera, dan kolaborasi keprofesian di SMA Negeri 4 Yogyakarta.
+        <h1 style="font-size: clamp(2.2rem, 4vw, 3.2rem); color: var(--color-primary-dark); margin-bottom: 0.8rem; font-weight: 800;">
+          Kegiatan Non-Mengajar PPL di SMA Negeri 4 Yogyakarta
+        </h1>
+        <p style="max-width: 820px; font-size: 1.05rem; line-height: 1.6; color: var(--color-text-muted)">
+          Laporan terperinci mengenai pelaksanaan 3 program non-mengajar otentik yang dilaksanakan oleh <strong>Wahyu Surya Al Fikri, S.Pd.</strong> selama masa PPL di SMA Negeri 4 Yogyakarta. Meliputi <strong>Piket Lobi</strong>, <strong>Mengawas ASTS</strong>, dan <strong>Panitia Lomba Kemerdekaan RI</strong> sebagai wujud integrasi kompetensi kepribadian, sosial, manajerial, dan penguatan budaya sekolah.
         </p>
 
         <div class="subpage-breadcrumb">
@@ -143,161 +395,322 @@
     </section>
 
     <!-- =================================================================
-       4. DETAIL ACTIVITIES GRID
+       4. DETAIL ACTIVITIES MAIN SECTION (3 DETAILED ACTIVITIES, NO PHOTOS)
        ================================================================= -->
     <main style="padding: 4rem 0 6rem; background: #ffffff">
       <div class="container">
-        <div class="cards-agency-grid">
-          <!-- Card 1: Ekstrakurikuler Olahraga -->
-          <div class="card-agency">
-            <div class="card-agency-header">
-              <div class="card-agency-icon">
-                <i class="fa-solid fa-person-military-pointing"></i>
-              </div>
-              <span class="tag-pill" style="background: rgba(184, 224, 35, 0.2); color: var(--color-primary-dark)">Minat & Bakat</span>
-            </div>
-            <div class="card-agency-body">
-              <div class="card-agency-title">Pembina Ekstrakurikuler Paskibra & Kedisiplinan</div>
-              <p class="card-agency-desc">Membimbing latihan baris-berbaris, pembentukan karakter kepemimpinan, tanggung jawab, ketertiban saf, dan wawasan kebangsaan anggota Paskibra sekolah mitra.</p>
-              <div class="card-agency-spec">
-                <div class="card-agency-spec-title">Rincian Kegiatan:</div>
-                <ul>
-                  <li>Jadwal: 2 Kali Seminggu (Selasa & Kamis sore)</li>
-                  <li>Fasilitas: Halaman Utama & Lapangan Upacara SMA Negeri 4 Yogyakarta</li>
-                  <li>Capaian: Kesiapan regu pengibar bendera dan penanaman jiwa nasionalisme</li>
-                </ul>
-              </div>
-              <div class="card-agency-footer">
-                <a href="dokumentasi.html" class="btn btn-primary-dark btn-sm"> <i class="fa-solid fa-images"></i> Lihat Galeri Foto </a>
-              </div>
+
+        <!-- Highlights Stat Row -->
+        <div class="nm-stats-strip">
+          <div class="nm-stat-card">
+            <div class="nm-stat-num">01</div>
+            <div class="nm-stat-info">
+              <h4>Piket Lobi</h4>
+              <p>Layanan Tamu, Perizinan Siswa & Budaya 5S</p>
             </div>
           </div>
-
-          <!-- Card 2: Piket Gerbang 5S -->
-          <div class="card-agency">
-            <div class="card-agency-header">
-              <div class="card-agency-icon">
-                <i class="fa-solid fa-clipboard-user"></i>
-              </div>
-              <span class="tag-pill" style="background: rgba(18, 56, 45, 0.08); color: var(--color-primary-dark)">Budaya Sekolah</span>
-            </div>
-            <div class="card-agency-body">
-              <div class="card-agency-title">Piket Gerbang & Penyambutan Siswa (5S)</div>
-              <p class="card-agency-desc">Menyambut kehadiran peserta didik di gerbang sekolah melalui pembiasaan Senyum, Salam, Sapa, Sopan, dan Santun, serta menegakkan ketertiban seragam dan kedisiplinan jam masuk.</p>
-              <div class="card-agency-spec">
-                <div class="card-agency-spec-title">Rincian Kegiatan:</div>
-                <ul>
-                  <li>Waktu: Setiap pagi pukul 06.30 - 07.15 WIB</li>
-                  <li>Fokus: Pembentukan karakter disiplin & kehangatan relasi guru-siswa</li>
-                  <li>Kolaborasi: Bersama guru piket harian sekolah mitra</li>
-                </ul>
-              </div>
-              <div class="card-agency-footer">
-                <a href="dokumentasi.html" class="btn btn-primary-dark btn-sm"> <i class="fa-solid fa-images"></i> Lihat Galeri Foto </a>
-              </div>
+          <div class="nm-stat-card">
+            <div class="nm-stat-num">02</div>
+            <div class="nm-stat-info">
+              <h4>Mengawas ASTS</h4>
+              <p>Pengawasan Evaluasi & Integritas Akademik</p>
             </div>
           </div>
-
-          <!-- Card 3: Upacara Bendera -->
-          <div class="card-agency">
-            <div class="card-agency-header">
-              <div class="card-agency-icon">
-                <i class="fa-solid fa-flag"></i>
-              </div>
-              <span class="tag-pill" style="background: rgba(184, 224, 35, 0.2); color: var(--color-primary-dark)">Nasionalisme</span>
-            </div>
-            <div class="card-agency-body">
-              <div class="card-agency-title">Pembina & Penata Barisan Upacara Bendera</div>
-              <p class="card-agency-desc">Membantu kelancaran upacara bendera hari Senin, mengatur kerapian saf tiap kelas, serta membina ketertiban barisan dan kesiapan petugas pengibar bendera sekolah.</p>
-              <div class="card-agency-spec">
-                <div class="card-agency-spec-title">Rincian Kegiatan:</div>
-                <ul>
-                  <li>Jadwal: Setiap Senin pagi pukul 07.00 - 08.00 WIB</li>
-                  <li>Peserta: Seluruh peserta didik Fase E & Fase F SMA Negeri 4 Yogyakarta</li>
-                  <li>Output: Kerapian barisan berkarakter Profil Pelajar Pancasila</li>
-                </ul>
-              </div>
-              <div class="card-agency-footer">
-                <a href="dokumentasi.html" class="btn btn-primary-dark btn-sm"> <i class="fa-solid fa-images"></i> Lihat Galeri Foto </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 4: Senam Bersama GSS -->
-          <div class="card-agency">
-            <div class="card-agency-header">
-              <div class="card-agency-icon">
-                <i class="fa-solid fa-person-running"></i>
-              </div>
-              <span class="tag-pill" style="background: rgba(18, 56, 45, 0.08); color: var(--color-primary-dark)">Sekolah Sehat</span>
-            </div>
-            <div class="card-agency-body">
-              <div class="card-agency-title">Instruktur Senam SKJ & Jumat Krida Sehat</div>
-              <p class="card-agency-desc">Memimpin senam kesegaran jasmani untuk seluruh dewan guru, staf tata usaha, dan peserta didik guna menyemarakkan Gerakan Sekolah Sehat (GSS) Kemenkes.</p>
-              <div class="card-agency-spec">
-                <div class="card-agency-spec-title">Rincian Kegiatan:</div>
-                <ul>
-                  <li>Jadwal: Setiap Jumat pagi pukul 06.45 - 07.45 WIB</li>
-                  <li>Materi: Senam Kesegaran Jasmani (SKJ) Pelajar & Senam Aerobik</li>
-                  <li>Dampak: Peningkatan kebugaran jasmani & suasana kekeluargaan sekolah</li>
-                </ul>
-              </div>
-              <div class="card-agency-footer">
-                <a href="dokumentasi.html" class="btn btn-primary-dark btn-sm"> <i class="fa-solid fa-images"></i> Lihat Galeri Foto </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 5: Pendampingan O2SN -->
-          <div class="card-agency">
-            <div class="card-agency-header">
-              <div class="card-agency-icon">
-                <i class="fa-solid fa-scale-balanced"></i>
-              </div>
-              <span class="tag-pill" style="background: rgba(184, 224, 35, 0.2); color: var(--color-primary-dark)">Prestasi Pelajar</span>
-            </div>
-            <div class="card-agency-body">
-              <div class="card-agency-title">Pendamping Lomba Debat Konstitusi & Cerdas Cermat</div>
-              <p class="card-agency-desc">Mendampingi persiapan substansi materi, argumentasi hukum tata negara, penguasaan isu kebangsaan, dan mental bertanding siswa perwakilan sekolah.</p>
-              <div class="card-agency-spec">
-                <div class="card-agency-spec-title">Rincian Kegiatan:</div>
-                <ul>
-                  <li>Peran: Pembimbing Teknis & Pendamping Lomba Debat Konstitusi</li>
-                  <li>Keahlian: Penguatan Argumentasi Hukum & Retorika Berpikir Kritis</li>
-                  <li>Pencapaian: Lolos seleksi rayon tingkat sekolah mitra</li>
-                </ul>
-              </div>
-              <div class="card-agency-footer">
-                <a href="dokumentasi.html" class="btn btn-primary-dark btn-sm"> <i class="fa-solid fa-images"></i> Lihat Galeri Foto </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 6: MGMP & FGD -->
-          <div class="card-agency">
-            <div class="card-agency-header">
-              <div class="card-agency-icon">
-                <i class="fa-solid fa-handshake-angle"></i>
-              </div>
-              <span class="tag-pill" style="background: rgba(18, 56, 45, 0.08); color: var(--color-primary-dark)">Keprofesian Guru</span>
-            </div>
-            <div class="card-agency-body">
-              <div class="card-agency-title">Musyawarah Guru Mata Pelajaran (MGMP) Pendidikan Pancasila</div>
-              <p class="card-agency-desc">Berpartisipasi aktif dalam musyawarah guru mata pelajaran Pendidikan Pancasila sekolah mitra, telaah modul ajar, asesmen otentik, serta Kurikulum Merdeka.</p>
-              <div class="card-agency-spec">
-                <div class="card-agency-spec-title">Rincian Kegiatan:</div>
-                <ul>
-                  <li>Frekuensi: Rapat koordinasi dwimingguan bersama Pamong & DPL</li>
-                  <li>Bahasan: Telaah modul Kurikulum Merdeka & asesmen diagnostik</li>
-                  <li>Hasil: Notulensi penyelarasan modul ajar & asesmen 3 ranah</li>
-                </ul>
-              </div>
-              <div class="card-agency-footer">
-                <a href="dokumentasi.html" class="btn btn-primary-dark btn-sm"> <i class="fa-solid fa-images"></i> Lihat Galeri Foto </a>
-              </div>
+          <div class="nm-stat-card">
+            <div class="nm-stat-num">03</div>
+            <div class="nm-stat-info">
+              <h4>Panitia Lomba HUT RI</h4>
+              <p>Karakter Kebangsaan & Kepanitiaan Kesiswaan</p>
             </div>
           </div>
         </div>
+
+        <!-- =============================================================
+             KEGIATAN 1: PIKET LOBI
+             ============================================================= -->
+        <article class="nm-showcase-card">
+          <div class="nm-card-top">
+            <div class="nm-top-left">
+              <div class="nm-icon-wrapper">
+                <i class="fa-solid fa-bell-concierge"></i>
+              </div>
+              <div>
+                <span class="nm-category-badge">Layanan Administrasi, Ketertiban & Budaya Sekolah</span>
+                <h2 class="nm-title">1. Piket Lobi & Manajemen Pelayanan Tamu Sekolah</h2>
+                <div class="nm-meta-location">
+                  <i class="fa-solid fa-location-dot" style="color: var(--color-primary-dark);"></i>
+                  <span>Lobi Utama & Meja Informasi SMA Negeri 4 Yogyakarta • Terjadwal Berkala PPL</span>
+                </div>
+              </div>
+            </div>
+            <div class="nm-status-badge">
+              <i class="fa-solid fa-circle-check" style="color: #16a34a;"></i>
+              <span>Terlaksana Penuh</span>
+            </div>
+          </div>
+
+          <p class="nm-lead-text">
+            Selama pelaksanaan PPL Terbimbing di SMA Negeri 4 Yogyakarta, Wahyu Surya Al Fikri, S.Pd. secara terjadwal melaksanakan tugas piket lobi sebagai representasi etalase terdepan pelayanan institusi sekolah. Bertugas di lobi utama menempatkan calon guru pada episentrum interaksi langsung dengan beragam pemangku kepentingan (<em>stakeholders</em>)—mulai dari tamu kedinasan, pengawas sekolah, orang tua/wali peserta didik, tamu kemitraan, hingga civitas akademika internal. Kegiatan ini mengasah kepekaan komunikasi interpersonal, ketegasan administratif, serta keteladanan penanaman budaya 5S (Senyum, Salam, Sapa, Sopan, dan Santun) dalam membangun atmosfer lingkungan sekolah yang ramah, tertib, dan berwibawa.
+          </p>
+
+          <div class="nm-grid-3">
+            <div class="nm-box-item">
+              <div class="nm-box-title">
+                <i class="fa-solid fa-list-check"></i>
+                <span>Tugas Pokok & Tanggung Jawab</span>
+              </div>
+              <ul>
+                <li>Menerima, menyapa, dan meregistrasi setiap tamu kedinasan maupun tamu umum ke dalam Buku Tamu Resmi Sekolah.</li>
+                <li>Menerbitkan kartu identitas pengunjung (<em>Visitor Badge</em>) guna menegakkan protokol keamanan lingkungan sekolah.</li>
+                <li>Mengonfirmasi dan menghubungkan kepentingan tamu kepada pimpinan sekolah, guru mata pelajaran, guru BK, atau tata usaha.</li>
+                <li>Mengelola penerimaan surat masuk kedinasan, dokumen eksternal, serta paket kiriman pembelajaran untuk didistribusikan ke bagian terkait.</li>
+                <li>Memfasilitasi administrasi perizinan siswa (kartu izin meninggalkan kelas, izin berobat/sakit, dan dispensasi tugas kedinasan/lomba).</li>
+              </ul>
+            </div>
+
+            <div class="nm-box-item">
+              <div class="nm-box-title">
+                <i class="fa-solid fa-gears"></i>
+                <span>Prosedur & Alur Operasional (SOP)</span>
+              </div>
+              <ul>
+                <li>Hadir di pos lobi mulai pukul 06.30 WIB untuk penyambutan pagi bersama tim guru piket harian sekolah.</li>
+                <li>Mencatat rekapitulasi presensi keterlambatan peserta didik pagi hari dengan pendekatan dialogis dan pembinaan disiplin positif tanpa kekerasan.</li>
+                <li>Berkoordinasi aktif dengan petugas keamanan (Satpam) gerbang utama dalam memantau akses keluar-masuk warga sekolah selama jam efektif belajar.</li>
+                <li>Menuliskan laporan jurnal harian piket mengenai dinamika kejadian, rekap izin siswa, dan daftar tamu yang hadir hingga jam kepulangan.</li>
+              </ul>
+            </div>
+
+            <div class="nm-box-item">
+              <div class="nm-box-title">
+                <i class="fa-solid fa-award"></i>
+                <span>Capaian & Dampak Nyata</span>
+              </div>
+              <ul>
+                <li>Terwujudnya pelayanan prima (<em>service excellence</em>) yang transparan, santun, dan responsif bagi seluruh orang tua murid dan tamu instansi.</li>
+                <li>Terdokumentasikannya lalu lintas perizinan dan dispensasi siswa secara rapi, valid, dan dapat dipertanggungjawabkan kepada guru wali kelas.</li>
+                <li>Penurunan angka pelanggaran ketertiban jam belajar melalui pendekatan bimbingan disiplin persuasif di area lobi.</li>
+                <li>Penguatan citra kelembagaan SMA Negeri 4 Yogyakarta sebagai sekolah berbudaya adiluhung yang mengedepankan etika kesantunan.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="nm-reflection-box">
+            <div class="nm-reflection-icon">
+              <i class="fa-solid fa-lightbulb"></i>
+            </div>
+            <div class="nm-reflection-text">
+              <h5>Refleksi Pedagogik & Penguatan Kompetensi Guru:</h5>
+              <p>
+                "Menjalankan piket lobi membukakan mata saya bahwa peran seorang guru melampaui sekat-sekat dinding ruang kelas. Guru adalah figur pelayanan publik yang dituntut memiliki kematangan emosional, kemampuan mendengar aktif, dan kecakapan komunikasi asertif—terutama saat menghadapi kekhawatiran wali murid maupun mengarahkan peserta didik yang terlambat. Tugas ini mematangkan kompetensi kepribadian dan sosial saya sebagai calon guru profesional yang siap menjadi teladan tata krama dan integritas di ruang publik satuan pendidikan."
+              </p>
+            </div>
+          </div>
+
+          <div class="nm-card-footer">
+            <div class="nm-tags-group">
+              <span class="nm-tag-pill"><i class="fa-solid fa-tag"></i> Pelayanan Publik</span>
+              <span class="nm-tag-pill"><i class="fa-solid fa-heart"></i> Budaya 5S</span>
+              <span class="nm-tag-pill"><i class="fa-solid fa-shield-halved"></i> Ketertiban Sekolah</span>
+              <span class="nm-tag-pill"><i class="fa-solid fa-user-check"></i> Disiplin Positif</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--color-text-muted); font-weight: 600;">
+              <i class="fa-solid fa-clock" style="margin-right: 4px;"></i> Terjadwal Rutin Setiap Pekan
+            </div>
+          </div>
+        </article>
+
+        <!-- =============================================================
+             KEGIATAN 2: MENGAWAS ASTS
+             ============================================================= -->
+        <article class="nm-showcase-card">
+          <div class="nm-card-top">
+            <div class="nm-top-left">
+              <div class="nm-icon-wrapper">
+                <i class="fa-solid fa-clipboard-check"></i>
+              </div>
+              <div>
+                <span class="nm-category-badge">Evaluasi Pembelajaran & Penjaminan Mutu Akademik</span>
+                <h2 class="nm-title">2. Pengawasan Asesmen Sumatif Tengah Semester (ASTS)</h2>
+                <div class="nm-meta-location">
+                  <i class="fa-solid fa-location-dot" style="color: var(--color-primary-dark);"></i>
+                  <span>Ruang Ujian Fase E & Fase F SMA Negeri 4 Yogyakarta • Pekan Penilaian Sumatif</span>
+                </div>
+              </div>
+            </div>
+            <div class="nm-status-badge">
+              <i class="fa-solid fa-circle-check" style="color: #16a34a;"></i>
+              <span>Terlaksana Penuh</span>
+            </div>
+          </div>
+
+          <p class="nm-lead-text">
+            Dalam rangkaian penjaminan mutu asesmen pembelajaran Kurikulum Merdeka di SMA Negeri 4 Yogyakarta, Wahyu Surya Al Fikri, S.Pd. dipercaya mengemban amanah sebagai Pengawas Ruang pada pelaksanaan Asesmen Sumatif Tengah Semester (ASTS) Gasal. Pengawasan asesmen sumatif memegang peranan krusial dalam menjamin keabsahan (validitas), keadilan (fairness), dan keandalan (reliabilitas) data capaian kompetensi peserta didik. Melalui pengawasan yang cermat dan berkeadaban, calon guru memastikan iklim ruang ujian berjalan hening, tertib, dan steril dari kecurangan akademik, sehingga setiap hasil evaluasi yang diperoleh merefleksikan kemampuan intelektual dan kejujuran murni peserta didik.
+          </p>
+
+          <div class="nm-grid-3">
+            <div class="nm-box-item">
+              <div class="nm-box-title">
+                <i class="fa-solid fa-list-check"></i>
+                <span>Tugas Pokok & Tanggung Jawab</span>
+              </div>
+              <ul>
+                <li>Mengambil berkas naskah soal, lembar jawab, daftar hadir, dan Berita Acara di Ruang Sekretariat Panitia ASTS tepat waktu.</li>
+                <li>Memeriksa kebersihan ruang, kerapian tata letak meja-kursi, serta memastikan jarak duduk antarpeserta telah memenuhi standar ujian.</li>
+                <li>Memverifikasi identitas peserta didik melalui pemeriksaan kartu peserta ujian dan kesesuaian denah tempat duduk.</li>
+                <li>Membacakan tata tertib peserta asesmen secara tegas, memimpin doa bersama, dan menginstruksikan penyimpanan gawai di tempat yang ditentukan.</li>
+                <li>Mengawasi ketertiban ruang selama 90 menit per sesi ujian, mencegah komunikasi antarsiswa atau indikasi ketidakjujuran akademik.</li>
+                <li>Menghitung kesesuaian jumlah lembar jawab dengan daftar hadir, menyusun Berita Acara Pelaksanaan, dan menyegel berkas kembali ke panitia.</li>
+              </ul>
+            </div>
+
+            <div class="nm-box-item">
+              <div class="nm-box-title">
+                <i class="fa-solid fa-gears"></i>
+                <span>Standar Operasional Prosedur (POS)</span>
+              </div>
+              <ul>
+                <li>Memasuki ruang ujian 15 menit sebelum bel tanda pengerjaan dimulai untuk memberikan arahan teknis dan pengisian biodata lembar jawab.</li>
+                <li>Penerapan kebijakan bebas gawai: seluruh ponsel/tas peserta didik wajib diletakkan di depan kelas di dekat meja pengawas dalam kondisi nonaktif.</li>
+                <li>Penanganan kendala teknis: menangani lembar naskah yang cacat cetak atau rusak dengan menukarkan naskah cadangan resmi dari sekretariat.</li>
+                <li>Pencatatan Berita Acara: mendokumentasikan rincian kehadiran (siswa hadir, absen karena sakit/izin) serta menandatangani berkas bersama pengawas pendamping.</li>
+              </ul>
+            </div>
+
+            <div class="nm-box-item">
+              <div class="nm-box-title">
+                <i class="fa-solid fa-award"></i>
+                <span>Capaian & Dampak Nyata</span>
+              </div>
+              <ul>
+                <li>Tercapainya kelancaran 100% sesi pengawasan ASTS di ruang ujian yang ditugaskan tanpa terjadinya insiden kebocoran soal atau kecurangan.</li>
+                <li>Terbangunnya iklim asesmen yang tenang, suportif, dan adil, memungkinkan peserta didik berkonsentrasi maksimal mengerahkan kompetensinya.</li>
+                <li>Tertibnya administrasi lembar jawab dan Berita Acara tanpa ada lembar yang tercecer atau tertukar nomor presensi.</li>
+                <li>Penanaman nilai integritas moral bahwa kejujuran akademik jauh lebih bernilai daripada sekadar angka hasil nilai ujian.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="nm-reflection-box">
+            <div class="nm-reflection-icon">
+              <i class="fa-solid fa-lightbulb"></i>
+            </div>
+            <div class="nm-reflection-text">
+              <h5>Refleksi Pedagogik & Penguatan Kompetensi Guru:</h5>
+              <p>
+                "Tugas mengawas ASTS mengajarkan saya esensi terdalam dari keadilan evaluasi pendidikan. Bagi seorang pendidik mata pelajaran Pendidikan Pancasila, ruang ujian adalah panggung nyata di mana nilai moralitas, kejujuran, dan rasa tanggung jawab diuji secara riil. Mengawas bukanlah sekadar menjaga agar siswa tidak menyontek, melainkan menciptakan rasa aman dan memastikan bahwa setiap usaha belajar anak dihargai secara terhormat. Pengalaman ini melatih ketegasan manajerial saya dalam menegakkan tata tertib secara berwibawa namun tetap penuh empati."
+              </p>
+            </div>
+          </div>
+
+          <div class="nm-card-footer">
+            <div class="nm-tags-group">
+              <span class="nm-tag-pill"><i class="fa-solid fa-tag"></i> Asesmen Sumatif</span>
+              <span class="nm-tag-pill"><i class="fa-solid fa-scale-balanced"></i> Integritas Akademik</span>
+              <span class="nm-tag-pill"><i class="fa-solid fa-file-contract"></i> POS Ujian Resmi</span>
+              <span class="nm-tag-pill"><i class="fa-solid fa-check-double"></i> Kurikulum Merdeka</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--color-text-muted); font-weight: 600;">
+              <i class="fa-solid fa-calendar-days" style="margin-right: 4px;"></i> Periode ASTS Gasal TA 2024/2025
+            </div>
+          </div>
+        </article>
+
+        <!-- =============================================================
+             KEGIATAN 3: PANITIA LOMBA KEMERDEKAAN
+             ============================================================= -->
+        <article class="nm-showcase-card">
+          <div class="nm-card-top">
+            <div class="nm-top-left">
+              <div class="nm-icon-wrapper">
+                <i class="fa-solid fa-flag"></i>
+              </div>
+              <div>
+                <span class="nm-category-badge">Pembinaan Kesiswaan, Nasionalisme & Kepanitiaan Sekolah</span>
+                <h2 class="nm-title">3. Kepanitiaan Peringatan HUT Ke-79 Kemerdekaan RI</h2>
+                <div class="nm-meta-location">
+                  <i class="fa-solid fa-location-dot" style="color: var(--color-primary-dark);"></i>
+                  <span>Lapangan Utama & Aula SMA Negeri 4 Yogyakarta • Semarak Bulan Kemerdekaan</span>
+                </div>
+              </div>
+            </div>
+            <div class="nm-status-badge">
+              <i class="fa-solid fa-circle-check" style="color: #16a34a;"></i>
+              <span>Terlaksana Penuh</span>
+            </div>
+          </div>
+
+          <p class="nm-lead-text">
+            Sebagai wujud komitmen kebangsaan dan peran aktif dalam pembinaan kesiswaan, Wahyu Surya Al Fikri, S.Pd. terlibat sebagai panitia pelaksana pada Peringatan Hari Ulang Tahun (HUT) Ke-79 Kemerdekaan Republik Indonesia di SMA Negeri 4 Yogyakarta. Momentum kemerdekaan menjadi arena laboratorium nyata bagi calon guru Pendidikan Pancasila dalam mengaktualisasikan nilai-nilai kebangsaan, gotong royong, dan patriotisme ke dalam jiwa generasi muda. Bekerja sama secara kolaboratif dengan Pembina OSIS, dewan guru, dan pengurus OSIS/MPK, keterlibatan ini mencakup perencanaan konseptual, manajemen teknis perlombaan edukatif, penjurian objektif, hingga koordinasi puncak peringatan proklamasi kemerdekaan.
+          </p>
+
+          <div class="nm-grid-3">
+            <div class="nm-box-item">
+              <div class="nm-box-title">
+                <i class="fa-solid fa-list-check"></i>
+                <span>Tugas Pokok & Tanggung Jawab</span>
+              </div>
+              <ul>
+                <li>Terlibat dalam rapat koordinasi panitia dewan guru dan OSIS untuk merumuskan tema, cabang perlombaan, dan linimasa kegiatan.</li>
+                <li>Menyusun Petunjuk Pelaksanaan dan Petunjuk Teknis (Juklak-Juknis) untuk perlombaan bertema wawasan kebangsaan dan kreativitas siswa.</li>
+                <li>Bertindak sebagai Koordinator Lapangan dan Dewan Juri untuk lomba orasi kebangsaan, kebersihan & estetika kelas bertema nasionalisme, serta lomba kekompakan antarkelas.</li>
+                <li>Mendampingi pengurus OSIS dalam mengelola logistik perlengkapan, tata suara panggung, alur mobilisasi ratusan peserta didik, dan keselamatan kegiatan.</li>
+                <li>Mengordinasikan pembagian hadiah, sertifikat penghargaan, serta evaluasi menyeluruh pascapenutupan kegiatan semarak kemerdekaan.</li>
+              </ul>
+            </div>
+
+            <div class="nm-box-item">
+              <div class="nm-box-title">
+                <i class="fa-solid fa-gears"></i>
+                <span>Dinamika Kolaborasi & Manajemen Lapangan</span>
+              </div>
+              <ul>
+                <li>Sinergi kemitraan: menjalin komunikasi harmonis antara guru pembina, mahasiswa praktikan PPL, pengurus OSIS/MPK, dan dewan juri.</li>
+                <li>Manajemen risiko & keamanan: berkoordinasi dengan tim PMR sekolah untuk menyediakan posko P3K dan memantau kondisi fisik peserta lomba di lapangan terbuka.</li>
+                <li>Kriteria penilaian objektif: menyusun rubrik penilaian juri yang transparan mencakup bobot orasi, kesesuaian nilai Pancasila, kekompakan, dan sportivitas.</li>
+                <li>Mitigasi waktu: menjaga agar setiap babak perlombaan berlangsung tepat jadwal tanpa mengorbankan ketertiban lingkungan belajar sekolah.</li>
+              </ul>
+            </div>
+
+            <div class="nm-box-item">
+              <div class="nm-box-title">
+                <i class="fa-solid fa-award"></i>
+                <span>Capaian & Dampak Nyata</span>
+              </div>
+              <ul>
+                <li>Partisipasi aktif 100% dari seluruh kelas Fase E dan Fase F SMA Negeri 4 Yogyakarta dengan atmosfer perlombaan yang semarak dan sportif.</li>
+                <li>Tumbuhnya rasa bangga atas warisan perjuangan pahlawan dan penguatan ikatan persaudaraan antarseluruh warga sekolah tanpa sekat.</li>
+                <li>Lahirnya karya dekorasi kelas dan orasi kepemudaan bertemakan nilai-nilai luhur Pancasila dan persatuan Negara Kesatuan Republik Indonesia (NKRI).</li>
+                <li>Terasahnya kapasitas kepemimpinan siswa panitia OSIS melalui bimbingan intensif dan keteladanan yang diberikan calon guru.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="nm-reflection-box">
+            <div class="nm-reflection-icon">
+              <i class="fa-solid fa-lightbulb"></i>
+            </div>
+            <div class="nm-reflection-text">
+              <h5>Refleksi Pedagogik & Penguatan Kompetensi Guru:</h5>
+              <p>
+                "Kepanitiaan HUT Kemerdekaan RI ke-79 membuktikan bahwa pembelajaran Pancasila paling bertenaga adalah yang dialami dan dirayakan bersama. Di luar ruang kelas teori, peringatan kemerdekaan menjadi laboratorium hidup penanaman dimensi Profil Pelajar Pancasila—terutama Gotong Royong, Berkebinekaan Global, dan Mandiri. Bagi saya pribadi, keterlibatan manajerial ini melatih kemampuan <em>event organizing</em>, manajemen krisis lapangan, dan seni merawat sinergi lintas generasi. Guru sejati adalah mereka yang mampu menggerakkan dan menyalakan api nasionalisme di hati para muridnya."
+              </p>
+            </div>
+          </div>
+
+          <div class="nm-card-footer">
+            <div class="nm-tags-group">
+              <span class="nm-tag-pill"><i class="fa-solid fa-tag"></i> HUT RI Ke-79</span>
+              <span class="nm-tag-pill"><i class="fa-solid fa-handshake"></i> Gotong Royong</span>
+              <span class="nm-tag-pill"><i class="fa-solid fa-landmark"></i> Wawasan Kebangsaan</span>
+              <span class="nm-tag-pill"><i class="fa-solid fa-people-group"></i> Kepemimpinan Kesiswaan</span>
+            </div>
+            <div style="font-size: 0.82rem; color: var(--color-text-muted); font-weight: 600;">
+              <i class="fa-solid fa-star" style="color: var(--color-accent-lime); margin-right: 4px;"></i> Peringatan Akbar Kemerdekaan RI
+            </div>
+          </div>
+        </article>
+
       </div>
     </main>
 
@@ -341,7 +754,7 @@
                 <a href="UTS/rancangan.html"><i class="fa-solid fa-arrow-right" style="font-size: 0.75rem; margin-right: 6px"></i> Siklus 1 (UTS PPL)</a>
               </li>
               <li>
-                <a href="UAS/rancangan.html"><i class="fa-solid fa-arrow-right" style="font-size: 0.75rem; margin-right: 6px"></i> Siklus 2 (UAS PPL)</a>
+                <a href="UAS/rancangan.html"><i class="fa-solid fa-arrow-right" style="font-size: 0.75rem; margin-right: 6px"></i> Siklus Lanjutan (UAS PPL)</a>
               </li>
               <li>
                 <a href="non-mengajar.html"><i class="fa-solid fa-arrow-right" style="font-size: 0.75rem; margin-right: 6px"></i> Kegiatan Non-Mengajar</a>
@@ -357,7 +770,10 @@
             <h4 class="footer-agency-col-title">Perangkat Pembelajaran</h4>
             <ul class="footer-agency-links">
               <li>
-                <a href="UTS/rancangan.html"><i class="fa-solid fa-check" style="color: var(--color-accent-lime); font-size: 0.75rem; margin-right: 6px"></i> Modul Ajar Siklus 1 & 2</a>
+                <a href="UTS/rancangan.html"><i class="fa-solid fa-check" style="color: var(--color-accent-lime); font-size: 0.75rem; margin-right: 6px"></i> Modul Ajar Siklus 1 - 4</a>
+              </li>
+              <li>
+                <a href="UTS/materi.html"><i class="fa-solid fa-check" style="color: var(--color-accent-lime); font-size: 0.75rem; margin-right: 6px"></i> Buku Saku Materi Digital</a>
               </li>
               <li>
                 <a href="UTS/media.html"><i class="fa-solid fa-check" style="color: var(--color-accent-lime); font-size: 0.75rem; margin-right: 6px"></i> Media Berbasis TPACK</a>

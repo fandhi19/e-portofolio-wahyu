@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UAS - Video Praktik (Siklus 2: Pancasila Sebagai Ideologi Negara) | Wahyu Surya Al Fikri, S.Pd. - UAD</title>
+    <title>UAS - Video Praktik Pembelajaran (Siklus 2, 3 & 4) | Wahyu Surya Al Fikri, S.Pd. - UAD</title>
 
     <link rel="icon" type="image/png" href="../logo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,60 +13,199 @@
     <link rel="stylesheet" href="../css/style.css" />
 
     <style>
-      .video-showcase-card {
-        background: #ffffff;
+      /* Cycle Switcher Tabs for UAS */
+      .uas-tabs-wrapper {
+        display: flex;
+        gap: 0.85rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+      .uas-tab-btn {
+        background: #F8F9F5;
         border: 1px solid var(--color-border-light);
+        color: var(--color-primary-dark);
+        padding: 0.85rem 1.65rem;
+        border-radius: var(--radius-pill);
+        font-size: 0.92rem;
+        font-weight: 700;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.65rem;
+        transition: all 0.25s ease;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+        font-family: inherit;
+        outline: none;
+      }
+      .uas-tab-btn:hover {
+        background: #FFFFFF;
+        border-color: var(--color-primary-dark);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-sm);
+      }
+      .uas-tab-btn.active {
+        background: var(--color-primary-dark) !important;
+        color: var(--color-accent-lime) !important;
+        border-color: var(--color-primary-dark) !important;
+        box-shadow: 0 8px 24px rgba(18, 56, 45, 0.28) !important;
+      }
+      .uas-tab-badge {
+        background: rgba(184, 224, 35, 0.25);
+        color: var(--color-primary-dark);
+        font-size: 0.72rem;
+        padding: 3px 8px;
+        border-radius: 4px;
+        font-weight: 800;
+        transition: all 0.2s ease;
+      }
+      .uas-tab-btn.active .uas-tab-badge {
+        background: var(--color-accent-lime) !important;
+        color: var(--color-primary-dark) !important;
+      }
+
+      /* Video Showcase Card */
+      .video-showcase-card {
+        background: #12382D;
         border-radius: var(--radius-xl);
         overflow: hidden;
-        box-shadow: var(--shadow-md);
-        margin-bottom: 5rem;
+        box-shadow: 0 12px 36px rgba(18, 56, 45, 0.25);
+        border: 1px solid rgba(184, 224, 35, 0.2);
       }
       .video-main-layout {
         display: grid;
-        grid-template-columns: 1.65fr 1fr;
-        background: #0b241d;
+        grid-template-columns: 1fr 380px;
+        background: #0d2820;
+      }
+      @media (max-width: 1024px) {
+        .video-main-layout {
+          grid-template-columns: 1fr;
+        }
       }
       .video-screen-wrapper {
         position: relative;
+        padding-top: 56.25%;
         background: #000000;
-        min-height: 460px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        min-height: 400px;
       }
       .video-screen-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
-        min-height: 460px;
-        border: none;
+        border: 0;
       }
       .video-sidebar-panel {
-        padding: 2.2rem;
         background: #ffffff;
+        padding: 1.85rem;
         display: flex;
         flex-direction: column;
         border-left: 1px solid var(--color-border-light);
       }
-      @media (max-width: 991px) {
-        .video-main-layout {
-          grid-template-columns: 1fr;
+      .timeline-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .timeline-item {
+        display: flex;
+        gap: 0.85rem;
+        align-items: flex-start;
+        padding: 0.65rem 0.75rem;
+        border-radius: 8px;
+        transition: background 0.2s ease;
+      }
+      .timeline-item:hover {
+        background: #f8f9f5;
+      }
+      .timeline-item.active {
+        background: rgba(184, 224, 35, 0.15);
+        border-left: 3px solid var(--color-primary-dark);
+      }
+      .time-badge {
+        background: rgba(18, 56, 45, 0.08);
+        color: var(--color-primary-dark);
+        font-size: 0.75rem;
+        font-weight: 800;
+        padding: 3px 8px;
+        border-radius: 4px;
+        flex-shrink: 0;
+      }
+      .timeline-item.active .time-badge {
+        background: var(--color-primary-dark);
+        color: var(--color-accent-lime);
+      }
+
+      /* Cycle summary cards */
+      .uas-cycles-summary-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 1.85rem;
+        margin-top: 3.5rem;
+      }
+      .uas-cycle-summary-card {
+        background: #FFFFFF;
+        border: 1px solid var(--color-border-light);
+        border-radius: var(--radius-xl);
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        box-shadow: var(--shadow-sm);
+        transition: var(--transition-fast);
+        position: relative;
+      }
+      .uas-cycle-summary-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--color-primary-dark);
+        box-shadow: var(--shadow-md);
+      }
+      .uas-cycle-summary-card.active-card {
+        border-top: 4px solid var(--color-accent-lime);
+      }
+
+      /* Analysis Cycle Switch Container */
+      .analysis-cycle-container {
+        display: none;
+        animation: fadeInAnalysis 0.35s ease;
+      }
+      .analysis-cycle-container.active {
+        display: block;
+      }
+      @keyframes fadeInAnalysis {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
         }
-        .video-screen-wrapper {
-          min-height: 320px;
+        to {
+          opacity: 1;
+          transform: translateY(0);
         }
-        .video-screen-wrapper iframe {
-          min-height: 320px;
-        }
-        .video-sidebar-panel {
-          border-left: none;
-          border-top: 1px solid var(--color-border-light);
-        }
+      }
+
+      /* Primary Lime Button Override */
+      .btn-primary-lime {
+        background: var(--color-accent-lime) !important;
+        color: var(--color-primary-dark) !important;
+        font-weight: 800 !important;
+        box-shadow: 0 6px 20px rgba(184, 224, 35, 0.35) !important;
+        text-decoration: none !important;
+        border: none !important;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .btn-primary-lime:hover {
+        background: var(--color-accent-lime-hover) !important;
+        transform: translateY(-2px);
+        color: var(--color-primary-dark) !important;
+        box-shadow: 0 10px 25px rgba(184, 224, 35, 0.45) !important;
       }
     </style>
   </head>
   <body>
     <!-- =================================================================
-       1. TOPBAR (Contact Info & Angled Lime Social Strip)
+       1. TOPBAR
        ================================================================= -->
     <div class="topbar">
       <div class="container topbar-inner">
@@ -178,13 +317,14 @@
       <div class="container">
         <div class="badge-pill-group">
           <span class="twin-dot-icon"> <span></span><span></span> </span>
-          <span>UAS • SIKLUS 2 PPL TERBIMBING</span>
+          <span>UAS • SIKLUS LANJUTAN PPL TERBIMBING</span>
         </div>
 
-        <h1 style="font-size: clamp(2.2rem, 4vw, 3.2rem); color: var(--color-primary-dark); margin-bottom: 0.8rem">Video Praktik Pembelajaran Pendidikan Pancasila (UAS)</h1>
-        <p style="max-width: 860px; font-size: 1.05rem; line-height: 1.6; color: var(--color-text-muted)">
-          Dokumentasi rekaman video pelaksanaan pembelajaran otentik materi <strong>Pancasila Sebagai Ideologi Negara</strong> berbasis Problem-Based Learning (PBL) Fase F Kelas XI di SMA Negeri 4 Yogyakarta, dilengkapi analisis sintaks
-          interaktif, evaluasi kritis proses mengajar, serta kajian supervisi klinis keolahragaan.
+        <h1 style="font-size: clamp(2.2rem, 4vw, 3.2rem); color: var(--color-primary-dark); margin-bottom: 0.8rem; font-weight: 800;">
+          Video Praktik Pembelajaran (Siklus 2, 3 & 4)
+        </h1>
+        <p style="max-width: 820px; font-size: 1.05rem; line-height: 1.6; color: var(--color-text-muted)">
+          Kompilasi rekaman video otentik pelaksanaan praktik pembelajaran Kurikulum Merdeka Fase F (Kelas XI SMA) untuk Ujian Akhir Semester (UAS) / Siklus Lanjutan PPL Terbimbing di SMA Negeri 4 Yogyakarta. Dilengkapi pemutar video interaktif YouTube HD, navigasi tab per siklus, timeline sintaks mengajar, serta analisis akademik mendalam.
         </p>
 
         <div class="subpage-breadcrumb">
@@ -198,41 +338,11 @@
     </section>
 
     <!-- =================================================================
-       4. MAIN CONTENT: VIDEO PLAYER & COMPREHENSIVE ANALYSIS
+       4. MAIN CONTENT: TABS, VIDEO PLAYER & COMPREHENSIVE ANALYSIS
        ================================================================= -->
     <main style="padding: 4rem 0 6rem; background: #ffffff">
       <div class="container">
-        <!-- Informative Notice Pill -->
-        <div
-          style="
-            background: #f8f9f5;
-            border: 1px solid var(--color-border-light);
-            border-left: 4px solid var(--color-accent-lime);
-            border-radius: var(--radius-md);
-            padding: 1.25rem 1.75rem;
-            margin-bottom: 2.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 1rem;
-          "
-        >
-          <div style="display: flex; align-items: center; gap: 1rem">
-            <i class="fa-solid fa-circle-info" style="font-size: 1.5rem; color: var(--color-primary-dark)"></i>
-            <div>
-              <strong style="color: var(--color-primary-dark); font-size: 0.95rem; display: block; margin-bottom: 2px"> Dokumentasi Resmi Video Siklus Lanjutan (UAS PPL Terbimbing) </strong>
-              <span style="color: var(--color-text-muted); font-size: 0.86rem; line-height: 1.5">
-                Sesuai ketentuan Uji Kinerja (UKin) PPG Calon Guru, rekaman video pelaksanaan pembelajaran pada siklus lanjutan UAS menampilkan <strong>Siklus 2: Pancasila Sebagai Ideologi Negara</strong>. Perangkat Modul Ajar, Media TPACK,
-                dan Instrumen Siklus 3 (Periodisasi Pemberlakuan UUD di Indonesia) & Siklus 4 (Perubahan UUD NRI Tahun 1945) tersedia lengkap pada menu rancangan, media, dan instrumen.
-              </span>
-            </div>
-          </div>
-          <span class="tag-pill" style="background: var(--color-primary-dark); color: var(--color-accent-lime); font-size: 0.75rem; font-weight: 800; padding: 6px 14px; white-space: nowrap">
-            Siklus 2 • Pancasila Sebagai Ideologi Negara
-          </span>
-        </div>
-
+        
         <!-- =============================================================
            A. INTERACTIVE VIDEO PLAYER SECTION
            ============================================================= -->
@@ -240,12 +350,33 @@
           <div class="section-agency-head" style="margin-bottom: 2rem">
             <div class="badge-pill-group">
               <span class="twin-dot-icon"> <span></span><span></span> </span>
-              <span>REKAMAN VIDEO SIKLUS 2: PANCASILA SEBAGAI IDEOLOGI NEGARA</span>
+              <span>VIDEO PRAKTIK PEMBELAJARAN SIKLUS 2, 3 & 4</span>
             </div>
-            <h2 class="section-agency-title">Pemutaran Video Praktik Mengajar (Google Drive Stream)</h2>
+            <h2 class="section-agency-title">Pemutaran Video Praktik Mengajar (Pilih Siklus)</h2>
             <p class="section-agency-subtitle">
-              Saksikan rekaman video utuh praktik mengajar permainan futsal di Lapangan Futsal / GOR SMA Negeri 4 Yogyakarta yang mendokumentasikan implementasi diferensiasi TaRL dan pembelajaran pemecahan masalah (PBL).
+              Klik tombol siklus di bawah untuk berganti rekaman video YouTube dan otomatis menampilkan alur sintaks mengajar serta analisis pedagogis untuk masing-masing siklus.
             </p>
+          </div>
+
+          <!-- Cycle Switcher Tab Navigation -->
+          <div class="uas-tabs-wrapper">
+            <button id="tab-btn-2" class="uas-tab-btn active" onclick="switchUASVideo(2)">
+              <i class="fa-solid fa-landmark"></i>
+              <span>Siklus 2: Pancasila Sebagai Ideologi Negara</span>
+              <span class="uas-tab-badge">YouTube HD</span>
+            </button>
+
+            <button id="tab-btn-3" class="uas-tab-btn" onclick="switchUASVideo(3)">
+              <i class="fa-solid fa-scale-balanced"></i>
+              <span>Siklus 3: Periodisasi Pemberlakuan UUD</span>
+              <span class="uas-tab-badge">YouTube HD</span>
+            </button>
+
+            <button id="tab-btn-4" class="uas-tab-btn" onclick="switchUASVideo(4)">
+              <i class="fa-solid fa-file-shield"></i>
+              <span>Siklus 4: Perubahan UUD NRI 1945</span>
+              <span class="uas-tab-badge">YouTube HD</span>
+            </button>
           </div>
 
           <!-- Video Showcase Container Card -->
@@ -257,20 +388,25 @@
                   <i class="fa-solid fa-circle-play"></i>
                 </div>
                 <div>
-                  <div class="pdf-toolbar-title">Video Praktik: Pembelajaran Pancasila Sebagai Ideologi Negara (Siklus 2)</div>
-                  <div class="pdf-toolbar-sub">Praktikan: <strong>Wahyu Surya Al Fikri, S.Pd.</strong> • SMA Negeri 4 Yogyakarta • Fase F / Kelas XI SMA • PPL PPG UAD</div>
+                  <div id="uas-video-title" class="pdf-toolbar-title">
+                    Video Praktik: Pembelajaran Pancasila Sebagai Ideologi Negara (Siklus 2)
+                  </div>
+                  <div id="uas-video-sub" class="pdf-toolbar-sub">
+                    Praktikan: <strong>Wahyu Surya Al Fikri, S.Pd.</strong> • Meja Statis & Leitstar Dinamis • Fase F / Kelas XI SMA • SMA Negeri 4 Yogyakarta
+                  </div>
                 </div>
               </div>
 
               <div class="pdf-toolbar-actions">
-                <span class="tag-pill" style="background: rgba(184, 224, 35, 0.2); color: #b8e023; font-weight: 700; border: 1px solid rgba(184, 224, 35, 0.4); padding: 6px 14px; font-size: 0.78rem">
+                <span id="uas-video-badge" class="tag-pill" style="background: rgba(184, 224, 35, 0.2); color: #b8e023; font-weight: 700; border: 1px solid rgba(184, 224, 35, 0.4); padding: 6px 14px; font-size: 0.78rem">
                   <i class="fa-solid fa-circle-check" style="margin-right: 5px"></i> Terverifikasi LPTK UAD
                 </span>
-                <a href="https://drive.google.com/file/d/1Q9KZ9lGvsLW-boEAnhLNlkiLUzBbjOe1/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-primary-lime btn-sm">
-                  <i class="fa-brands fa-google-drive"></i> Buka di Google Drive
+                <a id="uas-youtube-btn" href="https://youtu.be/AQ9FbNC42ck?si=0gO33Jm2WVuBJ4ix" target="_blank" rel="noopener noreferrer" class="btn btn-primary-lime btn-sm">
+                  <i class="fa-brands fa-youtube"></i> Tonton di YouTube
                 </a>
                 <a
-                  href="https://drive.google.com/file/d/1Q9KZ9lGvsLW-boEAnhLNlkiLUzBbjOe1/view?usp=sharing"
+                  id="uas-fullscreen-btn"
+                  href="https://www.youtube.com/watch?v=AQ9FbNC42ck"
                   target="_blank"
                   rel="noopener noreferrer"
                   class="btn btn-outline-light btn-sm"
@@ -283,14 +419,20 @@
 
             <!-- Video Display Layout: Screen + Sidebar -->
             <div class="video-main-layout">
-              <!-- Video Screen Wrapper with Google Drive Preview Iframe -->
+              <!-- Video Screen Wrapper with YouTube Embed Iframe -->
               <div class="video-screen-wrapper">
-                <iframe src="https://drive.google.com/file/d/1Q9KZ9lGvsLW-boEAnhLNlkiLUzBbjOe1/preview" title="Video Praktik Pembelajaran Futsal Wahyu Surya Al Fikri" allow="autoplay; fullscreen" allowfullscreen>
+                <iframe
+                  id="uas-video-frame"
+                  src="https://www.youtube.com/embed/AQ9FbNC42ck?rel=0&modestbranding=1"
+                  title="Video Praktik Pembelajaran UAS Wahyu Surya Al Fikri"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen
+                >
                   <p style="padding: 2rem; color: #ffffff; text-align: center">
                     Peramban Anda tidak mendukung pemutaran video langsung. Silakan
-                    <a href="https://drive.google.com/file/d/1Q9KZ9lGvsLW-boEAnhLNlkiLUzBbjOe1/view?usp=sharing" target="_blank" style="color: var(--color-accent-lime); font-weight: bold; text-decoration: underline">
-                      Klik di sini untuk menonton video di Google Drive </a
-                    >.
+                    <a id="uas-fallback-link" href="https://youtu.be/AQ9FbNC42ck?si=0gO33Jm2WVuBJ4ix" target="_blank" style="color: var(--color-accent-lime); font-weight: bold; text-decoration: underline">
+                      Klik di sini untuk menonton video di YouTube
+                    </a>.
                   </p>
                 </iframe>
               </div>
@@ -299,20 +441,23 @@
               <div class="video-sidebar-panel">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem">
                   <h3 style="font-size: 1.2rem; color: var(--color-primary-dark); font-weight: 800; margin: 0">Sintaks Pembelajaran</h3>
-                  <span class="time-badge" style="background: var(--color-primary-dark); color: var(--color-accent-lime); font-weight: 800; font-size: 0.75rem; padding: 4px 10px; border-radius: var(--radius-pill)">
-                    Video Praktik Lapangan
+                  <span id="uas-sintaks-model" class="time-badge" style="background: var(--color-primary-dark); color: var(--color-accent-lime); font-weight: 800; font-size: 0.75rem; padding: 4px 10px; border-radius: var(--radius-pill)">
+                    PBL Berdiferensiasi
                   </span>
                 </div>
-                <p style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 1.25rem">Materi: Pancasila Sebagai Ideologi Negara • Fase F Kelas XI SMA Negeri 4 Yogyakarta</p>
+                <p id="uas-sidebar-materi" style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 1.25rem">
+                  Materi: Pancasila Sebagai Ideologi Negara • Fase F Kelas XI SMA Negeri 4 Yogyakarta
+                </p>
 
-                <!-- Timeline Items -->
-                <div class="timeline-list">
+                <!-- Dynamic Timeline Items Container -->
+                <div id="uas-timeline-container" class="timeline-list">
+                  <!-- Timeline Siklus 2 (Default) -->
                   <div class="timeline-item active">
                     <span class="time-badge">Fase 1</span>
                     <div>
-                      <strong style="font-size: 0.88rem; color: var(--color-primary-dark); display: block; margin-bottom: 2px"> Pendahuluan & Apersepsi TaRL </strong>
+                      <strong style="font-size: 0.88rem; color: var(--color-primary-dark); display: block; margin-bottom: 2px"> Pendahuluan & Apersepsi Ideologi </strong>
                       <span style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.5; display: block">
-                        Salam, doa pembuka, presensi, penyampaian tujuan pembelajaran gerak invasi, pengondisian diagnostik TaRL (Bimbingan, Berkembang, Mahir).
+                        Salam pembuka, doa, presensi, dan stimulasi pertanyaan pemantik mengenai fungsi ideologi pemersatu di tengah kemajemukan bangsa.
                       </span>
                     </div>
                   </div>
@@ -320,9 +465,9 @@
                   <div class="timeline-item">
                     <span class="time-badge">Fase 2</span>
                     <div>
-                      <strong style="font-size: 0.88rem; color: var(--color-primary-dark); display: block; margin-bottom: 2px"> Pemanasan Dinamis & Ball Feeling </strong>
+                      <strong style="font-size: 0.88rem; color: var(--color-primary-dark); display: block; margin-bottom: 2px"> Eksplorasi Konsep Meja Statis & Leitstar </strong>
                       <span style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.5; display: block">
-                        Peregangan dinamis sendi lutut-engkel, drill rondo sentuhan bola bergilir menggunakan sol sepatu (<em>sole control</em>) untuk adaptasi lantai keras.
+                        Pemaparan dialektika pidato Bung Karno: Pancasila sebagai meja statis titik temu dan bintang penuntun dinamis era global.
                       </span>
                     </div>
                   </div>
@@ -330,9 +475,9 @@
                   <div class="timeline-item">
                     <span class="time-badge">Fase 3</span>
                     <div>
-                      <strong style="font-size: 0.88rem; color: var(--color-primary-dark); display: block; margin-bottom: 2px"> Kegiatan Inti Station Training & PBL </strong>
+                      <strong style="font-size: 0.88rem; color: var(--color-primary-dark); display: block; margin-bottom: 2px"> Diskusi Kelompok Diferensiasi TaRL </strong>
                       <span style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.5; display: block">
-                        Pos 1 (Passing-kontrol sol berpasangan), Pos 2 (Dribbling slalom cone), Pos 3 (Shooting target sudut gawang mini), dan Small Sided Games 3v3.
+                        Pembedahan perbandingan ideologi terbuka vs tertutup (liberalisme, komunisme, Pancasila) melalui studi kasus komparatif.
                       </span>
                     </div>
                   </div>
@@ -340,9 +485,19 @@
                   <div class="timeline-item">
                     <span class="time-badge">Fase 4</span>
                     <div>
-                      <strong style="font-size: 0.88rem; color: var(--color-primary-dark); display: block; margin-bottom: 2px"> Pendinginan, Evaluasi Taktik & Refleksi </strong>
+                      <strong style="font-size: 0.88rem; color: var(--color-primary-dark); display: block; margin-bottom: 2px"> Presentasi Argumen & Validasi </strong>
                       <span style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.5; display: block">
-                        Cooling down peregangan tungkai, evaluasi bersama mengenai letak kaki tumpu sejajar bola saat passing, refleksi sportivitas, dan doa penutup.
+                        Kelompok memaparkan hasil telaah keunggulan ideologi Pancasila, perdebatan kritis yang konstruktif, dan umpan balik guru.
+                      </span>
+                    </div>
+                  </div>
+
+                  <div class="timeline-item">
+                    <span class="time-badge">Fase 5</span>
+                    <div>
+                      <strong style="font-size: 0.88rem; color: var(--color-primary-dark); display: block; margin-bottom: 2px"> Evaluasi, Refleksi & Penutup </strong>
+                      <span style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.5; display: block">
+                        Kuis formatif cepat, komitmen menjaga ideologi negara di ruang digital, doa bersama, dan penutupan kelas.
                       </span>
                     </div>
                   </div>
@@ -351,13 +506,14 @@
                 <!-- Action Link -->
                 <div style="margin-top: auto; padding-top: 1.5rem">
                   <a
-                    href="https://drive.google.com/file/d/1Q9KZ9lGvsLW-boEAnhLNlkiLUzBbjOe1/view?usp=sharing"
+                    id="uas-sidebar-btn"
+                    href="https://youtu.be/AQ9FbNC42ck?si=0gO33Jm2WVuBJ4ix"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="btn btn-primary-dark btn-sm"
                     style="width: 100%; text-align: center; justify-content: center"
                   >
-                    <i class="fa-brands fa-google-drive"></i> Tonton di Tab Baru Google Drive
+                    <i class="fa-brands fa-youtube" style="color: #ff0000; margin-right: 6px;"></i> Tonton Langsung di YouTube
                   </a>
                 </div>
               </div>
@@ -368,24 +524,24 @@
               <div style="display: flex; align-items: center; gap: 1.8rem; flex-wrap: wrap">
                 <div style="font-size: 0.85rem; color: var(--color-text-muted)">
                   <i class="fa-solid fa-school" style="color: var(--color-primary-dark); margin-right: 6px"></i>
-                  <strong>Lokasi Praktik:</strong> SMA Negeri 4 Yogyakarta
+                  <strong>Lokasi:</strong> SMA Negeri 4 Yogyakarta
                 </div>
                 <div style="font-size: 0.85rem; color: var(--color-text-muted)">
-                  <i class="fa-solid fa-certificate" style="color: var(--color-primary-dark); margin-right: 6px"></i>
-                  <strong>Lisensi Pelatih:</strong> Futsal, Silat & Fisik
+                  <i class="fa-solid fa-clapperboard" style="color: var(--color-primary-dark); margin-right: 6px"></i>
+                  <strong>Format:</strong> UKin Praktik Mengajar PPG Calon Guru
                 </div>
                 <div style="font-size: 0.85rem; color: var(--color-text-muted)">
-                  <i class="fa-solid fa-cloud-arrow-up" style="color: var(--color-primary-dark); margin-right: 6px"></i>
-                  <strong>Streaming:</strong> Google Drive Cloud HD
+                  <i class="fa-brands fa-youtube" style="color: #ff0000; margin-right: 6px"></i>
+                  <strong>Streaming:</strong> YouTube HD 1080p
                 </div>
                 <div style="font-size: 0.85rem; color: var(--color-text-muted)">
-                  <i class="fa-solid fa-cubes" style="color: var(--color-primary-dark); margin-right: 6px"></i>
-                  <strong>Model:</strong> Station Training PBL & TaRL
+                  <i class="fa-solid fa-scale-balanced" style="color: var(--color-primary-dark); margin-right: 6px"></i>
+                  <strong>Kurikulum:</strong> Merdeka Belajar Fase F
                 </div>
               </div>
               <div>
                 <a href="javascript:void(0)" onclick="showToast('Video Resmi PPL Terbimbing PPG UAD 2026')" style="font-size: 0.82rem; color: var(--color-primary-dark); font-weight: 700; text-decoration: none">
-                  <i class="fa-solid fa-circle-check" style="color: var(--color-accent-lime); margin-right: 5px"></i> PPG Calon Guru Gelombang 1
+                  <i class="fa-solid fa-circle-check" style="color: var(--color-accent-lime); margin-right: 5px"></i> Terakreditasi LPTK UAD
                 </a>
               </div>
             </div>
@@ -393,326 +549,224 @@
         </section>
 
         <!-- =============================================================
-           B. COMPREHENSIVE ANALYSIS OF THE TEACHING VIDEO
+           B. UAS CYCLES SUMMARY CARDS
+           ============================================================= -->
+        <section style="margin-bottom: 5rem;">
+          <div class="uas-cycles-summary-grid">
+            <!-- Card Siklus 2 -->
+            <div id="summary-card-2" class="uas-cycle-summary-card active-card" onclick="switchUASVideo(2)" style="cursor: pointer;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <span class="tag-pill" style="background: rgba(18, 56, 45, 0.08); color: var(--color-primary-dark); font-weight: 800;">SIKLUS 2 • UAS</span>
+                <span style="font-size: 0.8rem; color: #ff0000; font-weight: 700;"><i class="fa-brands fa-youtube"></i> YouTube Video</span>
+              </div>
+              <h4 style="font-size: 1.15rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 0.6rem;">
+                Pancasila Sebagai Ideologi Negara
+              </h4>
+              <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 1.25rem;">
+                Praktik mengajar mendalami konsep dialektika Meja Statis dan Leitstar Dinamis, pembedaan ideologi terbuka vs tertutup, serta komitmen ideologis pelajar.
+              </p>
+              <div style="margin-top: auto; display: flex; align-items: center; justify-content: space-between; font-size: 0.82rem; font-weight: 700; color: var(--color-primary-dark);">
+                <span>Model: Problem Based Learning</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </div>
+
+            <!-- Card Siklus 3 -->
+            <div id="summary-card-3" class="uas-cycle-summary-card" onclick="switchUASVideo(3)" style="cursor: pointer;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <span class="tag-pill" style="background: rgba(18, 56, 45, 0.08); color: var(--color-primary-dark); font-weight: 800;">SIKLUS 3 • UAS</span>
+                <span style="font-size: 0.8rem; color: #ff0000; font-weight: 700;"><i class="fa-brands fa-youtube"></i> YouTube Video</span>
+              </div>
+              <h4 style="font-size: 1.15rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 0.6rem;">
+                Periodisasi Pemberlakuan UUD di Indonesia
+              </h4>
+              <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 1.25rem;">
+                Pembelajaran interaktif menelaah 4 periode konstitusi Indonesia (UUD 1945, RIS, UUDS 1950, Dekrit Presiden 1959) melalui analisis komparatif ketatanegaraan.
+              </p>
+              <div style="margin-top: auto; display: flex; align-items: center; justify-content: space-between; font-size: 0.82rem; font-weight: 700; color: var(--color-primary-dark);">
+                <span>Model: Discovery / Inquiry Learning</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </div>
+
+            <!-- Card Siklus 4 -->
+            <div id="summary-card-4" class="uas-cycle-summary-card" onclick="switchUASVideo(4)" style="cursor: pointer;">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <span class="tag-pill" style="background: rgba(18, 56, 45, 0.08); color: var(--color-primary-dark); font-weight: 800;">SIKLUS 4 • UAS</span>
+                <span style="font-size: 0.8rem; color: #ff0000; font-weight: 700;"><i class="fa-brands fa-youtube"></i> YouTube Video</span>
+              </div>
+              <h4 style="font-size: 1.15rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 0.6rem;">
+                Perubahan UUD NRI Tahun 1945
+              </h4>
+              <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin-bottom: 1.25rem;">
+                Praktik mengajar siklus pamungkas membahas 4 tahap amandemen UUD 1945 (1999–2002), penataan checks and balances antarlembaga negara, dan penegakan HAM.
+              </p>
+              <div style="margin-top: auto; display: flex; align-items: center; justify-content: space-between; font-size: 0.82rem; font-weight: 700; color: var(--color-primary-dark);">
+                <span>Model: Project / Problem Based Learning</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- =============================================================
+           C. DYNAMIC COMPREHENSIVE ANALYSIS (PER SIKLUS)
            ============================================================= -->
         <section>
           <div class="section-agency-head" style="margin-bottom: 3.5rem">
             <div class="badge-pill-group">
               <span class="twin-dot-icon"> <span></span><span></span> </span>
-              <span>ANALISIS KOMPREHENSIF PRAKTIK PEMBELAJARAN</span>
+              <span>ANALISIS PEDAGOGIK VIDEO PRAKTIK PEMBELAJARAN</span>
             </div>
-            <h2 class="section-agency-title">Analisis Akademik & Refleksi Kritis Video Praktik Siklus 2: Pancasila Sebagai Ideologi Negara</h2>
+            <h2 class="section-agency-title">Analisis Akademik & Refleksi Kritis Video Praktik</h2>
             <p class="section-agency-subtitle">
-              Kajian reflektif dan tinjauan ilmiah terhadap video pelaksanaan pembelajaran Siklus 2 Futsal, menelaah efektivitas model PBL, diferensiasi kesiapan motorik TaRL, dinamika interaksi kelas, serta justifikasi supervisi pedagogis
-              keolahragaan.
+              Telaah komprehensif video pembelajaran untuk setiap siklus UAS (Siklus 2, 3, dan 4) meninjau efektivitas sintaks, integrasi TPACK, diferensiasi siswa, dan rekomendasi perbaikan.
             </p>
           </div>
 
-          <!-- =========================================================
-             1. KONTEKS DAN TUJUAN
-             ========================================================= -->
-          <article class="analysis-module-card">
-            <div class="analysis-module-header">
-              <div class="analysis-module-num">01</div>
-              <div>
-                <h3 class="analysis-module-title">Konteks dan Tujuan Video Praktik Pembelajaran Siklus 2: Pancasila Sebagai Ideologi Negara</h3>
-                <p class="analysis-module-desc">Tinjauan situasi pembelajaran cabang olahraga invasi berkecepatan tinggi, dekonstruksi alur sintaks mengajar di GOR sekolah mitra, serta sasaran evaluasi kompetensi calon guru profesional.</p>
-              </div>
-            </div>
-
-            <div class="analysis-content-body">
-              <!-- Konteks Lapangan & Situasi Belajar -->
-              <div style="margin-bottom: 2.5rem">
-                <h4 style="font-size: 1.25rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.65rem">
-                  <i class="fa-solid fa-chalkboard-user" style="color: var(--color-primary-dark); font-size: 1.1rem"></i>
-                  A. Konteks Lapangan Pembelajaran & Karakteristik Permainan Futsal di SMA
-                </h4>
-                <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.75; margin-bottom: 1.2rem">
-                  Video praktik pembelajaran mendokumentasikan interaksi aktif antara praktikan mahasiswa PPG Calon Guru (Wahyu Surya Al Fikri, S.Pd.) dengan peserta didik <strong>Fase F (Kelas XI SMA Negeri 4 Yogyakarta)</strong> pada
-                  materi keterampilan gerak dasar futsal. Faktor kontekstual penting yang terekam meliputi:
-                </p>
-
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem">
-                  <div style="background: #f8f9f5; border-radius: var(--radius-md); padding: 1.4rem; border-left: 4px solid var(--color-primary-dark)">
-                    <strong style="display: block; color: var(--color-primary-dark); font-size: 0.95rem; margin-bottom: 0.4rem">
-                      <i class="fa-solid fa-users" style="margin-right: 6px"></i> Manajemen Kesenjangan Keterampilan Siswa (TaRL)
-                    </strong>
-                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
-                      Video memperlihatkan penanganan kesenjangan yang mencolok antara siswa aktif ekstrakurikuler/klub futsal dengan siswa pemula. Melalui pendekatan TaRL, guru membagi tugas gerak secara proporsional sehingga seluruh siswa
-                      tetap aktif berpartisipasi tanpa rasa canggung atau terintimidasi.
-                    </p>
-                  </div>
-
-                  <div style="background: #f8f9f5; border-radius: var(--radius-md); padding: 1.4rem; border-left: 4px solid #f59e0b">
-                    <strong style="display: block; color: var(--color-primary-dark); font-size: 0.95rem; margin-bottom: 0.4rem">
-                      <i class="fa-solid fa-shoe-prints" style="margin-right: 6px; color: #f59e0b"></i> Penekanan Teknik Spesifik Kontrol Sol Sepatu (Sole Control)
-                    </strong>
-                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
-                      Terdokumentasi bagaimana guru mengoreksi kebiasaan umum siswa yang sering mengontrol bola menggunakan kaki bagian dalam (seperti di sepak bola rumput). Guru mengarahkan penggunaan sol sepatu untuk menghentikan bola
-                      secara stabil di permukaan lantai indoor.
-                    </p>
-                  </div>
-
-                  <div style="background: #f8f9f5; border-radius: var(--radius-md); padding: 1.4rem; border-left: 4px solid var(--color-accent-lime)">
-                    <strong style="display: block; color: var(--color-primary-dark); font-size: 0.95rem; margin-bottom: 0.4rem">
-                      <i class="fa-solid fa-diagram-project" style="margin-right: 6px"></i> Integrasi Problem-Based Learning Melalui Sirkuit Stasiun
-                    </strong>
-                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
-                      Guru mengorganisasikan lapangan ke dalam 3 stasiun latihan simultan dan menantang siswa memecahkan masalah taktis: bagaimana melepaskan passing cepat dan akurat di bawah tekanan ruang sempit sebelum memasuki simulasi
-                      permainan 3v3.
-                    </p>
-                  </div>
+          <!-- ==================== SIKLUS 2 ANALYSIS ==================== -->
+          <div id="analysis-siklus-2" class="analysis-cycle-container active">
+            <article class="analysis-module-card">
+              <div class="analysis-module-header">
+                <div class="analysis-module-num">01</div>
+                <div>
+                  <h3 class="analysis-module-title">Konteks & Sasaran Video Pembelajaran Siklus 2 (Pancasila Ideologi Negara)</h3>
+                  <p class="analysis-module-desc">Analisis situasi kelas, perumusan ideologi terbuka vs tertutup, dan evaluasi keterlibatan nalar kritis peserta didik di SMA Negeri 4 Yogyakarta.</p>
                 </div>
               </div>
 
-              <!-- Sasaran dan Tujuan Dokumentasi Video -->
-              <div>
-                <h4 style="font-size: 1.25rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.65rem">
-                  <i class="fa-solid fa-bullseye" style="color: var(--color-primary-dark); font-size: 1.1rem"></i>
-                  B. Sasaran Dokumentasi Video & Sasaran Evaluasi Supervisi Guru
-                </h4>
-                <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7; margin-bottom: 1.4rem">
-                  Dokumentasi rekaman video pembelajaran futsal ini memiliki target strategis sebagai artefak portofolio PPG Calon Guru:
-                </p>
-
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.4rem">
-                  <div style="background: #ffffff; border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-sm)">
-                    <div style="display: inline-block; background: var(--color-primary-dark); color: var(--color-accent-lime); font-size: 0.72rem; font-weight: 800; padding: 3px 8px; border-radius: 4px; margin-bottom: 0.75rem">
-                      SASARAN 1 • UJI KINERJA (UKIN)
-                    </div>
-                    <h5 style="font-size: 1rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.5rem">Standar Kinerja Mengajar Olahraga Beregu</h5>
-                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
-                      Menunjukkan kemampuan calon guru dalam mengelola pembelajaran cabang permainan beregu yang dinamis, menjaga disiplin peserta didik, serta menerapkan strategi pembelajaran aktif berdurasi standar UKin.
-                    </p>
-                  </div>
-
-                  <div style="background: #ffffff; border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-sm)">
-                    <div style="display: inline-block; background: var(--color-primary-dark); color: var(--color-accent-lime); font-size: 0.72rem; font-weight: 800; padding: 3px 8px; border-radius: 4px; margin-bottom: 0.75rem">
-                      SASARAN 2 • INTENSITAS GERAK (ALT-PE)
-                    </div>
-                    <h5 style="font-size: 1rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.5rem">Optimalisasi Sentuhan Bola (Ball Touches)</h5>
-                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
-                      Menganalisis frekuensi keterlibatan motorik siswa (<em>Active Learning Time</em>) melalui format latihan stasiun dan permainan mini 3v3 yang menjamin setiap siswa mendapatkan sentuhan bola minimal 30 kali per sesi.
-                    </p>
-                  </div>
-
-                  <div style="background: #ffffff; border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-sm)">
-                    <div style="display: inline-block; background: var(--color-primary-dark); color: var(--color-accent-lime); font-size: 0.72rem; font-weight: 800; padding: 3px 8px; border-radius: 4px; margin-bottom: 0.75rem">
-                      SASARAN 3 • UMPAN BALIK KOREKTIF
-                    </div>
-                    <h5 style="font-size: 1rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.5rem">Ketepatan Kinesics & Audio Feedback</h5>
-                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
-                      Mengevaluasi kecepatan guru dalam mendeteksi dan mengoreksi kesalahan posisi kaki tumpu yang terlalu jauh dari bola serta badan yang kurang condong ke depan saat melakukan tendangan keras (shooting).
-                    </p>
-                  </div>
-
-                  <div style="background: #ffffff; border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-sm)">
-                    <div style="display: inline-block; background: #65a30d; color: #ffffff; font-size: 0.72rem; font-weight: 800; padding: 3px 8px; border-radius: 4px; margin-bottom: 0.75rem">SASARAN 4 • INTERNALISASI KARAKTER</div>
-                    <h5 style="font-size: 1rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.5rem">Pembiasaan Sportivitas & Kerjasama</h5>
-                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
-                      Mendokumentasikan bagaimana guru menanamkan nilai Profil Pelajar Pancasila: saling mendukung saat rekan salah operan, menghargai keputusan wasit/guru, dan merapikan sarana bola secara gotong royong.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- =========================================================
-             2. KELEBIHAN DAN KEKURANGAN
-             ========================================================= -->
-          <article class="analysis-module-card">
-            <div class="analysis-module-header">
-              <div class="analysis-module-num">02</div>
-              <div>
-                <h3 class="analysis-module-title">Kelebihan dan Kekurangan Video Praktik Pembelajaran Siklus 2: Pancasila Sebagai Ideologi Negara</h3>
-                <p class="analysis-module-desc">Analisis kritis terhadap kekuatan kompetensi kepelatihan praktikan, kendala teknis akustik dan kecepatan gerak permainan invasi, serta solusi mitigasi lapangan.</p>
-              </div>
-            </div>
-
-            <div class="analysis-content-body">
-              <!-- 2-Column Grid: Pro vs Con -->
-              <div class="analysis-grid-2col">
-                <!-- Kolom Kelebihan -->
-                <div class="analysis-box-item pro">
-                  <div class="analysis-box-title" style="color: var(--color-primary-dark)">
-                    <i class="fa-solid fa-circle-check" style="color: #65a30d; font-size: 1.3rem"></i>
-                    Kelebihan & Kekuatan Praktik Mengajar (Strengths)
-                  </div>
-                  <ul class="analysis-list">
-                    <li>
-                      <i class="fa-solid fa-check-circle" style="color: #65a30d"></i>
-                      <div>
-                        <strong>Otoritas & Keterampilan Demonstrasi Berlisensi Pelatih:</strong>
-                        Sebagai pemegang lisensi pelatih futsal dan kondisi fisik, guru mendemonstrasikan teknik perkenaan kaki tumpu, kontrol telapak kaki, dan gerakan tipuan (<em>faint movement</em>) dengan keluwesan motorik tingkat
-                        tinggi.
-                      </div>
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check-circle" style="color: #65a30d"></i>
-                      <div>
-                        <strong>Manajemen Stasiun Latihan yang Dinamis & Tertib:</strong>
-                        Pembagian sirkuit 3 pos keterampilan mampu mengurai kerumunan siswa di lapangan futsal, memastikan seluruh siswa terus bergerak dan menyentuh bola tanpa waktu tunggu pasif yang lama.
-                      </div>
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check-circle" style="color: #65a30d"></i>
-                      <div>
-                        <strong>Instruksi Verbal Lugas & Penuh Energi:</strong>
-                        Guru menggunakan isyarat peluit yang terstandar dan bahasa instruksi yang singkat, padat, serta mudah dipahami siswa dalam situasi lapangan yang luas.
-                      </div>
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-check-circle" style="color: #65a30d"></i>
-                      <div>
-                        <strong>Pengondisian Inklusif Bagi Siswa Pemula:</strong>
-                        Guru secara khusus mendampingi stasiun siswa pemula untuk membangun rasa percaya diri saat melakukan passing mendatar sebelum diintegrasikan ke permainan kelompok.
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-
-                <!-- Kolom Kekurangan / Tantangan -->
-                <div class="analysis-box-item con">
-                  <div class="analysis-box-title" style="color: #b45309">
-                    <i class="fa-solid fa-triangle-exclamation" style="color: #f59e0b; font-size: 1.3rem"></i>
-                    Kelemahan & Tantangan Teknis Rekaman (Limitations)
-                  </div>
-                  <ul class="analysis-list">
-                    <li>
-                      <i class="fa-solid fa-circle-xmark" style="color: #f59e0b"></i>
-                      <div>
-                        <strong>Akustik GOR dengan Pantulan Suara Keras (Reverberation):</strong>
-                        Suara decitan sepatu dan pantulan bola futsal di lantai semen/kayu menimbulkan kebisingan latar (<em>background noise</em>) yang cukup dominan saat guru memberikan penjelasan umum.
-                      </div>
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-circle-xmark" style="color: #f59e0b"></i>
-                      <div>
-                        <strong>Kecepatan Permainan Invasi Menantang Sudut Kamera:</strong>
-                        Perpindahan bola cepat pada simulasi game 3v3 terkadang bergerak lebih cepat daripada penyesuaian sudut bidik kamera statis, sehingga momen gol atau intersep sesekali keluar dari bingkai utama.
-                      </div>
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-circle-xmark" style="color: #f59e0b"></i>
-                      <div>
-                        <strong>Dominasi Bola Oleh Siswa Tertentu:</strong>
-                        Pada sesi permainan mini 3v3, siswa yang lebih mahir terkadang masih cenderung menahan bola terlalu lama jika guru tidak terus mengingatkan aturan sentuhan maksimal.
-                      </div>
-                    </li>
-                    <li>
-                      <i class="fa-solid fa-circle-xmark" style="color: #f59e0b"></i>
-                      <div>
-                        <strong>Keterbatasan Durasi Video untuk Menilai Seluruh Siklus:</strong>
-                        Format video Uji Kinerja berdurasi padat (sekitar 15–20 menit) menuntut pemilihan cuplikan sintaks yang sangat selektif antara pemanasan, drill stasiun, dan permainan aplikasi.
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-              <!-- Solusi dan Mitigasi Lapangan -->
-              <div class="analysis-box-item solution">
-                <div class="analysis-box-title" style="color: var(--color-primary-dark); font-size: 1.2rem; border-bottom: 1px solid var(--color-border-light); padding-bottom: 0.75rem; margin-bottom: 1.25rem">
-                  <i class="fa-solid fa-lightbulb" style="color: var(--color-accent-lime); font-size: 1.3rem"></i>
-                  Solusi & Rekomendasi Mitigasi Lapangan (Permainan Futsal)
-                </div>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem">
-                  <div>
-                    <h5 style="color: var(--color-primary-dark); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem">1. Penggunaan Wireless Mic Terarah dengan Noise Reduction</h5>
-                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
-                      Menggunakan mikrofon nirkabel clip-on berfitur <em>AI Environmental Noise Cancellation (ENC)</em> untuk menyaring frekuensi decitan sepatu dan dengung gedung olahraga, sehingga suara vokal guru terdengar jernih dan
-                      terisolasi dengan baik.
-                    </p>
-                  </div>
-                  <div>
-                    <h5 style="color: var(--color-primary-dark); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem">2. Penerapan Aturan Maksimal 3 Sentuhan (3-Touch Rule)</h5>
-                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
-                      Memberlakukan regulasi khusus dalam simulasi 3v3 di mana setiap pemain maksimal memegang bola 3 sentuhan (kontrol, dribble, lalu wajib passing/shooting), memastikan bola mengalir cepat dan seluruh pemain aktif bergerak
-                      membuka ruang.
-                    </p>
-                  </div>
-                  <div>
-                    <h5 style="color: var(--color-primary-dark); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem">3. Penempatan Kamera Bergerak di Garis Tengah (Mid-Court Gimbal)</h5>
-                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
-                      Menugaskan rekan videografer memegang gimbal di garis tepi tengah lapangan untuk melakukan <em>panning</em> horizontal mengikuti dinamika transisi serangan dan bertahan secara mulus tanpa kehilangan momen kritis.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- =========================================================
-             3. KAJIAN TEORI
-             ========================================================= -->
-          <article class="analysis-module-card">
-            <div class="analysis-module-header">
-              <div class="analysis-module-num">03</div>
-              <div>
-                <h3 class="analysis-module-title">Kajian Teori Pembelajaran & Supervisi Klinis PJOK</h3>
-                <p class="analysis-module-desc">Justifikasi ilmiah dari literatur pedagogi olahraga TGfU, kerangka diferensiasi TaRL, teori belajar keterampilan motorik terbuka, dan supervisi reflektif praktisi.</p>
-              </div>
-            </div>
-
-            <div class="analysis-content-body">
-              <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.75; margin-bottom: 2rem">
-                Pelaksanaan pembelajaran dalam video praktik Siklus 2 Futsal ini berakar pada 5 pilar keilmuan pendidikan jasmani dan supervisi klinis:
-              </p>
-
-              <div class="theory-grid">
-                <!-- Teori 1: TGfU Bunker & Thorpe -->
-                <div class="theory-card">
-                  <span class="theory-badge"> <i class="fa-solid fa-gamepad" style="margin-right: 5px"></i> Pendekatan Taktis </span>
-                  <h4 class="theory-title">Teaching Games for Understanding / TGfU (Bunker & Thorpe, 1982)</h4>
-                  <p class="theory-desc">
-                    TGfU menempatkan siswa dalam konteks permainan sesungguhnya sejak awal pembelajaran. Video memperlihatkan bagaimana drill passing dan kontrol tidak diajarkan secara membosankan, melainkan langsung diintegrasikan ke dalam
-                    situasi pemecahan masalah transisi bola pada Small-Sided Games (3v3).
+              <div class="analysis-content-body">
+                <div style="margin-bottom: 2rem;">
+                  <h4 style="font-size: 1.2rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 1rem;">
+                    A. Konteks Lapangan & Penerapan Problem Based Learning
+                  </h4>
+                  <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.75; text-align: justify;">
+                    Pada rekaman video Siklus 2, Wahyu Surya Al Fikri, S.Pd. mengondisikan kelas Fase F XI SMA Negeri 4 Yogyakarta untuk mengkaji materi fundamental <em>Pancasila Sebagai Ideologi Negara</em>. Guru model mengawali pembelajaran dengan menyajikan video kontras antara kondisi negara yang terpecah akibat benturan ideologi ekstrem dengan ketahanan bangsa Indonesia yang kokoh berkat falsafah Pancasila. Sintaks Problem Based Learning diimplementasikan secara terstruktur untuk merangsang kesadaran bahwa Pancasila bukan sekadar slogan, melainkan pedoman hidup bernegara yang adaptif terhadap dinamika zaman.
                   </p>
                 </div>
 
-                <!-- Teori 2: TaRL Banerjee & Duflo -->
-                <div class="theory-card">
-                  <span class="theory-badge" style="background: rgba(184, 224, 35, 0.25)"> <i class="fa-solid fa-layer-group" style="margin-right: 5px"></i> Diferensiasi Kompetensi </span>
-                  <h4 class="theory-title">Teaching at the Right Level / TaRL (Banerjee & Duflo, Pratham)</h4>
-                  <p class="theory-desc">
-                    Praktik pembelajaran mencerminkan diferensiasi pengajaran yang nyata. Siswa dengan tingkat keterampilan awal rendah diberikan intervensi latihan operan jarak pendek tanpa penjagaan, sementara siswa mahir diberikan
-                    tantangan variasi passing cepat satu sentuhan dan shooting sasaran target gawang kecil.
-                  </p>
-                </div>
+                <div class="analysis-grid-2col">
+                  <div style="background: #F8F9F5; border-radius: var(--radius-lg); padding: 1.8rem; border-top: 4px solid var(--color-primary-dark);">
+                    <h5 style="font-size: 1.05rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 0.75rem;">
+                      <i class="fa-solid fa-check-circle" style="color: #16a34a; margin-right: 6px;"></i> Keunggulan Pembelajaran Siklus 2
+                    </h5>
+                    <ul style="padding-left: 1.25rem; font-size: 0.88rem; line-height: 1.7; color: var(--color-text-muted);">
+                      <li>Visualisasi konsep Meja Statis & Leitstar Dinamis berhasil dipahami siswa melalui analogi jangkar kapal dan bintang kutub.</li>
+                      <li>Diskusi kelompok komparasi ideologi (Pancasila vs Liberalisme vs Sosialisme) berjalan hidup dengan argumentasi faktual.</li>
+                      <li>Penguatan literasi digital dalam membentengi diri dari hoaks dan infiltrasi radikalisme transnasional.</li>
+                    </ul>
+                  </div>
 
-                <!-- Teori 3: Open Motor Skill Schmidt -->
-                <div class="theory-card">
-                  <span class="theory-badge"> <i class="fa-solid fa-shuffle" style="margin-right: 5px"></i> Kontrol Motorik </span>
-                  <h4 class="theory-title">Teori Keterampilan Terbuka & Decision Making (Poulton; Schmidt, 2008)</h4>
-                  <p class="theory-desc">
-                    Futsal menuntut kemampuan membaca situasi lingkungan yang berubah secara cepat (<em>open motor skill</em>). Guru secara konstan merangsang kemampuan persepsi visual siswa (<em>visual scanning</em>) agar tidak hanya
-                    menatap bola, melainkan selalu melihat posisi rekan dan ruang kosong sebelum menendang.
-                  </p>
-                </div>
-
-                <!-- Teori 4: ALT-PE Siedentop -->
-                <div class="theory-card">
-                  <span class="theory-badge" style="background: rgba(184, 224, 35, 0.25)"> <i class="fa-solid fa-stopwatch" style="margin-right: 5px"></i> Efisiensi Waktu Gerak </span>
-                  <h4 class="theory-title">Active Learning Time in Physical Education / ALT-PE (Siedentop, 1982)</h4>
-                  <p class="theory-desc">
-                    Penggunaan pos sirkuit stasiun terbukti melipatgandakan waktu keterlibatan motorik aktif siswa. Pengorganisasian ruang lapangan yang efisien menekan waktu menganggur siswa hingga di bawah 15% dari total durasi
-                    pembelajaran lapangan.
-                  </p>
-                </div>
-
-                <!-- Teori 5: Clinical Supervision Goldhammer & Schon -->
-                <div class="theory-card">
-                  <span class="theory-badge"> <i class="fa-solid fa-brain" style="margin-right: 5px"></i> Supervisi Reflektif </span>
-                  <h4 class="theory-title">Supervisi Klinis & Praktisi Reflektif (Goldhammer, 1969; Schön, 1983)</h4>
-                  <p class="theory-desc">
-                    Rekaman video ini berfungsi sebagai instrumen supervisi klinis mandiri bagi praktikan. Guru dapat mengobservasi kembali postur mengajarnya, membedah interaksi verbal dengan peserta didik, serta menyusun rencana perbaikan
-                    (<em>action plan</em>) yang berkelanjutan demi peningkatan mutu pembelajaran PJOK di masa depan.
-                  </p>
+                  <div style="background: #F8F9F5; border-radius: var(--radius-lg); padding: 1.8rem; border-top: 4px solid var(--color-accent-lime);">
+                    <h5 style="font-size: 1.05rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 0.75rem;">
+                      <i class="fa-solid fa-lightbulb" style="color: var(--color-primary-dark); margin-right: 6px;"></i> Refleksi & Tindak Lanjut Guru Model
+                    </h5>
+                    <ul style="padding-left: 1.25rem; font-size: 0.88rem; line-height: 1.7; color: var(--color-text-muted);">
+                      <li>Waktu elaborasi kesimpulan antarkelompok perlu ditambah 5 menit agar seluruh kelompok mendapatkan sesi tanggapan balik.</li>
+                      <li>Pemberian scaffolding yang lebih intensif pada kelompok siswa yang masih bingung membedakan dimensi fleksibilitas ideologi.</li>
+                      <li>Integrasi studi kasus aktual kebijakan publik berbasis nilai ideologi Pancasila.</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
-            </div>
-          </article>
+            </article>
+          </div>
+
+          <!-- ==================== SIKLUS 3 ANALYSIS ==================== -->
+          <div id="analysis-siklus-3" class="analysis-cycle-container">
+            <article class="analysis-module-card">
+              <div class="analysis-module-header">
+                <div class="analysis-module-num">01</div>
+                <div>
+                  <h3 class="analysis-module-title">Konteks & Sasaran Video Pembelajaran Siklus 3 (Periodisasi UUD)</h3>
+                  <p class="analysis-module-desc">Analisis penelusuran sejarah konstitusi bangsa dari UUD 1945, RIS, UUDS 1950, hingga Dekrit Presiden 5 Juli 1959 di kelas SMA Negeri 4 Yogyakarta.</p>
+                </div>
+              </div>
+
+              <div class="analysis-content-body">
+                <div style="margin-bottom: 2rem;">
+                  <h4 style="font-size: 1.2rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 1rem;">
+                    A. Konteks Lapangan & Penerapan Discovery Learning
+                  </h4>
+                  <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.75; text-align: justify;">
+                    Pada rekaman video Siklus 3, pembelajaran difokuskan pada materi hukum tata negara historis: <em>Periodisasi Pemberlakuan UUD di Indonesia</em>. Wahyu Surya Al Fikri, S.Pd. menerapkan model Discovery Learning dengan menyajikan linimasa interaktif perubahan konstitusi nasional. Peserta didik diajak bertindak sebagai 'peneliti sejarah ketatanegaraan' yang membedah penyebab pergantian naskah konstitusi, perubahan bentuk negara (kesatuan vs serikat), serta implikasi sistem presidensial dan parlementer terhadap stabilitas politik nasional.
+                  </p>
+                </div>
+
+                <div class="analysis-grid-2col">
+                  <div style="background: #F8F9F5; border-radius: var(--radius-lg); padding: 1.8rem; border-top: 4px solid var(--color-primary-dark);">
+                    <h5 style="font-size: 1.05rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 0.75rem;">
+                      <i class="fa-solid fa-check-circle" style="color: #16a34a; margin-right: 6px;"></i> Keunggulan Pembelajaran Siklus 3
+                    </h5>
+                    <ul style="padding-left: 1.25rem; font-size: 0.88rem; line-height: 1.7; color: var(--color-text-muted);">
+                      <li>Media grafis linimasa konstitusi memudahkan siswa memetakan 4 periode konstitusi secara kronologis.</li>
+                      <li>Kajian kritis mengenai kebuntuan Konstituante dan latar belakang yuridis Dekrit Presiden 5 Juli 1959 berlangsung hidup.</li>
+                      <li>Siswa mampu mengomparasi kelebihan dan kelemahan sistem parlementer pada era UUDS 1950 secara objektif.</li>
+                    </ul>
+                  </div>
+
+                  <div style="background: #F8F9F5; border-radius: var(--radius-lg); padding: 1.8rem; border-top: 4px solid var(--color-accent-lime);">
+                    <h5 style="font-size: 1.05rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 0.75rem;">
+                      <i class="fa-solid fa-lightbulb" style="color: var(--color-primary-dark); margin-right: 6px;"></i> Refleksi & Tindak Lanjut Guru Model
+                    </h5>
+                    <ul style="padding-left: 1.25rem; font-size: 0.88rem; line-height: 1.7; color: var(--color-text-muted);">
+                      <li>Materi sejarah konstitusi cukup padat fakta tahun dan nama dokumen, perlu diperkuat dengan jembatan keledai / infografis ringkas.</li>
+                      <li>Memanfaatkan simulasi sidang perumusan konstitusi agar peserta didik merasakan dinamika perdebatan founding fathers secara riil.</li>
+                      <li>Penyederhanaan istilah teknis hukum tata negara (seperti 'mosi tidak percaya' dan 'kabinet parlementer') untuk siswa awam.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- ==================== SIKLUS 4 ANALYSIS ==================== -->
+          <div id="analysis-siklus-4" class="analysis-cycle-container">
+            <article class="analysis-module-card">
+              <div class="analysis-module-header">
+                <div class="analysis-module-num">01</div>
+                <div>
+                  <h3 class="analysis-module-title">Konteks & Sasaran Video Pembelajaran Siklus 4 (Perubahan UUD NRI 1945)</h3>
+                  <p class="analysis-module-desc">Telaah empat tahap amandemen 1999–2002, checks and balances lembaga negara, dan perlindungan hak asasi manusia era reformasi.</p>
+                </div>
+              </div>
+
+              <div class="analysis-content-body">
+                <div style="margin-bottom: 2rem;">
+                  <h4 style="font-size: 1.2rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 1rem;">
+                    A. Konteks Lapangan & Penerapan Problem Based Learning
+                  </h4>
+                  <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.75; text-align: justify;">
+                    Sebagai siklus penutup rangkaian PPL Terbimbing, video Siklus 4 menampilkan pembelajaran mengenai <em>Perubahan UUD NRI Tahun 1945</em> pasca-reformasi. Wahyu Surya Al Fikri, S.Pd. memandu peserta didik menganalisis latar belakang tuntutan reformasi 1998, kesepakatan dasar amandemen (tidak mengubah Pembukaan, mempertahankan NKRI, dan mempertegas sistem presidensial), serta implikasi berdirinya lembaga baru seperti Mahkamah Konstitusi (MK), Dewan Perwakilan Daerah (DPD), dan Komisi Yudisial (KY).
+                  </p>
+                </div>
+
+                <div class="analysis-grid-2col">
+                  <div style="background: #F8F9F5; border-radius: var(--radius-lg); padding: 1.8rem; border-top: 4px solid var(--color-primary-dark);">
+                    <h5 style="font-size: 1.05rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 0.75rem;">
+                      <i class="fa-solid fa-check-circle" style="color: #16a34a; margin-right: 6px;"></i> Keunggulan Pembelajaran Siklus 4
+                    </h5>
+                    <ul style="padding-left: 1.25rem; font-size: 0.88rem; line-height: 1.7; color: var(--color-text-muted);">
+                      <li>Bagan relasi kekuasaan antarlembaga negara pasca-amandemen disajikan dengan animasi visual interaktif yang jernih.</li>
+                      <li>Kajian Pasal 28A–28J mengenai jaminan HAM berhasil memantik empati dan pemahaman hak-kewajiban warga negara siswa.</li>
+                      <li>Penilaian formatif autentik melalui presentasi kelompok mengenai pengawasan checks and balances berlangsung sangat dinamis.</li>
+                    </ul>
+                  </div>
+
+                  <div style="background: #F8F9F5; border-radius: var(--radius-lg); padding: 1.8rem; border-top: 4px solid var(--color-accent-lime);">
+                    <h5 style="font-size: 1.05rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 0.75rem;">
+                      <i class="fa-solid fa-lightbulb" style="color: var(--color-primary-dark); margin-right: 6px;"></i> Refleksi & Tindak Lanjut Guru Model
+                    </h5>
+                    <ul style="padding-left: 1.25rem; font-size: 0.88rem; line-height: 1.7; color: var(--color-text-muted);">
+                      <li>Mengajak siswa menganalisis putusan-putusan penting Mahkamah Konstitusi (judicial review) sebagai contoh kasus nyata perlindungan hak konstitusional.</li>
+                      <li>Menjaga netralitas ruang kelas dari perdebatan politik praktis partisan dan memusatkan telaah pada kaidah hukum tata negara.</li>
+                      <li>Mendorong siswa menghasilkan karya poster edukatif digital tentang hak warga negara dalam UUD 1945 hasil amandemen.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
         </section>
       </div>
     </main>
@@ -773,7 +827,10 @@
             <h4 class="footer-agency-col-title">Perangkat Pembelajaran</h4>
             <ul class="footer-agency-links">
               <li>
-                <a href="rancangan.html"><i class="fa-solid fa-check" style="color: var(--color-accent-lime); font-size: 0.75rem; margin-right: 6px"></i> Modul Ajar Siklus 2, 3 & 4</a>
+                <a href="rancangan.html"><i class="fa-solid fa-check" style="color: var(--color-accent-lime); font-size: 0.75rem; margin-right: 6px"></i> Modul Ajar Siklus 1 - 4</a>
+              </li>
+              <li>
+                <a href="materi.html"><i class="fa-solid fa-check" style="color: var(--color-accent-lime); font-size: 0.75rem; margin-right: 6px"></i> Buku Saku Materi Digital</a>
               </li>
               <li>
                 <a href="media.html"><i class="fa-solid fa-check" style="color: var(--color-accent-lime); font-size: 0.75rem; margin-right: 6px"></i> Media Berbasis TPACK</a>
@@ -808,6 +865,225 @@
         </div>
       </div>
     </footer>
+
+    <!-- JAVASCRIPT SWITCHER FOR UAS VIDEOS -->
+    <script>
+      const uasVideoData = {
+        2: {
+          title: "Video Praktik: Pembelajaran Pancasila Sebagai Ideologi Negara (Siklus 2)",
+          sub: "Praktikan: <strong>Wahyu Surya Al Fikri, S.Pd.</strong> • Meja Statis & Leitstar Dinamis • Fase F / Kelas XI SMA • SMA Negeri 4 Yogyakarta",
+          embedUrl: "https://www.youtube.com/embed/AQ9FbNC42ck?rel=0&modestbranding=1",
+          directUrl: "https://youtu.be/AQ9FbNC42ck?si=0gO33Jm2WVuBJ4ix",
+          fullscreenUrl: "https://www.youtube.com/watch?v=AQ9FbNC42ck",
+          materiText: "Materi: Pancasila Sebagai Ideologi Negara • Fase F Kelas XI SMA Negeri 4 Yogyakarta",
+          modelBadge: "PBL Berdiferensiasi",
+          timelineHtml: `
+            <div class="timeline-item active">
+              <span class="time-badge">Fase 1</span>
+              <div>
+                <strong style="font-size: 0.88rem; color: var(--color-primary-dark); display: block; margin-bottom: 2px"> Pendahuluan & Apersepsi Ideologi </strong>
+                <span style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.5; display: block">
+                  Salam pembuka, doa, presensi, dan stimulasi pertanyaan pemantik mengenai fungsi ideologi pemersatu di tengah kemajemukan bangsa.
+                </span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="time-badge">Fase 2</span>
+              <div>
+                <strong style="font-size: 0.88rem; color: var(--color-primary-dark); display: block; margin-bottom: 2px"> Eksplorasi Konsep Meja Statis & Leitstar </strong>
+                <span style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.5; display: block">
+                  Pemaparan dialektika pidato Bung Karno: Pancasila sebagai meja statis titik temu dan bintang penuntun dinamis era global.
+                </span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="time-badge">Fase 3</span>
+              <div>
+                <strong style="font-size: 0.88rem; color: var(--color-primary-dark); display: block; margin-bottom: 2px"> Diskusi Kelompok Diferensiasi TaRL </strong>
+                <span style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.5; display: block">
+                  Pembedahan perbandingan ideologi terbuka vs tertutup (liberalisme, komunisme, Pancasila) melalui studi kasus komparatif.
+                </span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="time-badge">Fase 4</span>
+              <div>
+                <strong style="font-size: 0.88rem; color: var(--color-primary-dark); display: block; margin-bottom: 2px"> Presentasi Argumen & Validasi </strong>
+                <span style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.5; display: block">
+                  Kelompok memaparkan hasil telaah keunggulan ideologi Pancasila, perdebatan kritis yang konstruktif, dan umpan balik guru.
+                </span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="time-badge">Fase 5</span>
+              <div>
+                <strong style="font-size: 0.88rem; color: var(--color-primary-dark); display: block; margin-bottom: 2px"> Evaluasi, Refleksi & Penutup </strong>
+                <span style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.5; display: block">
+                  Kuis formatif cepat, komitmen menjaga ideologi negara di ruang digital, doa bersama, dan penutupan kelas.
+                </span>
+              </div>
+            </div>
+          `
+        },
+        3: {
+          title: "Video Praktik: Pembelajaran Periodisasi Pemberlakuan UUD di Indonesia (Siklus 3)",
+          sub: "Praktikan: <strong>Wahyu Surya Al Fikri, S.Pd.</strong> • Empat Periode Konstitusi Bangsa • Fase F / Kelas XI SMA • SMA Negeri 4 Yogyakarta",
+          embedUrl: "https://www.youtube.com/embed/CrtXwV8Y36A?rel=0&modestbranding=1",
+          directUrl: "https://youtu.be/CrtXwV8Y36A?feature=shared",
+          fullscreenUrl: "https://www.youtube.com/watch?v=CrtXwV8Y36A",
+          materiText: "Materi: Periodisasi Pemberlakuan UUD di Indonesia • Fase F Kelas XI SMA Negeri 4 Yogyakarta",
+          modelBadge: "Discovery Learning",
+          timelineHtml: `
+            <div class="timeline-item active">
+              <span class="time-badge">Fase 1</span>
+              <div>
+                <strong style="font-size: 0.88rem; color: var(--color-primary-dark); display: block; margin-bottom: 2px"> Pendahuluan & Apersepsi Konstitusi </strong>
+                <span style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.5; display: block">
+                  Salam, doa, presensi, dan apersepsi menganalogikan konstitusi sebagai aturan main dasar sebuah negara.
+                </span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="time-badge">Fase 2</span>
+              <div>
+                <strong style="font-size: 0.88rem; color: var(--color-primary-dark); display: block; margin-bottom: 2px"> Stimulasi Linimasa Sejarah Konstitusi </strong>
+                <span style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.5; display: block">
+                  Penayangan grafik linimasa 4 periode: UUD 1945 awal, Konstitusi RIS 1949, UUDS 1950, dan Dekrit Presiden 5 Juli 1959.
+                </span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="time-badge">Fase 3</span>
+              <div>
+                <strong style="font-size: 0.88rem; color: var(--color-primary-dark); display: block; margin-bottom: 2px"> Penyelidikan & Komparasi Ketatanegaraan </strong>
+                <span style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.5; display: block">
+                  Siswa secara berkelompok menelaah bentuk negara, sistem kabinet, dan penyebab berakhirnya masing-masing konstitusi.
+                </span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="time-badge">Fase 4</span>
+              <div>
+                <strong style="font-size: 0.88rem; color: var(--color-primary-dark); display: block; margin-bottom: 2px"> Presentasi Hasil Telaah & Klarifikasi </strong>
+                <span style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.5; display: block">
+                  Pemaparan hasil telaah historis-yuridis, tanya jawab antarkelompok, dan penguatan konseptual oleh guru model.
+                </span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="time-badge">Fase 5</span>
+              <div>
+                <strong style="font-size: 0.88rem; color: var(--color-primary-dark); display: block; margin-bottom: 2px"> Kesimpulan, Refleksi & Penutup </strong>
+                <span style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.5; display: block">
+                  Penyimpulan arti penting kepatuhan pada konstitusi hukum tertinggi negara, doa penutup, dan salam santun.
+                </span>
+              </div>
+            </div>
+          `
+        },
+        4: {
+          title: "Video Praktik: Pembelajaran Perubahan UUD NRI Tahun 1945 (Siklus 4)",
+          sub: "Praktikan: <strong>Wahyu Surya Al Fikri, S.Pd.</strong> • Empat Tahap Amandemen 1999–2002 • Fase F / Kelas XI SMA • SMA Negeri 4 Yogyakarta",
+          embedUrl: "https://www.youtube.com/embed/3OSVh4onJ20?rel=0&modestbranding=1",
+          directUrl: "https://youtu.be/3OSVh4onJ20?feature=shared",
+          fullscreenUrl: "https://www.youtube.com/watch?v=3OSVh4onJ20",
+          materiText: "Materi: Perubahan UUD NRI Tahun 1945 • Fase F Kelas XI SMA Negeri 4 Yogyakarta",
+          modelBadge: "Problem Based Learning",
+          timelineHtml: `
+            <div class="timeline-item active">
+              <span class="time-badge">Fase 1</span>
+              <div>
+                <strong style="font-size: 0.88rem; color: var(--color-primary-dark); display: block; margin-bottom: 2px"> Pendahuluan & Apersepsi Tuntutan Reformasi </strong>
+                <span style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.5; display: block">
+                  Salam pembuka, presensi, doa, dan apersepsi mengenai latar belakang tuntutan reformasi 1998 untuk mengamandemen konstitusi.
+                </span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="time-badge">Fase 2</span>
+              <div>
+                <strong style="font-size: 0.88rem; color: var(--color-primary-dark); display: block; margin-bottom: 2px"> Orientasi Tahapan Amandemen & Kesepakatan Dasar </strong>
+                <span style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.5; display: block">
+                  Penjelasan 5 kesepakatan dasar amandemen MPR dan rincian perubahan bertahap I (1999), II (2000), III (2001), dan IV (2002).
+                </span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="time-badge">Fase 3</span>
+              <div>
+                <strong style="font-size: 0.88rem; color: var(--color-primary-dark); display: block; margin-bottom: 2px"> Investigasi Checks and Balances & Lembaga Baru </strong>
+                <span style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.5; display: block">
+                  Diskusi kelompok mengkaji kewenangan lembaga negara baru (MK, DPD, KY) dan penegasan bab Hak Asasi Manusia (Pasal 28A-28J).
+                </span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="time-badge">Fase 4</span>
+              <div>
+                <strong style="font-size: 0.88rem; color: var(--color-primary-dark); display: block; margin-bottom: 2px"> Presentasi Hasil Analisis Yuridis </strong>
+                <span style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.5; display: block">
+                  Setiap kelompok mempresentasikan analisis studi kasus pengujian undang-undang oleh MK dan perlindungan hak konstitusional warga.
+                </span>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <span class="time-badge">Fase 5</span>
+              <div>
+                <strong style="font-size: 0.88rem; color: var(--color-primary-dark); display: block; margin-bottom: 2px"> Evaluasi Formatif & Refleksi Kesadaran Konstitusi </strong>
+                <span style="font-size: 0.8rem; color: var(--color-text-muted); line-height: 1.5; display: block">
+                  Penilaian formatif, penguatan komitmen budaya sadar konstitusi, apresiasi pencapaian peserta didik, dan doa penutup.
+                </span>
+              </div>
+            </div>
+          `
+        }
+      };
+
+      function switchUASVideo(cycle) {
+        const data = uasVideoData[cycle];
+        if (!data) return;
+
+        // Switch Tab Buttons
+        document.querySelectorAll('.uas-tab-btn').forEach(btn => btn.classList.remove('active'));
+        const activeBtn = document.getElementById('tab-btn-' + cycle);
+        if (activeBtn) activeBtn.classList.add('active');
+
+        // Switch Summary Cards
+        document.querySelectorAll('.uas-cycle-summary-card').forEach(card => card.classList.remove('active-card'));
+        const activeCard = document.getElementById('summary-card-' + cycle);
+        if (activeCard) activeCard.classList.add('active-card');
+
+        // Switch Analysis Containers
+        document.querySelectorAll('.analysis-cycle-container').forEach(c => c.classList.remove('active'));
+        const activeAnalysis = document.getElementById('analysis-siklus-' + cycle);
+        if (activeAnalysis) activeAnalysis.classList.add('active');
+
+        // Update Video Elements
+        const frame = document.getElementById('uas-video-frame');
+        const title = document.getElementById('uas-video-title');
+        const sub = document.getElementById('uas-video-sub');
+        const ytBtn = document.getElementById('uas-youtube-btn');
+        const fsBtn = document.getElementById('uas-fullscreen-btn');
+        const fallback = document.getElementById('uas-fallback-link');
+        const sidebarMateri = document.getElementById('uas-sidebar-materi');
+        const modelBadge = document.getElementById('uas-sintaks-model');
+        const timelineContainer = document.getElementById('uas-timeline-container');
+        const sidebarBtn = document.getElementById('uas-sidebar-btn');
+
+        if (frame) frame.src = data.embedUrl;
+        if (title) title.textContent = data.title;
+        if (sub) sub.innerHTML = data.sub;
+        if (ytBtn) ytBtn.href = data.directUrl;
+        if (fsBtn) fsBtn.href = data.fullscreenUrl;
+        if (fallback) fallback.href = data.directUrl;
+        if (sidebarMateri) sidebarMateri.textContent = data.materiText;
+        if (modelBadge) modelBadge.textContent = data.modelBadge;
+        if (timelineContainer) timelineContainer.innerHTML = data.timelineHtml;
+        if (sidebarBtn) sidebarBtn.href = data.directUrl;
+
+        showToast('Menampilkan Video Siklus ' + cycle + ': ' + (cycle === 2 ? 'Pancasila Sebagai Ideologi Negara' : cycle === 3 ? 'Periodisasi Pemberlakuan UUD' : 'Perubahan UUD NRI 1945'));
+      }
+    </script>
 
     <script src="../js/main.js"></script>
   </body>

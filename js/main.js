@@ -285,7 +285,8 @@ function initGalleryFilter() {
 
       galleryCards.forEach(card => {
         const cat = card.getAttribute('data-category') || '';
-        if (filter === 'all' || cat === filter) {
+        const cats = cat.split(/\s+/);
+        if (filter === 'all' || cat === filter || cats.includes(filter)) {
           card.style.display = 'flex';
         } else {
           card.style.display = 'none';
