@@ -1,788 +1,825 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>E-Portofolio PPL Terbimbing | Wahyu Surya Al Fikri, S.Pd. - PPG Pendidikan Pancasila UAD</title>
-  
-  <link rel="icon" type="image/png" href="logo.png">
-  
-  <!-- Google Fonts: Plus Jakarta Sans -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <!-- FontAwesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  
-  <!-- Custom Modern Stylesheet -->
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Portofolio PPL Terbimbing | Wahyu Surya Al Fikri, S.Pd. - PPG Pendidikan Pancasila UAD</title>
 
-  <!-- =================================================================
+    <link rel="icon" type="image/png" href="logo.png" />
+
+    <!-- Google Fonts: Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- Custom Modern Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- =================================================================
        1. TOPBAR (Contact Info & Angled Lime Social Strip - Reference Match)
        ================================================================= -->
-  <div class="topbar">
-    <div class="container topbar-inner">
-      <div class="topbar-contact">
-        <a href="tel:+62859195374310" class="topbar-item">
-          <i class="fa-solid fa-phone"></i>
-          <span>+62 859-1953-74310</span>
-        </a>
-        <a href="mailto:wahyu.ppg@uad.ac.id" class="topbar-item">
-          <i class="fa-solid fa-envelope"></i>
-          <span>wahyu.ppg@uad.ac.id</span>
-        </a> 
-        <div class="topbar-item">
-          <i class="fa-solid fa-location-dot"></i>
-          <span>Universitas Ahmad Dahlan (UAD) • D.I. Yogyakarta</span>
+    <div class="topbar">
+      <div class="container topbar-inner">
+        <div class="topbar-contact">
+          <a href="tel:+62859195374310" class="topbar-item">
+            <i class="fa-solid fa-phone"></i>
+            <span>+62 859-1953-74310</span>
+          </a>
+          <a href="mailto:wahyu.ppg@uad.ac.id" class="topbar-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span>wahyu.ppg@uad.ac.id</span>
+          </a>
+          <div class="topbar-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Universitas Ahmad Dahlan (UAD) • D.I. Yogyakarta</span>
+          </div>
+        </div>
+
+        <div class="topbar-social-wrap">
+          <a href="javascript:void(0)" onclick="showToast('Facebook Wahyu Surya Al Fikri')" class="social-circle-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="javascript:void(0)" onclick="showToast('Twitter / X')" class="social-circle-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="javascript:void(0)" onclick="showToast('Instagram Wahyu Surya Al Fikri')" class="social-circle-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="javascript:void(0)" onclick="showToast('Kanal YouTube Pembelajaran Pendidikan Pancasila')" class="social-circle-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="javascript:void(0)" onclick="showToast('LinkedIn Wahyu Surya Al Fikri')" class="social-circle-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
         </div>
       </div>
-
-      <div class="topbar-social-wrap">
-        <a href="javascript:void(0)" onclick="showToast('Facebook Wahyu Surya Al Fikri')" class="social-circle-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="javascript:void(0)" onclick="showToast('Twitter / X')" class="social-circle-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="javascript:void(0)" onclick="showToast('Instagram Wahyu Surya Al Fikri')" class="social-circle-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="javascript:void(0)" onclick="showToast('Kanal YouTube Pembelajaran Pendidikan Pancasila')" class="social-circle-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        <a href="javascript:void(0)" onclick="showToast('LinkedIn Wahyu Surya Al Fikri')" class="social-circle-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-      </div>
     </div>
-  </div>
 
-  <!-- =================================================================
+    <!-- =================================================================
        2. MAIN NAVBAR (Clean White Header with Dropdowns)
        ================================================================= -->
-  <header class="navbar">
-    <div class="container navbar-inner">
-      <a href="index.html" class="brand">
-        <img src="logo navbar.png" alt="Logo UAD" class="brand-logo-img" onerror="this.style.display='none'">
-        <div>
-          <span class="brand-title">Wahyu Surya Al Fikri, S.Pd.</span>
-          <span class="brand-subtitle">PPG Calon Guru Pendidikan Pancasila UAD</span>
+    <header class="navbar">
+      <div class="container navbar-inner">
+        <a href="index.html" class="brand">
+          <img src="logo navbar.png" alt="Logo UAD" class="brand-logo-img" onerror="this.style.display = 'none'" />
+          <div>
+            <span class="brand-title">Wahyu Surya Al Fikri, S.Pd.</span>
+            <span class="brand-subtitle">PPG Calon Guru Pendidikan Pancasila UAD</span>
+          </div>
+        </a>
+
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html" class="nav-link active">Beranda</a></li>
+            <li><a href="profil.html" class="nav-link">Profil</a></li>
+
+            <!-- UTS Dropdown -->
+            <li class="nav-item-dropdown">
+              <a href="javascript:void(0)" class="nav-link dropdown-toggle" role="button"> UTS <i class="fa-solid fa-chevron-down chevron-icon"></i> </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="UTS/rancangan.html" class="dropdown-item"><i class="fa-solid fa-book-bookmark"></i> Rancangan</a>
+                </li>
+                <li>
+                  <a href="UTS/materi.html" class="dropdown-item"><i class="fa-solid fa-book-open"></i> Materi</a>
+                </li>
+                <li>
+                  <a href="UTS/media.html" class="dropdown-item"><i class="fa-solid fa-photo-film"></i> Media</a>
+                </li>
+                <li>
+                  <a href="UTS/instrumen.html" class="dropdown-item"><i class="fa-solid fa-clipboard-check"></i> Instrumen</a>
+                </li>
+                <li>
+                  <a href="UTS/video.html" class="dropdown-item"><i class="fa-solid fa-circle-play"></i> Video</a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- UAS Dropdown -->
+            <li class="nav-item-dropdown">
+              <a href="javascript:void(0)" class="nav-link dropdown-toggle" role="button"> UAS <i class="fa-solid fa-chevron-down chevron-icon"></i> </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="UAS/rancangan.html" class="dropdown-item"><i class="fa-solid fa-book-bookmark"></i> Rancangan</a>
+                </li>
+                <li>
+                  <a href="UAS/materi.html" class="dropdown-item"><i class="fa-solid fa-book-open"></i> Materi</a>
+                </li>
+                <li>
+                  <a href="UAS/media.html" class="dropdown-item"><i class="fa-solid fa-photo-film"></i> Media</a>
+                </li>
+                <li>
+                  <a href="UAS/instrumen.html" class="dropdown-item"><i class="fa-solid fa-clipboard-check"></i> Instrumen</a>
+                </li>
+                <li>
+                  <a href="UAS/video.html" class="dropdown-item"><i class="fa-solid fa-circle-play"></i> Video</a>
+                </li>
+              </ul>
+            </li>
+
+            <li><a href="non-mengajar.html" class="nav-link">Non-Mengajar</a></li>
+            <li><a href="dokumentasi.html" class="nav-link">Dokumentasi</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="btn btn-primary-dark btn-sm" onclick="showToast('Mengunduh Berkas Lengkap Portofolio PPL (.ZIP)...')"><i class="fa-solid fa-download"></i> Unduh E-Porto</button>
+          <button class="mobile-toggle" aria-label="Toggle Menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
         </div>
-      </a>
-
-      <nav>
-        <ul class="nav-links">
-          <li><a href="index.html" class="nav-link active">Beranda</a></li>
-          <li><a href="profil.html" class="nav-link">Profil</a></li>
-          
-          <!-- UTS Dropdown -->
-          <li class="nav-item-dropdown">
-            <a href="javascript:void(0)" class="nav-link dropdown-toggle" role="button">
-              UTS <i class="fa-solid fa-chevron-down chevron-icon"></i>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="UTS/rancangan.html" class="dropdown-item"><i class="fa-solid fa-book-bookmark"></i> Rancangan</a></li>
-              <li><a href="UTS/materi.html" class="dropdown-item"><i class="fa-solid fa-book-open"></i> Materi</a></li>
-              <li><a href="UTS/media.html" class="dropdown-item"><i class="fa-solid fa-photo-film"></i> Media</a></li>
-              <li><a href="UTS/instrumen.html" class="dropdown-item"><i class="fa-solid fa-clipboard-check"></i> Instrumen</a></li>
-              <li><a href="UTS/video.html" class="dropdown-item"><i class="fa-solid fa-circle-play"></i> Video</a></li>
-            </ul>
-          </li>
-
-          <!-- UAS Dropdown -->
-          <li class="nav-item-dropdown">
-            <a href="javascript:void(0)" class="nav-link dropdown-toggle" role="button">
-              UAS <i class="fa-solid fa-chevron-down chevron-icon"></i>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="UAS/rancangan.html" class="dropdown-item"><i class="fa-solid fa-book-bookmark"></i> Rancangan</a></li>
-              <li><a href="UAS/materi.html" class="dropdown-item"><i class="fa-solid fa-book-open"></i> Materi</a></li>
-              <li><a href="UAS/media.html" class="dropdown-item"><i class="fa-solid fa-photo-film"></i> Media</a></li>
-              <li><a href="UAS/instrumen.html" class="dropdown-item"><i class="fa-solid fa-clipboard-check"></i> Instrumen</a></li>
-              <li><a href="UAS/video.html" class="dropdown-item"><i class="fa-solid fa-circle-play"></i> Video</a></li>
-            </ul>
-          </li>
-
-          <li><a href="non-mengajar.html" class="nav-link">Non-Mengajar</a></li>
-          <li><a href="dokumentasi.html" class="nav-link">Dokumentasi</a></li>
-        </ul>
-      </nav>
-
-      <div class="nav-actions">
-        <button class="btn btn-primary-dark btn-sm" onclick="showToast('Mengunduh Berkas Lengkap Portofolio PPL (.ZIP)...')">
-          <i class="fa-solid fa-download"></i> Unduh E-Porto
-        </button>
-        <button class="mobile-toggle" aria-label="Toggle Menu">
-          <i class="fa-solid fa-bars"></i>
-        </button>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <main>
-    <!-- =================================================================
+    <main>
+      <!-- =================================================================
          3. HERO SECTION (Exact Reference Composition: Left Typography + Right Collage)
          ================================================================= -->
-    <section id="beranda" class="hero-agency">
-      <div class="container">
-        <div class="hero-agency-grid">
-          
-          <!-- Left Text Content -->
-          <div class="hero-agency-content">
-            <div class="badge-pill-group">
-              <span class="twin-dot-icon">
-                <span></span><span></span>
-              </span>
-              <span>PPL Terbimbing • SMA Negeri 4 Yogyakarta • PPG UAD</span>
+      <section id="beranda" class="hero-agency">
+        <div class="container">
+          <div class="hero-agency-grid">
+            <!-- Left Text Content -->
+            <div class="hero-agency-content">
+              <div class="badge-pill-group">
+                <span class="twin-dot-icon"> <span></span><span></span> </span>
+                <span>PPL Terbimbing • SMA Negeri 4 Yogyakarta • PPG UAD</span>
+              </div>
+
+              <h1 class="hero-agency-title">Mewujudkan Inovasi Pembelajaran <span class="lime-highlight">Pendidikan Pancasila Berdiferensiasi</span></h1>
+
+              <p class="hero-agency-desc">
+                Portofolio digital resmi <strong>Wahyu Surya Al Fikri, S.Pd.</strong> Mahasiswa PPG Calon Guru Bidang Studi Pendidikan Pancasila Universitas Ahmad Dahlan (UAD) — Mengedepankan pembelajaran inovatif, berdiferensiasi, berbasis
+                penguatan Profil Pelajar Pancasila, pemikiran kritis, dan kesadaran konstitusi di <strong>SMA Negeri 4 Yogyakarta</strong>.
+              </p>
+
+              <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem">
+                <span class="tag-pill" style="background: rgba(184, 224, 35, 0.25); color: var(--color-primary-dark); font-weight: 700"
+                  ><i class="fa-solid fa-scale-balanced" style="margin-right: 4px"></i> Pendidikan Karakter Pancasila</span
+                >
+                <span class="tag-pill" style="background: rgba(18, 56, 45, 0.08); color: var(--color-primary-dark); font-weight: 700"><i class="fa-solid fa-users" style="margin-right: 4px"></i> Musyawarah & Demokrasi</span>
+                <span class="tag-pill" style="background: rgba(184, 224, 35, 0.25); color: var(--color-primary-dark); font-weight: 700"><i class="fa-solid fa-landmark" style="margin-right: 4px"></i> Kesadaran Konstitusi</span>
+              </div>
+
+              <div class="hero-agency-actions">
+                <a href="#artefak" class="btn btn-with-arrow">
+                  <span>Eksplorasi Portofolio</span>
+                  <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <a href="#lokasi-lptr" class="btn-link-simple">
+                  <span>Sekolah Mitra & Profil</span>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </a>
+              </div>
             </div>
 
-            <h1 class="hero-agency-title">
-              Mewujudkan Inovasi Pembelajaran <span class="lime-highlight">Pendidikan Pancasila Berdiferensiasi</span>
-            </h1>
+            <!-- Right Asymmetric Rounded Photo Collage (Reference Match) -->
+            <div class="hero-collage-wrapper">
+              <div class="hero-collage-grid">
+                <!-- Box 1: Small Rounded Photo -->
+                <div class="collage-box">
+                  <img src="IMG/Dokumentasi Siklus 2.jpeg" alt="Praktik Pembelajaran Pendidikan Pancasila di Kelas" style="object-fit: cover; width: 100%; height: 100%" />
+                </div>
 
-            <p class="hero-agency-desc">
-              Portofolio digital resmi <strong>Wahyu Surya Al Fikri, S.Pd.</strong> Mahasiswa PPG Calon Guru Bidang Studi Pendidikan Pancasila Universitas Ahmad Dahlan (UAD) — Mengedepankan pembelajaran inovatif, berdiferensiasi, berbasis penguatan Profil Pelajar Pancasila, pemikiran kritis, dan kesadaran konstitusi di <strong>SMA Negeri 4 Yogyakarta</strong>.
-            </p>
+                <!-- Box 2: Tall Asymmetric Image featuring Wahyu's Photo! -->
+                <div class="collage-box collage-box-tall">
+                  <img src="pas foto.png" alt="Wahyu Surya Al Fikri, S.Pd." onerror="this.src = 'Pas Foto.JPG'" />
+                </div>
 
-            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1.5rem;">
-              <span class="tag-pill" style="background: rgba(184, 224, 35, 0.25); color: var(--color-primary-dark); font-weight: 700;"><i class="fa-solid fa-scale-balanced" style="margin-right: 4px;"></i> Pendidikan Karakter Pancasila</span>
-              <span class="tag-pill" style="background: rgba(18, 56, 45, 0.08); color: var(--color-primary-dark); font-weight: 700;"><i class="fa-solid fa-users" style="margin-right: 4px;"></i> Musyawarah & Demokrasi</span>
-              <span class="tag-pill" style="background: rgba(184, 224, 35, 0.25); color: var(--color-primary-dark); font-weight: 700;"><i class="fa-solid fa-landmark" style="margin-right: 4px;"></i> Kesadaran Konstitusi</span>
-            </div>
+                <!-- Box 3: Bottom Rounded Photo -->
+                <div class="collage-box collage-box-bottom">
+                  <img src="IMG/Dokumentasi Siklus 3.jpeg" alt="Diskusi Interaktif Peserta Didik SMA Negeri 4 Yogyakarta" style="object-fit: cover; width: 100%; height: 100%" />
+                </div>
+              </div>
 
-            <div class="hero-agency-actions">
-              <a href="#artefak" class="btn btn-with-arrow">
-                <span>Eksplorasi Portofolio</span>
-                <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
+              <!-- Floating Circular "HIRE ME" Badge (Reference Match) -->
+              <a href="profil.html" class="floating-circle-badge" title="Profil Lengkap Guru Pendidikan Pancasila">
+                <div class="badge-center-icon">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </div>
               </a>
-              <a href="#lokasi-lptr" class="btn-link-simple">
-                <span>Sekolah Mitra & Profil</span>
-                <i class="fa-solid fa-arrow-right"></i>
-              </a>
+
+              <!-- Sparkle Elements -->
+              <div class="sparkle-icon" style="top: -10px; right: 20px">✦</div>
+              <div class="sparkle-icon" style="bottom: 15px; left: -10px; font-size: 1.4rem">✦</div>
             </div>
           </div>
-   
-          <!-- Right Asymmetric Rounded Photo Collage (Reference Match) -->
-          <div class="hero-collage-wrapper">
-            <div class="hero-collage-grid">
-              
-              <!-- Box 1: Small Rounded Photo -->
-              <div class="collage-box">
-                <img src="IMG/Dokumentasi Siklus 2.jpeg" alt="Praktik Pembelajaran Pendidikan Pancasila di Kelas" style="object-fit: cover; width: 100%; height: 100%;">
-              </div>
-
-              <!-- Box 2: Tall Asymmetric Image featuring Wahyu's Photo! -->
-              <div class="collage-box collage-box-tall">
-                <img src="pas foto.png" alt="Wahyu Surya Al Fikri, S.Pd." onerror="this.src='Pas Foto.JPG'">
-              </div>
-
-              <!-- Box 3: Bottom Rounded Photo -->
-              <div class="collage-box collage-box-bottom">
-                <img src="IMG/Dokumentasi Siklus 3.jpeg" alt="Diskusi Interaktif Peserta Didik SMA Negeri 4 Yogyakarta" style="object-fit: cover; width: 100%; height: 100%;">
-              </div>
-
-            </div>
-
-            <!-- Floating Circular "HIRE ME" Badge (Reference Match) -->
-            <a href="profil.html" class="floating-circle-badge" title="Profil Lengkap Guru Pendidikan Pancasila">
-              <div class="badge-center-icon">
-                <i class="fa-solid fa-arrow-right"></i>
-              </div>
-            </a>
-
-            <!-- Sparkle Elements -->
-            <div class="sparkle-icon" style="top: -10px; right: 20px;">✦</div>
-            <div class="sparkle-icon" style="bottom: 15px; left: -10px; font-size: 1.4rem;">✦</div>
-          </div>
-
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- =================================================================
+      <!-- =================================================================
          4. MARQUEE TICKER (Exact Reference Full-Width Dark Green Ribbon)
          ================================================================= -->
-    <div class="marquee-ribbon">
-      <div class="marquee-content">
-        <span class="marquee-item">INOVASI PEMBELAJARAN PENDIDIKAN PANCASILA <span class="marquee-star">✳</span></span>
-        <span class="marquee-item">KURIKULUM MERDEKA <span class="marquee-star">✳</span></span>
-        <span class="marquee-item">TPACK BERBASIS DIGITAL <span class="marquee-star">✳</span></span>
-        <span class="marquee-item">ASESMEN OTENTIK 3 RANAH <span class="marquee-star">✳</span></span>
-        <span class="marquee-item">PENDIDIKAN KARAKTER & KESADARAN KONSTITUSI <span class="marquee-star">✳</span></span>
-        <span class="marquee-item">PENGUATAN PROFIL PELAJAR PANCASILA <span class="marquee-star">✳</span></span>
-        <span class="marquee-item">REFLEKSI SIKLUS MODEL 4F <span class="marquee-star">✳</span></span>
-        <span class="marquee-item">PEMBELAJARAN BERDIFERENSIASI <span class="marquee-star">✳</span></span>
+      <div class="marquee-ribbon">
+        <div class="marquee-content">
+          <span class="marquee-item">INOVASI PEMBELAJARAN PENDIDIKAN PANCASILA <span class="marquee-star">✳</span></span>
+          <span class="marquee-item">KURIKULUM MERDEKA <span class="marquee-star">✳</span></span>
+          <span class="marquee-item">TPACK BERBASIS DIGITAL <span class="marquee-star">✳</span></span>
+          <span class="marquee-item">ASESMEN OTENTIK 3 RANAH <span class="marquee-star">✳</span></span>
+          <span class="marquee-item">PENDIDIKAN KARAKTER & KESADARAN KONSTITUSI <span class="marquee-star">✳</span></span>
+          <span class="marquee-item">PENGUATAN PROFIL PELAJAR PANCASILA <span class="marquee-star">✳</span></span>
+          <span class="marquee-item">REFLEKSI SIKLUS MODEL 4F <span class="marquee-star">✳</span></span>
+          <span class="marquee-item">PEMBELAJARAN BERDIFERENSIASI <span class="marquee-star">✳</span></span>
 
-        <!-- Duplicated for seamless continuous scroll -->
-        <span class="marquee-item">INOVASI PEMBELAJARAN PENDIDIKAN PANCASILA <span class="marquee-star">✳</span></span>
-        <span class="marquee-item">KURIKULUM MERDEKA <span class="marquee-star">✳</span></span>
-        <span class="marquee-item">TPACK BERBASIS DIGITAL <span class="marquee-star">✳</span></span>
-        <span class="marquee-item">ASESMEN OTENTIK 3 RANAH <span class="marquee-star">✳</span></span>
-        <span class="marquee-item">PENDIDIKAN KARAKTER & KESADARAN KONSTITUSI <span class="marquee-star">✳</span></span>
-        <span class="marquee-item">PENGUATAN PROFIL PELAJAR PANCASILA <span class="marquee-star">✳</span></span>
-        <span class="marquee-item">REFLEKSI SIKLUS MODEL 4F <span class="marquee-star">✳</span></span>
-        <span class="marquee-item">PEMBELAJARAN BERDIFERENSIASI <span class="marquee-star">✳</span></span>
+          <!-- Duplicated for seamless continuous scroll -->
+          <span class="marquee-item">INOVASI PEMBELAJARAN PENDIDIKAN PANCASILA <span class="marquee-star">✳</span></span>
+          <span class="marquee-item">KURIKULUM MERDEKA <span class="marquee-star">✳</span></span>
+          <span class="marquee-item">TPACK BERBASIS DIGITAL <span class="marquee-star">✳</span></span>
+          <span class="marquee-item">ASESMEN OTENTIK 3 RANAH <span class="marquee-star">✳</span></span>
+          <span class="marquee-item">PENDIDIKAN KARAKTER & KESADARAN KONSTITUSI <span class="marquee-star">✳</span></span>
+          <span class="marquee-item">PENGUATAN PROFIL PELAJAR PANCASILA <span class="marquee-star">✳</span></span>
+          <span class="marquee-item">REFLEKSI SIKLUS MODEL 4F <span class="marquee-star">✳</span></span>
+          <span class="marquee-item">PEMBELAJARAN BERDIFERENSIASI <span class="marquee-star">✳</span></span>
+        </div>
       </div>
-    </div>
 
-    <!-- =================================================================
+      <!-- =================================================================
          5. SECTION 2: ABOUT / SEKOLAH MITRA & PROFIL (Reference Match: Progress Bars & Stats)
          ================================================================= -->
-    <section id="lokasi-lptr" class="about-agency-section">
-      <div class="container">
-        
-        <div class="about-agency-grid">
-          <!-- Left Collage -->
-          <div class="about-collage-left">
-            <div class="about-image-main">
-              <img src="IMG/Mengawas ASTS.jpeg" alt="SMA Negeri 4 Yogyakarta" onerror="this.src='IMG/IMG_3039.jpg'">
-            </div>
-            <div class="about-image-secondary">
-              <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=700&q=80" alt="Diskusi Kolaboratif PPL" onerror="this.src='https://placehold.co/700x350/12382D/FFFFFF?text=Supervisi+PPL'">
-            </div>
-
-            <!-- Floating Badge -->
-            <a href="profil.html" class="floating-circle-badge" style="top: 55%; left: 88%;" title="Tentang Guru Pendidikan Pancasila">
-              <div class="badge-center-icon">
-                <i class="fa-solid fa-graduation-cap"></i>
+      <section id="lokasi-lptr" class="about-agency-section">
+        <div class="container">
+          <div class="about-agency-grid">
+            <!-- Left Collage -->
+            <div class="about-collage-left">
+              <div class="about-image-main">
+                <img src="IMG/Mengawas ASTS.jpeg" alt="SMA Negeri 4 Yogyakarta" onerror="this.src = 'IMG/IMG_3039.jpg'" />
               </div>
-            </a>
-          </div>
-
-          <!-- Right Content & Skill Bars -->
-          <div class="about-agency-content">
-            <div class="badge-pill-group">
-              <span class="twin-dot-icon">
-                <span></span><span></span>
-              </span>
-              <span>Sekolah Mitra PPL</span>
-            </div>
-
-            <h2>Sinergi Akademik Kampus LPTK UAD & SMA Negeri 4 Yogyakarta</h2>
-
-            <p>
-              Pelaksanaan PPL Terbimbing berpusat di <strong>SMA Negeri 4 Yogyakarta</strong> di bawah bimbingan Guru Pamong Pendidikan Pancasila <em>Drs. Bambang Wijanarko, M.Pd.</em> dan Dosen Pembimbing Lapangan Universitas Ahmad Dahlan (UAD) <em>Dr. Sugiyanto, M.Pd.</em> Mengedepankan integrasi teknologi pedagogik TPACK, pendekatan berdiferensiasi, dan penguatan Profil Pelajar Pancasila.
-            </p>
-
-            <!-- Skill Progress Bars (Reference Match with Lime Knobs) -->
-            <div class="skill-bars-list">
-              <!-- Bar 1 -->
-              <div class="skill-bar-item">
-                <div class="skill-bar-head">
-                  <span class="skill-bar-label">Perangkat Ajar Kurikulum Merdeka</span>
-                  <span class="skill-bar-pct">95%</span>
-                </div>
-                <div class="skill-bar-track">
-                  <div class="skill-bar-fill" data-width="95%" style="width: 0%;"></div>
-                </div>
+              <div class="about-image-secondary">
+                <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=700&q=80" alt="Diskusi Kolaboratif PPL" onerror="this.src = 'https://placehold.co/700x350/12382D/FFFFFF?text=Supervisi+PPL'" />
               </div>
 
-              <!-- Bar 2 -->
-              <div class="skill-bar-item">
-                <div class="skill-bar-head">
-                  <span class="skill-bar-label">Pelaksanaan Praktik Terbimbing Lapangan</span>
-                  <span class="skill-bar-pct">100%</span>
+              <!-- Floating Badge -->
+              <a href="profil.html" class="floating-circle-badge" style="top: 55%; left: 88%" title="Tentang Guru Pendidikan Pancasila">
+                <div class="badge-center-icon">
+                  <i class="fa-solid fa-graduation-cap"></i>
                 </div>
-                <div class="skill-bar-track">
-                  <div class="skill-bar-fill" data-width="100%" style="width: 0%;"></div>
-                </div>
-              </div>
-
-              <!-- Bar 3 -->
-              <div class="skill-bar-item">
-                <div class="skill-bar-head">
-                  <span class="skill-bar-label">Integrasi Media Digital TPACK & E-LKPD</span>
-                  <span class="skill-bar-pct">92%</span>
-                </div>
-                <div class="skill-bar-track">
-                  <div class="skill-bar-fill" data-width="92%" style="width: 0%;"></div>
-                </div>
-              </div>
-
-              <!-- Bar 4 -->
-              <div class="skill-bar-item">
-                <div class="skill-bar-head">
-                  <span class="skill-bar-label">Ketercapaian Asesmen Otentik 3 Ranah</span>
-                  <span class="skill-bar-pct">98%</span>
-                </div>
-                <div class="skill-bar-track">
-                  <div class="skill-bar-fill" data-width="98%" style="width: 0%;"></div>
-                </div>
-              </div>
-            </div>
-
-            <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
-              <a href="profil.html" class="btn btn-with-arrow">
-                <span>Detail Profil Mahasiswa</span>
-                <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
               </a>
-              <button class="btn btn-outline-dark" onclick="showToast('Alamat: SMA Negeri 4 Yogyakarta, Jl. Magelang, Karangwaru, Kec. Tegalrejo, Kota Yogyakarta')">
-                <i class="fa-solid fa-map-location-dot"></i> Peta Lokasi SMA Negeri 4 Yogyakarta
-              </button>
+            </div>
+
+            <!-- Right Content & Skill Bars -->
+            <div class="about-agency-content">
+              <div class="badge-pill-group">
+                <span class="twin-dot-icon"> <span></span><span></span> </span>
+                <span>Sekolah Mitra PPL</span>
+              </div>
+
+              <h2>Sinergi Akademik Kampus LPTK UAD & SMA Negeri 4 Yogyakarta</h2>
+
+              <p>
+                Pelaksanaan PPL Terbimbing berpusat di <strong>SMA Negeri 4 Yogyakarta</strong> di bawah bimbingan Guru Pamong Pendidikan Pancasila <em>Arfan Wasesa, S.Pd</em> dan Dosen Pembimbing Lapangan Universitas Ahmad Dahlan (UAD)
+                <em>Dr. Dra. Triwahyuningsih, M,Hum</em> Mengedepankan integrasi teknologi pedagogik TPACK, pendekatan berdiferensiasi, dan penguatan Profil Pelajar Pancasila.
+              </p>
+
+              <!-- Skill Progress Bars (Reference Match with Lime Knobs) -->
+              <div class="skill-bars-list">
+                <!-- Bar 1 -->
+                <div class="skill-bar-item">
+                  <div class="skill-bar-head">
+                    <span class="skill-bar-label">Perangkat Ajar Kurikulum Merdeka</span>
+                    <span class="skill-bar-pct">95%</span>
+                  </div>
+                  <div class="skill-bar-track">
+                    <div class="skill-bar-fill" data-width="95%" style="width: 0%"></div>
+                  </div>
+                </div>
+
+                <!-- Bar 2 -->
+                <div class="skill-bar-item">
+                  <div class="skill-bar-head">
+                    <span class="skill-bar-label">Pelaksanaan Praktik Terbimbing Lapangan</span>
+                    <span class="skill-bar-pct">100%</span>
+                  </div>
+                  <div class="skill-bar-track">
+                    <div class="skill-bar-fill" data-width="100%" style="width: 0%"></div>
+                  </div>
+                </div>
+
+                <!-- Bar 3 -->
+                <div class="skill-bar-item">
+                  <div class="skill-bar-head">
+                    <span class="skill-bar-label">Integrasi Media Digital TPACK & E-LKPD</span>
+                    <span class="skill-bar-pct">92%</span>
+                  </div>
+                  <div class="skill-bar-track">
+                    <div class="skill-bar-fill" data-width="92%" style="width: 0%"></div>
+                  </div>
+                </div>
+
+                <!-- Bar 4 -->
+                <div class="skill-bar-item">
+                  <div class="skill-bar-head">
+                    <span class="skill-bar-label">Ketercapaian Asesmen Otentik 3 Ranah</span>
+                    <span class="skill-bar-pct">98%</span>
+                  </div>
+                  <div class="skill-bar-track">
+                    <div class="skill-bar-fill" data-width="98%" style="width: 0%"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap">
+                <a href="profil.html" class="btn btn-with-arrow">
+                  <span>Detail Profil Mahasiswa</span>
+                  <span class="arrow-circle"><i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+                <button class="btn btn-outline-dark" onclick="showToast('Alamat: SMA Negeri 4 Yogyakarta, Jl. Magelang, Karangwaru, Kec. Tegalrejo, Kota Yogyakarta')">
+                  <i class="fa-solid fa-map-location-dot"></i> Peta Lokasi SMA Negeri 4 Yogyakarta
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom Stats Counter Strip (Reference bottom match: 3k+, 200+, 350+, 16+) -->
+          <div class="stats-counter-strip">
+            <div class="stat-item-agency">
+              <div>
+                <div class="stat-num-agency">36+</div>
+                <div class="stat-label-agency">Jam Praktik Terbimbing</div>
+              </div>
+            </div>
+
+            <div class="stat-separator-twin"><span></span><span></span></div>
+
+            <div class="stat-item-agency">
+              <div>
+                <div class="stat-num-agency">2</div>
+                <div class="stat-label-agency">Siklus PPL (UTS & UAS)</div>
+              </div>
+            </div>
+
+            <div class="stat-separator-twin"><span></span><span></span></div>
+
+            <div class="stat-item-agency">
+              <div>
+                <div class="stat-num-agency">120+</div>
+                <div class="stat-label-agency">Siswa Binaan Pendidikan Pancasila</div>
+              </div>
+            </div>
+
+            <div class="stat-separator-twin"><span></span><span></span></div>
+
+            <div class="stat-item-agency">
+              <div>
+                <div class="stat-num-agency">A</div>
+                <div class="stat-label-agency">Akreditasi Unggul SMA Negeri 4 Yogyakarta</div>
+              </div>
             </div>
           </div>
         </div>
+      </section>
 
-        <!-- Bottom Stats Counter Strip (Reference bottom match: 3k+, 200+, 350+, 16+) -->
-        <div class="stats-counter-strip">
-          
-          <div class="stat-item-agency">
-            <div>
-              <div class="stat-num-agency">36+</div>
-              <div class="stat-label-agency">Jam Praktik Terbimbing</div>
-            </div>
-          </div>
-
-          <div class="stat-separator-twin">
-            <span></span><span></span>
-          </div>
-
-          <div class="stat-item-agency">
-            <div>
-              <div class="stat-num-agency">2</div>
-              <div class="stat-label-agency">Siklus PPL (UTS & UAS)</div>
-            </div>
-          </div>
-
-          <div class="stat-separator-twin">
-            <span></span><span></span>
-          </div>
-
-          <div class="stat-item-agency">
-            <div>
-              <div class="stat-num-agency">120+</div>
-              <div class="stat-label-agency">Siswa Binaan Pendidikan Pancasila</div>
-            </div>
-          </div>
-
-          <div class="stat-separator-twin">
-            <span></span><span></span>
-          </div>
-
-          <div class="stat-item-agency">
-            <div>
-              <div class="stat-num-agency">A</div>
-              <div class="stat-label-agency">Akreditasi Unggul SMA Negeri 4 Yogyakarta</div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- =================================================================
+      <!-- =================================================================
          6. SECTION 3: DOKUMEN & ARTEFAK UTAMA (Reference Match: Dark Green Section with Lime Card)
          ================================================================= -->
-    <section id="artefak" class="services-dark-section">
-      <div class="container">
-        
-        <div class="services-header-row">
-          <div>
-            <div class="badge-pill-group light">
-              <span class="twin-dot-icon">
-                <span></span><span></span>
-              </span>
-              <span>Dokumen & Artefak Utama</span>
+      <section id="artefak" class="services-dark-section">
+        <div class="container">
+          <div class="services-header-row">
+            <div>
+              <div class="badge-pill-group light">
+                <span class="twin-dot-icon"> <span></span><span></span> </span>
+                <span>Dokumen & Artefak Utama</span>
+              </div>
+              <h2 class="services-title">Perangkat Pembelajaran PPL Terbimbing</h2>
             </div>
-            <h2 class="services-title">Perangkat Pembelajaran PPL Terbimbing</h2>
+
+            <div>
+              <a href="UTS/rancangan.html" class="btn btn-outline-white">
+                <span>Lihat Semua Dokumen</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
           </div>
 
-          <div>
-            <a href="UTS/rancangan.html" class="btn btn-outline-white">
-              <span>Lihat Semua Dokumen</span>
-              <i class="fa-solid fa-arrow-right"></i>
-            </a>
+          <!-- 3-Column Services Grid (Exact Reference Match) -->
+          <div class="services-agency-grid">
+            <!-- Card 1: Standard Dark Card -->
+            <div class="service-dark-card">
+              <div class="service-card-media">
+                <img
+                  src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=600&q=80"
+                  alt="Modul Ajar Pendidikan Pancasila"
+                  onerror="this.src = 'https://placehold.co/600x350/0d2820/FFFFFF?text=Modul+Ajar+Pancasila'"
+                />
+              </div>
+              <h4 class="service-card-title">Modul Ajar Siklus 1: Pancasila dalam Tindakan (UTS)</h4>
+              <p class="service-card-desc">Perangkat ajar Kurikulum Merdeka Fase F materi Pancasila dalam Tindakan dengan model Problem-Based Learning (PBL) dan diferensiasi konten.</p>
+              <a href="UTS/rancangan.html" class="service-card-link">
+                <span>Pelajari Selengkapnya</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+
+            <!-- Card 2: FEATURED VIBRANT LIME CARD (Exact Center Card in Reference!) -->
+            <div class="service-featured-lime-card">
+              <div style="font-size: 0.78rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; color: #12382d">FEATURED ARTIFACT • SIKLUS 2</div>
+              <h4 class="service-card-title">Modul Ajar Siklus 2: Pancasila Sebagai Ideologi Negara (UAS)</h4>
+              <p class="service-card-desc">Perangkat ajar dan media presentasi interaktif materi Pancasila Sebagai Ideologi Negara (Meja Statis & Leitstar Dinamis) Fase F Kelas XI.</p>
+              <a href="UAS/rancangan.html" class="service-card-link" style="margin-top: 1rem">
+                <span>Akses Modul UAS</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <div class="service-featured-media-bottom">
+                <img
+                  src="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=600&q=80"
+                  alt="Buku Saku Materi Pendidikan Pancasila"
+                  onerror="this.src = 'https://placehold.co/600x300/12382D/FFFFFF?text=Buku+Saku+Pancasila'"
+                />
+              </div>
+            </div>
+
+            <!-- Card 3: Standard Dark Card -->
+            <div class="service-dark-card">
+              <div class="service-card-media">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80" alt="Media TPACK" onerror="this.src = 'https://placehold.co/600x350/0d2820/FFFFFF?text=Media+TPACK'" />
+              </div>
+              <h4 class="service-card-title">Media & TPACK Digital</h4>
+              <p class="service-card-desc">Pemanfaatan presentasi multimedia interaktif Canva, integrasi video YouTube narasi kebangsaan, dan E-LKPD digital berbasis studi kasus aktual.</p>
+              <a href="UTS/media.html" class="service-card-link">
+                <span>Pelajari Selengkapnya</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+
+            <!-- Card 4: Standard Dark Card -->
+            <div class="service-dark-card">
+              <div class="service-card-media">
+                <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&q=80" alt="Instrumen Penilaian" onerror="this.src = 'https://placehold.co/600x350/0d2820/FFFFFF?text=Rubrik+Penilaian'" />
+              </div>
+              <h4 class="service-card-title">Instrumen Penilaian 3 Ranah</h4>
+              <p class="service-card-desc">Rubrik unjuk kerja telaah kasus & presentasi kelompok, kisi-kisi dan bank soal kognitif HOTS, serta lembar observasi Profil Pelajar Pancasila.</p>
+              <a href="UTS/instrumen.html" class="service-card-link">
+                <span>Pelajari Selengkapnya</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+
+            <!-- Card 5: Standard Dark Card -->
+            <div class="service-dark-card">
+              <div class="service-card-media">
+                <img src="https://images.unsplash.com/photo-1526676037777-05a232554f77?auto=format&fit=crop&w=600&q=80" alt="Video Praktik Mengajar" onerror="this.src = 'https://placehold.co/600x350/0d2820/FFFFFF?text=Video+Praktik'" />
+              </div>
+              <h4 class="service-card-title">Video Pembelajaran UKin</h4>
+              <p class="service-card-desc">Rekaman video praktik pembelajaran tatap muka di SMA Negeri 4 Yogyakarta berdurasi terstandar Uji Kinerja (UKin) PPG Calon Guru Pendidikan Pancasila.</p>
+              <a href="UTS/video.html" class="service-card-link">
+                <span>Pelajari Selengkapnya</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+
+            <!-- Card 6: Standard Dark Card -->
+            <div class="service-dark-card">
+              <div class="service-card-media">
+                <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=600&q=80" alt="Jurnal Refleksi 4F" onerror="this.src = 'https://placehold.co/600x350/0d2820/FFFFFF?text=Jurnal+Refleksi'" />
+              </div>
+              <h4 class="service-card-title">Jurnal Refleksi Model 4F</h4>
+              <p class="service-card-desc">Dokumentasi introspeksi berkala Facts, Feelings, Findings, Future serta laporan akhir pelaksanaan PPL yang disahkan DPL & Guru Pamong.</p>
+              <a href="javascript:void(0)" onclick="showToast('Jurnal Refleksi 4F dibuka di modal')" class="service-card-link">
+                <span>Pelajari Selengkapnya</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
           </div>
         </div>
+      </section>
 
-        <!-- 3-Column Services Grid (Exact Reference Match) -->
-        <div class="services-agency-grid">
-          
-          <!-- Card 1: Standard Dark Card -->
-          <div class="service-dark-card">
-            <div class="service-card-media">
-              <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=600&q=80" alt="Modul Ajar Pendidikan Pancasila" onerror="this.src='https://placehold.co/600x350/0d2820/FFFFFF?text=Modul+Ajar+Pancasila'">
-            </div>
-            <h4 class="service-card-title">Modul Ajar Siklus 1: Pancasila dalam Tindakan (UTS)</h4>
-            <p class="service-card-desc">
-              Perangkat ajar Kurikulum Merdeka Fase F materi Pancasila dalam Tindakan dengan model Problem-Based Learning (PBL) dan diferensiasi konten.
-            </p>
-            <a href="UTS/rancangan.html" class="service-card-link">
-              <span>Pelajari Selengkapnya</span>
-              <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </div>
-
-          <!-- Card 2: FEATURED VIBRANT LIME CARD (Exact Center Card in Reference!) -->
-          <div class="service-featured-lime-card">
-            <div style="font-size: 0.78rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.5rem; color: #12382D;">
-              FEATURED ARTIFACT • SIKLUS 2
-            </div>
-            <h4 class="service-card-title">Modul Ajar Siklus 2: Pancasila Sebagai Ideologi Negara (UAS)</h4>
-            <p class="service-card-desc">
-              Perangkat ajar dan media presentasi interaktif materi Pancasila Sebagai Ideologi Negara (Meja Statis & Leitstar Dinamis) Fase F Kelas XI.
-            </p>
-            <a href="UAS/rancangan.html" class="service-card-link" style="margin-top: 1rem;">
-              <span>Akses Modul UAS</span>
-              <i class="fa-solid fa-arrow-right"></i>
-            </a>
-            <div class="service-featured-media-bottom">
-              <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=600&q=80" alt="Buku Saku Materi Pendidikan Pancasila" onerror="this.src='https://placehold.co/600x300/12382D/FFFFFF?text=Buku+Saku+Pancasila'">
-            </div>
-          </div>
-
-          <!-- Card 3: Standard Dark Card -->
-          <div class="service-dark-card">
-            <div class="service-card-media">
-              <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80" alt="Media TPACK" onerror="this.src='https://placehold.co/600x350/0d2820/FFFFFF?text=Media+TPACK'">
-            </div>
-            <h4 class="service-card-title">Media & TPACK Digital</h4>
-            <p class="service-card-desc">
-              Pemanfaatan presentasi multimedia interaktif Canva, integrasi video YouTube narasi kebangsaan, dan E-LKPD digital berbasis studi kasus aktual.
-            </p>
-            <a href="UTS/media.html" class="service-card-link">
-              <span>Pelajari Selengkapnya</span>
-              <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </div>
-
-          <!-- Card 4: Standard Dark Card -->
-          <div class="service-dark-card">
-            <div class="service-card-media">
-              <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=600&q=80" alt="Instrumen Penilaian" onerror="this.src='https://placehold.co/600x350/0d2820/FFFFFF?text=Rubrik+Penilaian'">
-            </div>
-            <h4 class="service-card-title">Instrumen Penilaian 3 Ranah</h4>
-            <p class="service-card-desc">
-              Rubrik unjuk kerja telaah kasus & presentasi kelompok, kisi-kisi dan bank soal kognitif HOTS, serta lembar observasi Profil Pelajar Pancasila.
-            </p>
-            <a href="UTS/instrumen.html" class="service-card-link">
-              <span>Pelajari Selengkapnya</span>
-              <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </div>
-
-          <!-- Card 5: Standard Dark Card -->
-          <div class="service-dark-card">
-            <div class="service-card-media">
-              <img src="https://images.unsplash.com/photo-1526676037777-05a232554f77?auto=format&fit=crop&w=600&q=80" alt="Video Praktik Mengajar" onerror="this.src='https://placehold.co/600x350/0d2820/FFFFFF?text=Video+Praktik'">
-            </div>
-            <h4 class="service-card-title">Video Pembelajaran UKin</h4>
-            <p class="service-card-desc">
-              Rekaman video praktik pembelajaran tatap muka di SMA Negeri 4 Yogyakarta berdurasi terstandar Uji Kinerja (UKin) PPG Calon Guru Pendidikan Pancasila.
-            </p>
-            <a href="UTS/video.html" class="service-card-link">
-              <span>Pelajari Selengkapnya</span>
-              <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </div>
-
-          <!-- Card 6: Standard Dark Card -->
-          <div class="service-dark-card">
-            <div class="service-card-media">
-              <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=600&q=80" alt="Jurnal Refleksi 4F" onerror="this.src='https://placehold.co/600x350/0d2820/FFFFFF?text=Jurnal+Refleksi'">
-            </div>
-            <h4 class="service-card-title">Jurnal Refleksi Model 4F</h4>
-            <p class="service-card-desc">
-              Dokumentasi introspeksi berkala Facts, Feelings, Findings, Future serta laporan akhir pelaksanaan PPL yang disahkan DPL & Guru Pamong.
-            </p>
-            <a href="javascript:void(0)" onclick="showToast('Jurnal Refleksi 4F dibuka di modal')" class="service-card-link">
-              <span>Pelajari Selengkapnya</span>
-              <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- =================================================================
+      <!-- =================================================================
          7. SECTION 4: DOKUMENTASI KEGIATAN PPL (Clean Light Card Grid with Zoom)
          ================================================================= -->
-    <section id="dokumentasi-kegiatan" class="doc-section-agency">
-      <div class="container">
-        
-        <div class="section-header">
-          <div class="badge-pill-group">
-            <span class="twin-dot-icon">
-              <span></span><span></span>
-            </span>
-            <span>Galeri Bukti Otentik</span>
+      <section id="dokumentasi-kegiatan" class="doc-section-agency">
+        <div class="container">
+          <div class="section-header">
+            <div class="badge-pill-group">
+              <span class="twin-dot-icon"> <span></span><span></span> </span>
+              <span>Galeri Bukti Otentik</span>
+            </div>
+            <h2 class="section-title">Dokumentasi Kegiatan PPL Terbimbing</h2>
+            <p class="section-subtitle">Koleksi foto kegiatan pembelajaran di kelas & luar kelas, pembinaan kesiswaan, penanaman karakter, serta asistensi bersama DPL UAD dan Guru Pamong.</p>
           </div>
-          <h2 class="section-title">Dokumentasi Kegiatan PPL Terbimbing</h2>
-          <p class="section-subtitle">
-            Koleksi foto kegiatan pembelajaran di kelas & luar kelas, pembinaan kesiswaan, penanaman karakter, serta asistensi bersama DPL UAD dan Guru Pamong.
-          </p>
+
+          <!-- Gallery Grid (Foto dan Judul) -->
+          <div class="gallery-grid-agency">
+            <!-- Foto 1 -->
+            <div
+              class="gallery-card-agency"
+              onclick="
+                openPhotoModal(
+                  'IMG/Dokumentasi Siklus 1.jpeg',
+                  'Dokumentasi Praktik Pembelajaran Siklus 1: Pancasila dalam Tindakan',
+                  'Praktik Pembelajaran',
+                  'Dokumentasi otentik pelaksanaan praktik pembelajaran tatap muka Siklus 1 materi Pancasila dalam Tindakan di SMA Negeri 4 Yogyakarta.',
+                  'Ruang Kelas Fase F SMA Negeri 4 Yogyakarta',
+                  'Siklus 1 (UTS)',
+                )
+              "
+            >
+              <div class="gallery-agency-thumb">
+                <img src="IMG/Dokumentasi Siklus 1.jpeg" alt="Siklus 1: Pancasila dalam Tindakan" loading="lazy" />
+                <div class="gallery-zoom-overlay">
+                  <div class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+              </div>
+              <div class="gallery-agency-body" style="padding: 1.15rem 1.4rem">
+                <h4 class="gallery-agency-title" style="margin: 0; font-size: 1.05rem; font-weight: 700; color: var(--color-primary-dark); line-height: 1.4">Siklus 1: Pancasila dalam Tindakan</h4>
+              </div>
+            </div>
+
+            <!-- Foto 6 -->
+            <div
+              class="gallery-card-agency"
+              onclick="
+                openPhotoModal(
+                  'IMG/Mengawas ASTS.jpeg',
+                  'Dokumentasi Pengawasan Asesmen Sumatif Tengah Semester (ASTS)',
+                  'Kegiatan Non-Mengajar',
+                  'Dokumentasi pengawasan ruang evaluasi ASTS Gasal guna menjamin integritas akademik dan ketertiban evaluasi belajar siswa di SMA Negeri 4 Yogyakarta.',
+                  'Ruang Ujian SMA Negeri 4 Yogyakarta',
+                  'Pengawasan ASTS',
+                )
+              "
+            >
+              <div class="gallery-agency-thumb">
+                <img src="IMG/Mengawas ASTS.jpeg" alt="Pengawasan Ujian ASTS Gasal" loading="lazy" />
+                <div class="gallery-zoom-overlay">
+                  <div class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+              </div>
+              <div class="gallery-agency-body" style="padding: 1.15rem 1.4rem">
+                <h4 class="gallery-agency-title" style="margin: 0; font-size: 1.05rem; font-weight: 700; color: var(--color-primary-dark); line-height: 1.4">Pengawasan Ujian ASTS Gasal</h4>
+              </div>
+            </div>
+
+            <!-- Foto 7 -->
+            <div
+              class="gallery-card-agency"
+              onclick="
+                openPhotoModal(
+                  'IMG/Panitia Lomba.jpeg',
+                  'Kepanitiaan & Penjurian Lomba Kemerdekaan RI Ke-79',
+                  'Kegiatan Non-Mengajar',
+                  'Dokumentasi keterlibatan kepanitiaan dan dewan juri lomba kemerdekaan bersama guru dan OSIS SMA Negeri 4 Yogyakarta.',
+                  'Lapangan & Panggung Utama SMA Negeri 4 Yogyakarta',
+                  'Panitia Lomba',
+                )
+              "
+            >
+              <div class="gallery-agency-thumb">
+                <img src="IMG/Panitia Lomba.jpeg" alt="Panitia Lomba Kemerdekaan RI Ke-79" loading="lazy" />
+                <div class="gallery-zoom-overlay">
+                  <div class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+              </div>
+              <div class="gallery-agency-body" style="padding: 1.15rem 1.4rem">
+                <h4 class="gallery-agency-title" style="margin: 0; font-size: 1.05rem; font-weight: 700; color: var(--color-primary-dark); line-height: 1.4">Panitia Lomba Kemerdekaan RI Ke-79</h4>
+              </div>
+            </div>
+
+            <!-- Foto 8 -->
+            <div
+              class="gallery-card-agency"
+              onclick="
+                openPhotoModal(
+                  'IMG/Upacara Kemerdekaan 17 Agustus.jpeg',
+                  'Upacara Peringatan Detik-Detik Proklamasi Kemerdekaan RI Ke-79',
+                  'Kegiatan Non-Mengajar',
+                  'Dokumentasi mengikuti upacara bendera peringatan detik-detik Proklamasi Kemerdekaan RI di SMA Negeri 4 Yogyakarta.',
+                  'Lapangan Upacara SMA Negeri 4 Yogyakarta',
+                  'Upacara 17 Agustus',
+                )
+              "
+            >
+              <div class="gallery-agency-thumb">
+                <img src="IMG/Upacara Kemerdekaan 17 Agustus.jpeg" alt="Upacara HUT Ke-79 Kemerdekaan RI" loading="lazy" />
+                <div class="gallery-zoom-overlay">
+                  <div class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+              </div>
+              <div class="gallery-agency-body" style="padding: 1.15rem 1.4rem">
+                <h4 class="gallery-agency-title" style="margin: 0; font-size: 1.05rem; font-weight: 700; color: var(--color-primary-dark); line-height: 1.4">Upacara HUT Ke-79 Kemerdekaan RI</h4>
+              </div>
+            </div>
+
+            <!-- Foto 9 -->
+            <div
+              class="gallery-card-agency"
+              onclick="
+                openPhotoModal(
+                  'IMG/Kunjungan DPL.jpeg',
+                  'Supervisi Klinis & Monitoring Kunjungan DPL UAD',
+                  'Dokumentasi PPL',
+                  'Kunjungan monitoring resmi DPL UAD untuk melakukan observasi pembelajaran tatap muka dan koordinasi di SMA Negeri 4 Yogyakarta.',
+                  'Selasar Pembelajaran SMA Negeri 4 Yogyakarta',
+                  'Supervisi DPL',
+                )
+              "
+            >
+              <div class="gallery-agency-thumb">
+                <img src="IMG/Kunjungan DPL.jpeg" alt="Kunjungan Supervisi DPL UAD" loading="lazy" />
+                <div class="gallery-zoom-overlay">
+                  <div class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+              </div>
+              <div class="gallery-agency-body" style="padding: 1.15rem 1.4rem">
+                <h4 class="gallery-agency-title" style="margin: 0; font-size: 1.05rem; font-weight: 700; color: var(--color-primary-dark); line-height: 1.4">Kunjungan Supervisi DPL UAD</h4>
+              </div>
+            </div>
+
+            <!-- Foto 10 -->
+            <div
+              class="gallery-card-agency"
+              onclick="
+                openPhotoModal(
+                  'IMG/Evaluasi dan Refleksi Akhir DPL Bersama Guru Pamong.jpeg',
+                  'Evaluasi & Refleksi Akhir DPL Bersama Guru Pamong',
+                  'Dokumentasi PPL',
+                  'Evaluasi akhir komprehensif penugasan PPL Terbimbing bersama DPL UAD dan Guru Pamong Pendidikan Pancasila SMA Negeri 4 Yogyakarta.',
+                  'Ruang Rapat SMA Negeri 4 Yogyakarta',
+                  'Evaluasi Akhir',
+                )
+              "
+            >
+              <div class="gallery-agency-thumb">
+                <img src="IMG/Evaluasi dan Refleksi Akhir DPL Bersama Guru Pamong.jpeg" alt="Evaluasi Akhir DPL & Guru Pamong" loading="lazy" />
+                <div class="gallery-zoom-overlay">
+                  <div class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                </div>
+              </div>
+              <div class="gallery-agency-body" style="padding: 1.15rem 1.4rem">
+                <h4 class="gallery-agency-title" style="margin: 0; font-size: 1.05rem; font-weight: 700; color: var(--color-primary-dark); line-height: 1.4">Evaluasi Akhir DPL & Guru Pamong</h4>
+              </div>
+            </div>
+          </div>
+          <!-- Call To Action Button to Full Gallery -->
+          <div style="text-align: center">
+            <a href="dokumentasi.html" class="btn btn-primary-dark" style="padding: 0.95rem 2.4rem; font-size: 1rem">
+              <span>Lihat Seluruh Galeri Dokumentasi Lengkap</span>
+              <i class="fa-solid fa-arrow-right" style="margin-left: 6px"></i>
+            </a>
+          </div>
         </div>
+      </section>
+    </main>
 
-                <!-- Gallery Grid (Foto dan Judul) -->
-        <div class="gallery-grid-agency">
-          
-          <!-- Foto 1 -->
-          <div
-            class="gallery-card-agency"
-            onclick="openPhotoModal('IMG/Dokumentasi Siklus 1.jpeg', 'Dokumentasi Praktik Pembelajaran Siklus 1: Pancasila dalam Tindakan', 'Praktik Pembelajaran', 'Dokumentasi otentik pelaksanaan praktik pembelajaran tatap muka Siklus 1 materi Pancasila dalam Tindakan di SMA Negeri 4 Yogyakarta.', 'Ruang Kelas Fase F SMA Negeri 4 Yogyakarta', 'Siklus 1 (UTS)')"
-          >
-            <div class="gallery-agency-thumb">
-              <img src="IMG/Dokumentasi Siklus 1.jpeg" alt="Siklus 1: Pancasila dalam Tindakan" loading="lazy" />
-              <div class="gallery-zoom-overlay">
-                <div class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-              </div>
-            </div>
-            <div class="gallery-agency-body" style="padding: 1.15rem 1.4rem;">
-              <h4 class="gallery-agency-title" style="margin: 0; font-size: 1.05rem; font-weight: 700; color: var(--color-primary-dark); line-height: 1.4;">
-                Siklus 1: Pancasila dalam Tindakan
-              </h4>
-            </div>
-          </div>
-
-          <!-- Foto 6 -->
-          <div
-            class="gallery-card-agency"
-            onclick="openPhotoModal('IMG/Mengawas ASTS.jpeg', 'Dokumentasi Pengawasan Asesmen Sumatif Tengah Semester (ASTS)', 'Kegiatan Non-Mengajar', 'Dokumentasi pengawasan ruang evaluasi ASTS Gasal guna menjamin integritas akademik dan ketertiban evaluasi belajar siswa di SMA Negeri 4 Yogyakarta.', 'Ruang Ujian SMA Negeri 4 Yogyakarta', 'Pengawasan ASTS')"
-          >
-            <div class="gallery-agency-thumb">
-              <img src="IMG/Mengawas ASTS.jpeg" alt="Pengawasan Ujian ASTS Gasal" loading="lazy" />
-              <div class="gallery-zoom-overlay">
-                <div class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-              </div>
-            </div>
-            <div class="gallery-agency-body" style="padding: 1.15rem 1.4rem;">
-              <h4 class="gallery-agency-title" style="margin: 0; font-size: 1.05rem; font-weight: 700; color: var(--color-primary-dark); line-height: 1.4;">
-                Pengawasan Ujian ASTS Gasal
-              </h4>
-            </div>
-          </div>
-
-          <!-- Foto 7 -->
-          <div
-            class="gallery-card-agency"
-            onclick="openPhotoModal('IMG/Panitia Lomba.jpeg', 'Kepanitiaan & Penjurian Lomba Kemerdekaan RI Ke-79', 'Kegiatan Non-Mengajar', 'Dokumentasi keterlibatan kepanitiaan dan dewan juri lomba kemerdekaan bersama guru dan OSIS SMA Negeri 4 Yogyakarta.', 'Lapangan & Panggung Utama SMA Negeri 4 Yogyakarta', 'Panitia Lomba')"
-          >
-            <div class="gallery-agency-thumb">
-              <img src="IMG/Panitia Lomba.jpeg" alt="Panitia Lomba Kemerdekaan RI Ke-79" loading="lazy" />
-              <div class="gallery-zoom-overlay">
-                <div class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-              </div>
-            </div>
-            <div class="gallery-agency-body" style="padding: 1.15rem 1.4rem;">
-              <h4 class="gallery-agency-title" style="margin: 0; font-size: 1.05rem; font-weight: 700; color: var(--color-primary-dark); line-height: 1.4;">
-                Panitia Lomba Kemerdekaan RI Ke-79
-              </h4>
-            </div>
-          </div>
-
-          <!-- Foto 8 -->
-          <div
-            class="gallery-card-agency"
-            onclick="openPhotoModal('IMG/Upacara Kemerdekaan 17 Agustus.jpeg', 'Upacara Peringatan Detik-Detik Proklamasi Kemerdekaan RI Ke-79', 'Kegiatan Non-Mengajar', 'Dokumentasi mengikuti upacara bendera peringatan detik-detik Proklamasi Kemerdekaan RI di SMA Negeri 4 Yogyakarta.', 'Lapangan Upacara SMA Negeri 4 Yogyakarta', 'Upacara 17 Agustus')"
-          >
-            <div class="gallery-agency-thumb">
-              <img src="IMG/Upacara Kemerdekaan 17 Agustus.jpeg" alt="Upacara HUT Ke-79 Kemerdekaan RI" loading="lazy" />
-              <div class="gallery-zoom-overlay">
-                <div class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-              </div>
-            </div>
-            <div class="gallery-agency-body" style="padding: 1.15rem 1.4rem;">
-              <h4 class="gallery-agency-title" style="margin: 0; font-size: 1.05rem; font-weight: 700; color: var(--color-primary-dark); line-height: 1.4;">
-                Upacara HUT Ke-79 Kemerdekaan RI
-              </h4>
-            </div>
-          </div>
-
-          <!-- Foto 9 -->
-          <div
-            class="gallery-card-agency"
-            onclick="openPhotoModal('IMG/Kunjungan DPL.jpeg', 'Supervisi Klinis & Monitoring Kunjungan DPL UAD', 'Dokumentasi PPL', 'Kunjungan monitoring resmi DPL UAD untuk melakukan observasi pembelajaran tatap muka dan koordinasi di SMA Negeri 4 Yogyakarta.', 'Selasar Pembelajaran SMA Negeri 4 Yogyakarta', 'Supervisi DPL')"
-          >
-            <div class="gallery-agency-thumb">
-              <img src="IMG/Kunjungan DPL.jpeg" alt="Kunjungan Supervisi DPL UAD" loading="lazy" />
-              <div class="gallery-zoom-overlay">
-                <div class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-              </div>
-            </div>
-            <div class="gallery-agency-body" style="padding: 1.15rem 1.4rem;">
-              <h4 class="gallery-agency-title" style="margin: 0; font-size: 1.05rem; font-weight: 700; color: var(--color-primary-dark); line-height: 1.4;">
-                Kunjungan Supervisi DPL UAD
-              </h4>
-            </div>
-          </div>
-
-          <!-- Foto 10 -->
-          <div
-            class="gallery-card-agency"
-            onclick="openPhotoModal('IMG/Evaluasi dan Refleksi Akhir DPL Bersama Guru Pamong.jpeg', 'Evaluasi & Refleksi Akhir DPL Bersama Guru Pamong', 'Dokumentasi PPL', 'Evaluasi akhir komprehensif penugasan PPL Terbimbing bersama DPL UAD dan Guru Pamong Pendidikan Pancasila SMA Negeri 4 Yogyakarta.', 'Ruang Rapat SMA Negeri 4 Yogyakarta', 'Evaluasi Akhir')"
-          >
-            <div class="gallery-agency-thumb">
-              <img src="IMG/Evaluasi dan Refleksi Akhir DPL Bersama Guru Pamong.jpeg" alt="Evaluasi Akhir DPL & Guru Pamong" loading="lazy" />
-              <div class="gallery-zoom-overlay">
-                <div class="gallery-zoom-btn"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
-              </div>
-            </div>
-            <div class="gallery-agency-body" style="padding: 1.15rem 1.4rem;">
-              <h4 class="gallery-agency-title" style="margin: 0; font-size: 1.05rem; font-weight: 700; color: var(--color-primary-dark); line-height: 1.4;">
-                Evaluasi Akhir DPL & Guru Pamong
-              </h4>
-            </div>
-          </div>
-
-        </div>
-        <!-- Call To Action Button to Full Gallery -->
-        <div style="text-align: center;">
-          <a href="dokumentasi.html" class="btn btn-primary-dark" style="padding: 0.95rem 2.4rem; font-size: 1rem;">
-            <span>Lihat Seluruh Galeri Dokumentasi Lengkap</span>
-            <i class="fa-solid fa-arrow-right" style="margin-left: 6px;"></i>
-          </a>
-        </div>
-
-      </div>
-    </section>
-  </main>
-
-  <!-- Global Modal Viewer (Modul Ajar, Rubrik & Video) -->
-  <div id="global-modal" class="modal-overlay">
-    <div class="modal-window">
-      <button class="modal-close-btn" id="modal-close-btn" aria-label="Tutup Modal">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-      <div style="margin-bottom: 0.5rem;">
-        <span id="modal-category" class="tag-pill-light" style="background:#12382D; color:#B8E023; font-weight:700;"></span>
-      </div>
-      <h3 id="modal-title" style="font-size: 1.45rem; color: #12382D; margin-bottom: 0.4rem; font-weight:800;"></h3>
-      <div id="modal-meta" style="font-size: 0.82rem; color: #64748B; margin-bottom: 1.25rem;"></div>
-      <div id="modal-body" class="modal-body-content"></div>
-    </div>
-  </div>
-
-  <!-- Photo Lightbox Modal -->
-  <div id="photo-modal" class="modal-overlay">
-    <div class="modal-window">
-      <button class="modal-close-btn" id="photo-modal-close" aria-label="Tutup Pratinjau">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-      <span id="photo-badge" class="tag-pill-light" style="background:#12382D; color:#B8E023; margin-bottom:0.75rem; display:inline-block; font-weight:700;"></span>
-      <h3 id="photo-title" style="font-size:1.4rem; color:#12382D; margin-bottom:0.5rem; font-weight:800;"></h3>
-      <div id="photo-loc" style="font-size:0.85rem; color:#12382D; font-weight:600; margin-bottom:1rem;"></div>
-      <div id="photo-desc" style="color:#475569; font-size:0.95rem; line-height:1.7; background:#F8F9F5; padding:1.25rem; border-radius:12px; border-left:4px solid #B8E023; margin-bottom:1.25rem;"></div>
-      <div style="display:flex; justify-content:space-between; align-items:center;">
-        <span style="font-size:0.8rem; color:#64748B;">Arsip Digital PPL Terbimbing • PPG UAD</span>
-        <button class="btn btn-primary-dark btn-sm" onclick="showToast('Tautan dokumentasi disalin!')">
-          <i class="fa-solid fa-share-nodes"></i> Bagikan
+    <!-- Global Modal Viewer (Modul Ajar, Rubrik & Video) -->
+    <div id="global-modal" class="modal-overlay">
+      <div class="modal-window">
+        <button class="modal-close-btn" id="modal-close-btn" aria-label="Tutup Modal">
+          <i class="fa-solid fa-xmark"></i>
         </button>
+        <div style="margin-bottom: 0.5rem">
+          <span id="modal-category" class="tag-pill-light" style="background: #12382d; color: #b8e023; font-weight: 700"></span>
+        </div>
+        <h3 id="modal-title" style="font-size: 1.45rem; color: #12382d; margin-bottom: 0.4rem; font-weight: 800"></h3>
+        <div id="modal-meta" style="font-size: 0.82rem; color: #64748b; margin-bottom: 1.25rem"></div>
+        <div id="modal-body" class="modal-body-content"></div>
       </div>
     </div>
-  </div>
 
-  <!-- =================================================================
+    <!-- Photo Lightbox Modal -->
+    <div id="photo-modal" class="modal-overlay">
+      <div class="modal-window">
+        <button class="modal-close-btn" id="photo-modal-close" aria-label="Tutup Pratinjau">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <span id="photo-badge" class="tag-pill-light" style="background: #12382d; color: #b8e023; margin-bottom: 0.75rem; display: inline-block; font-weight: 700"></span>
+        <h3 id="photo-title" style="font-size: 1.4rem; color: #12382d; margin-bottom: 0.5rem; font-weight: 800"></h3>
+        <div id="photo-loc" style="font-size: 0.85rem; color: #12382d; font-weight: 600; margin-bottom: 1rem"></div>
+        <div id="photo-desc" style="color: #475569; font-size: 0.95rem; line-height: 1.7; background: #f8f9f5; padding: 1.25rem; border-radius: 12px; border-left: 4px solid #b8e023; margin-bottom: 1.25rem"></div>
+        <div style="display: flex; justify-content: space-between; align-items: center">
+          <span style="font-size: 0.8rem; color: #64748b">Arsip Digital PPL Terbimbing • PPG UAD</span>
+          <button class="btn btn-primary-dark btn-sm" onclick="showToast('Tautan dokumentasi disalin!')"><i class="fa-solid fa-share-nodes"></i> Bagikan</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- =================================================================
        8. FOOTER (Deep Forest Green with Lime Accents - Reference Match)
        ================================================================= -->
-  <footer class="footer-agency">
-    <div class="container">
-      <div class="footer-agency-grid">
-        
-        <!-- Brand Info -->
-        <div class="footer-agency-col">
-          <div class="footer-agency-brand" style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 1rem;">
-            <img src="logo navbar.png" alt="Logo UAD" class="footer-agency-logo-img" style="width: 46px; height: 46px; object-fit: contain; background: transparent; padding: 0; border: none; box-shadow: none; flex-shrink: 0;" onerror="this.style.display='none'">
-            <div class="footer-agency-brand-text">
-              <span class="title" style="display: block; font-size: 1.15rem; font-weight: 800; color: #ffffff;">Wahyu Surya Al Fikri, S.Pd.</span>
-              <span class="sub" style="display: block; font-size: 0.8rem; color: #94A3B8; font-weight: 600;">PPG Calon Guru Pendidikan Pancasila UAD</span>
+    <footer class="footer-agency">
+      <div class="container">
+        <div class="footer-agency-grid">
+          <!-- Brand Info -->
+          <div class="footer-agency-col">
+            <div class="footer-agency-brand" style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 1rem">
+              <img
+                src="logo navbar.png"
+                alt="Logo UAD"
+                class="footer-agency-logo-img"
+                style="width: 46px; height: 46px; object-fit: contain; background: transparent; padding: 0; border: none; box-shadow: none; flex-shrink: 0"
+                onerror="this.style.display = 'none'"
+              />
+              <div class="footer-agency-brand-text">
+                <span class="title" style="display: block; font-size: 1.15rem; font-weight: 800; color: #ffffff">Wahyu Surya Al Fikri, S.Pd.</span>
+                <span class="sub" style="display: block; font-size: 0.8rem; color: #94a3b8; font-weight: 600">PPG Calon Guru Pendidikan Pancasila UAD</span>
+              </div>
+            </div>
+            <p class="footer-agency-bio" style="color: #94a3b8; font-size: 0.88rem; line-height: 1.7">
+              Portofolio resmi PPL Terbimbing Program Pendidikan Profesi Guru (PPG) Calon Guru Bidang Studi Pendidikan Pancasila Universitas Ahmad Dahlan (UAD) di SMA Negeri 4 Yogyakarta.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="footer-agency-col">
+            <h4 class="footer-agency-col-title">Navigasi Portofolio</h4>
+            <ul class="footer-agency-links">
+              <li>
+                <a href="index.html"><i class="fa-solid fa-arrow-right" style="font-size: 0.75rem; margin-right: 6px"></i> Beranda Utama</a>
+              </li>
+              <li>
+                <a href="profil.html"><i class="fa-solid fa-arrow-right" style="font-size: 0.75rem; margin-right: 6px"></i> Profil Lengkap Mahasiswa</a>
+              </li>
+              <li>
+                <a href="UTS/rancangan.html"><i class="fa-solid fa-arrow-right" style="font-size: 0.75rem; margin-right: 6px"></i> Siklus 1 (UTS PPL)</a>
+              </li>
+              <li>
+                <a href="UAS/rancangan.html"><i class="fa-solid fa-arrow-right" style="font-size: 0.75rem; margin-right: 6px"></i> Siklus 2 (UAS PPL)</a>
+              </li>
+              <li>
+                <a href="non-mengajar.html"><i class="fa-solid fa-arrow-right" style="font-size: 0.75rem; margin-right: 6px"></i> Kegiatan Non-Mengajar</a>
+              </li>
+              <li>
+                <a href="dokumentasi.html"><i class="fa-solid fa-arrow-right" style="font-size: 0.75rem; margin-right: 6px"></i> Galeri Dokumentasi</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Perangkat PPL -->
+          <div class="footer-agency-col">
+            <h4 class="footer-agency-col-title">Perangkat Pembelajaran</h4>
+            <ul class="footer-agency-links">
+              <li>
+                <a href="UTS/rancangan.html"><i class="fa-solid fa-check" style="color: var(--color-accent-lime); font-size: 0.75rem; margin-right: 6px"></i> Modul Ajar Siklus 1 & 2</a>
+              </li>
+              <li>
+                <a href="UTS/materi.html"><i class="fa-solid fa-check" style="color: var(--color-accent-lime); font-size: 0.75rem; margin-right: 6px"></i> Buku Saku Materi Digital</a>
+              </li>
+              <li>
+                <a href="UTS/media.html"><i class="fa-solid fa-check" style="color: var(--color-accent-lime); font-size: 0.75rem; margin-right: 6px"></i> Media Berbasis TPACK</a>
+              </li>
+              <li>
+                <a href="UTS/instrumen.html"><i class="fa-solid fa-check" style="color: var(--color-accent-lime); font-size: 0.75rem; margin-right: 6px"></i> Instrumen Asesmen Pancasila</a>
+              </li>
+              <li>
+                <a href="UTS/video.html"><i class="fa-solid fa-check" style="color: var(--color-accent-lime); font-size: 0.75rem; margin-right: 6px"></i> Video Praktik Pembelajaran</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Kontak & Alamat -->
+          <div class="footer-agency-col">
+            <h4 class="footer-agency-col-title">LPTK & Kontak Resmi</h4>
+            <p style="font-size: 0.88rem; color: #94a3b8; margin-bottom: 0.75rem">
+              <i class="fa-solid fa-location-dot" style="color: var(--color-accent-lime); margin-right: 6px"></i> Kampus Utama UAD, Jl. Ringroad Selatan, Tamanan, Banguntapan, Bantul, D.I. Yogyakarta 55191
+            </p>
+            <p style="font-size: 0.88rem; color: #94a3b8; margin-bottom: 1.25rem"><i class="fa-solid fa-envelope" style="color: var(--color-accent-lime); margin-right: 6px"></i> wahyu.ppg@uad.ac.id</p>
+            <div style="display: flex; gap: 0.6rem">
+              <a href="javascript:void(0)" onclick="showToast('YouTube')" class="social-circle-btn"><i class="fa-brands fa-youtube"></i></a>
+              <a href="javascript:void(0)" onclick="showToast('Instagram')" class="social-circle-btn"><i class="fa-brands fa-instagram"></i></a>
+              <a href="javascript:void(0)" onclick="showToast('LinkedIn')" class="social-circle-btn"><i class="fa-brands fa-linkedin-in"></i></a>
             </div>
           </div>
-          <p class="footer-agency-bio" style="color: #94A3B8; font-size: 0.88rem; line-height: 1.7;">
-            Portofolio resmi PPL Terbimbing Program Pendidikan Profesi Guru (PPG) Calon Guru Bidang Studi Pendidikan Pancasila Universitas Ahmad Dahlan (UAD) di SMA Negeri 4 Yogyakarta.
-          </p>
         </div>
 
-        <!-- Quick Links -->
-        <div class="footer-agency-col">
-          <h4 class="footer-agency-col-title">Navigasi Portofolio</h4>
-          <ul class="footer-agency-links">
-            <li><a href="index.html"><i class="fa-solid fa-arrow-right" style="font-size:0.75rem; margin-right:6px;"></i> Beranda Utama</a></li>
-            <li><a href="profil.html"><i class="fa-solid fa-arrow-right" style="font-size:0.75rem; margin-right:6px;"></i> Profil Lengkap Mahasiswa</a></li>
-            <li><a href="UTS/rancangan.html"><i class="fa-solid fa-arrow-right" style="font-size:0.75rem; margin-right:6px;"></i> Siklus 1 (UTS PPL)</a></li>
-            <li><a href="UAS/rancangan.html"><i class="fa-solid fa-arrow-right" style="font-size:0.75rem; margin-right:6px;"></i> Siklus 2 (UAS PPL)</a></li>
-            <li><a href="non-mengajar.html"><i class="fa-solid fa-arrow-right" style="font-size:0.75rem; margin-right:6px;"></i> Kegiatan Non-Mengajar</a></li>
-            <li><a href="dokumentasi.html"><i class="fa-solid fa-arrow-right" style="font-size:0.75rem; margin-right:6px;"></i> Galeri Dokumentasi</a></li>
-          </ul>
-        </div>
-
-        <!-- Perangkat PPL -->
-        <div class="footer-agency-col">
-          <h4 class="footer-agency-col-title">Perangkat Pembelajaran</h4>
-          <ul class="footer-agency-links">
-            <li><a href="UTS/rancangan.html"><i class="fa-solid fa-check" style="color:var(--color-accent-lime); font-size:0.75rem; margin-right:6px;"></i> Modul Ajar Siklus 1 & 2</a></li>
-            <li><a href="UTS/materi.html"><i class="fa-solid fa-check" style="color:var(--color-accent-lime); font-size:0.75rem; margin-right:6px;"></i> Buku Saku Materi Digital</a></li>
-            <li><a href="UTS/media.html"><i class="fa-solid fa-check" style="color:var(--color-accent-lime); font-size:0.75rem; margin-right:6px;"></i> Media Berbasis TPACK</a></li>
-            <li><a href="UTS/instrumen.html"><i class="fa-solid fa-check" style="color:var(--color-accent-lime); font-size:0.75rem; margin-right:6px;"></i> Instrumen Asesmen Pancasila</a></li>
-            <li><a href="UTS/video.html"><i class="fa-solid fa-check" style="color:var(--color-accent-lime); font-size:0.75rem; margin-right:6px;"></i> Video Praktik Pembelajaran</a></li>
-          </ul>
-        </div>
-
-        <!-- Kontak & Alamat -->
-        <div class="footer-agency-col">
-          <h4 class="footer-agency-col-title">LPTK & Kontak Resmi</h4>
-          <p style="font-size: 0.88rem; color: #94A3B8; margin-bottom: 0.75rem;">
-            <i class="fa-solid fa-location-dot" style="color: var(--color-accent-lime); margin-right: 6px;"></i> Kampus Utama UAD, Jl. Ringroad Selatan, Tamanan, Banguntapan, Bantul, D.I. Yogyakarta 55191
-          </p>
-          <p style="font-size: 0.88rem; color: #94A3B8; margin-bottom: 1.25rem;">
-            <i class="fa-solid fa-envelope" style="color: var(--color-accent-lime); margin-right: 6px;"></i> wahyu.ppg@uad.ac.id
-          </p>
-          <div style="display: flex; gap: 0.6rem;">
-            <a href="javascript:void(0)" onclick="showToast('YouTube')" class="social-circle-btn"><i class="fa-brands fa-youtube"></i></a>
-            <a href="javascript:void(0)" onclick="showToast('Instagram')" class="social-circle-btn"><i class="fa-brands fa-instagram"></i></a>
-            <a href="javascript:void(0)" onclick="showToast('LinkedIn')" class="social-circle-btn"><i class="fa-brands fa-linkedin-in"></i></a>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="footer-bottom-strip">
-        <div>
-          &copy; 2026 <strong>Wahyu Surya Al Fikri, S.Pd.</strong> All Rights Reserved • PPG Calon Guru Pendidikan Pancasila Universitas Ahmad Dahlan (UAD).
-        </div>
-        <div>
-          Tema Desain: Modern Clean Green & Lime Agency Style
+        <div class="footer-bottom-strip">
+          <div>&copy; 2026 <strong>Wahyu Surya Al Fikri, S.Pd.</strong> All Rights Reserved • PPG Calon Guru Pendidikan Pancasila Universitas Ahmad Dahlan (UAD).</div>
+          <div>Tema Desain: Modern Clean Green & Lime Agency Style</div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
-  <!-- Scripts -->
-  <script src="js/main.js"></script>
-  <script>
-    // Photo Lightbox modal handler
-    const photoModal = document.getElementById('photo-modal');
-    const photoClose = document.getElementById('photo-modal-close');
-    const photoTitle = document.getElementById('photo-title');
-    const photoBadge = document.getElementById('photo-badge');
-    const photoLoc = document.getElementById('photo-loc');
-    const photoDesc = document.getElementById('photo-desc');
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script>
+      // Photo Lightbox modal handler
+      const photoModal = document.getElementById("photo-modal");
+      const photoClose = document.getElementById("photo-modal-close");
+      const photoTitle = document.getElementById("photo-title");
+      const photoBadge = document.getElementById("photo-badge");
+      const photoLoc = document.getElementById("photo-loc");
+      const photoDesc = document.getElementById("photo-desc");
 
-    window.openPhotoModal = function(imgSrc, title, category, desc, location, label) {
-      const modalImg = document.getElementById('photo-modal-img');
-      const modalLink = document.getElementById('photo-modal-link');
-      if (modalImg) modalImg.src = imgSrc;
-      if (modalLink) modalLink.href = imgSrc;
-      if (!photoModal) return;
-      photoTitle.textContent = title;
-      photoBadge.textContent = `${category} • ${label}`;
-      photoLoc.innerHTML = `<i class="fa-solid fa-location-dot" style="margin-right:6px; color:#12382D;"></i> Lokasi: ${location}`;
-      photoDesc.textContent = desc;
+      window.openPhotoModal = function (imgSrc, title, category, desc, location, label) {
+        const modalImg = document.getElementById("photo-modal-img");
+        const modalLink = document.getElementById("photo-modal-link");
+        if (modalImg) modalImg.src = imgSrc;
+        if (modalLink) modalLink.href = imgSrc;
+        if (!photoModal) return;
+        photoTitle.textContent = title;
+        photoBadge.textContent = `${category} • ${label}`;
+        photoLoc.innerHTML = `<i class="fa-solid fa-location-dot" style="margin-right:6px; color:#12382D;"></i> Lokasi: ${location}`;
+        photoDesc.textContent = desc;
 
-      photoModal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    };
+        photoModal.classList.add("active");
+        document.body.style.overflow = "hidden";
+      };
 
-    if (photoClose) {
-      photoClose.addEventListener('click', () => {
-        photoModal.classList.remove('active');
-        document.body.style.overflow = '';
-      });
-    }
+      if (photoClose) {
+        photoClose.addEventListener("click", () => {
+          photoModal.classList.remove("active");
+          document.body.style.overflow = "";
+        });
+      }
 
-    if (photoModal) {
-      photoModal.addEventListener('click', (e) => {
-        if (e.target === photoModal) {
-          photoModal.classList.remove('active');
-          document.body.style.overflow = '';
-        }
-      });
-    }
-  </script>
-</body>
+      if (photoModal) {
+        photoModal.addEventListener("click", (e) => {
+          if (e.target === photoModal) {
+            photoModal.classList.remove("active");
+            document.body.style.overflow = "";
+          }
+        });
+      }
+    </script>
+  </body>
 </html>
