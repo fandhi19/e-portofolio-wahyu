@@ -1,696 +1,681 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UTS - Materi Pembelajaran Pendidikan Pancasila (Siklus 1: Pancasila dalam Tindakan) | Wahyu Surya Al Fikri, S.Pd. - UAD</title>
-  
-  <link rel="icon" type="image/png" href="../logo.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="../css/style.css">
-  <style>
-    .btn-primary-lime {
-      background: var(--color-accent-lime) !important;
-      color: var(--color-primary-dark) !important;
-      font-weight: 800 !important;
-      box-shadow: 0 6px 20px rgba(184, 224, 35, 0.35) !important;
-      text-decoration: none !important;
-      border: none !important;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-    .btn-primary-lime:hover {
-      background: var(--color-accent-lime-hover) !important;
-      transform: translateY(-2px);
-      color: var(--color-primary-dark) !important;
-      box-shadow: 0 10px 25px rgba(184, 224, 35, 0.45) !important;
-    }
-  </style>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UTS - Materi Pembelajaran Pendidikan Pancasila (Siklus 1: Pancasila dalam Tindakan) | Wahyu Surya Al Fikri, S.Pd. - UAD</title>
 
-  <!-- =================================================================
+    <link rel="icon" type="image/png" href="../logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <style>
+      .btn-primary-lime {
+        background: var(--color-accent-lime) !important;
+        color: var(--color-primary-dark) !important;
+        font-weight: 800 !important;
+        box-shadow: 0 6px 20px rgba(184, 224, 35, 0.35) !important;
+        text-decoration: none !important;
+        border: none !important;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .btn-primary-lime:hover {
+        background: var(--color-accent-lime-hover) !important;
+        transform: translateY(-2px);
+        color: var(--color-primary-dark) !important;
+        box-shadow: 0 10px 25px rgba(184, 224, 35, 0.45) !important;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- =================================================================
        1. TOPBAR
        ================================================================= -->
-  <div class="topbar">
-    <div class="container topbar-inner">
-      <div class="topbar-contact">
-        <a href="tel:+62859195374310" class="topbar-item">
-          <i class="fa-solid fa-phone"></i>
-          <span>+62 859-1953-74310</span>
-        </a>
-        <a href="mailto:wahyu.ppg@uad.ac.id" class="topbar-item">
-          <i class="fa-solid fa-envelope"></i>
-          <span>wahyu.ppg@uad.ac.id</span>
-        </a>
-        <div class="topbar-item">
-          <i class="fa-solid fa-location-dot"></i>
-          <span>Universitas Ahmad Dahlan (UAD) • D.I. Yogyakarta</span>
+    <div class="topbar">
+      <div class="container topbar-inner">
+        <div class="topbar-contact">
+          <a href="tel:+62859195374310" class="topbar-item">
+            <i class="fa-solid fa-phone"></i>
+            <span>+62 859-1953-74310</span>
+          </a>
+          <a href="mailto:wahyu.ppg@uad.ac.id" class="topbar-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span>wahyu.ppg@uad.ac.id</span>
+          </a>
+          <div class="topbar-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Universitas Ahmad Dahlan (UAD) • D.I. Yogyakarta</span>
+          </div>
+        </div>
+
+        <div class="topbar-social-wrap">
+          <a href="javascript:void(0)" onclick="showToast('Facebook Wahyu Surya Al Fikri')" class="social-circle-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="javascript:void(0)" onclick="showToast('Twitter / X')" class="social-circle-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="javascript:void(0)" onclick="showToast('Instagram Wahyu Surya Al Fikri')" class="social-circle-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="javascript:void(0)" onclick="showToast('Kanal YouTube Pembelajaran Pendidikan Pancasila')" class="social-circle-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          <a href="javascript:void(0)" onclick="showToast('LinkedIn Wahyu Surya Al Fikri')" class="social-circle-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
         </div>
       </div>
-
-      <div class="topbar-social-wrap">
-        <a href="javascript:void(0)" onclick="showToast('Facebook Wahyu Surya Al Fikri')" class="social-circle-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-        <a href="javascript:void(0)" onclick="showToast('Twitter / X')" class="social-circle-btn" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-        <a href="javascript:void(0)" onclick="showToast('Instagram Wahyu Surya Al Fikri')" class="social-circle-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        <a href="javascript:void(0)" onclick="showToast('Kanal YouTube Pembelajaran Pendidikan Pancasila')" class="social-circle-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        <a href="javascript:void(0)" onclick="showToast('LinkedIn Wahyu Surya Al Fikri')" class="social-circle-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-      </div>
     </div>
-  </div>
 
-  <!-- =================================================================
+    <!-- =================================================================
        2. MAIN NAVBAR
        ================================================================= -->
-  <header class="navbar">
-    <div class="container navbar-inner">
-      <a href="../index.html" class="brand">
-        <img src="../logo.png" alt="Logo UAD" class="brand-logo-img" onerror="this.style.display='none'">
-        <div>
-          <span class="brand-title">Wahyu Surya Al Fikri, S.Pd.</span>
-          <span class="brand-subtitle">PPG Calon Guru Pendidikan Pancasila UAD</span>
-        </div>
-      </a>
-
-      <nav>
-        <ul class="nav-links">
-          <li><a href="../index.html" class="nav-link">Beranda</a></li>
-          <li><a href="../profil.html" class="nav-link">Profil</a></li>
-          
-          <!-- UTS Dropdown (Active) -->
-          <li class="nav-item-dropdown">
-            <a href="javascript:void(0)" class="nav-link dropdown-toggle active" role="button">
-              UTS <i class="fa-solid fa-chevron-down chevron-icon"></i>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="rancangan.html" class="dropdown-item"><i class="fa-solid fa-book-bookmark"></i> Rancangan</a></li>
-              <li><a href="materi.html" class="dropdown-item active" style="font-weight:700;"><i class="fa-solid fa-book-open"></i> Materi</a></li>
-              <li><a href="media.html" class="dropdown-item"><i class="fa-solid fa-photo-film"></i> Media</a></li>
-              <li><a href="instrumen.html" class="dropdown-item"><i class="fa-solid fa-clipboard-check"></i> Instrumen</a></li>
-              <li><a href="video.html" class="dropdown-item"><i class="fa-solid fa-circle-play"></i> Video</a></li>
-            </ul>
-          </li>
-
-          <!-- UAS Dropdown -->
-          <li class="nav-item-dropdown">
-            <a href="javascript:void(0)" class="nav-link dropdown-toggle" role="button">
-              UAS <i class="fa-solid fa-chevron-down chevron-icon"></i>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="../UAS/rancangan.html" class="dropdown-item"><i class="fa-solid fa-book-bookmark"></i> Rancangan</a></li>
-              <li><a href="../UAS/materi.html" class="dropdown-item"><i class="fa-solid fa-book-open"></i> Materi</a></li>
-              <li><a href="../UAS/media.html" class="dropdown-item"><i class="fa-solid fa-photo-film"></i> Media</a></li>
-              <li><a href="../UAS/instrumen.html" class="dropdown-item"><i class="fa-solid fa-clipboard-check"></i> Instrumen</a></li>
-              <li><a href="../UAS/video.html" class="dropdown-item"><i class="fa-solid fa-circle-play"></i> Video</a></li>
-            </ul>
-          </li>
-
-          <li><a href="../non-mengajar.html" class="nav-link">Non-Mengajar</a></li>
-          <li><a href="../dokumentasi.html" class="nav-link">Dokumentasi</a></li>
-        </ul>
-      </nav>
-
-      <div class="nav-actions">
-        <a href="../index.html" class="btn btn-outline-dark btn-sm">
-          <i class="fa-solid fa-arrow-left"></i> Beranda
+    <header class="navbar">
+      <div class="container navbar-inner">
+        <a href="../index.html" class="brand">
+          <img src="../logo navbar.png" alt="Logo UAD" class="brand-logo-img" onerror="this.style.display = 'none'" />
+          <div>
+            <span class="brand-title">Wahyu Surya Al Fikri, S.Pd.</span>
+            <span class="brand-subtitle">PPG Calon Guru Pendidikan Pancasila UAD</span>
+          </div>
         </a>
-        <button class="mobile-toggle" aria-label="Toggle Menu">
-          <i class="fa-solid fa-bars"></i>
-        </button>
-      </div>
-    </div>
-  </header>
 
-  <!-- =================================================================
+        <nav>
+          <ul class="nav-links">
+            <li><a href="../index.html" class="nav-link">Beranda</a></li>
+            <li><a href="../profil.html" class="nav-link">Profil</a></li>
+
+            <!-- UTS Dropdown (Active) -->
+            <li class="nav-item-dropdown">
+              <a href="javascript:void(0)" class="nav-link dropdown-toggle active" role="button"> UTS <i class="fa-solid fa-chevron-down chevron-icon"></i> </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="rancangan.html" class="dropdown-item"><i class="fa-solid fa-book-bookmark"></i> Rancangan</a>
+                </li>
+                <li>
+                  <a href="materi.html" class="dropdown-item active" style="font-weight: 700"><i class="fa-solid fa-book-open"></i> Materi</a>
+                </li>
+                <li>
+                  <a href="media.html" class="dropdown-item"><i class="fa-solid fa-photo-film"></i> Media</a>
+                </li>
+                <li>
+                  <a href="instrumen.html" class="dropdown-item"><i class="fa-solid fa-clipboard-check"></i> Instrumen</a>
+                </li>
+                <li>
+                  <a href="video.html" class="dropdown-item"><i class="fa-solid fa-circle-play"></i> Video</a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- UAS Dropdown -->
+            <li class="nav-item-dropdown">
+              <a href="javascript:void(0)" class="nav-link dropdown-toggle" role="button"> UAS <i class="fa-solid fa-chevron-down chevron-icon"></i> </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="../UAS/rancangan.html" class="dropdown-item"><i class="fa-solid fa-book-bookmark"></i> Rancangan</a>
+                </li>
+                <li>
+                  <a href="../UAS/materi.html" class="dropdown-item"><i class="fa-solid fa-book-open"></i> Materi</a>
+                </li>
+                <li>
+                  <a href="../UAS/media.html" class="dropdown-item"><i class="fa-solid fa-photo-film"></i> Media</a>
+                </li>
+                <li>
+                  <a href="../UAS/instrumen.html" class="dropdown-item"><i class="fa-solid fa-clipboard-check"></i> Instrumen</a>
+                </li>
+                <li>
+                  <a href="../UAS/video.html" class="dropdown-item"><i class="fa-solid fa-circle-play"></i> Video</a>
+                </li>
+              </ul>
+            </li>
+
+            <li><a href="../non-mengajar.html" class="nav-link">Non-Mengajar</a></li>
+            <li><a href="../dokumentasi.html" class="nav-link">Dokumentasi</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="../index.html" class="btn btn-outline-dark btn-sm"> <i class="fa-solid fa-arrow-left"></i> Beranda </a>
+          <button class="mobile-toggle" aria-label="Toggle Menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- =================================================================
        3. SUBPAGE HERO HEADER
        ================================================================= -->
-  <section class="subpage-hero-agency">
-    <div class="container">
-      <div class="badge-pill-group">
-        <span class="twin-dot-icon">
-          <span></span><span></span>
-        </span>
-        <span>UTS • SIKLUS 1 PPL TERBIMBING</span>
+    <section class="subpage-hero-agency">
+      <div class="container">
+        <div class="badge-pill-group">
+          <span class="twin-dot-icon"> <span></span><span></span> </span>
+          <span>UTS • SIKLUS 1 PPL TERBIMBING</span>
+        </div>
+
+        <h1 style="font-size: clamp(2.2rem, 4vw, 3.2rem); color: var(--color-primary-dark); margin-bottom: 0.8rem; font-weight: 800">Materi Pembelajaran Pendidikan Pancasila (Buku Saku Digital)</h1>
+        <p style="max-width: 840px; font-size: 1.05rem; line-height: 1.6; color: var(--color-text-muted)">
+          Buku saku digital edukatif <em>"Pancasila dalam Tindakan: Menghidupkan Nilai-Nilai Luhur Bangsa"</em> Kurikulum Merdeka Fase F (Kelas XI) untuk Siklus 1 PPL Terbimbing di SMA Negeri 4 Yogyakarta. Memuat peta konsep, kajian
+          etimologi, sejarah perumusan dari BPUPKI hingga PPKI, kedudukan Pancasila, pemaknaan 5 sila pada 3 tingkatan nilai (Dasar, Instrumental, Praksis), aktualisasi di 3 lingkungan kehidupan, analisis tantangan era digital, latihan
+          mandiri, hingga glosarium kamus istilah.
+        </p>
+
+        <div class="subpage-breadcrumb">
+          <a href="../index.html">Beranda</a>
+          <i class="fa-solid fa-chevron-right"></i>
+          <span>Siklus 1 (UTS)</span>
+          <i class="fa-solid fa-chevron-right"></i>
+          <span style="color: var(--color-primary-dark); font-weight: 700">Materi Pembelajaran</span>
+        </div>
       </div>
+    </section>
 
-      <h1 style="font-size: clamp(2.2rem, 4vw, 3.2rem); color: var(--color-primary-dark); margin-bottom: 0.8rem; font-weight: 800;">
-        Materi Pembelajaran Pendidikan Pancasila (Buku Saku Digital)
-      </h1>
-      <p style="max-width: 840px; font-size: 1.05rem; line-height: 1.6; color: var(--color-text-muted);">
-        Buku saku digital edukatif <em>"Pancasila dalam Tindakan: Menghidupkan Nilai-Nilai Luhur Bangsa"</em> Kurikulum Merdeka Fase F (Kelas XI) untuk Siklus 1 PPL Terbimbing di SMA Negeri 4 Yogyakarta. Memuat peta konsep, kajian etimologi, sejarah perumusan dari BPUPKI hingga PPKI, kedudukan Pancasila, pemaknaan 5 sila pada 3 tingkatan nilai (Dasar, Instrumental, Praksis), aktualisasi di 3 lingkungan kehidupan, analisis tantangan era digital, latihan mandiri, hingga glosarium kamus istilah.
-      </p>
-
-      <div class="subpage-breadcrumb">
-        <a href="../index.html">Beranda</a>
-        <i class="fa-solid fa-chevron-right"></i>
-        <span>Siklus 1 (UTS)</span>
-        <i class="fa-solid fa-chevron-right"></i>
-        <span style="color: var(--color-primary-dark); font-weight: 700;">Materi Pembelajaran</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- =================================================================
+    <!-- =================================================================
        4. MAIN CONTENT: PDF VIEWER & COMPREHENSIVE ANALYSIS
        ================================================================= -->
-  <main style="padding: 4rem 0 6rem; background: #FFFFFF;">
-    <div class="container">
-      
-      <!-- =============================================================
+    <main style="padding: 4rem 0 6rem; background: #ffffff">
+      <div class="container">
+        <!-- =============================================================
            A. INTERACTIVE PDF VIEWER SECTION
            ============================================================= -->
-      <section style="margin-bottom: 5rem;">
-        <div class="section-agency-head" style="margin-bottom: 2rem;">
-          <div class="badge-pill-group">
-            <span class="twin-dot-icon">
-              <span></span><span></span>
-            </span>
-            <span>BAHAN AJAR BUKU SAKU SIKLUS 1</span>
+        <section style="margin-bottom: 5rem">
+          <div class="section-agency-head" style="margin-bottom: 2rem">
+            <div class="badge-pill-group">
+              <span class="twin-dot-icon"> <span></span><span></span> </span>
+              <span>BAHAN AJAR BUKU SAKU SIKLUS 1</span>
+            </div>
+            <h2 class="section-agency-title">Pratinjau Materi Pembelajaran (PDF)</h2>
+            <p class="section-agency-subtitle">
+              Eksplorasi langsung 18 halaman buku saku digital <strong>Pancasila dalam Tindakan</strong> yang disusun secara sistematis, bertahap, dan aplikatif sebagai pegangan belajar mandiri maupun kolaboratif peserta didik di kelas dan
+              rumah.
+            </p>
           </div>
-          <h2 class="section-agency-title">Pratinjau Materi Pembelajaran (PDF)</h2>
-          <p class="section-agency-subtitle">
-            Eksplorasi langsung 18 halaman buku saku digital <strong>Pancasila dalam Tindakan</strong> yang disusun secara sistematis, bertahap, dan aplikatif sebagai pegangan belajar mandiri maupun kolaboratif peserta didik di kelas dan rumah.
-          </p>
-        </div>
 
-        <!-- PDF Viewer Container Card -->
-        <div class="pdf-viewer-card">
-          <!-- Toolbar -->
-          <div class="pdf-viewer-toolbar">
-            <div class="pdf-toolbar-info">
-              <div class="pdf-toolbar-icon">
-                <i class="fa-solid fa-book-open"></i>
+          <!-- PDF Viewer Container Card -->
+          <div class="pdf-viewer-card">
+            <!-- Toolbar -->
+            <div class="pdf-viewer-toolbar">
+              <div class="pdf-toolbar-info">
+                <div class="pdf-toolbar-icon">
+                  <i class="fa-solid fa-book-open"></i>
+                </div>
+                <div>
+                  <div class="pdf-toolbar-title">Buku Saku Pendidikan Pancasila: Pancasila dalam Tindakan</div>
+                  <div class="pdf-toolbar-sub">Penyusun: <strong>Wahyu Surya Al Fikri, S.Pd.</strong> • Menghidupkan Nilai-Nilai Luhur Bangsa • Fase F / Kelas XI SMA • 18 Halaman</div>
+                </div>
+              </div>
+
+              <div class="pdf-toolbar-actions">
+                <span class="tag-pill" style="background: rgba(184, 224, 35, 0.2); color: #b8e023; font-weight: 700; border: 1px solid rgba(184, 224, 35, 0.4); padding: 6px 14px; font-size: 0.78rem">
+                  <i class="fa-solid fa-circle-check" style="margin-right: 5px"></i> Terverifikasi LPTK UAD
+                </span>
+                <a href="../Dokumen/Materi Siklus 1.pdf" download="Materi_Pembelajaran_Pendidikan_Pancasila_Siklus1_WahyuSuryaAlFikri.pdf" class="btn btn-primary-lime btn-sm">
+                  <i class="fa-solid fa-file-arrow-down"></i> Unduh Buku Saku PDF (528 KB)
+                </a>
+                <a href="../Dokumen/Materi Siklus 1.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light btn-sm" style="border-color: rgba(255, 255, 255, 0.4); color: #ffffff">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Layar Penuh
+                </a>
+              </div>
+            </div>
+
+            <!-- Embedded Frame -->
+            <div class="pdf-frame-wrapper">
+              <iframe src="../Dokumen/Materi Siklus 1.pdf#toolbar=1&navpanes=0&scrollbar=1" title="Materi Pembelajaran Siklus 1 Wahyu Surya Al Fikri - Buku Saku Pancasila dalam Tindakan" loading="lazy">
+                <p style="padding: 2rem; color: #ffffff; text-align: center">
+                  Peramban Anda tidak mendukung tampilan PDF langsung. Silakan
+                  <a href="../Dokumen/Materi Siklus 1.pdf" target="_blank" style="color: var(--color-accent-lime); font-weight: bold; text-decoration: underline">
+                    Klik di sini untuk mengunduh atau membuka Materi Pembelajaran Siklus 1 (.PDF) </a
+                  >.
+                </p>
+              </iframe>
+            </div>
+
+            <!-- Footer Metadata Bar -->
+            <div style="background: #f8f9f5; padding: 1.25rem 2rem; border-top: 1px solid var(--color-border-light); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem">
+              <div style="display: flex; align-items: center; gap: 1.8rem; flex-wrap: wrap">
+                <div style="font-size: 0.85rem; color: var(--color-text-muted)">
+                  <i class="fa-solid fa-book-bookmark" style="color: var(--color-primary-dark); margin-right: 6px"></i>
+                  <strong>Format:</strong> Buku Saku Digital (Pocket Book 18 Halaman)
+                </div>
+                <div style="font-size: 0.85rem; color: var(--color-text-muted)">
+                  <i class="fa-solid fa-sitemap" style="color: var(--color-primary-dark); margin-right: 6px"></i>
+                  <strong>Struktur:</strong> 3 Bab Inti, Latihan Mandiri & Glosarium
+                </div>
+                <div style="font-size: 0.85rem; color: var(--color-text-muted)">
+                  <i class="fa-solid fa-compass" style="color: var(--color-primary-dark); margin-right: 6px"></i>
+                  <strong>Fokus:</strong> Nilai Praksis (Pancasila Bukan Sekadar Hafalan)
+                </div>
               </div>
               <div>
-                <div class="pdf-toolbar-title">Buku Saku Pendidikan Pancasila: Pancasila dalam Tindakan</div>
-                <div class="pdf-toolbar-sub">
-                  Penyusun: <strong>Wahyu Surya Al Fikri, S.Pd.</strong> • Menghidupkan Nilai-Nilai Luhur Bangsa • Fase F / Kelas XI SMA • 18 Halaman
-                </div>
+                <a href="javascript:void(0)" onclick="showToast('Bahan Ajar Terintegrasi Kurikulum Merdeka Fase F')" style="font-size: 0.82rem; color: var(--color-primary-dark); font-weight: 700; text-decoration: none">
+                  <i class="fa-solid fa-circle-info" style="color: var(--color-accent-lime); margin-right: 5px"></i> Kurikulum Merdeka Fase F
+                </a>
               </div>
-            </div>
-
-            <div class="pdf-toolbar-actions">
-              <span class="tag-pill" style="background: rgba(184, 224, 35, 0.2); color: #B8E023; font-weight: 700; border: 1px solid rgba(184, 224, 35, 0.4); padding: 6px 14px; font-size: 0.78rem;">
-                <i class="fa-solid fa-circle-check" style="margin-right: 5px;"></i> Terverifikasi LPTK UAD
-              </span>
-              <a href="../Dokumen/Materi Siklus 1.pdf" download="Materi_Pembelajaran_Pendidikan_Pancasila_Siklus1_WahyuSuryaAlFikri.pdf" class="btn btn-primary-lime btn-sm">
-                <i class="fa-solid fa-file-arrow-down"></i> Unduh Buku Saku PDF (528 KB)
-              </a>
-              <a href="../Dokumen/Materi Siklus 1.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-outline-light btn-sm" style="border-color: rgba(255,255,255,0.4); color: #FFFFFF;">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i> Layar Penuh
-              </a>
             </div>
           </div>
+        </section>
 
-          <!-- Embedded Frame -->
-          <div class="pdf-frame-wrapper">
-            <iframe 
-              src="../Dokumen/Materi Siklus 1.pdf#toolbar=1&navpanes=0&scrollbar=1" 
-              title="Materi Pembelajaran Siklus 1 Wahyu Surya Al Fikri - Buku Saku Pancasila dalam Tindakan"
-              loading="lazy">
-              <p style="padding: 2rem; color: #FFFFFF; text-align: center;">
-                Peramban Anda tidak mendukung tampilan PDF langsung. Silakan 
-                <a href="../Dokumen/Materi Siklus 1.pdf" target="_blank" style="color: var(--color-accent-lime); font-weight: bold; text-decoration: underline;">
-                  Klik di sini untuk mengunduh atau membuka Materi Pembelajaran Siklus 1 (.PDF)
-                </a>.
-              </p>
-            </iframe>
-          </div>
-
-          <!-- Footer Metadata Bar -->
-          <div style="background: #F8F9F5; padding: 1.25rem 2rem; border-top: 1px solid var(--color-border-light); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
-            <div style="display: flex; align-items: center; gap: 1.8rem; flex-wrap: wrap;">
-              <div style="font-size: 0.85rem; color: var(--color-text-muted);">
-                <i class="fa-solid fa-book-bookmark" style="color: var(--color-primary-dark); margin-right: 6px;"></i>
-                <strong>Format:</strong> Buku Saku Digital (Pocket Book 18 Halaman)
-              </div>
-              <div style="font-size: 0.85rem; color: var(--color-text-muted);">
-                <i class="fa-solid fa-sitemap" style="color: var(--color-primary-dark); margin-right: 6px;"></i>
-                <strong>Struktur:</strong> 3 Bab Inti, Latihan Mandiri & Glosarium
-              </div>
-              <div style="font-size: 0.85rem; color: var(--color-text-muted);">
-                <i class="fa-solid fa-compass" style="color: var(--color-primary-dark); margin-right: 6px;"></i>
-                <strong>Fokus:</strong> Nilai Praksis (Pancasila Bukan Sekadar Hafalan)
-              </div>
-            </div>
-            <div>
-              <a href="javascript:void(0)" onclick="showToast('Bahan Ajar Terintegrasi Kurikulum Merdeka Fase F')" style="font-size: 0.82rem; color: var(--color-primary-dark); font-weight: 700; text-decoration: none;">
-                <i class="fa-solid fa-circle-info" style="color: var(--color-accent-lime); margin-right: 5px;"></i> Kurikulum Merdeka Fase F
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- =============================================================
+        <!-- =============================================================
            B. COMPREHENSIVE ANALYSIS OF THE LEARNING MATERIAL
            ============================================================= -->
-      <section>
-        <div class="section-agency-head" style="margin-bottom: 3.5rem;">
-          <div class="badge-pill-group">
-            <span class="twin-dot-icon">
-              <span></span><span></span>
-            </span>
-            <span>ANALISIS KOMPREHENSIF MATERI PEMBELAJARAN</span>
-          </div>
-          <h2 class="section-agency-title">Analisis Akademik & Refleksi Kritis Materi Pembelajaran</h2>
-          <p class="section-agency-subtitle">
-            Tinjauan mendalam terhadap relevansi desain bahan ajar buku saku, dekonstruksi nilai praksis, kelebihan, keterbatasan instruksional, serta justifikasi teoritis teknologi pendidikan kewarganegaraan.
-          </p>
-        </div>
-
-        <!-- 1. KONTEKS DAN TUJUAN MATERI -->
-        <article class="analysis-module-card">
-          <div class="analysis-module-header">
-            <div class="analysis-module-num">01</div>
-            <div>
-              <h3 class="analysis-module-title">Konteks dan Tujuan Materi Pembelajaran</h3>
-              <p class="analysis-module-desc">
-                Tinjauan urgensi perancangan bahan ajar buku saku mandiri dalam menjembatani gap antara hafalan teks normatif dan aktualisasi tindakan nyata di era digital.
-              </p>
+        <section>
+          <div class="section-agency-head" style="margin-bottom: 3.5rem">
+            <div class="badge-pill-group">
+              <span class="twin-dot-icon"> <span></span><span></span> </span>
+              <span>ANALISIS KOMPREHENSIF MATERI PEMBELAJARAN</span>
             </div>
-          </div>
-
-          <div class="analysis-content-body">
-            
-            <div style="margin-bottom: 2.5rem;">
-              <h4 style="font-size: 1.25rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.65rem;">
-                <i class="fa-solid fa-chalkboard-user" style="color: var(--color-primary-dark); font-size: 1.1rem;"></i>
-                A. Analisis Konteks Kebutuhan Bahan Ajar & Kondisi Kelas XI SMA Negeri 4 Yogyakarta
-              </h4>
-              <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.75; margin-bottom: 1.2rem;">
-                Dalam pembelajaran Pendidikan Pancasila di SMA Negeri 4 Yogyakarta, fenomena umum yang dihadapi guru adalah kecenderungan siswa yang mampu menghafal butir-butir Pancasila dan kronologi sejarah kemerdekaan secara verbal, namun mengalami kesulitan ketika diminta mengartikulasikan nilai-nilai tersebut ke dalam tindakan etis sehari-hari. Buku saku <em>"Pancasila dalam Tindakan"</em> ini dirancang untuk merespons empat tantangan kontekstual utama:
-              </p>
-              
-              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem;">
-                <div style="background: #F8F9F5; border-radius: var(--radius-md); padding: 1.4rem; border-left: 4px solid var(--color-primary-dark);">
-                  <strong style="display: block; color: var(--color-primary-dark); font-size: 0.95rem; margin-bottom: 0.4rem;">
-                    <i class="fa-solid fa-heart-circle-bolt" style="margin-right: 6px; color: var(--color-primary-dark);"></i> Transformasi dari Hafalan Teks Menjadi Tindakan Praksis (Bab II)
-                  </strong>
-                  <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
-                    Buku saku membedah tiga tingkatan nilai (Nilai Dasar, Nilai Instrumental, dan Nilai Praksis). Fokus utama diletakkan pada nilai praksis agar peserta didik memahami bahwa menolak perundungan (bullying), tidak menyebarkan hoaks, dan membagi tugas piket secara adil adalah perwujudan konkret dari Sila ke-2 dan Sila ke-5.
-                  </p>
-                </div>
-
-                <div style="background: #F8F9F5; border-radius: var(--radius-md); padding: 1.4rem; border-left: 4px solid var(--color-accent-lime-hover);">
-                  <strong style="display: block; color: var(--color-primary-dark); font-size: 0.95rem; margin-bottom: 0.4rem;">
-                    <i class="fa-solid fa-house-chimney" style="margin-right: 6px; color: var(--color-accent-lime-hover);"></i> Pemetaan Wujud Tindakan di 3 Lingkungan Hidup Siswa (Bab II & III)
-                  </strong>
-                  <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
-                    Materi memberikan contoh implementasi yang sangat terperinci pada tiga arena interaksi nyata siswa: lingkungan keluarga (musyawarah keputusan keluarga), lingkungan sekolah (alur musyawarah pemilihan ketua kelas), dan lingkungan masyarakat (kerja bakti, ronda malam, toleransi adat).
-                  </p>
-                </div>
-
-                <div style="background: #F8F9F5; border-radius: var(--radius-md); padding: 1.4rem; border-left: 4px solid var(--color-primary-dark);">
-                  <strong style="display: block; color: var(--color-primary-dark); font-size: 0.95rem; margin-bottom: 0.4rem;">
-                    <i class="fa-solid fa-shield-virus" style="margin-right: 6px; color: var(--color-primary-dark);"></i> Analisis Kritis 6 Tantangan Era Digital & Globalisasi (Bab III)
-                  </strong>
-                  <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
-                    Siswa diajak mengidentifikasi ancaman kontemporer terhadap ideologi bangsa: individualisme, radikalisme, hoaks/ujaran kebencian, intoleransi, hingga korupsi. Pendekatan ini melatih kepekaan moral peserta didik agar bijak bermedia sosial dan berkarakter teguh.
-                  </p>
-                </div>
-
-                <div style="background: #F8F9F5; border-radius: var(--radius-md); padding: 1.4rem; border-left: 4px solid var(--color-accent-lime-hover);">
-                  <strong style="display: block; color: var(--color-primary-dark); font-size: 0.95rem; margin-bottom: 0.4rem;">
-                    <i class="fa-solid fa-spell-check" style="margin-right: 6px; color: var(--color-accent-lime-hover);"></i> Fasilitas Belajar Mandiri: Glosarium Kamus Istilah & Latihan (Bab Akhir)
-                  </strong>
-                  <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
-                    Menyediakan glosarium istilah ketatanegaraan (BPUPKI, PPKI, Piagam Jakarta, Supel, Sishankamrata, Demokrasi Pancasila) dan 4 butir soal studi kasus terbuka yang memicu daya analisis siswa tanpa sekadar mencari jawaban hafalan.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h4 style="font-size: 1.25rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.65rem;">
-                <i class="fa-solid fa-bullseye" style="color: var(--color-primary-dark); font-size: 1.1rem;"></i>
-                B. Tujuan Pengembangan Materi Pembelajaran Berbasis 4 Domain Kompetensi
-              </h4>
-              <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7; margin-bottom: 1.4rem;">
-                Bahan ajar buku saku ini dikembangkan untuk merealisasikan tujuan pembelajaran komprehensif pada 4 domain capaian:
-              </p>
-
-              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.4rem;">
-                
-                <div style="background: #FFFFFF; border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-sm);">
-                  <div style="display: inline-block; background: var(--color-primary-dark); color: var(--color-accent-lime); font-size: 0.72rem; font-weight: 800; padding: 3px 8px; border-radius: 4px; margin-bottom: 0.75rem;">
-                    DOMAIN KOGNITIF
-                  </div>
-                  <h5 style="font-size: 1rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.5rem;">
-                    Penguasaan Sejarah & Esensi 5 Sila
-                  </h5>
-                  <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
-                    Mampu menguraikan etimologi Sanskerta Pancasila, 6 tonggak sejarah perumusan dari 1 Maret hingga 18 Agustus 1945, 6 kedudukan Pancasila bagi NKRI, serta membedakan nilai dasar, instrumental, dan praksis secara logis.
-                  </p>
-                </div>
-
-                <div style="background: #FFFFFF; border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-sm);">
-                  <div style="display: inline-block; background: var(--color-primary-dark); color: var(--color-accent-lime); font-size: 0.72rem; font-weight: 800; padding: 3px 8px; border-radius: 4px; margin-bottom: 0.75rem;">
-                    DOMAIN AFEKTIF & MORAL
-                  </div>
-                  <h5 style="font-size: 1rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.5rem;">
-                    Penghayatan Karakter Kebangsaan
-                  </h5>
-                  <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
-                    Mengembangkan rasa syukur atas konsensus para pendiri bangsa, menjunjung tinggi toleransi kerukunan umat beragama, mencintai produk dalam negeri, dan menolak penyebaran hoaks di media sosial.
-                  </p>
-                </div>
-
-                <div style="background: #FFFFFF; border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-sm);">
-                  <div style="display: inline-block; background: var(--color-primary-dark); color: var(--color-accent-lime); font-size: 0.72rem; font-weight: 800; padding: 3px 8px; border-radius: 4px; margin-bottom: 0.75rem;">
-                    DOMAIN KETERAMPILAN PRAKSIS
-                  </div>
-                  <h5 style="font-size: 1rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.5rem;">
-                    Simulasi Musyawarah & Pemecahan Masalah
-                  </h5>
-                  <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
-                    Mampu mempraktikkan 5 langkah alur musyawarah kelas mufakat (Pembukaan, Usulan, Diskusi, Mufakat, Pelaksanaan) serta menganalisis studi kasus pemaksaan kehendak pada rubrik Latihan Mandiri.
-                  </p>
-                </div>
-
-                <div style="background: #FFFFFF; border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-sm);">
-                  <div style="display: inline-block; background: var(--color-primary-dark); color: var(--color-accent-lime); font-size: 0.72rem; font-weight: 800; padding: 3px 8px; border-radius: 4px; margin-bottom: 0.75rem;">
-                    PENGUATAN PROFIL PELAJAR PANCASILA
-                  </div>
-                  <h5 style="font-size: 1rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.5rem;">
-                    Beriman, Bernalar Kritis & Gotong Royong
-                  </h5>
-                  <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
-                    Menginternalisasi kebiasaan berpikir kritis (saring sebelum sharing) dan berkolaborasi dalam kerja tim heterogen, menyadari bahwa gotong royong adalah jati diri luhur bangsa yang harus dilestarikan.
-                  </p>
-                </div>
-
-              </div>
-            </div>
-
-          </div>
-        </article>
-
-        <!-- 2. KELEBIHAN DAN KEKURANGAN MATERI -->
-        <article class="analysis-module-card">
-          <div class="analysis-module-header">
-            <div class="analysis-module-num">02</div>
-            <div>
-              <h3 class="analysis-module-title">Kelebihan dan Kekurangan Materi Pembelajaran</h3>
-              <p class="analysis-module-desc">
-                Evaluasi komparatif mengenai kekuatan narasi edukatif buku saku, format portabel ramah baca, tantangan literasi mandiri, beserta strategi mitigasi kelas.
-              </p>
-            </div>
-          </div>
-
-          <div class="analysis-content-body">
-            
-            <div class="analysis-grid-2col">
-              
-              <!-- Kolom Kelebihan -->
-              <div class="analysis-box-item pro">
-                <div class="analysis-box-title" style="color: var(--color-primary-dark);">
-                  <i class="fa-solid fa-circle-check" style="color: #65A30D; font-size: 1.3rem;"></i>
-                  Kelebihan & Kekuatan Materi Ajar (Strengths)
-                </div>
-                <ul class="analysis-list">
-                  <li>
-                    <i class="fa-solid fa-check-circle" style="color: #65A30D;"></i>
-                    <div>
-                      <strong>Struktur Modul Ajar Sangat Bersahabat & Runtut (Pedagogical Quest Flow):</strong>
-                      Setiap bab diawali dengan target kompetensi (Quest), Peta Konsep diagram alur, pembahasan inti berpoin, dan diakhiri dengan kotak "Uji Nyali Pancasila", memudahkan siswa membaca secara mandiri.
-                    </div>
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-check-circle" style="color: #65A30D;"></i>
-                    <div>
-                      <strong>Analogi Konseptual yang Sangat Membumi ("Rumah & Fondasi"):</strong>
-                      Menganalogikan Pancasila sebagai fondasi rumah bangsa yang membuat materi filsafat ketatanegaraan langsung tertanam di benak siswa tanpa memerlukan hafalan rumit.
-                    </div>
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-check-circle" style="color: #65A30D;"></i>
-                    <div>
-                      <strong>Kompilasi Glosarium Kamus Istilah Terpadu (Halaman 12):</strong>
-                      Memuat 24 istilah penting konstitusi dan sejarah (BPUPKI, PPKI, Piagam Jakarta, Supel, Sishankamrata, HAM, dll.), berfungsi sebagai kamus saku referensi cepat bagi peserta didik.
-                    </div>
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-check-circle" style="color: #65A30D;"></i>
-                    <div>
-                      <strong>Konteks Relevan Era Digital (Tantangan Hoaks & Cyber Bullying):</strong>
-                      Menghubungkan nilai Sila ke-2 dan ke-3 dengan etika bermedia sosial ("saring sebelum sharing"), menjadikannya bahan ajar yang sangat kontekstual dengan kehidupan Generasi Z.
-                    </div>
-                  </li>
-                </ul>
-              </div>
-
-              <!-- Kolom Kekurangan -->
-              <div class="analysis-box-item con">
-                <div class="analysis-box-title" style="color: #B45309;">
-                  <i class="fa-solid fa-triangle-exclamation" style="color: #F59E0B; font-size: 1.3rem;"></i>
-                  Kelemahan & Tantangan Implementasi Materi (Limitations)
-                </div>
-                <ul class="analysis-list">
-                  <li>
-                    <i class="fa-solid fa-circle-xmark" style="color: #F59E0B;"></i>
-                    <div>
-                      <strong>Tingkat Kepadatan Teks Berpotensi Menantang Bagi Siswa Minat Baca Rendah:</strong>
-                      Sebagai buku saku 18 halaman yang memuat banyak narasi sejarah dan tabel perbandingan, sebagian siswa dengan gaya belajar visual-kinestetik memerlukan bantuan pendampingan guru.
-                    </div>
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-circle-xmark" style="color: #F59E0B;"></i>
-                    <div>
-                      <strong>Soal Latihan Masih Berupa Esai Terbuka Tanpa Kunci Jawaban Mandiri:</strong>
-                      Empat soal pada halaman 11 menuntut penilaian subjektif guru sehingga siswa tidak bisa langsung melakukan pengecekan mandiri (*self-check assessment*).
-                    </div>
-                  </li>
-                  <li>
-                    <i class="fa-solid fa-circle-xmark" style="color: #F59E0B;"></i>
-                    <div>
-                      <strong>Ketiadaan Elemen Multimedia Langsung di Dalam Buku Saku:</strong>
-                      Sebagai dokumen cetak/PDF, buku saku belum memiliki tautan QR Code interaktif langsung menuju video rekonstruksi sidang BPUPKI di YouTube.
-                    </div>
-                  </li>
-                </ul>
-              </div>
-
-            </div>
-
-            <!-- Solusi dan Mitigasi Lapangan -->
-            <div class="analysis-box-item solution">
-              <div class="analysis-box-title" style="color: var(--color-primary-dark); font-size: 1.2rem; border-bottom: 1px solid var(--color-border-light); padding-bottom: 0.75rem; margin-bottom: 1.25rem;">
-                <i class="fa-solid fa-lightbulb" style="color: var(--color-accent-lime); font-size: 1.3rem;"></i>
-                Solusi & Rekomendasi Mitigasi Instruksional (Actionable Strategies)
-              </div>
-              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
-                <div>
-                  <h5 style="color: var(--color-primary-dark); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem;">
-                    1. Penggunaan Peta Konsep Bab sebagai Pemandu Visual Kelas
-                  </h5>
-                  <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
-                    Guru memproyeksikan diagram alur peta konsep bab (misal: Etimologi → Perumusan → Piagam Jakarta → Pengesahan) di papan tulis sebelum siswa membaca uraian teks buku saku.
-                  </p>
-                </div>
-                <div>
-                  <h5 style="color: var(--color-primary-dark); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem;">
-                    2. Diskusi Berpasangan (Think-Pair-Share) untuk Soal "Uji Nyali"
-                  </h5>
-                  <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
-                    Menggunakan kotak Uji Nyali di setiap akhir bab sebagai bahan diskusi cepat 2 menit dengan teman sebangku guna mengonfirmasi pemahaman sebelum melangkah ke bab selanjutnya.
-                  </p>
-                </div>
-                <div>
-                  <h5 style="color: var(--color-primary-dark); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem;">
-                    3. Integrasi Buku Saku dengan Media Presentasi Slide Siklus 1
-                  </h5>
-                  <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0;">
-                    Menjadikan buku saku ini sebagai bahan bacaan pendamping saat siswa menyimak presentasi slide Canva interaktif dan mengerjakan LKPD studi kasus kelompok.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </article>
-
-        <!-- 3. KAJIAN TEORI MATERI PEMBELAJARAN -->
-        <article class="analysis-module-card">
-          <div class="analysis-module-header">
-            <div class="analysis-module-num">03</div>
-            <div>
-              <h3 class="analysis-module-title">Kajian Teori & Landasan Keilmuan Bahan Ajar</h3>
-              <p class="analysis-module-desc">
-                Justifikasi teoritis dari literatur beban kognitif teks, belajar bermakna, klarifikasi nilai, serta pedagogi praksis dalam pendidikan moral Pancasila.
-              </p>
-            </div>
-          </div>
-
-          <div class="analysis-content-body">
-            
-            <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.75; margin-bottom: 2rem;">
-              Perancangan dan pengorganisasian substansi buku saku Materi Pembelajaran Siklus 1 ini didasarkan pada enam landasan teori ilmiah pendidikan:
+            <h2 class="section-agency-title">Analisis Akademik & Refleksi Kritis Materi Pembelajaran</h2>
+            <p class="section-agency-subtitle">
+              Tinjauan mendalam terhadap relevansi desain bahan ajar buku saku, dekonstruksi nilai praksis, kelebihan, keterbatasan instruksional, serta justifikasi teoritis teknologi pendidikan kewarganegaraan.
             </p>
+          </div>
 
-            <div class="theory-grid">
-              
-              <div class="theory-card">
-                <span class="theory-badge">
-                  <i class="fa-solid fa-sitemap" style="margin-right: 5px;"></i> Belajar Bermakna
-                </span>
-                <h4 class="theory-title">Meaningful Learning & Advance Organizer (David Ausubel, 1968)</h4>
-                <p class="theory-desc">
-                  Ausubel menyatakan bahwa belajar bermakna terjadi ketika konsep baru dijangkarkan ke pengetahuan lama siswa:
-                  <br><br>
-                  Buku saku menggunakan analogi "Pancasila sebagai Fondasi Rumah" dan peta konsep di awal setiap bab sebagai <em>Advance Organizer</em>. Siswa mengaitkan struktur kenegaraan yang abstrak dengan logika fondasi fisik yang telah akrab dalam kehidupan nyata.
-                </p>
+          <!-- 1. KONTEKS DAN TUJUAN MATERI -->
+          <article class="analysis-module-card">
+            <div class="analysis-module-header">
+              <div class="analysis-module-num">01</div>
+              <div>
+                <h3 class="analysis-module-title">Konteks dan Tujuan Materi Pembelajaran</h3>
+                <p class="analysis-module-desc">Tinjauan urgensi perancangan bahan ajar buku saku mandiri dalam menjembatani gap antara hafalan teks normatif dan aktualisasi tindakan nyata di era digital.</p>
               </div>
-
-              <div class="theory-card">
-                <span class="theory-badge" style="background: rgba(184, 224, 35, 0.25);">
-                  <i class="fa-solid fa-scale-balanced" style="margin-right: 5px;"></i> Pendidikan Nilai
-                </span>
-                <h4 class="theory-title">Value Clarification Technique (Louis Raths et al., 1966)</h4>
-                <p class="theory-desc">
-                  Proses penanaman nilai moral tidak efektif jika dilakukan secara indoktrinasi searah, melainkan melalui 3 tahapan VCT:
-                  <br><br>
-                  <strong>• Choosing (Memilih):</strong> Siswa memilih sikap berdasarkan pertimbangan akal budi pada kotak Uji Nyali.
-                  <br>
-                  <strong>• Prizing (Menghargai):</strong> Menumbuhkan rasa bangga terhadap konsensus Pancasila.
-                  <br>
-                  <strong>• Acting (Bertindak):</strong> Mengamalkan nilai praksis pada interaksi nyata di sekolah dan masyarakat.
-                </p>
-              </div>
-
-              <div class="theory-card">
-                <span class="theory-badge">
-                  <i class="fa-solid fa-brain" style="margin-right: 5px;"></i> Psikologi Kognitif
-                </span>
-                <h4 class="theory-title">Cognitive Load Theory & Chunking (Sweller, 1988)</h4>
-                <p class="theory-desc">
-                  Materi sejarah dan konstitusi yang tebal dipecah (*chunking*) menjadi segmen-segmen ringkas:
-                  <br><br>
-                  Kronologi perumusan dipadatkan menjadi 6 tonggak tanggal utama (1 Maret hingga 18 Agustus 1945), dan kedudukan Pancasila dibagi dalam 6 kartu tematik, menjaga kapasitas memori kerja siswa agar tidak mengalami kejenuhan informasi.
-                </p>
-              </div>
-
-              <div class="theory-card">
-                <span class="theory-badge" style="background: rgba(18, 56, 45, 0.08);">
-                  <i class="fa-solid fa-hands-holding-circle" style="margin-right: 5px;"></i> Pedagogi Kritis
-                </span>
-                <h4 class="theory-title">Praxis: Action-Reflection (Paulo Freire, 1970)</h4>
-                <p class="theory-desc">
-                  Freire menegaskan bahwa transformasi kesadaran manusia lahir dari dialektika antara aksi dan refleksi (<em>Praxis</em>):
-                  <br><br>
-                  Buku saku ini secara tegas mengusung semboyan <em>"Pancasila bukan hafalan, melainkan praktik"</em>. Halaman refleksi penutup membimbing siswa merenungkan perilaku pribadi dalam menghadapi ujaran kebencian dan toleransi keberagaman.
-                </p>
-              </div>
-
-              <div class="theory-card">
-                <span class="theory-badge">
-                  <i class="fa-solid fa-book-atlas" style="margin-right: 5px;"></i> Taksonomi Sikap
-                </span>
-                <h4 class="theory-title">Taxonomy of Affective Domain (Krathwohl, Bloom, Masia, 1964)</h4>
-                <p class="theory-desc">
-                  Tiga tingkatan nilai dalam buku saku (Dasar, Instrumental, Praksis) selaras dengan hierarki afektif:
-                  <br><br>
-                  Mulai dari <em>Receiving</em> (mengetahui definisi etimologis), <em>Responding</em> (berpartisipasi dalam musyawarah), <em>Valuing</em> (meyakini kebenaran sila), hingga <em>Characterization</em> (menjadikan Pancasila sebagai pandangan hidup personal yang ajeg).
-                </p>
-              </div>
-
-              <div class="theory-card">
-                <span class="theory-badge" style="background: rgba(184, 224, 35, 0.25);">
-                  <i class="fa-solid fa-network-wired" style="margin-right: 5px;"></i> Literasi Kritis
-                </span>
-                <h4 class="theory-title">Digital Civic Literacy (Kahne & Bowyer, 2017)</h4>
-                <p class="theory-desc">
-                  Kecakapan kewarganegaraan era digital menuntut kemampuan verifikasi informasi dan etika partisipasi:
-                  <br><br>
-                  Bab III buku saku menyematkan prinsip literasi digital kritis (*saring sebelum sharing*) sebagai benteng terhadap ancaman hoaks dan polarisasi sosial, membekali siswa menjadi warganegara digital yang bertanggung jawab (*responsible digital citizen*).
-                </p>
-              </div>
-
             </div>
 
-          </div>
-        </article>
+            <div class="analysis-content-body">
+              <div style="margin-bottom: 2.5rem">
+                <h4 style="font-size: 1.25rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.65rem">
+                  <i class="fa-solid fa-chalkboard-user" style="color: var(--color-primary-dark); font-size: 1.1rem"></i>
+                  A. Analisis Konteks Kebutuhan Bahan Ajar & Kondisi Kelas XI SMA Negeri 4 Yogyakarta
+                </h4>
+                <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.75; margin-bottom: 1.2rem">
+                  Dalam pembelajaran Pendidikan Pancasila di SMA Negeri 4 Yogyakarta, fenomena umum yang dihadapi guru adalah kecenderungan siswa yang mampu menghafal butir-butir Pancasila dan kronologi sejarah kemerdekaan secara verbal,
+                  namun mengalami kesulitan ketika diminta mengartikulasikan nilai-nilai tersebut ke dalam tindakan etis sehari-hari. Buku saku <em>"Pancasila dalam Tindakan"</em> ini dirancang untuk merespons empat tantangan kontekstual
+                  utama:
+                </p>
 
-      </section>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; margin-bottom: 1.5rem">
+                  <div style="background: #f8f9f5; border-radius: var(--radius-md); padding: 1.4rem; border-left: 4px solid var(--color-primary-dark)">
+                    <strong style="display: block; color: var(--color-primary-dark); font-size: 0.95rem; margin-bottom: 0.4rem">
+                      <i class="fa-solid fa-heart-circle-bolt" style="margin-right: 6px; color: var(--color-primary-dark)"></i> Transformasi dari Hafalan Teks Menjadi Tindakan Praksis (Bab II)
+                    </strong>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                      Buku saku membedah tiga tingkatan nilai (Nilai Dasar, Nilai Instrumental, dan Nilai Praksis). Fokus utama diletakkan pada nilai praksis agar peserta didik memahami bahwa menolak perundungan (bullying), tidak
+                      menyebarkan hoaks, dan membagi tugas piket secara adil adalah perwujudan konkret dari Sila ke-2 dan Sila ke-5.
+                    </p>
+                  </div>
 
-    </div>
-  </main>
+                  <div style="background: #f8f9f5; border-radius: var(--radius-md); padding: 1.4rem; border-left: 4px solid var(--color-accent-lime-hover)">
+                    <strong style="display: block; color: var(--color-primary-dark); font-size: 0.95rem; margin-bottom: 0.4rem">
+                      <i class="fa-solid fa-house-chimney" style="margin-right: 6px; color: var(--color-accent-lime-hover)"></i> Pemetaan Wujud Tindakan di 3 Lingkungan Hidup Siswa (Bab II & III)
+                    </strong>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                      Materi memberikan contoh implementasi yang sangat terperinci pada tiga arena interaksi nyata siswa: lingkungan keluarga (musyawarah keputusan keluarga), lingkungan sekolah (alur musyawarah pemilihan ketua kelas), dan
+                      lingkungan masyarakat (kerja bakti, ronda malam, toleransi adat).
+                    </p>
+                  </div>
 
-  <!-- =================================================================
+                  <div style="background: #f8f9f5; border-radius: var(--radius-md); padding: 1.4rem; border-left: 4px solid var(--color-primary-dark)">
+                    <strong style="display: block; color: var(--color-primary-dark); font-size: 0.95rem; margin-bottom: 0.4rem">
+                      <i class="fa-solid fa-shield-virus" style="margin-right: 6px; color: var(--color-primary-dark)"></i> Analisis Kritis 6 Tantangan Era Digital & Globalisasi (Bab III)
+                    </strong>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                      Siswa diajak mengidentifikasi ancaman kontemporer terhadap ideologi bangsa: individualisme, radikalisme, hoaks/ujaran kebencian, intoleransi, hingga korupsi. Pendekatan ini melatih kepekaan moral peserta didik agar
+                      bijak bermedia sosial dan berkarakter teguh.
+                    </p>
+                  </div>
+
+                  <div style="background: #f8f9f5; border-radius: var(--radius-md); padding: 1.4rem; border-left: 4px solid var(--color-accent-lime-hover)">
+                    <strong style="display: block; color: var(--color-primary-dark); font-size: 0.95rem; margin-bottom: 0.4rem">
+                      <i class="fa-solid fa-spell-check" style="margin-right: 6px; color: var(--color-accent-lime-hover)"></i> Fasilitas Belajar Mandiri: Glosarium Kamus Istilah & Latihan (Bab Akhir)
+                    </strong>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                      Menyediakan glosarium istilah ketatanegaraan (BPUPKI, PPKI, Piagam Jakarta, Supel, Sishankamrata, Demokrasi Pancasila) dan 4 butir soal studi kasus terbuka yang memicu daya analisis siswa tanpa sekadar mencari jawaban
+                      hafalan.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h4 style="font-size: 1.25rem; font-weight: 800; color: var(--color-primary-dark); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.65rem">
+                  <i class="fa-solid fa-bullseye" style="color: var(--color-primary-dark); font-size: 1.1rem"></i>
+                  B. Tujuan Pengembangan Materi Pembelajaran Berbasis 4 Domain Kompetensi
+                </h4>
+                <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.7; margin-bottom: 1.4rem">Bahan ajar buku saku ini dikembangkan untuk merealisasikan tujuan pembelajaran komprehensif pada 4 domain capaian:</p>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.4rem">
+                  <div style="background: #ffffff; border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-sm)">
+                    <div style="display: inline-block; background: var(--color-primary-dark); color: var(--color-accent-lime); font-size: 0.72rem; font-weight: 800; padding: 3px 8px; border-radius: 4px; margin-bottom: 0.75rem">
+                      DOMAIN KOGNITIF
+                    </div>
+                    <h5 style="font-size: 1rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.5rem">Penguasaan Sejarah & Esensi 5 Sila</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                      Mampu menguraikan etimologi Sanskerta Pancasila, 6 tonggak sejarah perumusan dari 1 Maret hingga 18 Agustus 1945, 6 kedudukan Pancasila bagi NKRI, serta membedakan nilai dasar, instrumental, dan praksis secara logis.
+                    </p>
+                  </div>
+
+                  <div style="background: #ffffff; border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-sm)">
+                    <div style="display: inline-block; background: var(--color-primary-dark); color: var(--color-accent-lime); font-size: 0.72rem; font-weight: 800; padding: 3px 8px; border-radius: 4px; margin-bottom: 0.75rem">
+                      DOMAIN AFEKTIF & MORAL
+                    </div>
+                    <h5 style="font-size: 1rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.5rem">Penghayatan Karakter Kebangsaan</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                      Mengembangkan rasa syukur atas konsensus para pendiri bangsa, menjunjung tinggi toleransi kerukunan umat beragama, mencintai produk dalam negeri, dan menolak penyebaran hoaks di media sosial.
+                    </p>
+                  </div>
+
+                  <div style="background: #ffffff; border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-sm)">
+                    <div style="display: inline-block; background: var(--color-primary-dark); color: var(--color-accent-lime); font-size: 0.72rem; font-weight: 800; padding: 3px 8px; border-radius: 4px; margin-bottom: 0.75rem">
+                      DOMAIN KETERAMPILAN PRAKSIS
+                    </div>
+                    <h5 style="font-size: 1rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.5rem">Simulasi Musyawarah & Pemecahan Masalah</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                      Mampu mempraktikkan 5 langkah alur musyawarah kelas mufakat (Pembukaan, Usulan, Diskusi, Mufakat, Pelaksanaan) serta menganalisis studi kasus pemaksaan kehendak pada rubrik Latihan Mandiri.
+                    </p>
+                  </div>
+
+                  <div style="background: #ffffff; border: 1px solid var(--color-border-light); border-radius: var(--radius-md); padding: 1.5rem; box-shadow: var(--shadow-sm)">
+                    <div style="display: inline-block; background: var(--color-primary-dark); color: var(--color-accent-lime); font-size: 0.72rem; font-weight: 800; padding: 3px 8px; border-radius: 4px; margin-bottom: 0.75rem">
+                      PENGUATAN PROFIL PELAJAR PANCASILA
+                    </div>
+                    <h5 style="font-size: 1rem; font-weight: 700; color: var(--color-primary-dark); margin-bottom: 0.5rem">Beriman, Bernalar Kritis & Gotong Royong</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                      Menginternalisasi kebiasaan berpikir kritis (saring sebelum sharing) dan berkolaborasi dalam kerja tim heterogen, menyadari bahwa gotong royong adalah jati diri luhur bangsa yang harus dilestarikan.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. KELEBIHAN DAN KEKURANGAN MATERI -->
+          <article class="analysis-module-card">
+            <div class="analysis-module-header">
+              <div class="analysis-module-num">02</div>
+              <div>
+                <h3 class="analysis-module-title">Kelebihan dan Kekurangan Materi Pembelajaran</h3>
+                <p class="analysis-module-desc">Evaluasi komparatif mengenai kekuatan narasi edukatif buku saku, format portabel ramah baca, tantangan literasi mandiri, beserta strategi mitigasi kelas.</p>
+              </div>
+            </div>
+
+            <div class="analysis-content-body">
+              <div class="analysis-grid-2col">
+                <!-- Kolom Kelebihan -->
+                <div class="analysis-box-item pro">
+                  <div class="analysis-box-title" style="color: var(--color-primary-dark)">
+                    <i class="fa-solid fa-circle-check" style="color: #65a30d; font-size: 1.3rem"></i>
+                    Kelebihan & Kekuatan Materi Ajar (Strengths)
+                  </div>
+                  <ul class="analysis-list">
+                    <li>
+                      <i class="fa-solid fa-check-circle" style="color: #65a30d"></i>
+                      <div>
+                        <strong>Struktur Modul Ajar Sangat Bersahabat & Runtut (Pedagogical Quest Flow):</strong>
+                        Setiap bab diawali dengan target kompetensi (Quest), Peta Konsep diagram alur, pembahasan inti berpoin, dan diakhiri dengan kotak "Uji Nyali Pancasila", memudahkan siswa membaca secara mandiri.
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-check-circle" style="color: #65a30d"></i>
+                      <div>
+                        <strong>Analogi Konseptual yang Sangat Membumi ("Rumah & Fondasi"):</strong>
+                        Menganalogikan Pancasila sebagai fondasi rumah bangsa yang membuat materi filsafat ketatanegaraan langsung tertanam di benak siswa tanpa memerlukan hafalan rumit.
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-check-circle" style="color: #65a30d"></i>
+                      <div>
+                        <strong>Kompilasi Glosarium Kamus Istilah Terpadu (Halaman 12):</strong>
+                        Memuat 24 istilah penting konstitusi dan sejarah (BPUPKI, PPKI, Piagam Jakarta, Supel, Sishankamrata, HAM, dll.), berfungsi sebagai kamus saku referensi cepat bagi peserta didik.
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-check-circle" style="color: #65a30d"></i>
+                      <div>
+                        <strong>Konteks Relevan Era Digital (Tantangan Hoaks & Cyber Bullying):</strong>
+                        Menghubungkan nilai Sila ke-2 dan ke-3 dengan etika bermedia sosial ("saring sebelum sharing"), menjadikannya bahan ajar yang sangat kontekstual dengan kehidupan Generasi Z.
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Kolom Kekurangan -->
+                <div class="analysis-box-item con">
+                  <div class="analysis-box-title" style="color: #b45309">
+                    <i class="fa-solid fa-triangle-exclamation" style="color: #f59e0b; font-size: 1.3rem"></i>
+                    Kelemahan & Tantangan Implementasi Materi (Limitations)
+                  </div>
+                  <ul class="analysis-list">
+                    <li>
+                      <i class="fa-solid fa-circle-xmark" style="color: #f59e0b"></i>
+                      <div>
+                        <strong>Tingkat Kepadatan Teks Berpotensi Menantang Bagi Siswa Minat Baca Rendah:</strong>
+                        Sebagai buku saku 18 halaman yang memuat banyak narasi sejarah dan tabel perbandingan, sebagian siswa dengan gaya belajar visual-kinestetik memerlukan bantuan pendampingan guru.
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-circle-xmark" style="color: #f59e0b"></i>
+                      <div>
+                        <strong>Soal Latihan Masih Berupa Esai Terbuka Tanpa Kunci Jawaban Mandiri:</strong>
+                        Empat soal pada halaman 11 menuntut penilaian subjektif guru sehingga siswa tidak bisa langsung melakukan pengecekan mandiri (*self-check assessment*).
+                      </div>
+                    </li>
+                    <li>
+                      <i class="fa-solid fa-circle-xmark" style="color: #f59e0b"></i>
+                      <div>
+                        <strong>Ketiadaan Elemen Multimedia Langsung di Dalam Buku Saku:</strong>
+                        Sebagai dokumen cetak/PDF, buku saku belum memiliki tautan QR Code interaktif langsung menuju video rekonstruksi sidang BPUPKI di YouTube.
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- Solusi dan Mitigasi Lapangan -->
+              <div class="analysis-box-item solution">
+                <div class="analysis-box-title" style="color: var(--color-primary-dark); font-size: 1.2rem; border-bottom: 1px solid var(--color-border-light); padding-bottom: 0.75rem; margin-bottom: 1.25rem">
+                  <i class="fa-solid fa-lightbulb" style="color: var(--color-accent-lime); font-size: 1.3rem"></i>
+                  Solusi & Rekomendasi Mitigasi Instruksional (Actionable Strategies)
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem">
+                  <div>
+                    <h5 style="color: var(--color-primary-dark); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem">1. Penggunaan Peta Konsep Bab sebagai Pemandu Visual Kelas</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                      Guru memproyeksikan diagram alur peta konsep bab (misal: Etimologi → Perumusan → Piagam Jakarta → Pengesahan) di papan tulis sebelum siswa membaca uraian teks buku saku.
+                    </p>
+                  </div>
+                  <div>
+                    <h5 style="color: var(--color-primary-dark); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem">2. Diskusi Berpasangan (Think-Pair-Share) untuk Soal "Uji Nyali"</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                      Menggunakan kotak Uji Nyali di setiap akhir bab sebagai bahan diskusi cepat 2 menit dengan teman sebangku guna mengonfirmasi pemahaman sebelum melangkah ke bab selanjutnya.
+                    </p>
+                  </div>
+                  <div>
+                    <h5 style="color: var(--color-primary-dark); font-size: 0.95rem; font-weight: 700; margin-bottom: 0.4rem">3. Integrasi Buku Saku dengan Media Presentasi Slide Siklus 1</h5>
+                    <p style="font-size: 0.88rem; color: var(--color-text-muted); line-height: 1.6; margin: 0">
+                      Menjadikan buku saku ini sebagai bahan bacaan pendamping saat siswa menyimak presentasi slide Canva interaktif dan mengerjakan LKPD studi kasus kelompok.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. KAJIAN TEORI MATERI PEMBELAJARAN -->
+          <article class="analysis-module-card">
+            <div class="analysis-module-header">
+              <div class="analysis-module-num">03</div>
+              <div>
+                <h3 class="analysis-module-title">Kajian Teori & Landasan Keilmuan Bahan Ajar</h3>
+                <p class="analysis-module-desc">Justifikasi teoritis dari literatur beban kognitif teks, belajar bermakna, klarifikasi nilai, serta pedagogi praksis dalam pendidikan moral Pancasila.</p>
+              </div>
+            </div>
+
+            <div class="analysis-content-body">
+              <p style="font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.75; margin-bottom: 2rem">
+                Perancangan dan pengorganisasian substansi buku saku Materi Pembelajaran Siklus 1 ini didasarkan pada enam landasan teori ilmiah pendidikan:
+              </p>
+
+              <div class="theory-grid">
+                <div class="theory-card">
+                  <span class="theory-badge"> <i class="fa-solid fa-sitemap" style="margin-right: 5px"></i> Belajar Bermakna </span>
+                  <h4 class="theory-title">Meaningful Learning & Advance Organizer (David Ausubel, 1968)</h4>
+                  <p class="theory-desc">
+                    Ausubel menyatakan bahwa belajar bermakna terjadi ketika konsep baru dijangkarkan ke pengetahuan lama siswa:
+                    <br /><br />
+                    Buku saku menggunakan analogi "Pancasila sebagai Fondasi Rumah" dan peta konsep di awal setiap bab sebagai <em>Advance Organizer</em>. Siswa mengaitkan struktur kenegaraan yang abstrak dengan logika fondasi fisik yang
+                    telah akrab dalam kehidupan nyata.
+                  </p>
+                </div>
+
+                <div class="theory-card">
+                  <span class="theory-badge" style="background: rgba(184, 224, 35, 0.25)"> <i class="fa-solid fa-scale-balanced" style="margin-right: 5px"></i> Pendidikan Nilai </span>
+                  <h4 class="theory-title">Value Clarification Technique (Louis Raths et al., 1966)</h4>
+                  <p class="theory-desc">
+                    Proses penanaman nilai moral tidak efektif jika dilakukan secara indoktrinasi searah, melainkan melalui 3 tahapan VCT:
+                    <br /><br />
+                    <strong>• Choosing (Memilih):</strong> Siswa memilih sikap berdasarkan pertimbangan akal budi pada kotak Uji Nyali.
+                    <br />
+                    <strong>• Prizing (Menghargai):</strong> Menumbuhkan rasa bangga terhadap konsensus Pancasila.
+                    <br />
+                    <strong>• Acting (Bertindak):</strong> Mengamalkan nilai praksis pada interaksi nyata di sekolah dan masyarakat.
+                  </p>
+                </div>
+
+                <div class="theory-card">
+                  <span class="theory-badge"> <i class="fa-solid fa-brain" style="margin-right: 5px"></i> Psikologi Kognitif </span>
+                  <h4 class="theory-title">Cognitive Load Theory & Chunking (Sweller, 1988)</h4>
+                  <p class="theory-desc">
+                    Materi sejarah dan konstitusi yang tebal dipecah (*chunking*) menjadi segmen-segmen ringkas:
+                    <br /><br />
+                    Kronologi perumusan dipadatkan menjadi 6 tonggak tanggal utama (1 Maret hingga 18 Agustus 1945), dan kedudukan Pancasila dibagi dalam 6 kartu tematik, menjaga kapasitas memori kerja siswa agar tidak mengalami kejenuhan
+                    informasi.
+                  </p>
+                </div>
+
+                <div class="theory-card">
+                  <span class="theory-badge" style="background: rgba(18, 56, 45, 0.08)"> <i class="fa-solid fa-hands-holding-circle" style="margin-right: 5px"></i> Pedagogi Kritis </span>
+                  <h4 class="theory-title">Praxis: Action-Reflection (Paulo Freire, 1970)</h4>
+                  <p class="theory-desc">
+                    Freire menegaskan bahwa transformasi kesadaran manusia lahir dari dialektika antara aksi dan refleksi (<em>Praxis</em>):
+                    <br /><br />
+                    Buku saku ini secara tegas mengusung semboyan <em>"Pancasila bukan hafalan, melainkan praktik"</em>. Halaman refleksi penutup membimbing siswa merenungkan perilaku pribadi dalam menghadapi ujaran kebencian dan toleransi
+                    keberagaman.
+                  </p>
+                </div>
+
+                <div class="theory-card">
+                  <span class="theory-badge"> <i class="fa-solid fa-book-atlas" style="margin-right: 5px"></i> Taksonomi Sikap </span>
+                  <h4 class="theory-title">Taxonomy of Affective Domain (Krathwohl, Bloom, Masia, 1964)</h4>
+                  <p class="theory-desc">
+                    Tiga tingkatan nilai dalam buku saku (Dasar, Instrumental, Praksis) selaras dengan hierarki afektif:
+                    <br /><br />
+                    Mulai dari <em>Receiving</em> (mengetahui definisi etimologis), <em>Responding</em> (berpartisipasi dalam musyawarah), <em>Valuing</em> (meyakini kebenaran sila), hingga <em>Characterization</em> (menjadikan Pancasila
+                    sebagai pandangan hidup personal yang ajeg).
+                  </p>
+                </div>
+
+                <div class="theory-card">
+                  <span class="theory-badge" style="background: rgba(184, 224, 35, 0.25)"> <i class="fa-solid fa-network-wired" style="margin-right: 5px"></i> Literasi Kritis </span>
+                  <h4 class="theory-title">Digital Civic Literacy (Kahne & Bowyer, 2017)</h4>
+                  <p class="theory-desc">
+                    Kecakapan kewarganegaraan era digital menuntut kemampuan verifikasi informasi dan etika partisipasi:
+                    <br /><br />
+                    Bab III buku saku menyematkan prinsip literasi digital kritis (*saring sebelum sharing*) sebagai benteng terhadap ancaman hoaks dan polarisasi sosial, membekali siswa menjadi warganegara digital yang bertanggung jawab
+                    (*responsible digital citizen*).
+                  </p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </section>
+      </div>
+    </main>
+
+    <!-- =================================================================
        5. AGENCY FOOTER
        ================================================================= -->
-  <footer class="footer-agency">
-    <div class="container">
-      <div class="footer-agency-grid">
-        
-        <div class="footer-agency-col">
-          <div class="footer-agency-brand" style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 1rem;">
-            <img src="../logo.png" alt="Logo UAD" class="footer-agency-logo-img" style="width: 46px; height: 46px; object-fit: contain; background: transparent; padding: 0; border: none; box-shadow: none; flex-shrink: 0;" onerror="this.style.display='none'">
-            <div class="footer-agency-brand-text">
-              <span class="title" style="display: block; font-size: 1.15rem; font-weight: 800; color: #ffffff;">Wahyu Surya Al Fikri, S.Pd.</span>
-              <span class="sub" style="display: block; font-size: 0.8rem; color: #94A3B8; font-weight: 600;">PPG Calon Guru Pendidikan Pancasila UAD</span>
+    <footer class="footer-agency">
+      <div class="container">
+        <div class="footer-agency-grid">
+          <div class="footer-agency-col">
+            <div class="footer-agency-brand" style="display: flex; align-items: center; gap: 0.85rem; margin-bottom: 1rem">
+              <img
+                src="../logo navbar.png"
+                alt="Logo UAD"
+                class="footer-agency-logo-img"
+                style="width: 46px; height: 46px; object-fit: contain; background: transparent; padding: 0; border: none; box-shadow: none; flex-shrink: 0"
+                onerror="this.style.display = 'none'"
+              />
+              <div class="footer-agency-brand-text">
+                <span class="title" style="display: block; font-size: 1.15rem; font-weight: 800; color: #ffffff">Wahyu Surya Al Fikri, S.Pd.</span>
+                <span class="sub" style="display: block; font-size: 0.8rem; color: #94a3b8; font-weight: 600">PPG Calon Guru Pendidikan Pancasila UAD</span>
+              </div>
+            </div>
+            <p class="footer-agency-bio" style="color: #94a3b8; font-size: 0.88rem; line-height: 1.7">
+              Portofolio resmi PPL Terbimbing Program Pendidikan Profesi Guru (PPG) Calon Guru Bidang Studi Pendidikan Pancasila Universitas Ahmad Dahlan (UAD) di SMA Negeri 4 Yogyakarta.
+            </p>
+          </div>
+
+          <div class="footer-agency-col">
+            <h4 class="footer-agency-col-title">Navigasi Portofolio</h4>
+            <ul class="footer-agency-links">
+              <li>
+                <a href="../index.html"><i class="fa-solid fa-arrow-right" style="font-size: 0.75rem; margin-right: 6px"></i> Beranda Utama</a>
+              </li>
+              <li>
+                <a href="../profil.html"><i class="fa-solid fa-arrow-right" style="font-size: 0.75rem; margin-right: 6px"></i> Profil Lengkap Mahasiswa</a>
+              </li>
+              <li>
+                <a href="rancangan.html"><i class="fa-solid fa-arrow-right" style="font-size: 0.75rem; margin-right: 6px"></i> Siklus 1 (UTS PPL)</a>
+              </li>
+              <li>
+                <a href="../UAS/rancangan.html"><i class="fa-solid fa-arrow-right" style="font-size: 0.75rem; margin-right: 6px"></i> Siklus Lanjutan (UAS PPL)</a>
+              </li>
+              <li>
+                <a href="../non-mengajar.html"><i class="fa-solid fa-arrow-right" style="font-size: 0.75rem; margin-right: 6px"></i> Kegiatan Non-Mengajar</a>
+              </li>
+              <li>
+                <a href="../dokumentasi.html"><i class="fa-solid fa-arrow-right" style="font-size: 0.75rem; margin-right: 6px"></i> Galeri Dokumentasi</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-agency-col">
+            <h4 class="footer-agency-col-title">Perangkat Pembelajaran</h4>
+            <ul class="footer-agency-links">
+              <li>
+                <a href="rancangan.html"><i class="fa-solid fa-check" style="color: var(--color-accent-lime); font-size: 0.75rem; margin-right: 6px"></i> Modul Ajar Siklus 1 & 2</a>
+              </li>
+              <li>
+                <a href="materi.html"><i class="fa-solid fa-check" style="color: var(--color-accent-lime); font-size: 0.75rem; margin-right: 6px"></i> Bahan Ajar Buku Saku</a>
+              </li>
+              <li>
+                <a href="media.html"><i class="fa-solid fa-check" style="color: var(--color-accent-lime); font-size: 0.75rem; margin-right: 6px"></i> Media Berbasis TPACK</a>
+              </li>
+              <li>
+                <a href="instrumen.html"><i class="fa-solid fa-check" style="color: var(--color-accent-lime); font-size: 0.75rem; margin-right: 6px"></i> Instrumen Asesmen Pancasila</a>
+              </li>
+              <li>
+                <a href="video.html"><i class="fa-solid fa-check" style="color: var(--color-accent-lime); font-size: 0.75rem; margin-right: 6px"></i> Video Praktik Pembelajaran</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-agency-col">
+            <h4 class="footer-agency-col-title">LPTK & Kontak Resmi</h4>
+            <p style="font-size: 0.88rem; color: #94a3b8; margin-bottom: 0.75rem">
+              <i class="fa-solid fa-location-dot" style="color: var(--color-accent-lime); margin-right: 6px"></i> Kampus Utama UAD, Jl. Ringroad Selatan, Tamanan, Banguntapan, Bantul, D.I. Yogyakarta 55191
+            </p>
+            <p style="font-size: 0.88rem; color: #94a3b8; margin-bottom: 1.25rem"><i class="fa-solid fa-envelope" style="color: var(--color-accent-lime); margin-right: 6px"></i> wahyu.ppg@uad.ac.id</p>
+            <div style="display: flex; gap: 0.6rem">
+              <a href="javascript:void(0)" onclick="showToast('YouTube')" class="social-circle-btn"><i class="fa-brands fa-youtube"></i></a>
+              <a href="javascript:void(0)" onclick="showToast('Instagram')" class="social-circle-btn"><i class="fa-brands fa-instagram"></i></a>
+              <a href="javascript:void(0)" onclick="showToast('LinkedIn')" class="social-circle-btn"><i class="fa-brands fa-linkedin-in"></i></a>
             </div>
           </div>
-          <p class="footer-agency-bio" style="color: #94A3B8; font-size: 0.88rem; line-height: 1.7;">
-            Portofolio resmi PPL Terbimbing Program Pendidikan Profesi Guru (PPG) Calon Guru Bidang Studi Pendidikan Pancasila Universitas Ahmad Dahlan (UAD) di SMA Negeri 4 Yogyakarta.
-          </p>
         </div>
 
-        <div class="footer-agency-col">
-          <h4 class="footer-agency-col-title">Navigasi Portofolio</h4>
-          <ul class="footer-agency-links">
-            <li><a href="../index.html"><i class="fa-solid fa-arrow-right" style="font-size:0.75rem; margin-right:6px;"></i> Beranda Utama</a></li>
-            <li><a href="../profil.html"><i class="fa-solid fa-arrow-right" style="font-size:0.75rem; margin-right:6px;"></i> Profil Lengkap Mahasiswa</a></li>
-            <li><a href="rancangan.html"><i class="fa-solid fa-arrow-right" style="font-size:0.75rem; margin-right:6px;"></i> Siklus 1 (UTS PPL)</a></li>
-            <li><a href="../UAS/rancangan.html"><i class="fa-solid fa-arrow-right" style="font-size:0.75rem; margin-right:6px;"></i> Siklus Lanjutan (UAS PPL)</a></li>
-            <li><a href="../non-mengajar.html"><i class="fa-solid fa-arrow-right" style="font-size:0.75rem; margin-right:6px;"></i> Kegiatan Non-Mengajar</a></li>
-            <li><a href="../dokumentasi.html"><i class="fa-solid fa-arrow-right" style="font-size:0.75rem; margin-right:6px;"></i> Galeri Dokumentasi</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-agency-col">
-          <h4 class="footer-agency-col-title">Perangkat Pembelajaran</h4>
-          <ul class="footer-agency-links">
-            <li><a href="rancangan.html"><i class="fa-solid fa-check" style="color:var(--color-accent-lime); font-size:0.75rem; margin-right:6px;"></i> Modul Ajar Siklus 1 & 2</a></li>
-            <li><a href="materi.html"><i class="fa-solid fa-check" style="color:var(--color-accent-lime); font-size:0.75rem; margin-right:6px;"></i> Bahan Ajar Buku Saku</a></li>
-            <li><a href="media.html"><i class="fa-solid fa-check" style="color:var(--color-accent-lime); font-size:0.75rem; margin-right:6px;"></i> Media Berbasis TPACK</a></li>
-            <li><a href="instrumen.html"><i class="fa-solid fa-check" style="color:var(--color-accent-lime); font-size:0.75rem; margin-right:6px;"></i> Instrumen Asesmen Pancasila</a></li>
-            <li><a href="video.html"><i class="fa-solid fa-check" style="color:var(--color-accent-lime); font-size:0.75rem; margin-right:6px;"></i> Video Praktik Pembelajaran</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-agency-col">
-          <h4 class="footer-agency-col-title">LPTK & Kontak Resmi</h4>
-          <p style="font-size: 0.88rem; color: #94A3B8; margin-bottom: 0.75rem;">
-            <i class="fa-solid fa-location-dot" style="color: var(--color-accent-lime); margin-right: 6px;"></i> Kampus Utama UAD, Jl. Ringroad Selatan, Tamanan, Banguntapan, Bantul, D.I. Yogyakarta 55191
-          </p>
-          <p style="font-size: 0.88rem; color: #94A3B8; margin-bottom: 1.25rem;">
-            <i class="fa-solid fa-envelope" style="color: var(--color-accent-lime); margin-right: 6px;"></i> wahyu.ppg@uad.ac.id
-          </p>
-          <div style="display: flex; gap: 0.6rem;">
-            <a href="javascript:void(0)" onclick="showToast('YouTube')" class="social-circle-btn"><i class="fa-brands fa-youtube"></i></a>
-            <a href="javascript:void(0)" onclick="showToast('Instagram')" class="social-circle-btn"><i class="fa-brands fa-instagram"></i></a>
-            <a href="javascript:void(0)" onclick="showToast('LinkedIn')" class="social-circle-btn"><i class="fa-brands fa-linkedin-in"></i></a>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="footer-bottom-strip">
-        <div>
-          &copy; 2026 <strong>Wahyu Surya Al Fikri, S.Pd.</strong> All Rights Reserved • PPG Calon Guru Pendidikan Pancasila Universitas Ahmad Dahlan (UAD).
-        </div>
-        <div>
-          Tema Desain: Modern Clean Green & Lime Agency Style
+        <div class="footer-bottom-strip">
+          <div>&copy; 2026 <strong>Wahyu Surya Al Fikri, S.Pd.</strong> All Rights Reserved • PPG Calon Guru Pendidikan Pancasila Universitas Ahmad Dahlan (UAD).</div>
+          <div>Tema Desain: Modern Clean Green & Lime Agency Style</div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
 
-  <script src="../js/main.js"></script>
-</body>
+    <script src="../js/main.js"></script>
+  </body>
 </html>
